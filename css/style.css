@@ -1,0 +1,88 @@
+:root {
+	--main-gray-color: #1C1C1C;
+}
+
+
+
+/*
+* _____ PRESETS _____
+*/
+html {
+	font-size: 1px;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+/*
+@media screen and (max-width: 576px) {
+	html {
+		font-size: 1.1px;
+	}
+}*/
+
+
+
+/*
+* _____ PAGE PROPERTIES _____
+*/
+.page {
+	font-family: "Museo Sans", "Open Sans", sans-serif;
+	color: var(--main-green-color);
+	background: var(--main-green-color);
+	min-width: 320px;
+}
+
+
+
+/*
+* _____ REPEATING ELEMENTS _____
+*/
+
+/* --- Reservation --- */
+.reservation-btn {
+
+}
+
+
+
+/*
+* _____ FIRST _____
+*/
+
+/* --- Section --- */
+.first {
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+	min-height: 440px;
+	position: relative;
+}
+.first__background {
+	background: var(--main-gray-color);
+	position: absolute;
+	z-index: -10;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.first__inner {
+	position: relative;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	height: 100%;
+	color: white;
+	text-align: center;
+}

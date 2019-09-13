@@ -38,13 +38,13 @@ a {
 	letter-spacing: 1rem;
 	background: #1A1718;
 
-	/* for now */
+	/* For now */
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
 	min-height: 475px;
 }
 
-/* container */
+/* Container */
 .container {
 	padding-right: 15px;
 	padding-left: 15px;
@@ -86,17 +86,18 @@ a {
 .reservation-btn {
 	position: relative;
 	z-index: 3;
-	padding: 20px 30px;
-	font-size: 16em;
+	padding: 15px 26px;
+	font-size: 15em;
 	font-weight: bold;
+	letter-spacing: 0.5rem;
 	color: white;
 	border: 1px solid white;
-	-webkit-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
-/* animation */
+/* Animation */
 .reservation-btn:after {
 	content: '';
 	position: absolute;
@@ -223,20 +224,20 @@ a {
 	transition: margin 0.3s;
 }
 
-/* address */
+/* Address */
 .contacts__address {
 	font-size: 10.9em;
 	font-weight: normal;
 	text-transform: uppercase;
-	-webkit-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
+	-webkit-transition: text-shadow 0.4s;
+	-moz-transition: text-shadow 0.4s;
+	transition: text-shadow 0.4s;
 }
 .contacts__address:hover {
 	text-shadow: 0 0 6px white;
 }
 
-/* tel */
+/* Tel */
 .contacts__fa {
 	font-size: 0.8em;
 	-webkit-transition: transform 0.3s;
@@ -294,7 +295,7 @@ a {
 }
 .first__title {
 	margin-top: 15px;
-	margin-bottom: 45px;
+	margin-bottom: 40px;
 }
 .first__heading {
 	font-family: 'Alegreya Sans SC', sans-serif;
@@ -317,7 +318,7 @@ a {
 
 /* === Media === */
 
-/* decrease central content */
+/* Decrease central content */
 @media (max-height: 475px) {
 	.first__logo {
 		width: 150px;
@@ -329,7 +330,6 @@ a {
 	.first__reservation-btn {
 		padding: 10px 21px 11px;
 		font-size: 14em;
-		letter-spacing: 0.5rem;
 	}
 	.page {
 		min-height: 275px;
@@ -360,8 +360,49 @@ a {
 	}
 }
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+	.contacts {
+		font-size: 1.2px;
+		width: 330px;
+	}
+	.first__title {
+		font-size: 1.2px;
+	}
+	.first__heading {
+		font-size: 26em;
+	}
+}
 
-/* contacts text-align:right; */
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.first__logo {
+		width: 250px;
+	}
+	.first__title {
+		font-size: 1.5px;
+	}
+	.first__heading {
+		font-size: 28em;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.first__logo {
+		width: 320px;
+	}
+	.first__title {
+		margin-top: 35px;
+	}
+
+}
+
+
+
+
+
+/* Contacts text-align:right; */
 /*@media (max-height: 385px) {
 	.contacts {
 		text-align: right;

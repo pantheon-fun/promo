@@ -15,7 +15,7 @@
 
 	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
 
-	<link rel="stylesheet" href="css/style.css?v=1.2">
+	<link rel="stylesheet" href="css/style.css?v=1.1.4">
 </head>
 <body class="page">
 	<section class="first">
@@ -80,25 +80,23 @@
 					</a>
 				</div>
 			</header>
-			<div class="first__centralize">
-				<div class="first__content">
-					<div class="logo first__logo">
-						<img src="img/logo.png" alt="Pantheon" class="logo__img">
-					</div>
-					<h1 class="first__heading">
-						Клуб спортивно-тактических игр
-					</h1>
-					<p class="first__inspiration">
-						Лазертаг
-						<i class="first__aim fas fa-crosshairs"></i>
-						Нёрф
-						<i class="first__aim fas fa-crosshairs"></i>
-						Арчеритаг
-					</p>
-					<a href="#" class="reservation-btn first__reservation-btn">
-						Забронировать игру
-					</a>
+			<div class="first__content">
+				<div class="logo first__logo">
+					<img src="img/logo.png" alt="Pantheon" class="logo__img">
 				</div>
+				<h1 class="first__heading">
+					Клуб спортивно-тактических игр
+				</h1>
+				<p class="first__inspiration">
+					Лазертаг
+					<i class="first__aim fas fa-crosshairs"></i>
+					Нёрф
+					<i class="first__aim fas fa-crosshairs"></i>
+					Арчеритаг
+				</p>
+				<a href="#" class="reservation-btn first__reservation-btn">
+					Забронировать игру
+				</a>
 			</div>
 		</div>
 	</section>
@@ -112,23 +110,25 @@
 			type: 'carousel',
 			perView: 1,
 			gap: 0,
-			autoplay: 2500,
+			autoplay: 3000,
 			animationDuration: 1000,
 			hoverpause: false,
-			keyboard: true
+			keyboard: true,
 		})
 		glide.mount()
 	</script>
 	
 	<script>
-		correctSizing();
-		window.addEventListener('orientationchange', function() {
-			let afterOrientationChange = function() {
-				correctSizing();
-				window.removeEventListener('resize', afterOrientationChange);
-			};
-			window.addEventListener('resize', afterOrientationChange);
-		});
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			correctSizing();
+			window.addEventListener('orientationchange', function() {
+				let afterOrientationChange = function() {
+					correctSizing();
+					window.removeEventListener('resize', afterOrientationChange);
+				};
+				window.addEventListener('resize', afterOrientationChange);
+			});
+		}
 		function correctSizing() {
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);

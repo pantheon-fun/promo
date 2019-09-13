@@ -41,7 +41,7 @@ a {
 	/* for now */
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
-	min-height: 470px;
+	min-height: 475px;
 }
 
 /* container */
@@ -70,24 +70,27 @@ a {
 
 
 /*
-* _____ REPEATING ELEMENTS _____
+* _____ MAIN ELEMENTS _____
 */
 
-/* --- Logo --- */
+/* === Logo === */
+.logo {
+	transition: width 0.3s;
+}
 .logo__img {
 	width: 100%;
 }
 
 
-/* --- Reservation --- */
+/* === Reservation === */
 .reservation-btn {
 	position: relative;
 	z-index: 3;
 	padding: 20px 30px;
 	font-size: 16em;
+	font-weight: bold;
 	color: white;
 	border: 1px solid white;
-	font-weight: bold;
 	-webkit-transition: all 0.4s;
 	-moz-transition: all 0.4s;
 	transition: all 0.4s;
@@ -131,7 +134,7 @@ a {
 * _____ FIRST _____
 */
 
-/* --- Section --- */
+/* === Section === */
 .first {
 	/*height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
@@ -140,7 +143,8 @@ a {
 	position: relative;
 }
 
-/* --- Background glide --- */
+
+/* === Background glide === */
 .glide,
 .glide__track,
 .glide__slides,
@@ -168,14 +172,14 @@ a {
 	height: 4px;
 	width: 40px;
 	background: rgba(255,255,255,0.4);
-	pointer-events: auto;	
+	pointer-events: auto;
 }
 .glide__bullet--active {
 	background: white;
 }
 
 
-/* --- Inner --- */
+/* === Inner === */
 .first__inner {
 	position: relative;
 	height: 100%;
@@ -190,7 +194,7 @@ a {
 }
 
 
-/* --- Masthead --- */
+/* === Masthead === */
 .masthead {
 	position: absolute;
 	top: 10px;
@@ -205,84 +209,162 @@ a {
 }
 
 
-/* --- Navigation --- */
+/* === Navigation === */
 .navigation {
 	display: none;
 }
 
 
-/* --- Contacts --- */
+/* === Contacts === */
 .contacts {
 	margin: auto;
 	margin-top: 15px;
 	width: 286px;	
+	transition: margin 0.3s;
 }
+
+/* address */
 .contacts__address {
 	font-size: 10.9em;
 	font-weight: normal;
 	text-transform: uppercase;
-	-webkit-transition: all 0.6s;
-	-moz-transition: all 0.6s;
-	transition: all 0.6s;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
 }
 .contacts__address:hover {
-	text-shadow: 0 0 8px white;
+	text-shadow: 0 0 6px white;
+}
+
+/* tel */
+.contacts__fa {
+	font-size: 0.8em;
+	-webkit-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	transition: transform 0.3s;
 }
 .contacts__tel {
 	font-size: 20em;
 	margin-top: 8px;
 }
-.spin {
-	display: inline-block;
-	-webkit-transition: all 1s;
-	-o-transition: all 1s;
-	transition: all 1s;
+
+/* animation */
+.underline {
+	position: relative;
+	padding-bottom: 5px;
 }
-.contacts__tel:hover .spin{
-	-ms-transform: rotate(360deg);
- 	-webkit-transform: rotate(360deg);
- 	transform: rotate(360deg);
+.underline:after {
+	display: block;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background: #fff;
+	opacity: 0;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
 }
-.contacts__fa {
-	font-size: 0.8em;
+.contacts__tel:hover .underline:after,
+.underline:hover:after {
+	height: 3px;
+	opacity: 1;
+	background: var(--main-red-color);
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+.contacts__tel:active .contacts__fa {
+	transform: rotate(-13deg);
 }
 
 
-/* --- Content --- */
+/* === Content === */
 .first__content {
 	margin: auto;
 }
 .first__logo {
-	width: 200px;
+	width: 220px;
 	margin: auto;
-	margin-bottom: 20px;
+}
+.first__title {
+	margin-top: 15px;
+	margin-bottom: 45px;
 }
 .first__heading {
-	font-size: 22em;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 19.9em;
+	font-weight: bold;
 	margin: auto;
-	width: 220px;
-	text-transform: uppercase;
-	font-weight: normal;
+	letter-spacing: 0;
 }
 .first__inspiration {
-	margin-top: 9px;
-	padding-left: 8px;
-	font-size: 15em;
+	margin-top: 7px;
+	padding-left: 5px;
+	font-size: 14em;
 	font-weight: 300;
+	text-transform: uppercase;
 }
 .first__aim {
 	color: var(--main-red-color);
 }
-.first__reservation-btn {
-	margin-top: 30px;
-}
 
 
+/* === Media === */
 
-
-
-@media (min-width: 470px) {
-	.first__heading {
-		width: auto;
+/* decrease central content */
+@media (max-height: 475px) {
+	.first__logo {
+		width: 150px;
+	}
+	.first__title {
+		margin-top: 13px;
+		margin-bottom: 20px;
+	}
+	.first__reservation-btn {
+		padding: 10px 21px 11px;
+		font-size: 14em;
+		letter-spacing: 0.5rem;
+	}
+	.page {
+		min-height: 320px;
 	}
 }
+@media (max-height: 385px) {
+	.glide__bullets {
+		bottom: 15px;
+	}
+	.contacts {
+		margin-top: 0;
+	}
+	.contacts__tel {
+		margin-top: 4px;
+		font-size: 16em;
+	}
+	.first__logo {
+		width: 110px;
+	}
+	.first__title {
+		font-size: 0.9px;
+		margin-top: 8px;
+		margin-bottom: 15px;
+	}
+	.first__inspiration {
+		margin-top: 4px;
+	}
+}
+
+
+/* contacts text-align:right; */
+/*@media (max-height: 385px) {
+	.contacts {
+		text-align: right;
+	}
+	
+}*/
+

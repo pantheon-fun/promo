@@ -7,15 +7,15 @@
 	<link rel="icon" href="img/logo.png">
 	<!-- <link rel="stylesheet" href="fonts/stylesheet.css?v=1.0"> -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:700&display=swap" rel="stylesheet">
 
-	<!-- Required Core stylesheet -->
+	<!-- Glidejs -->
 	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-	<!-- Optional Theme stylesheet -->
 	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
 
 	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
 
-	<link rel="stylesheet" href="css/style.css?v=1.1.4">
+	<link rel="stylesheet" href="css/style.css?v=1.1.7">
 </head>
 <body class="page">
 	<section class="first">
@@ -71,12 +71,12 @@
 					</ul>
 				</nav>
 				<div class="contacts">
-					<a href="" class="contacts__address">
+					<a class="contacts__address" href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18" target="_blank">
 						Олимпийский проспект 20к1, Мытищи
 					</a>
 					<a href="tel:+79777220960" class="contacts__tel">
 						<i class="contacts__fa fas fa-phone-alt"></i>
-						<span class="spin">+</span>7 977 722 09 60
+						<span class="underline">+7 977 722 09 60</span>
 					</a>
 				</div>
 			</header>
@@ -84,16 +84,18 @@
 				<div class="logo first__logo">
 					<img src="img/logo.png" alt="Pantheon" class="logo__img">
 				</div>
-				<h1 class="first__heading">
-					Клуб спортивно-тактических игр
-				</h1>
-				<p class="first__inspiration">
-					Лазертаг
-					<i class="first__aim fas fa-crosshairs"></i>
-					Нёрф
-					<i class="first__aim fas fa-crosshairs"></i>
-					Арчеритаг
-				</p>
+				<div class="first__title">
+					<h1 class="first__heading">
+						Клуб спортивно-тактических игр
+					</h1>
+					<p class="first__inspiration">
+						Лазертаг
+						<i class="first__aim fas fa-crosshairs"></i>
+						Нёрф
+						<i class="first__aim fas fa-crosshairs"></i>
+						Арчеритаг
+					</p>
+				</div>
 				<a href="#" class="reservation-btn first__reservation-btn">
 					Забронировать игру
 				</a>
@@ -111,14 +113,15 @@
 			perView: 1,
 			gap: 0,
 			autoplay: 3000,
-			animationDuration: 1000,
+			animationDuration: 750,
 			hoverpause: false,
 			keyboard: true,
+			animationTimingFunc: 'ease-out'
 		})
 		glide.mount()
 	</script>
 	
-	<script>
+	<!-- <script>
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 			correctSizing();
 			window.addEventListener('orientationchange', function() {
@@ -133,7 +136,7 @@
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		}
-	</script>
+	</script> -->
 
 	<!-- <script type="text/javascript" id="widget-script" data-type="inline" data-color="#cccccc" src="https://pantheon.laserwar.club/template/standard/web/js/form.js"></script><noscript><a href='https://pantheon.laserwar.club/' target='_blank'><img src='https://pantheon.laserwar.club/template/standard/web/images/mini-site/make-order.jpg'/></a></noscript> -->
 </body>

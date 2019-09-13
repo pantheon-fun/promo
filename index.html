@@ -3,20 +3,44 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	<title>Лазертаг Нёрф Арчеритаг в Мытищах "PANTHEON"</title>
-	<!-- <link rel="icon" href="img/site-icon.ico">
-	<link rel="stylesheet" href="fonts/stylesheet.css?v=1.0"> -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css?v=1.0">
+	<title>Лазертаг, Нёрф и Арчеритаг в Мытищах "PANTHEON"</title>
+	<link rel="icon" href="img/logo.png">
+	<!-- <link rel="stylesheet" href="fonts/stylesheet.css?v=1.0"> -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<!-- Required Core stylesheet -->
+	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+	<!-- Optional Theme stylesheet -->
+	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+
+	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
+
+	<link rel="stylesheet" href="css/style.css?v=1.2">
 </head>
 <body class="page">
 	<section class="first">
-		<img src="img/first/bg-img1.jpg" alt="Перестрелка" class="first__background">
+		<div class="glide">
+			<div class="glide__track" data-glide-el="track">
+				<ul class="glide__slides">
+					<li class="glide__slide">
+						<img src="img/background/bg1.jpg" alt="Перестрелка" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/bg2.jpg" alt="Страшные маски" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/bg3.jpg" alt="Крик" class="glide__img">
+					</li>
+				</ul>
+			</div>
+			<div class="glide__bullets" data-glide-el="controls[nav]">
+				<button class="glide__bullet" data-glide-dir="=0"></button>
+				<button class="glide__bullet" data-glide-dir="=1"></button>
+				<button class="glide__bullet" data-glide-dir="=2"></button>
+			</div>
+		</div>
 		<div class="container first__inner">
 			<header class="masthead">
-				<div class="logo masthead__logo">
-					<img src="img/logo.jpg" alt="Pantheon" class="logo__img">
-				</div>
 				<nav>
 					<ul class="navigation">
 						<li class="navigation__item">
@@ -47,43 +71,70 @@
 					</ul>
 				</nav>
 				<div class="contacts">
-					<a href="" class="contacts__tel">
-						...
-					</a>
 					<a href="" class="contacts__address">
-						...
+						Олимпийский проспект 20к1, Мытищи
+					</a>
+					<a href="tel:+79777220960" class="contacts__tel">
+						<i class="contacts__fa fas fa-phone-alt"></i>
+						<span class="spin">+</span>7 977 722 09 60
 					</a>
 				</div>
 			</header>
-			<div class="first__title">
-				<h1 class="first__heading">
-					Дело, которым я живу
-				</h1>
-				<p class="first__inspiration">
-					Верстка & Frontend
-				</p>
+			<div class="first__centralize">
+				<div class="first__content">
+					<div class="logo first__logo">
+						<img src="img/logo.png" alt="Pantheon" class="logo__img">
+					</div>
+					<h1 class="first__heading">
+						Клуб спортивно-тактических игр
+					</h1>
+					<p class="first__inspiration">
+						Лазертаг
+						<i class="first__aim fas fa-crosshairs"></i>
+						Нёрф
+						<i class="first__aim fas fa-crosshairs"></i>
+						Арчеритаг
+					</p>
+					<a href="#" class="reservation-btn first__reservation-btn">
+						Забронировать игру
+					</a>
+				</div>
 			</div>
-			<a href="#" class="reservation-btn first__reservation-btn">
-				Забронировать игру
-			</a>
 		</div>
 	</section>
 
+
+
+	<script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
 	<script>
-		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { 
-			correctSizing();
-			window.addEventListener('orientationchange', function() {
-			    var afterOrientationChange = function() {
-					correctSizing();
-			        window.removeEventListener('resize', afterOrientationChange);
-			    };
-			    window.addEventListener('resize', afterOrientationChange);
-			});
-			function correctSizing() {
-				let vh = window.innerHeight * 0.01;
-				document.documentElement.style.setProperty('--vh', `${vh}px`);
-			}
+		new Glide('.glide').mount()
+		var glide = new Glide('.glide', {
+			type: 'carousel',
+			perView: 1,
+			gap: 0,
+			autoplay: 2500,
+			animationDuration: 1000,
+			hoverpause: false,
+			keyboard: true
+		})
+		glide.mount()
+	</script>
+	
+	<script>
+		correctSizing();
+		window.addEventListener('orientationchange', function() {
+			let afterOrientationChange = function() {
+				correctSizing();
+				window.removeEventListener('resize', afterOrientationChange);
+			};
+			window.addEventListener('resize', afterOrientationChange);
+		});
+		function correctSizing() {
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		}
 	</script>
+
+	<!-- <script type="text/javascript" id="widget-script" data-type="inline" data-color="#cccccc" src="https://pantheon.laserwar.club/template/standard/web/js/form.js"></script><noscript><a href='https://pantheon.laserwar.club/' target='_blank'><img src='https://pantheon.laserwar.club/template/standard/web/images/mini-site/make-order.jpg'/></a></noscript> -->
 </body>
 </html>

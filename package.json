@@ -1,0 +1,22 @@
+{
+  "name": "pantheon",
+  "version": "1.0.0",
+  "description": "pantheon web-site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DZakh/Pantheon.git"
+  },
+  "author": "dzakh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DZakh/Pantheon/issues"
+  },
+  "homepage": "https://github.com/DZakh/Pantheon#readme",
+  "dependencies": {
+    "@glidejs/glide": "^3.3.0"
+  }
+}

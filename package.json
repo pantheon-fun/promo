@@ -1,17 +1,18 @@
 {
-  "name": "pantheon",
+  "name": "Pantheon",
   "version": "1.0.0",
-  "description": "pantheon web-site",
+  "description": "Web site for lasertag arena Pantheon",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node js/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DZakh/Pantheon.git"
   },
-  "author": "dzakh",
-  "license": "ISC",
+  "keywords": [],
+  "author": "Dmitry Zakh",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DZakh/Pantheon/issues"
   },

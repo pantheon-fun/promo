@@ -4,8 +4,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<meta name="theme-color" content="#1C1C1C"/>
-	<title>Лазертаг, Нёрф и Арчеритаг в Мытищах "PANTHEON"</title>
-	<link rel="icon" href="img/logo.png">
+	<title>ЛАЗЕРТАГ | НЁРФ | АРЧЕРИТАГ в Мытищах «Pantheon»</title>
+	<link rel="icon" href="img/logo/logo-min.png">
 	<!-- <link rel="stylesheet" href="fonts/stylesheet.css?v=1.0"> -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:700&display=swap" rel="stylesheet">
@@ -16,30 +16,10 @@
 
 	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
 
-	<link rel="stylesheet" href="css/style.css?v=1.1.10">
+	<link rel="stylesheet" href="css/style.css?v=1.1.15">
 </head>
 <body class="page">
 	<section class="first">
-		<div class="glide">
-			<div class="glide__track" data-glide-el="track">
-				<ul class="glide__slides">
-					<li class="glide__slide">
-						<img src="img/background/bg1.jpg" alt="Перестрелка" class="glide__img">
-					</li>
-					<li class="glide__slide">
-						<img src="img/background/bg2.jpg" alt="Страшные маски" class="glide__img">
-					</li>
-					<li class="glide__slide">
-						<img src="img/background/bg3.jpg" alt="Крик" class="glide__img">
-					</li>
-				</ul>
-			</div>
-			<div class="glide__bullets" data-glide-el="controls[nav]">
-				<button class="glide__bullet" data-glide-dir="=0"></button>
-				<button class="glide__bullet" data-glide-dir="=1"></button>
-				<button class="glide__bullet" data-glide-dir="=2"></button>
-			</div>
-		</div>
 		<div class="container first__inner">
 			<header class="masthead">
 				<nav>
@@ -83,9 +63,24 @@
 			</header>
 			<div class="first__content">
 				<div class="logo first__logo">
-					<img src="img/logo.png" alt="Pantheon" class="logo__img">
+					<!-- <img src="img/logo/logo-690w.png" 
+						srcset="img/logo/logo-230w.png 230w,
+								img/logo/logo-460w.png 460w,
+								img/logo/logo-690w.png 690w"
+						class="logo__img" alt="Лазертаг арена «Pantheon»"> -->
+					<!-- I'm not sure abaut this -->
+					<picture>
+						<source media="(max-width: 767px) and (max-height: 524px)" 
+								srcset="img/logo/logo-460w.png 460w">
+						<source media="(min-width: 768px) and (min-height: 525px) 
+								and (max-width: 991px) and (max-height: 599px)" 
+								srcset="img/logo/logo-460w.png 460w">
+						<source media="(min-width: 992px) and (min-height: 600px)" 
+								srcset="img/logo/logo-690w.png">
+						<img src="img/logo/logo-690w.png" alt="Лазертаг арена «Pantheon»" class="logo__img">
+					</picture>
 				</div>
-				<div class="first__title">
+				<div class="first__banner">
 					<h1 class="first__heading">
 						Клуб спортивно-тактических игр
 					</h1>
@@ -102,42 +97,32 @@
 				</a>
 			</div>
 		</div>
+		<div class="glide">
+			<div class="glide__track" data-glide-el="track">
+				<ul class="glide__slides">
+					<li class="glide__slide">
+						<img src="img/background/bg1.jpg" alt="Перестрелка" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/bg2.jpg" alt="Люди в масках кровожадных клоунов выглядывают из тьмы с лазертаг оружием" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/bg3.jpg" alt="Крик" class="glide__img">
+					</li>
+				</ul>
+			</div>
+			<div class="glide__bullets" data-glide-el="controls[nav]">
+				<button class="glide__bullet" data-glide-dir="=0"></button>
+				<button class="glide__bullet" data-glide-dir="=1"></button>
+				<button class="glide__bullet" data-glide-dir="=2"></button>
+			</div>
+		</div>
 	</section>
 
 
-
+	<script src="js/correct-sizing.js"></script>
 	<script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
-	<script>
-		new Glide('.glide').mount()
-		var glide = new Glide('.glide', {
-			type: 'carousel',
-			perView: 1,
-			gap: 0,
-			autoplay: 3250,
-			animationDuration: 700,
-			hoverpause: false,
-			keyboard: true,
-			animationTimingFunc: 'ease-out'
-		})
-		glide.mount()
-	</script>
-	
-	<script>
-		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			correctSizing();
-			window.addEventListener('orientationchange', function() {
-				let afterOrientationChange = function() {
-					correctSizing();
-					window.removeEventListener('resize', afterOrientationChange);
-				};
-				window.addEventListener('resize', afterOrientationChange);
-			});
-		}
-		function correctSizing() {
-			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-		}
-	</script>
+	<script src="js/glide.js"></script>
 
 	<!-- <script type="text/javascript" id="widget-script" data-type="inline" data-color="#cccccc" src="https://pantheon.laserwar.club/template/standard/web/js/form.js"></script><noscript><a href='https://pantheon.laserwar.club/' target='_blank'><img src='https://pantheon.laserwar.club/template/standard/web/images/mini-site/make-order.jpg'/></a></noscript> -->
 </body>

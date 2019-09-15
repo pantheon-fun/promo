@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
+	<!— Global site tag (gtag.js) - Google Analytics —>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148064605-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-148064605-1');
+	</script>
+	<!— Yandex.Metrika counter —>
+	<script type="text/javascript">
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(55340875, "init", {
+		clickmap:true,
+		trackLinks:true,
+		accurateTrackBounce:true,
+		webvisor:true
+		});
+	</script>
+	<!— /Yandex.Metrika counter —>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta charset="UTF-8"/>
 	<meta name="theme-color" content="#1C1C1C"/>
-	<title>ЛАЗЕРТАГ | НЁРФ | АРЧЕРИТАГ в Мытищах «Pantheon»</title>
-	<link rel="icon" href="img/logo/logo-min.png">
-	<!-- <link rel="stylesheet" href="fonts/stylesheet.css?v=1.0"> -->
+	<meta name="description" content="Крытая арена спортивно-тактических игр, приходите играть в Лазертаг, NERF, Лучный Бой. Площадка 400 метров в 10 минутах ходьбы от станции Мытищи."/>
+	<title>ЛАЗЕРТАГ | НЁРФ | ЛУЧНЫЙ БОЙ в Мытищах «Pantheon»</title>
+	<!-- Icon -->
+	<link rel="icon" href="img/logo/logo.ico">
+	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:700&display=swap" rel="stylesheet">
-
 	<!-- Glidejs -->
 	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
 	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
-
+	<!-- Style -->
+	<link rel="stylesheet" href="css/style.css?v=1.1.20">
+	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
-
-	<link rel="stylesheet" href="css/style.css?v=1.1.15">
 </head>
 <body class="page">
 	<section class="first">
 		<div class="container first__inner">
-			<header class="masthead">
+			<div class="masthead">
 				<nav>
 					<ul class="navigation">
 						<li class="navigation__item">
@@ -52,7 +75,7 @@
 					</ul>
 				</nav>
 				<div class="contacts">
-					<a class="contacts__address" href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18" target="_blank">
+					<a class="contacts__address" href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18" target="_blank" rel="noopener">
 						Олимпийский проспект 20к1, Мытищи
 					</a>
 					<a href="tel:+79777220960" class="contacts__tel">
@@ -60,7 +83,7 @@
 						<span class="underline">+7 977 722 09 60</span>
 					</a>
 				</div>
-			</header>
+			</div>
 			<div class="first__content">
 				<div class="logo first__logo">
 					<!-- <img src="img/logo/logo-690w.png" 
@@ -82,17 +105,17 @@
 				</div>
 				<div class="first__banner">
 					<h1 class="first__heading">
-						Клуб спортивно-тактических игр
+						Лазертаг-клуб в Мытищах
 					</h1>
 					<p class="first__inspiration">
-						Лазертаг
+						Дни рождения
 						<i class="first__aim fas fa-crosshairs"></i>
-						Нёрф
+						Праздники
 						<i class="first__aim fas fa-crosshairs"></i>
-						Арчеритаг
+						Открытые игры
 					</p>
 				</div>
-				<a href="#" class="reservation-btn first__reservation-btn">
+				<a href="https://vk.com/app5708398_-97450505" class="reservation-btn first__reservation-btn">
 					Забронировать игру
 				</a>
 			</div>
@@ -101,29 +124,49 @@
 			<div class="glide__track" data-glide-el="track">
 				<ul class="glide__slides">
 					<li class="glide__slide">
-						<img src="img/background/bg1.jpg" alt="Перестрелка" class="glide__img">
+						<img src="img/background/roar-1920w.jpg" alt="Возбужденный мальчишка воинственно рычит с лазертаг автоматом в руках" class="glide__img">
 					</li>
 					<li class="glide__slide">
-						<img src="img/background/bg2.jpg" alt="Люди в масках кровожадных клоунов выглядывают из тьмы с лазертаг оружием" class="glide__img">
+						<img src="img/background/aim-1920w.jpg" alt="Маленький ребенок целится из Лазертаг тагера" class="glide__img">
 					</li>
 					<li class="glide__slide">
-						<img src="img/background/bg3.jpg" alt="Крик" class="glide__img">
+						<img src="img/background/capture-1920w.jpg" alt="День рождения в стиле Нерф" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/smile-1920w.jpg" alt="Довольный школьник после игры в Нерф" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/madness-1920w.jpg" alt="Захват точки во время игры в Лазертаг" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/horor-1920w.jpg" alt="Люди в страшных клоунских масках выглядывают из тьмы" class="glide__img">
+					</li>
+					<li class="glide__slide">
+						<img src="img/background/skirmish-1920w.jpg" alt="Лазертаг перестрелка на закрытой арене" class="glide__img">
 					</li>
 				</ul>
 			</div>
 			<div class="glide__bullets" data-glide-el="controls[nav]">
-				<button class="glide__bullet" data-glide-dir="=0"></button>
-				<button class="glide__bullet" data-glide-dir="=1"></button>
-				<button class="glide__bullet" data-glide-dir="=2"></button>
+				<button class="glide__bullet" data-glide-dir="=0" aria-label="Навигация по слайдеру"></button>
+				<button class="glide__bullet" data-glide-dir="=1" aria-label="Навигация по слайдеру"></button>
+				<button class="glide__bullet" data-glide-dir="=2" aria-label="Навигация по слайдеру"></button>
+				<button class="glide__bullet" data-glide-dir="=3" aria-label="Навигация по слайдеру"></button>
+				<button class="glide__bullet" data-glide-dir="=4" aria-label="Навигация по слайдеру"></button>
+				<button class="glide__bullet" data-glide-dir="=5" aria-label="Навигация по слайдеру"></button>
+				<button class="glide__bullet" data-glide-dir="=6" aria-label="Навигация по слайдеру"></button>
 			</div>
 		</div>
 	</section>
 
+	<!-- <section class="connect-us">
+		<div class="container connect-us__inner">
+			<script type="text/javascript" id="widget-script" data-type="inline" data-color="#cccccc" src="https://pantheon.laserwar.club/template/standard/web/js/form.js"></script>
+		</div>
+	</section> -->
 
-	<script src="js/correct-sizing.js"></script>
+	<script src="js/correct-sizing.js?v=1.1.1"></script>
 	<script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
-	<script src="js/glide.js"></script>
-
-	<!-- <script type="text/javascript" id="widget-script" data-type="inline" data-color="#cccccc" src="https://pantheon.laserwar.club/template/standard/web/js/form.js"></script><noscript><a href='https://pantheon.laserwar.club/' target='_blank'><img src='https://pantheon.laserwar.club/template/standard/web/images/mini-site/make-order.jpg'/></a></noscript> -->
+	<script src="js/glide.js?v=1.1.1"></script>
+	<!-- <script src="js/popup.js?v=1.1.1"></script> -->
 </body>
 </html>

@@ -96,9 +96,9 @@ a {
 	letter-spacing: 0.5rem;
 	color: white;
 	border: 1px solid white;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
+	-webkit-transition: color 0.5s ease-in-out;
+	-moz-transition: color 0.5s ease-in-out;
+	transition: color 0.5s ease-in-out;
 }
 
 /* Animation */
@@ -175,13 +175,23 @@ a {
 }
 .glide__bullet {
 	border-radius: 0;
-	height: 4px;
-	width: 40px;
-	background: rgba(255,255,255,0.4);
+	height: 14px;
+	width: 14px;
+	margin: 6px;
+	background: white;
+	opacity: 0.4;
 	pointer-events: auto;
 }
+.glide__bullet:nth-child(1),
+.glide__bullet:nth-last-child(1) {
+	background: var(--main-red-color);
+}
+.glide__bullet:hover {
+	opacity: 0.8;
+}
 .glide__bullet--active {
-	background: white;
+	opacity: 0.8;
+	box-shadow: 0 0 6px white;
 }
 
 
@@ -306,15 +316,15 @@ a {
 }
 .first__heading {
 	font-family: 'Alegreya Sans SC', sans-serif;
-	font-size: 19.9em;
+	font-size: 25em;
 	font-weight: bold;
 	margin: auto;
 	letter-spacing: 0;
 }
 .first__inspiration {
-	margin-top: 7px;
-	padding-left: 5px;
-	font-size: 14em;
+	margin-top: 4px;
+	font-size: 12em;
+	letter-spacing: -0.5rem;
 	font-weight: 300;
 	text-transform: uppercase;
 }
@@ -334,7 +344,7 @@ a {
 		width: 115px;
 	}
 	.first__banner {
-		margin-top: 21px;
+		margin-top: 18px;
 		margin-bottom: 20px;
 	}
 	.page {
@@ -343,7 +353,7 @@ a {
 }
 @media (max-height: 385px) {
 	.glide__bullets {
-		bottom: 15px;
+		bottom: 8px;
 	}
 	.contacts {
 		margin-top: 0;
@@ -360,12 +370,19 @@ a {
 		margin-top: 5px;
 	}
 	.first__banner {
-		font-size: 0.9px;
-		margin-top: 10px;
+		margin-top: 4px;
 		margin-bottom: 15px;
 	}
+}
+
+/* Increase banner */
+@media (min-width: 400px) and (min-height: 475px) {
+	.first__heading {
+		font-size: 31em;	
+	}
 	.first__inspiration {
-		margin-top: 4px;
+		letter-spacing: 0rem;
+		font-size: 14em;
 	}
 }
 
@@ -379,7 +396,10 @@ a {
 		font-size: 1.2px;
 	}
 	.first__heading {
-		font-size: 26em;
+		font-size: 36em;
+	}
+	.first__inspiration {
+		letter-spacing: 0.5rem;
 	}
 	.first__reservation-btn {
 		padding: 15px 26px;
@@ -396,7 +416,10 @@ a {
 		font-size: 1.5px;
 	}
 	.first__heading {
-		font-size: 28em;
+		font-size: 40em;
+	}
+	.first__inspiration {
+		font-size: 16em;
 	}
 }
 
@@ -409,6 +432,6 @@ a {
 		width: 230px;
 	}
 	.first__banner {
-		margin-top: 53px;
+		margin-top: 45px;
 	}
 }

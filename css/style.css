@@ -36,11 +36,8 @@ a {
 */
 .page {
 	font-family: "Open sans", sans-serif;
-	color: var(--main-green-color);
-	background: var(--main-green-color);
 	min-width: 320px;
 	letter-spacing: 1rem;
-	background: #1A1718;
 
 	/* For now */
 	height: 100vh;
@@ -76,6 +73,12 @@ a {
 /*
 * _____ MAIN ELEMENTS _____
 */
+
+/* === Hidden === */
+.hidden {
+	display: none;
+}
+
 
 /* === Logo === */
 .logo {
@@ -131,6 +134,17 @@ a {
 .reservation-btn:active:after {
 	width: 101%;
 	opacity: 1;
+}
+
+
+/* === Section heading === */
+.section-heading {
+	font-size: 20em;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: black;
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 
@@ -316,7 +330,7 @@ a {
 }
 .first__heading {
 	font-family: 'Alegreya Sans SC', sans-serif;
-	font-size: 25em;
+	font-size: 22.2em;
 	font-weight: bold;
 	margin: auto;
 	letter-spacing: 0;
@@ -376,9 +390,9 @@ a {
 }
 
 /* Increase banner */
-@media (min-width: 400px) and (min-height: 475px) {
+@media (min-width: 440px) and (min-height: 475px) {
 	.first__heading {
-		font-size: 31em;	
+		font-size: 30em;	
 	}
 	.first__inspiration {
 		letter-spacing: 0rem;
@@ -396,7 +410,7 @@ a {
 		font-size: 1.2px;
 	}
 	.first__heading {
-		font-size: 36em;
+		font-size: 34em;
 	}
 	.first__inspiration {
 		letter-spacing: 0.5rem;
@@ -415,9 +429,6 @@ a {
 	.first__banner {
 		font-size: 1.5px;
 	}
-	.first__heading {
-		font-size: 40em;
-	}
 	.first__inspiration {
 		font-size: 16em;
 	}
@@ -434,4 +445,41 @@ a {
 	.first__banner {
 		margin-top: 45px;
 	}
+}
+
+
+
+/*
+* _____ CONTACT US _____
+*/
+
+/* === Section === */
+.contact-us {
+	height: 100vh;
+}
+.contact-us__inner {
+	padding-top: 20px;
+}
+.yandex-map {
+	overflow-x: hidden;
+}
+.notification {
+	color: white;
+	background: var(--main-gray-color);
+	padding-top: 15px;
+	padding-bottom: 35px;
+	text-align: center;
+}
+.notification__link {
+	font-size: 14em;
+	margin-top: 20px;
+}
+.notification__link:hover {
+	text-decoration: underline;
+}
+.notification__text {
+	font-size: 14em;
+	width: 200px;
+	margin: auto;
+	font-weight: 300;
 }

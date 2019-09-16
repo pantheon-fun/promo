@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/DZakh/Pantheon#readme",
   "dependencies": {
-    "@glidejs/glide": "^3.3.0"
+    "@glidejs/glide": "^3.3.0",
+    "lazysizes": "^5.1.1"
   }
 }

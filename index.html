@@ -85,10 +85,11 @@
 			</div>
 			<div class="first__content">
 				<div class="logo first__logo">
-					<img src="img/logo/logo-690w.png"
-						srcset="img/logo/logo-345w.png 345w,
-						 		img/logo/logo-690w.png 690w"
-						class="logo__img" alt="Логотип клуба активно-тактических игр «Pantheon»">
+					<img data-srcset="img/logo/logo-345w-1x.png 345w,
+						 			  img/logo/logo-690w-2x.png 690w"
+							data-src="img/logo/logo-690w-2x.png"
+								 src="img/logo/logo-690w-min.png"
+						class="logo__img lazyload" alt="Логотип клуба активно-тактических игр «Pantheon»">
 				</div>
 				<div class="first__banner">
 					<h1 class="first__heading">
@@ -222,7 +223,7 @@
 		</div>
 	</section>
 
-	<section id="contact-us" class="contact-us hidden">
+	<!-- <section id="contact-us" class="contact-us hidden">
 		<div class="container contact-us__inner">
 			<h2 class="section-heading">
 				Свяжись с нами
@@ -245,13 +246,12 @@
 				https://vk.com/club.pantheon
 			</a>
 		</div>
-	</section>
+	</section> -->
 
 	<script src="js/correct-view.js?v=1.2.1"></script>
 	<script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>
 	<script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
 	<script src="js/glide.js?v=1.1.1"></script>
 	<script src="js/index.js?v=1.1.1"></script>
-	<script src="js/img-load-optimization.js?v=1.1.1"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 :root {
 	--main-gray-color: #1C1C1C;
+	--main-red-color: #D30504;
+	--section-gray-color: #231c1c;
 }
 
 
@@ -15,19 +17,19 @@ html {
 	padding: 0;
 	box-sizing: border-box;
 }
+img {
+	font-size: 14em;
+	color: inherit;
+	width: 100%;
+}
 ul {
 	list-style: none;
 }
 a {
 	text-decoration: inherit;
 	color: inherit;
+	display: inline-block;
 }
-/*
-@media screen and (max-width: 576px) {
-	html {
-		font-size: 1.1px;
-	}
-}*/
 
 
 
@@ -35,21 +37,116 @@ a {
 * _____ PAGE PROPERTIES _____
 */
 .page {
-	font-family: "Museo Sans", "Open Sans", sans-serif;
-	color: var(--main-green-color);
-	background: var(--main-green-color);
+	font-family: "Open sans", sans-serif;
 	min-width: 320px;
+	letter-spacing: 1rem;
+	color: white;
+}
+
+/* Container */
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.inner-container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media (min-width: 768px) {
+	.container {
+		width: 768px;
+	}
+	.inner-container {
+		width: 600px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 992px;
+	}
+	.inner-container {
+		width: 620px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1200px;
+	}
+	.inner-container {
+		width: 760px;
+	}
 }
 
 
 
 /*
-* _____ REPEATING ELEMENTS _____
+* _____ MAIN ELEMENTS _____
 */
 
-/* --- Reservation --- */
-.reservation-btn {
+/* === Hidden === */
+.hidden {
+	display: none;
+}
 
+
+/* === Reservation === */
+.reservation-btn {
+	position: relative;
+	z-index: 3;
+	padding: 11px 21px 12px;
+	font-size: 14em;
+	font-weight: bold;
+	letter-spacing: 0.5rem;
+	border: 1px solid white;
+	-webkit-transition: color 0.5s ease-in-out;
+	-moz-transition: color 0.5s ease-in-out;
+	transition: color 0.5s ease-in-out;
+}
+
+/* Animation */
+.reservation-btn:after {
+	content: '';
+	position: absolute;
+	z-index: -10;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 0;
+	height: 103%;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	opacity: 0;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+.reservation-btn:hover,
+.reservation-btn:active {
+	color: #750202;
+}
+.reservation-btn:hover:after {
+	width: 90%;
+	opacity: 1;
+}
+.reservation-btn:active:after {
+	width: 101%;
+	opacity: 1;
+}
+
+
+/* === Section heading === */
+.section-heading {
+	font-size: 20em;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: black;
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 
@@ -58,31 +155,334 @@ a {
 * _____ FIRST _____
 */
 
-/* --- Section --- */
+/* === Section === */
 .first {
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
-	min-height: 440px;
+	min-height: 275px;
 	position: relative;
-}
-.first__background {
-	background: var(--main-gray-color);
-	position: absolute;
-	z-index: -10;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
 }
 .first__inner {
 	position: relative;
+	z-index: 1;
+	height: 100%;
+	text-align: center;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	-ms-align-items: center;
-	align-items: center;
+	align-content: center;
+}
+
+
+/* === Masthead === */
+.masthead {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	left: 0;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+/* === Navigation === */
+.navigation {
+	display: none;
+}
+
+
+/* === Contacts === */
+.contacts {
+	margin: auto;
+	margin-top: 5px;
+	width: 286px;	
+	transition: margin 0.3s;
+}
+
+/* Address */
+.contacts__address {
+	font-size: 10.9em;
+	line-height: 24rem;
+	font-weight: normal;
+	text-transform: uppercase;
+	-webkit-transition: text-shadow 0.4s;
+	-moz-transition: text-shadow 0.4spa;
+	transition: text-shadow 0.4s;
+}
+.contacts__address:hover {
+	text-shadow: 0 0 6px white;
+}
+
+/* Tel */
+.contacts__fa {
+	font-size: 0.8em;
+	-webkit-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	transition: transform 0.3s;
+}
+.contacts__tel {
+	font-size: 20em;
+	margin-top: 6px;
+}
+
+/* animation */
+.underline {
+	position: relative;
+	padding-bottom: 5px;
+}
+.underline:after {
+	display: block;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background: #fff;
+	opacity: 0;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+.contacts__tel:hover .underline:after,
+.underline:hover:after {
+	height: 3px;
+	opacity: 1;
+	background: var(--main-red-color);
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+.contacts__tel:active .contacts__fa {
+	transform: rotate(-13deg);
+}
+
+
+/* === Content === */
+.first__content {
+	margin: auto;
+	padding-top: 37px;
+}
+.first__logo {
+	width: 160px;
+	margin: auto;
+	transition: width 0.3s;
+}
+.first__banner {
+	margin-top: 22px;
+	margin-bottom: 40px;
+}
+.first__heading {
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 22.2em;
+	font-weight: bold;
+	margin: auto;
+	letter-spacing: 0;
+}
+.first__inspiration {
+	margin-top: 4px;
+	font-size: 12em;
+	letter-spacing: -0.5rem;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+.first__aim {
+	color: var(--main-red-color);
+}
+
+
+/* === Background glide === */
+.glide,
+.glide__track,
+.glide__slides,
+.glide__slide {
 	height: 100%;
+}
+.glide {
+	position: absolute;
+	top: 0;
+	/* No swipe */
+	pointer-events: none;
+}
+.glide__img {
+	background: var(--main-gray-color);
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	filter: brightness(40%);
+}
+.glide__bullets {
+	bottom: 25px;
+	margin: auto;
+}
+.glide__bullet {
+	border-radius: 0;
+	height: 14px;
+	width: 14px;
+	margin: 6px;
+	background: white;
+	opacity: 0.4;
+	pointer-events: auto;
+}
+.glide__bullet:nth-child(1),
+.glide__bullet:nth-last-child(1) {
+	background: var(--main-red-color);
+}
+.glide__bullet:hover {
+	opacity: 0.8;
+}
+.glide__bullet--active {
+	opacity: 0.8;
+	box-shadow: 0 0 6px white;
+}
+
+
+/* === Media === */
+
+/* Decrease central content */
+@media (max-height: 475px) {
+	.first__content {
+		padding-top: 30px;
+	}
+	.first__logo {
+		width: 115px;
+	}
+	.first__banner {
+		margin-top: 18px;
+		margin-bottom: 20px;
+	}
+}
+@media (max-height: 385px) {
+	.glide__bullets {
+		bottom: 8px;
+	}
+	.contacts {
+		margin-top: 0;
+	}
+	.contacts__tel {
+		margin-top: 3px;
+		font-size: 16em;
+	}
+	.first__content {
+		padding-top: 17px;
+	}
+	.first__logo {
+		width: 80px;
+		margin-top: 5px;
+	}
+	.first__banner {
+		margin-top: 4px;
+		margin-bottom: 15px;
+	}
+}
+
+/* Increase banner */
+@media (min-width: 440px) and (min-height: 475px) {
+	.first__heading {
+		font-size: 30em;	
+	}
+	.first__inspiration {
+		letter-spacing: 0rem;
+		font-size: 14em;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (min-height: 475px) {
+	.contacts {
+		font-size: 1.2px;
+		width: 330px;
+	}
+	.first__banner {
+		font-size: 1.2px;
+	}
+	.first__heading {
+		font-size: 34em;
+	}
+	.first__inspiration {
+		letter-spacing: 0.5rem;
+	}
+	.first__reservation-btn {
+		padding: 15px 26px;
+		font-size: 15em;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (min-height: 525px) {
+	.first__logo {
+		width: 180px;
+	}
+	.first__banner {
+		font-size: 1.5px;
+	}
+	.first__inspiration {
+		font-size: 16em;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (min-height: 600px) {
+	.first__content {
+		padding-top: 60px;
+	}
+	.first__logo {
+		width: 230px;
+	}
+	.first__banner {
+		margin-top: 45px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+* _____ CONTACT US _____
+*/
+/* .contact-us__inner {
+	padding-top: 20px;
+}
+.yandex-map {
+	overflow-x: hidden;
+}
+.notification {
 	color: white;
+	background: var(--main-gray-color);
+	padding-top: 15px;
+	padding-bottom: 35px;
 	text-align: center;
 }
+.notification__link {
+	font-size: 14em;
+	margin-top: 20px;
+}
+.notification__link:hover {
+	text-decoration: underline;
+}
+.notification__text {
+	font-size: 14em;
+	width: 200px;
+	margin: auto;
+	font-weight: 300;
+} */

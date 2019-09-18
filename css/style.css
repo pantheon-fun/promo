@@ -511,10 +511,13 @@ a {
 	border-radius: 20px;
 }
 .games__img-wrap {
-	height: 150px;
-	width: 165px;
+	height: 100px;
+	width: 140px;
 	display: flex;
 	margin: auto;
+}
+.games__img-wrap_correction {
+	width: 90px;
 }
 .games__img {
 	align-self: center;

@@ -467,9 +467,28 @@ a {
 
 
 /*
-* _____ ABOUT US _____
+* _____ MAIN _____
 */
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 768px) {
+	main {
+		font-size: 1.04px;
+		letter-spacing: 1rem;
+	}
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	main {
+		font-size: 1px;
+	}
+}
+
+
+
+/*
+* _____ ABOUT US _____
+*/
 /* none */
 
 
@@ -477,6 +496,9 @@ a {
 /*
 * _____ GAMES _____
 */
+.games {
+	letter-spacing: 0.5rem;
+}
 .games__list {
 	display: grid;
 	grid-gap: 15px;
@@ -499,7 +521,6 @@ a {
 }
 .games__description {
 	text-align: center;
-	letter-spacing: 0;
 }
 
 

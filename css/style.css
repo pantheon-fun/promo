@@ -1,7 +1,8 @@
 :root {
 	--main-gray-color: #1C1C1C;
 	--main-red-color: #D30504;
-	--section-gray-color: #231c1c;
+	--heading-red-color: #e00000;
+	--page-bg-color: #231c1c;
 }
 
 
@@ -20,7 +21,8 @@ html {
 img {
 	font-size: 14em;
 	color: inherit;
-	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
 }
 ul {
 	list-style: none;
@@ -41,6 +43,8 @@ a {
 	min-width: 320px;
 	letter-spacing: 1rem;
 	color: white;
+	text-align: center;
+	background: var(--page-bg-color);
 }
 
 /* Container */
@@ -139,15 +143,33 @@ a {
 }
 
 
-/* === Section heading === */
-.section-heading {
-	font-size: 20em;
+/* === Heading === */
+.heading {
 	text-transform: uppercase;
-	text-align: center;
-	cursor: black;
-	margin-top: 30px;
-	margin-bottom: 20px;
+	color: var(--heading-red-color);
+	font-weight: normal;
+	line-height: 1em;
+	text-shadow: 0 0 6px rgba(255, 14, 14, 0.7);
 }
+.heading_section {
+	font-size: 32em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+.heading_sub {
+	font-size: 24em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+
+/* === Text === */
+.text {
+	font-size: 16em;
+	text-align: justify;
+	letter-spacing: 0.5rem;
+}
+
 
 
 
@@ -166,7 +188,6 @@ a {
 	position: relative;
 	z-index: 1;
 	height: 100%;
-	text-align: center;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -440,6 +461,62 @@ a {
 	}
 	.first__banner {
 		margin-top: 45px;
+	}
+}
+
+
+
+/*
+* _____ ABOUT US _____
+*/
+
+/* none */
+
+
+
+/*
+* _____ GAMES _____
+*/
+.games__list {
+	display: grid;
+	grid-gap: 15px;
+	margin-bottom: 65px;
+}
+.games__card {
+	padding: 25px 20px;
+	border: 1px solid #fff;
+	border-radius: 20px;
+}
+.games__img-wrap {
+	height: 150px;
+	width: 190px;
+	display: flex;
+	margin: auto;
+}
+.games__img {
+	align-self: center;
+	margin: auto;
+}
+.games__description {
+	text-align: center;
+	letter-spacing: 0;
+}
+
+
+/* === Media === */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 768px) {
+	.games__list {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 20px;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.games__list {
+		grid-gap: 40px;
 	}
 }
 

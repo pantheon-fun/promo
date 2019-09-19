@@ -1,8 +1,9 @@
 :root {
-	--second-gray-color: #2c2424;
 	--main-red-color: #D30504;
 	--heading-red-color: #e00000;
 	--page-bg-color: #231c1c;
+	--second-gray-color: #2c2424;
+	--soft-orange-color: #f9da84;
 }
 
 
@@ -42,7 +43,7 @@ a {
 .page {
 	font-family: "Open sans", sans-serif;
 	min-width: 303px;
-	letter-spacing: 1rem;
+	letter-spacing: 0;
 	color: white;
 	text-align: center;
 	background: var(--page-bg-color);
@@ -155,7 +156,7 @@ a {
 .heading_section {
 	font-size: 32em;
 	padding-top: 1.9em;
-	padding-bottom: 1.1em;
+	padding-bottom: 1.2em;
 }
 .heading_sub {
 	font-size: 24em;
@@ -307,7 +308,6 @@ a {
 	font-size: 22.2em;
 	font-weight: bold;
 	margin: auto;
-	letter-spacing: 0;
 }
 .first__inspiration {
 	margin-top: 4px;
@@ -500,7 +500,7 @@ a {
 }
 .games__list {
 	display: grid;
-	grid-gap: 25px;
+	gap: 25px;
 	margin: 5px auto 65px auto;
 }
 .games__card {
@@ -546,16 +546,15 @@ a {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	.games__list {
-		grid-gap: 40px;
+		gap: 40px;
 	}
 }
 
 
 
 /*
-* _____ Galary _____
+* _____ GALERY _____
 */
-
 .galery {
 	background: var(--second-gray-color);
 	padding-bottom: 65px;
@@ -598,6 +597,39 @@ a {
 
 
 
+/*
+* _____ REQUEST _____
+*/
+.request {
+	background: var(--page-bg-color);
+	padding-bottom: 65px;
+}
+.request__heading {
+	color: white;
+	text-transform: none;
+	text-shadow: none;
+	padding-bottom: 0.6em;
+}
+.request__caption {
+	font-size: 20em;
+}
+.request__widget {
+	margin-top: 30px;
+}
+/* .form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 1fr);
+	gap: 10px;
+}
+.form__input {
+	height: 50px;
+}
+.privacy-policy {
+	font-size: 14em;
+}*/
+
+
 
 
 
@@ -607,31 +639,9 @@ a {
 
 
 /*
-* _____ CONTACT US _____
+* _____ REFERENCES _____
 */
-/* .contact-us__inner {
-	padding-top: 20px;
+
+.references__map {
+	overflow-x:hidden;
 }
-.yandex-map {
-	overflow-x: hidden;
-}
-.notification {
-	color: white;
-	background: var(--main-gray-color);
-	padding-top: 15px;
-	padding-bottom: 35px;
-	text-align: center;
-}
-.notification__link {
-	font-size: 14em;
-	margin-top: 20px;
-}
-.notification__link:hover {
-	text-decoration: underline;
-}
-.notification__text {
-	font-size: 14em;
-	width: 200px;
-	margin: auto;
-	font-weight: 300;
-} */

@@ -41,7 +41,10 @@
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.2.9">
+	<link rel="stylesheet" href="css/style.css?v=1.2.11">
+	<!-- Bookform widget -->
+	<script>(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));</script>
+	<!-- End Bookform widget -->
 </head>
 <body class="page">
 	<header class="first">
@@ -285,59 +288,104 @@
 		<section class="galery">
 			<div class="container">
 				<h2 class="heading heading_section">
-					Стань частью игры
+					Стань частью сражения
 				</h2>
 			</div>
 			<ul class="galery__list">
 				<li class="galery__item">
-					<img src="img/glide/roar-1920w-2x.jpg" alt="1" class="galery__img">
+					<img src="img/glide/roar-1920w-min.jpg" data-src="img/glide/roar-960w-1x.jpg" alt="1" class="galery__img lazyload">
 				</li>
 				<li class="galery__item">
-					<img src="img/glide/skirmish-1920w-2x.jpg" alt="2" class="galery__img">
+					<img src="img/glide/skirmish-1920w-min.jpg" data-src="img/glide/skirmish-960w-1x.jpg" alt="2" class="galery__img lazyload">
 				</li>
 				<li class="galery__item">
-					<img src="img/glide/horor-1920w-2x.jpg" alt="3" class="galery__img">
+					<img src="img/glide/horor-1920w-min.jpg" data-src="img/glide/horor-960w-1x.jpg" alt="3" class="galery__img lazyload">
 				</li>
 				<li class="galery__item">
-					<img src="img/glide/madness-1920w-2x.jpg" alt="4" class="galery__img">
+					<img src="img/glide/madness-1920w-min.jpg" data-src="img/glide/madness-960w-1x.jpg" alt="4" class="galery__img lazyload">
 				</li>
 				<li class="galery__item">
-					<img src="img/glide/aim-1920w-2x.jpg" alt="5" class="galery__img">
+					<img src="img/glide/aim-1920w-min.jpg" data-src="img/glide/aim-960w-1x.jpg" alt="5" class="galery__img lazyload">
 				</li>
 				<li class="galery__item">
-					<img src="img/glide/capture-1920w-2x.jpg" alt="6" class="galery__img">
+					<img src="img/glide/capture-1920w-min.jpg" data-src="img/glide/capture-960w-1x.jpg" alt="6" class="galery__img lazyload">
 				</li>
 			</ul>
 		</section>
-	</main>
-
-
-
-
-	<!-- <section id="contact-us" class="contact-us">
-		<div class="container contact-us__inner">
-			<h2 class="section-heading">
-				Свяжись с нами
-			</h2>
-			<div class="laserwar-form">
-				<iframe style="height: 552px; width: 100%; border: none;" src="https://pantheon.laserwar.club//minisite/widgets/widget-form?color=%23fff&amp;type=inline"></iframe>
+		<section class="reviews"></section>
+		<section class="request">
+			<div class="request__inner container">
+				<h2 class="request__heading heading heading_section">
+					В какой день планируете мероприятие?
+				</h2>
+				<p class="request__caption">
+					Сделаем выгодное предложение специально для вас!
+				</p>
+				<div class="request__widget">
+					<div id="bookform-embedded-widget-3458"></div>
+					<script>Bookform('embedded',{id:3458});</script>
+				</div>
+				<!-- <form action="" class="request__form form">
+					<input type="text" name="username" id="username" placeholder="Ваше имя" class="form__input">
+					<input type="tel" name="tel" id="tel" placeholder="Телефон" required class="form__input">
+					<input type="date" name="date" id="date" class="form__input">
+					<input type="submit" value="Получить предложение" class="form__input">
+				</form> -->
 			</div>
-		</div>
-		<div class="yandex-map">
-			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-		</div>
-		<div class="notification">
-			<h3 class="section-heading">
-				Сайт в разработке
-			</h3>
-			<p class="notification__text">
-				А пока подписывайся на нашу группу во Вконтакте и следи за последними новостями.
-			</p>
-			<a href="https://vk.com/club.pantheon" class="notification__link" target="_blank" rel="noopener">
-				https://vk.com/club.pantheon
-			</a>
-		</div>
-	</section> -->
+		</section>
+		<section class="prices"></section>
+		<section class="we-can-more"></section>
+		<section class="q-and-a"></section>
+		<section class="call-back"></section>
+		<section class="references">
+			<div class="references__card">
+					<h2 class="references__heading heading">
+						Контакты
+					</h2>
+					<ul class="references__list">
+						<li class="references__item">
+							<h3 class="references__type">
+								Телефон
+							</h3>
+							<a href="" class="references__link">
+
+							</a>
+						</li>
+						<li class="references__item">
+							<h3 class="references__type">
+								Почта
+							</h3>
+							<a href="" class="references__link">
+
+							</a>
+						</li>
+						<li class="references__item">
+							<h3 class="references__type">
+								Адрес
+							</h3>
+							<a href="" class="references__link">
+								
+							</a>
+						</li>
+						<li class="references__item">
+							<h3 class="references__type">
+								Мы в соцсетях
+							</h3>
+							<a href="" class="references__link"></a>
+						</li>
+					</ul>
+			</div>
+			<div class="references__map" id="map">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
+			</div>
+		</section>	
+	</main>
+	<footer class="footer"></footer>
+
+
+
+
+
 
 	<script src="js/correct-view.js?v=1.2.1"></script>
 	<script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>

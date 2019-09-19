@@ -50,7 +50,7 @@
 	<header class="first">
 		<div class="container first__inner">
 			<div class="masthead">
-				<nav>
+				<!-- <nav>
 					<ul class="navigation">
 						<li class="navigation__item">
 							<a href="#" class="navigation__link">
@@ -78,7 +78,7 @@
 							</a>
 						</li>
 					</ul>
-				</nav>
+				</nav> -->
 				<div class="contacts">
 					<a class="contacts__address" href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18" target="_blank" rel="noopener">
 						Олимпийский проспект 20к1, Мытищи
@@ -313,7 +313,7 @@
 			</ul>
 		</section>
 		<section class="reviews"></section>
-		<section class="request">
+		<section class="request" id=request>
 			<div class="request__inner container">
 				<h2 class="request__heading heading heading_section">
 					В какой день планируете мероприятие?
@@ -338,49 +338,62 @@
 		<section class="q-and-a"></section>
 		<section class="call-back"></section>
 		<section class="references">
-			<div class="references__card">
+			<div class="references__map" id="map">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+			</div>
+			<div class="container references__inner">
+				<div class="references__card">
 					<h2 class="references__heading heading">
 						Контакты
 					</h2>
 					<ul class="references__list">
 						<li class="references__item">
-							<h3 class="references__type">
+							<h3 class="references__type heading heading_sub">
 								Телефон
 							</h3>
-							<a href="" class="references__link">
-
+							<a class="references__link" href="tel:+79777220960">
+								+7 977 722 09 60
 							</a>
 						</li>
 						<li class="references__item">
-							<h3 class="references__type">
+							<h3 class="references__type heading heading_sub">
 								Почта
 							</h3>
-							<a href="" class="references__link">
-
+							<a class="references__link" href="mailto:corp.pantheon@yandex.ru">
+								corp.pantheon@yandex.ru
 							</a>
 						</li>
 						<li class="references__item">
-							<h3 class="references__type">
+							<h3 class="references__type heading heading_sub">
 								Адрес
 							</h3>
-							<a href="" class="references__link">
-								
+							<a class="references__link" href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18" target="_blank" rel="noopener">
+								Олимпийский проспект 20к1, Мытищи
 							</a>
 						</li>
 						<li class="references__item">
-							<h3 class="references__type">
+							<h3 class="references__type heading heading_sub">
 								Мы в соцсетях
 							</h3>
-							<a href="" class="references__link"></a>
+							<div class="references__socials-wrap">
+								<a class="social-vk references__social" href="https://vk.com/club.pantheon" target="_blank" rel="noopener"></a>
+								<a class="social-in references__social" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener"></a>
+								<a class="references__btn" href="#request">
+									Заказать
+								</a>
+							</div>
 						</li>
 					</ul>
+				</div>
 			</div>
-			<div class="references__map" id="map">
-				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
-			</div>
+			
 		</section>	
 	</main>
-	<footer class="footer"></footer>
+	<footer class="footer">
+		<p class="text">
+			Сайт находится в стадии разработки
+		</p>
+	</footer>
 
 
 

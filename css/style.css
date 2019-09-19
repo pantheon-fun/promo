@@ -173,6 +173,30 @@ a {
 }
 
 
+/* Underline animation */
+.underline {
+	position: relative;
+	padding-bottom: 5px;
+}
+.underline:after {
+	display: block;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background: #fff;
+	opacity: 0;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+
 
 /*
 * _____ FIRST _____
@@ -254,27 +278,6 @@ a {
 }
 
 /* Animation */
-.underline {
-	position: relative;
-	padding-bottom: 5px;
-}
-.underline:after {
-	display: block;
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 0;
-	background: #fff;
-	opacity: 0;
-	-webkit-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
-}
 .contacts__tel:hover .underline:after,
 .underline:hover:after {
 	height: 3px;
@@ -641,7 +644,133 @@ a {
 /*
 * _____ REFERENCES _____
 */
+.references {
+	position: relative;
+	height: 500px;
+}
 
+/* === Map === */
 .references__map {
-	overflow-x:hidden;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+
+/* === References card === */
+.references__inner {
+	display: flex;
+	height: 100%;
+}
+.references__card {
+	z-index: 2;
+	color: #fff;
+	background: var(--page-bg-color);
+	border: 3px solid var(--main-red-color);
+	margin: auto;
+}
+.references__heading {
+	font-size: 28em;
+	background: var(--main-red-color);
+	margin: 4px;
+	color: var(--page-bg-color);
+	height: 2em;
+	line-height: 2em;
+}
+.references__list {
+	padding: 10px 13px;
+}
+.references__type {
+	text-shadow: none;
+	font-size: 22em;
+	padding: 0;
+}
+.references__link {
+	font-size: 16em;
+	padding-top: 6px;
+	padding-bottom: 1em;
+	transition: all 0.4s;
+}
+.references__link:hover {
+	text-shadow: 0 0 7px white;
+}
+
+/* Socials */
+.references__socials-wrap {
+	display: flex;
+	height: 40px;
+	margin: 13px auto 10px;
+	justify-content: center;
+}
+.references__social {
+	min-width: 40px;
+	min-height: 40px;
+	margin-right: 10px;
+	-webkit-background-size: 100% auto;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.references__btn {
+	padding: 10px 13px;
+	font-weight: bold;
+	font-size: 14em;
+	color: var(--page-bg-color);
+	text-transform: uppercase;
+	background: white;
+	border-radius: 20px;
+	transition: all 0.25s;
+}
+.references__btn:hover {
+	background: var(--main-red-color);
+	color: white;
+}
+.social-in {
+	transition: all 0.25s;
+	background-image: url(../img/references/in-logo.svg);
+}
+.social-in:hover {
+	background-image: url(../img/references/in-logo-active.svg);
+}
+.social-fb {
+	transition: all 0.25s;
+	background-image: url(../img/references/fb-logo.svg);
+}
+.social-fb:hover {
+	background-image: url(../img/references/fb-logo-active.svg);
+}
+.social-vk {
+	transition: all 0.25s;
+	background-image: url(../img/references/vk-logo.svg);
+}
+.social-vk:hover {
+	background-image: url(../img/references/vk-logo-active.svg);
+}
+
+
+/* === Media === */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 768px) {
+	.references__card {
+		margin-right: 0;
+	}
+}
+
+
+
+
+
+
+
+footer {
+	background: var(--page-bg-color);
+
+}
+footer p {
+	padding: 20px;
+	text-transform: uppercase;
+	display: inline-block;
+	margin: auto;
 }

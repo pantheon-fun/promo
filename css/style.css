@@ -1,7 +1,6 @@
 :root {
-	--main-red-color: #D30504;
-	--heading-red-color: #e00000;
-	--page-bg-color: #231c1c;
+	--red-color: #F44336;
+	--bg-page-color: #231c1c;
 	--second-gray-color: #2c2424;
 	--soft-orange-color: #f9da84;
 }
@@ -46,7 +45,7 @@ a {
 	letter-spacing: 0;
 	color: white;
 	text-align: center;
-	background: var(--page-bg-color);
+	background: var(--bg-page-color);
 }
 
 /* Container */
@@ -148,7 +147,7 @@ a {
 /* === Heading === */
 .heading {
 	text-transform: uppercase;
-	color: var(--heading-red-color);
+	color: var(--red-color);
 	font-weight: normal;
 	line-height: 1em;
 	text-shadow: 0 0 6px rgba(255, 14, 14, 0.7);
@@ -282,7 +281,7 @@ a {
 .underline:hover:after {
 	height: 3px;
 	opacity: 1;
-	background: var(--main-red-color);
+	background: var(--red-color);
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
@@ -320,7 +319,7 @@ a {
 	text-transform: uppercase;
 }
 .first__aim {
-	color: var(--main-red-color);
+	color: var(--red-color);
 }
 
 
@@ -358,7 +357,7 @@ a {
 }
 .glide__bullet:nth-child(1),
 .glide__bullet:nth-last-child(1) {
-	background: var(--main-red-color);
+	background: var(--red-color);
 }
 .glide__bullet:hover {
 	opacity: 0.8;
@@ -579,7 +578,7 @@ a {
 .gallery__img {
 	object-fit: cover;
 	height: 100%;
-	transition: all ease-in-out 0.5s;
+	transition: all 0.7s;
 }
 .gallery__img:hover {
 	transform: scale(1.15);
@@ -614,7 +613,7 @@ a {
 * _____ REQUEST _____
 */
 .request {
-	background: var(--page-bg-color);
+	background: var(--bg-page-color);
 	padding-bottom: 65px;
 }
 .request__heading {
@@ -676,15 +675,15 @@ a {
 .references__card {
 	z-index: 2;
 	color: #fff;
-	background: var(--page-bg-color);
-	border: 3px solid var(--main-red-color);
+	background: var(--bg-page-color);
+	border: 3px solid var(--red-color);
 	margin: auto;
 }
 .references__heading {
 	font-size: 28em;
-	background: var(--main-red-color);
+	background: var(--red-color);
 	margin: 4px;
-	color: var(--page-bg-color);
+	color: var(--bg-page-color);
 	height: 2em;
 	line-height: 2em;
 }
@@ -727,14 +726,14 @@ a {
 	padding: 10px 13px;
 	font-weight: bold;
 	font-size: 14em;
-	color: var(--page-bg-color);
+	color: var(--bg-page-color);
 	text-transform: uppercase;
 	background: white;
 	border-radius: 20px;
 	transition: all 0.25s;
 }
 .references__btn:hover {
-	background: var(--main-red-color);
+	background: var(--red-color);
 	color: white;
 }
 .social-in {
@@ -775,7 +774,7 @@ a {
 
 
 footer {
-	background: var(--page-bg-color);
+	background: var(--bg-page-color);
 }
 footer p {
 	font-size: 16em;

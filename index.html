@@ -12,7 +12,7 @@
 	<!— Yandex.Metrika counter —>
 	<script type="text/javascript">
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=0,k.src=r,a.parentNode.insertBefore(k,a)})
 		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
 		ym(55340875, "init", {
@@ -41,7 +41,7 @@
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.3.1">
+	<link rel="stylesheet" href="css/style.css?v=1.3.3">
 	<!-- Bookform widget -->
 	<script>(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));</script>
 	<!-- End Bookform widget -->
@@ -310,9 +310,52 @@
 				<li class="gallery__item">
 					<img src="img/glide/capture-1920w-min.jpg" data-src="img/glide/capture-960w-1x.jpg" alt="6" class="gallery__img lazyload">
 				</li>
+				<li class="gallery__item">
+					<img src="img/glide/smile-1920w-min.jpg" data-src="img/glide/smile-960w-1x.jpg" alt="7" class="gallery__img lazyload">
+				</li>
+				<li class="gallery__item">
+					<img src="img/glide/capture-1920w-min.jpg" data-src="img/glide/capture-960w-1x.jpg" alt="8" class="gallery__img lazyload">
+				</li>
 			</ul>
 		</section>
 		<section class="reviews"></section>
+		<section class="prices">
+			<img src="img/prices/zqUsN9r7FdY.jpg" alt="1" class="prices__background">
+			<div class="prices__inner container">
+				<h2 class="prices__heading heading heading__section">
+					Стоимость часа игры
+				</h2>
+				<p class="prices__per-person">
+					от 200 ₽ за человека
+				</p>
+				<ul class="prices__advantages">
+					<li class="advantage">
+						<h3 class="advantage__heading heading">
+							Открытые игры
+						</h3>
+						<p class="advantage__caption">
+							Не нужно собирать команду, регистрируйся и приходи один
+						</p>
+					</li>
+					<li class="advantage">
+						<h3 class="advantage__heading heading">
+							Закрытые игры
+						</h3>
+						<p class="advantage__caption">
+							На игре не будет посторонних участников — только ваша команда
+						</p>
+					</li>
+					<li class="advantage">
+						<h3 class="advantage__heading heading">
+							Увеличенное время
+						</h3>
+						<p class="advantage__caption">
+						  Комната отдыха во время игры и час после в подарок
+						</p>
+					</li>
+				</ul>
+			</div>
+		</section>
 		<section class="request" id=request>
 			<div class="request__inner container">
 				<h2 class="request__heading heading heading_section">
@@ -325,21 +368,21 @@
 					<div id="bookform-embedded-widget-3458"></div>
 					<script>Bookform('embedded',{id:3458});</script>
 				</div>
-				<!-- <form action="" class="request__form form">
+				<!-- 
+				<form action="" class="request__form form">
 					<input type="text" name="username" id="username" placeholder="Ваше имя" class="form__input">
 					<input type="tel" name="tel" id="tel" placeholder="Телефон" required class="form__input">
-					<input type="date" name="date" id="date" class="form__input">
 					<input type="submit" value="Получить предложение" class="form__input">
-				</form> -->
+				</form>
+			  -->
 			</div>
 		</section>
-		<section class="prices"></section>
 		<section class="we-can-more"></section>
 		<section class="q-and-a"></section>
 		<section class="call-back"></section>
 		<section class="references">
 			<div class="references__map" id="map">
-				<script type="text/javascript" charset="utf-8" defer src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>
 			</div>
 			<div class="container references__inner">
 				<div class="references__card">

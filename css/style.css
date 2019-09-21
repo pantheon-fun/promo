@@ -97,6 +97,23 @@ a {
 }
 
 
+/* === Background === */
+.background {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	filter: brightness(40%);
+}
+.background_img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+
 /* === Reservation === */
 .reservation-btn {
 	position: relative;
@@ -335,12 +352,6 @@ a {
 	top: 0;
 	/* No swipe */
 	pointer-events: none;
-}
-.glide__img {
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-	filter: brightness(40%);
 }
 .glide__bullets {
 	bottom: 25px;
@@ -607,18 +618,6 @@ a {
 .prices {
 	position: relative;
 }
-.prices__background {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1 ;
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-	filter: brightness(40%);
-}
 .prices__inner {
 	margin: auto;
 	padding-top: 100px;
@@ -667,20 +666,175 @@ a {
 
 
 /*
+* _____ PRICE LIST _____
+*/
+.price-list {
+	background: var(--second-gray-color);
+	padding-bottom: 65px;
+	position: relative;
+}
+.price-list__heading {
+	position: absolute;
+	top: -70px;
+	margin: auto;
+	font-size: 30em;
+	letter-spacing: 8rem;
+	position: relative;
+}
+.price-list__heading:after {
+	content: "";
+	display: block;
+	position: absolute;
+	margin-top: 7px;
+	background: url(../img/backgrounds/triangle.svg) center center no-repeat;
+	background-size: 300px 70px;
+	height: 100px;
+	width: 100%;
+	filter: brightness(90%);
+}
+.price-list__content {
+	display: grid;
+	grid-template-rows: auto 2px auto;
+	gap: 20px;
+	padding-top: 40px;
+}
+.price-list__type {
+	color: white;
+	text-shadow: none;
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+.price-list__cards {
+	display: grid;
+	grid-template-rows: 2fr 1fr;
+	gap: 15px;
+}
+.price-list__line {
+	display: hidden;
+	background: #fff;
+	margin-top: 85px;
+	border-radius: 10px;
+}
+.price-list__holidays {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	gap: 15px;
+}
+.price-list__card {
+	background: #fff;
+	color: var(--second-gray-color);
+	height: 300px;
+	border-radius: 20px;
+	display: flex;
+	position: relative;
+}
+.price-list__card-wrap {
+	margin: auto;
+	font-size: 20em;
+	padding-bottom: 2.8em;
+}
+.huge {
+	font-size: 3em;
+}
+.price-list__sing-up-btn {
+	font-size: 0.8em;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	left: 20px;
+	margin: auto;
+	width: calc(100% - 55px) !important;
+	text-transform: uppercase;
+}
+
+/* === Table with praces === */
+.price-table {
+	color: var(--second-gray-color);
+	width: 100%;
+	padding: 10px;
+}
+.price-table__title {
+	padding-top: 13px;
+	padding-bottom: 15px;
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 22em;
+}
+.price-table__tbody {
+	font-size: 15em;
+	font-weight: bold;
+}
+.price-table__time {
+	line-height: 1.1em;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.price-table__price {
+	border: 2px solid rgba(0,0,0,0.4);
+	border-radius: 10px;
+	width: calc(100% - 18px);
+	padding: 9px 0;
+	margin: 9px;
+	transition: all 0.3s;
+}
+.price-table__price:hover {
+	border-color: var(--red-color);
+}
+
+
+/* === Media === */
+
+/* 1 above, 3 below */
+@media (min-width: 660px) {
+	.price-list__content {
+		grid-template-rows: auto 2px auto;
+	}
+	.price-list__cards {
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: auto;
+	}
+	.price-list__holidays {
+		grid-template-columns: 1fr 0.77fr;
+		grid-template-rows: auto;
+		padding-right: 12px;
+		border-radius: 20px;
+		background: #fff;
+		gap: 0;
+	}
+	.hiding-time {
+		display: none;
+	}
+}
+
+/* One row */
+@media (min-width: 992px) {
+	.price-list__content {
+		grid-template-columns: 1fr 2px 3fr;
+		grid-template-rows: auto;
+	}
+	.huge {
+		font-size: 2.25em;
+	}
+}
+
+
+
+/*
 * _____ REQUEST _____
 */
 .request {
-	background: var(--soft-orange-color);
 	padding-bottom: 65px;
+	position: relative;
 }
 .request__heading {
-	color: var(--bg-page-color);
+	color: var(--soft-orange-color);
 	text-transform: none;
 	text-shadow: none;
+	padding-top: 1.2em;
 	padding-bottom: 0.6em;
 }
 .request__caption {
-	color: var(--bg-page-color);
+	color: #fff;
 	font-size: 20em;
 }
 .request__widget {
@@ -698,13 +852,6 @@ a {
 .privacy-policy {
 	font-size: 14em;
 }*/
-
-
-
-
-
-
-
 
 
 

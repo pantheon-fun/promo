@@ -12,7 +12,6 @@
 */
 html {
   font-size: 1px;
-  letter-spacing: 1px;
 }
 * {
 	margin: 0;
@@ -138,7 +137,7 @@ a, button {
 	padding: 11px 21px 12px;
 	font-size: 14em;
 	font-weight: bold;
-	letter-spacing: 0.5rem;
+	letter-spacing: 0.5px;
 	border: 1px solid white;
 	-webkit-transition: color 0.5s ease-in-out;
 	transition: color 0.5s ease-in-out;
@@ -198,7 +197,7 @@ a, button {
 .text {
 	font-size: 16em;
 	text-align: justify;
-	letter-spacing: 0.5rem;
+	letter-spacing: 0.5px;
 }
 
 
@@ -261,7 +260,7 @@ a, button {
 /* Address */
 .contacts__address {
 	font-size: 13em;
-	line-height: 24rem;
+	line-height: 2.2em;
 	text-transform: uppercase;
 	-webkit-transition: text-shadow 0.4s;
 	transition: text-shadow 0.4s;
@@ -324,7 +323,7 @@ a, button {
 .first__events {
 	margin-top: 4px;
 	font-size: 11em;
-	letter-spacing: -0.5rem;
+	letter-spacing: -0.5px;
 	font-weight: 300;
 	text-transform: uppercase;
 }
@@ -436,7 +435,7 @@ a, button {
 	}
 	.first__events {
     font-size: 16.5em;
-		letter-spacing: 0.5rem;
+		letter-spacing: 0.5px;
 	}
 	.first__reservation-btn {
 		padding: 15px 26px;
@@ -528,7 +527,7 @@ a, button {
 @media (min-width: 768px) {
 	main {
 		font-size: 1.04px;
-		letter-spacing: 1rem;
+		letter-spacing: 1px;
 	}
 }
 /* Large devices (desktops, 992px and up) */
@@ -551,7 +550,7 @@ a, button {
 * _____ GAMES _____
 */
 .games {
-	letter-spacing: 0.5rem;
+	letter-spacing: 0.5px;
 }
 .games__list {
 	display: grid;
@@ -729,7 +728,7 @@ a, button {
 	top: -70px;
 	margin: auto;
 	font-size: 30em;
-	letter-spacing: 8rem;
+	letter-spacing: 8px;
 	position: relative;
 }
 .price-list__heading:after {

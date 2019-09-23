@@ -11,12 +11,14 @@
 * _____ PRESETS _____
 */
 html {
-	font-size: 1px;
+  font-size: 1px;
+  letter-spacing: 1px;
 }
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 img {
 	font-size: 14em;
@@ -112,10 +114,12 @@ a, button {
 
 /* === Background === */
 .background {
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	width: 100%;
 	height: 100%;
-	filter: brightness(40%);
+	-webkit-filter: brightness(40%);
+	        filter: brightness(40%);
 }
 .background_img {
 	position: absolute;
@@ -137,7 +141,6 @@ a, button {
 	letter-spacing: 0.5rem;
 	border: 1px solid white;
 	-webkit-transition: color 0.5s ease-in-out;
-	-moz-transition: color 0.5s ease-in-out;
 	transition: color 0.5s ease-in-out;
 }
 
@@ -147,7 +150,6 @@ a, button {
 	position: absolute;
 	z-index: -10;
 	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 	width: 0;
 	height: 103%;
@@ -156,8 +158,6 @@ a, button {
 	background: #fff;
 	opacity: 0;
 	-webkit-transform: translateX(-50%) translateY(-50%);
-	-moz-transform: translateX(-50%) translateY(-50%);
-	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
 .reservation-btn:hover,
@@ -218,10 +218,8 @@ a, button {
 	background: #fff;
 	opacity: 0;
 	-webkit-transition: all 0.4s;
-	-moz-transition: all 0.4s;
 	transition: all 0.4s;
 	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
 	transform: translateY(-10px);
 }
 
@@ -256,6 +254,7 @@ a, button {
 .contacts {
   grid-area: contacts;
 	margin: 14px auto 0 auto;
+	-webkit-transition: margin 0.3s;
 	transition: margin 0.3s;
 }
 
@@ -265,7 +264,6 @@ a, button {
 	line-height: 24rem;
 	text-transform: uppercase;
 	-webkit-transition: text-shadow 0.4s;
-	-moz-transition: text-shadow 0.4s;
 	transition: text-shadow 0.4s;
 }
 .contacts__address:hover {
@@ -276,8 +274,10 @@ a, button {
 .contacts__fa {
 	font-size: 0.8em;
 	-webkit-transition: transform 0.3s;
-	-o-transition: transform 0.3s;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
+	transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .contacts__tel {
 	font-size: 22em;
@@ -291,11 +291,11 @@ a, button {
 	opacity: 1;
 	background: var(--red-color);
 	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
 	transform: translateY(0px);
 }
 .contacts__tel:active .contacts__fa {
-	transform: rotate(-13deg);
+	-webkit-transform: rotate(-13deg);
+	        transform: rotate(-13deg);
 }
 
 
@@ -309,6 +309,7 @@ a, button {
 .first__logo {
 	width: 160px;
 	margin: auto;
+	-webkit-transition: width 0.3s;
 	transition: width 0.3s;
 }
 .first__banner {
@@ -340,10 +341,14 @@ a, button {
 .arrow-to-down__icon {
   height: 30px;
   width: 37px;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
   transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
 }
 .arrow-to-down__icon:hover {
-  transform: translateY(4px);
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
 
@@ -470,8 +475,11 @@ a, button {
       "swipe-arrow_left . arrow-to-down . swipe-arrow_right";
   }
   .swipe-arrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     cursor: pointer;
+    -webkit-transition: background 0.7s;
     transition: background 0.7s;
   }
   .swipe-arrow_left {
@@ -485,6 +493,7 @@ a, button {
     width: 40px;
     height: 40px;
     opacity: 0.25;
+    -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
   .swipe-arrow:hover {
@@ -553,15 +562,20 @@ a, button {
 	padding: 19px 15px;
 	border: 2px solid var(--second-gray-color);
 	border-radius: 20px;
+	-webkit-transition: all 0.1s;
 	transition: all 0.1s;
 }
 .games__card:hover {
-	transform: scale(1.01);
-	box-shadow: 0 5px 7px rgba(0,0,0,0.3);
+	-webkit-transform: scale(1.01);
+	        transform: scale(1.01);
+	-webkit-box-shadow: 0 5px 7px rgba(0,0,0,0.3);
+	        box-shadow: 0 5px 7px rgba(0,0,0,0.3);
 }
 .games__img-wrap {
 	height: 100px;
 	width: 140px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	margin: auto;
 }
@@ -569,7 +583,8 @@ a, button {
 	width: 90px;
 }
 .games__img {
-	align-self: center;
+	-ms-flex-item-align: center;
+	    align-self: center;
 	margin: auto;
 }
 .games__description {
@@ -621,12 +636,15 @@ a, button {
 	overflow: hidden;
 }
 .gallery__img {
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	height: 100%;
+	-webkit-transition: all 0.7s;
 	transition: all 0.7s;
 }
 .gallery__img:hover {
-	transform: scale(1.15);
+	-webkit-transform: scale(1.15);
+	        transform: scale(1.15);
 }
 
 
@@ -723,7 +741,8 @@ a, button {
 	background-size: 300px 70px;
 	height: 100px;
 	width: 100%;
-	filter: brightness(90%);
+	-webkit-filter: brightness(90%);
+	        filter: brightness(90%);
 }
 .price-list__content {
 	display: grid;
@@ -758,6 +777,8 @@ a, button {
 	color: var(--second-gray-color);
 	height: 300px;
 	border-radius: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	position: relative;
 }
@@ -808,6 +829,7 @@ a, button {
 	width: calc(100% - 18px);
 	padding: 9px 0;
 	margin: 9px;
+	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
 .price-table__price:hover {
@@ -907,6 +929,8 @@ a, button {
 
 /* === References card === */
 .references__inner {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	height: 100%;
 }
@@ -937,6 +961,7 @@ a, button {
 	font-size: 16em;
 	padding-top: 6px;
 	padding-bottom: 1em;
+	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
 .references__link:hover {
@@ -945,16 +970,19 @@ a, button {
 
 /* Socials */
 .references__socials-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	height: 40px;
 	margin: 13px auto 10px;
-	justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 .references__social {
 	min-width: 40px;
 	min-height: 40px;
 	margin-right: 10px;
-	-webkit-background-size: 100% auto;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	border-radius: 50%;
@@ -968,6 +996,7 @@ a, button {
 	text-transform: uppercase;
 	background: white;
 	border-radius: 20px;
+	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .references__btn:hover {
@@ -975,6 +1004,7 @@ a, button {
 	color: white;
 }
 .social-in {
+	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 	background-image: url(../img/references/in-logo.svg);
 }
@@ -982,6 +1012,7 @@ a, button {
 	background-image: url(../img/references/in-logo-active.svg);
 }
 .social-fb {
+	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 	background-image: url(../img/references/fb-logo.svg);
 }
@@ -989,6 +1020,7 @@ a, button {
 	background-image: url(../img/references/fb-logo-active.svg);
 }
 .social-vk {
+	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 	background-image: url(../img/references/vk-logo.svg);
 }

@@ -39,7 +39,7 @@
   <!-- Normalize.css -->
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.4.8">
+	<link rel="stylesheet" href="css/style.css?v=1.4.9">
 	<!-- Bookform widget -->
 	<script>(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));</script>
 	<!-- End Bookform widget -->
@@ -245,76 +245,84 @@
 			</div>
 			<ul class="gallery__list">
 				<li class="gallery__item">
-					<img data-srcset="img/gallery/archer-480w-1x.jpg 480w,
-														img/gallery/archer-960w-2x.jpg 960w,
-														img/gallery/archer-1920w-3x.webp 1920w,
-														img/gallery/archer-1920w-3x.jpg 1920w"
-									data-src="img/gallery/archer-960w-2x.jpg"
-												src="img/gallery/archer-960w-min.jpg"
-											class="gallery__img lazyload" alt="Школьник в защитной маске натягивает лук">
+          <picture>
+            <source data-srcset="img/gallery/archer-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/archer-480w-1x.jpg 480w,
+                                  img/gallery/archer-960w-2x.jpg 960w,
+                                  img/gallery/archer-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/archer-960w-2x.jpg" src="img/gallery/archer-960w-min.jpg"
+                 class="gallery__img lazyload" alt="Школьник в защитной маске натягивает лук">
+          </picture>
 				</li>
 				<li class="gallery__item">
-					<img data-srcset="img/gallery/big-gun-480w-1x.jpg 480w,
-														img/gallery/big-gun-960w-2x.jpg 960w,
-														img/gallery/big-gun-1920w-3x.webp 1920w,
-														img/gallery/big-gun-1920w-3x.jpg 1920w"
-									data-src="img/gallery/big-gun-960w-2x.jpg"
-												src="img/gallery/big-gun-960w-min.jpg"
-											class="gallery__img lazyload" alt="Мальчики держат большие редкие виды оружия Нерф">
+          <picture>
+            <source data-srcset="img/gallery/big-gun-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/big-gun-480w-1x.jpg 480w,
+                                  img/gallery/big-gun-960w-2x.jpg 960w,
+                                  img/gallery/big-gun-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/big-gun-960w-2x.jpg" src="img/gallery/big-gun-960w-min.jpg"
+                  class="gallery__img lazyload" alt="Мальчики держат большие редкие виды оружия Нерф">
+          </picture>
 				</li>
 				<li class="gallery__item">
-					<img data-srcset="img/gallery/guy-480w-1x.jpg 480w,
-														img/gallery/guy-960w-2x.jpg 960w,
-														img/gallery/guy-1920w-3x.webp 1920w,
-														img/gallery/guy-1920w-3x.jpg 1920w"
-									data-src="img/gallery/guy-960w-2x.jpg"
-												src="img/gallery/guy-960w-min.jpg"
-											class="gallery__img lazyload" alt="Парень с лазертаг винтовкой">
+          <picture>
+            <source data-srcset="img/gallery/guy-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/guy-480w-1x.jpg 480w,
+                                  img/gallery/guy-960w-2x.jpg 960w,
+                                  img/gallery/guy-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/guy-960w-2x.jpg" src="img/gallery/guy-960w-min.jpg"
+                  class="gallery__img lazyload" alt="Парень с лазертаг винтовкой">
+          </picture>
+        </li>
+				<li class="gallery__item">
+          <picture>
+            <source data-srcset="img/gallery/midder-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/midder-480w-1x.jpg 480w,
+                                  img/gallery/midder-960w-2x.jpg 960w,
+                                  img/gallery/midder-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/midder-960w-2x.jpg" src="img/gallery/midder-960w-min.jpg"
+                  class="gallery__img lazyload" alt="Веселая заварушка за центральную точку">
+          </picture>
 				</li>
 				<li class="gallery__item">
-					<img data-srcset="img/gallery/midder-480w-1x.jpg 480w,
-														img/gallery/midder-960w-2x.jpg 960w,
-														img/gallery/midder-1920w-3x.webp 1920w,
-														img/gallery/midder-1920w-3x.jpg 1920w"
-									data-src="img/gallery/midder-960w-2x.jpg"
-												src="img/gallery/midder-960w-min.jpg"
-											class="gallery__img lazyload" alt="Веселая заварушка за центральную точку">
+          <picture>
+            <source data-srcset="img/gallery/nekit-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/nekit-480w-1x.jpg 480w,
+                                  img/gallery/nekit-960w-2x.jpg 960w,
+                                  img/gallery/nekit-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/nekit-960w-2x.jpg" src="img/gallery/nekit-960w-min.jpg"
+                  class="gallery__img lazyload" alt="Суровый боец с современным оборудованием">
+          </picture>
 				</li>
 				<li class="gallery__item">
-					<img data-srcset="img/gallery/nekit-480w-1x.jpg 480w,
-														img/gallery/nekit-960w-2x.jpg 960w,
-														img/gallery/nekit-1920w-3x.webp 1920w,
-														img/gallery/nekit-1920w-3x.jpg 1920w"
-									data-src="img/gallery/nekit-960w-2x.jpg"
-												src="img/gallery/nekit-960w-min.jpg"
-											class="gallery__img lazyload" alt="Суровый боец с современным оборудованием">
+          <picture>
+            <source data-srcset="img/gallery/nerf-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/nerf-480w-1x.jpg 480w,
+                                  img/gallery/nerf-960w-2x.jpg 960w,
+                                  img/gallery/nerf-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/nerf-960w-2x.jpg" src="img/gallery/nerf-960w-min.jpg"
+                  class="gallery__img lazyload" alt="Наше разнообразное Нерф снаряжение">
+          </picture>
 				</li>
 				<li class="gallery__item">
-					<img data-srcset="img/gallery/nerf-480w-1x.jpg 480w,
-														img/gallery/nerf-960w-2x.jpg 960w,
-														img/gallery/nerf-1920w-3x.webp 1920w,
-														img/gallery/nerf-1920w-3x.jpg 1920w"
-									data-src="img/gallery/nerf-960w-2x.jpg"
-												src="img/gallery/nerf-960w-min.jpg"
-											class="gallery__img lazyload" alt="Наше разнообразное Нерф снаряжение">
+          <picture>
+            <source data-srcset="img/gallery/shine-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/shine-480w-1x.jpg 480w,
+                                  img/gallery/shine-960w-2x.jpg 960w,
+                                  img/gallery/shine-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/shine-960w-2x.jpg" src="img/gallery/shine-960w-min.jpg"
+                  class="gallery__img lazyload" alt="Парень захватывает центральную точку во время игры в стрелялку">
+          </picture>
 				</li>
 				<li class="gallery__item">
-					<img data-srcset="img/gallery/shine-480w-1x.jpg 480w,
-														img/gallery/shine-960w-2x.jpg 960w,
-														img/gallery/shine-1920w-3x.webp 1920w,
-														img/gallery/shine-1920w-3x.jpg 1920w"
-									data-src="img/gallery/shine-960w-2x.jpg"
-												src="img/gallery/shine-960w-min.jpg"
-											class="gallery__img lazyload" alt="Парень захватывает центральную точку во время игры в стрелялку">
-				</li>
-				<li class="gallery__item">
-					<img data-srcset="img/gallery/dark-gun-480w-1x.jpg 480w,
-														img/gallery/dark-gun-960w-2x.jpg 960w,
-														img/gallery/dark-gun-1920w-3x.webp 1920w,
-														img/gallery/dark-gun-1920w-3x.jpg 1920w"
-									data-src="img/gallery/dark-gun-960w-2x.jpg"
-												src="img/gallery/dark-gun-960w-min.jpg"
-											class="gallery__img lazyload" alt="Мальчик целится из грозного оружия">
+          <picture>
+            <source data-srcset="img/gallery/dark-gun-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/dark-gun-480w-1x.jpg 480w,
+                                  img/gallery/dark-gun-960w-2x.jpg 960w,
+                                  img/gallery/dark-gun-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/dark-gun-960w-2x.jpg" src="img/gallery/dark-gun-960w-min.jpg"
+                class="gallery__img lazyload" alt="Мальчик целится из грозного оружия">
+          </picture>
 				</li>
 			</ul>
 		</section>
@@ -700,8 +708,8 @@
   <!-- Lazy load for images -->
   <script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>
   <!-- Carousel Siema -->
-  <script src="node_modules/siema/dist/siema.min.js"></script>
-  <script src="js/siema.js?v=1.1.4"></script> -->
+  <script src="node_modules/siema/dist/siema.min.js?v=1.1.1"></script>
+  <script src="js/siema.js?v=1.1.8"></script> -->
   <!-- Smooth scroll -->
   <script src="node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
   <script>
@@ -710,6 +718,6 @@
     });
   </script>
   <!-- Main js -->
-	<script src="js/index.js?v=1.1.5"></script>
+	<script src="js/index.js?v=1.1.6"></script>
 </body>
 </html>

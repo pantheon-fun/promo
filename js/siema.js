@@ -4,7 +4,7 @@ const mySiema = new Siema({
   loop: true,
 });
 
-const delay = 3500;
+const delay = 3000;
 let autoplay = setInterval(() => mySiema.next(), delay);
 function cancelAutoplay(e) {
   clearInterval(autoplay);
@@ -19,4 +19,12 @@ items.forEach(function(item) {
   item.addEventListener("touchstart", cancelAutoplay);
   item.addEventListener("mouseup", reAutoplay);
   item.addEventListener("touchend", reAutoplay);
+});
+
+let arrows = document.querySelectorAll(".swipe-arrow");
+arrows.forEach(function(arrow) {
+  arrow.addEventListener("mouseenter", cancelAutoplay);
+  arrow.addEventListener("touchstart", cancelAutoplay);
+  arrow.addEventListener("mouseleave", reAutoplay);
+  arrow.addEventListener("touchend", reAutoplay);
 });

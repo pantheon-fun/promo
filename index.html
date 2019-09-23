@@ -12,9 +12,8 @@
 	<!— Yandex.Metrika counter —>
 	<script type="text/javascript">
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=0,k.src=r,a.parentNode.insertBefore(k,a)})
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
 		ym(55340875, "init", {
 		clickmap:true,
 		trackLinks:true,
@@ -36,9 +35,11 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<!-- Font Awesome -->
-	<script src="https://kit.fontawesome.com/24110dbf81.js"></script>
+  <script async src="https://kit.fontawesome.com/24110dbf81.js"></script>
+  <!-- Normalize.css -->
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.4.2">
+	<link rel="stylesheet" href="css/style.css?v=1.4.8">
 	<!-- Bookform widget -->
 	<script>(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));</script>
 	<!-- End Bookform widget -->
@@ -76,18 +77,24 @@
             Открытые игры
           </p>
         </div>
-        <a id="reservation-btn" class="reservation-btn first__reservation-btn" href="#request">
+        <a id="reservation-btn" class="reservation-btn first__reservation-btn" data-scroll href="#request">
           Забронировать игру
         </a>
       </div>
       <div class="arrow-to-down">
-          <a href="#about-us" class="arrow-to-down__btn">
-            <img class="arrow-to-down__icon" src="img/icons/angel-down-icon.svg" alt="Стрелочка вниз. Листайте дальше, там много интересного!">
-          </a>
+        <a data-scroll href="#about-us" class="arrow-to-down__btn">
+          <img class="arrow-to-down__icon" src="img/icons/angel-down-icon.svg" alt="Стрелочка вниз. Листайте дальше, там много интересного!">
+        </a>
       </div>
+      <button class="swipe-arrow swipe-arrow_left" onclick="mySiema.prev()">
+        <img class="swipe-arrow__icon" src="img/icons/care-left-icon.svg" alt="Стрелочка влево. Посмотреть предыдущую фотографию в слайдере.">
+      </button>
+      <button class="swipe-arrow swipe-arrow_right" onclick="mySiema.next()">
+        <img class="swipe-arrow__icon" src="img/icons/care-right-icon.svg" alt="Стрелочка вправо. Посмотреть следующую фотографию в слайдере.">
+      </button>
     </div>
     <div class="carousel">
-      <picture>
+      <picture class="carousel__slide">
         <source media="(min-width: 900px)"
             data-srcset="img/carousel/roar-960w-1x.jpg 960w,
                 img/carousel/roar-1920w-2x.jpg 1920w,
@@ -99,7 +106,7 @@
             srcset="img/carousel/roar-992w-min.jpg">
         <img class="background lazyload" alt="Возбужденный мальчишка воинственно рычит с лазертаг автоматом в руках" data-src="img/carousel/roar-1920w-2x.jpg">
       </picture>
-      <picture>
+      <picture class="carousel__slide">
         <source media="(min-width: 900px)"
             data-srcset="img/carousel/aim-960w-1x.jpg 960w,
                 img/carousel/aim-1920w-2x.jpg 1920w,
@@ -111,7 +118,7 @@
             srcset="img/carousel/aim-992w-min.jpg">
         <img class="background lazyload" alt="Маленький ребенок целится из Лазертаг тагера" data-src="img/carousel/aim-1920w-2x.jpg">
       </picture>
-      <picture>
+      <picture class="carousel__slide">
         <source media="(min-width: 900px)"
             data-srcset="img/carousel/capture-960w-1x.jpg 960w,
                 img/carousel/capture-1920w-2x.jpg 1920w,
@@ -123,7 +130,7 @@
             srcset="img/carousel/capture-992w-min.jpg">
         <img class="background lazyload" alt="День рождения в стиле Нерф" data-src="img/carousel/capture-1920w-2x.jpg">
       </picture>
-      <picture>
+      <picture class="carousel__slide">
         <source media="(min-width: 900px)"
             data-srcset="img/carousel/smile-960w-1x.jpg 960w,
                 img/carousel/smile-1920w-2x.jpg 1920w,
@@ -135,7 +142,7 @@
             srcset="img/carousel/smile-992w-min.jpg">
         <img class="background lazyload" alt="Довольный школьник после игры в Нерф" data-src="img/carousel/smile-1920w-2x.jpg">
       </picture>
-      <picture>
+      <picture class="carousel__slide">
         <source media="(min-width: 900px)"
             data-srcset="img/carousel/madness-960w-1x.jpg 960w,
                 img/carousel/madness-1920w-2x.jpg 1920w,
@@ -147,7 +154,7 @@
             srcset="img/carousel/madness-992w-min.jpg">
         <img class="background lazyload" alt="Захват точки во время игры в Лазертаг" data-src="img/carousel/madness-1920w-2x.jpg">
       </picture>
-      <picture>
+      <picture class="carousel__slide">
         <source media="(min-width: 900px)"
             data-srcset="img/carousel/horor-960w-1x.jpg 960w,
                 img/carousel/horor-1920w-2x.jpg 1920w,
@@ -159,7 +166,7 @@
             srcset="img/carousel/horor-992w-min.jpg">
         <img class="background lazyload" alt="Люди в страшных клоунских масках выглядывают из тьмы" data-src="img/carousel/horor-1920w-2x.jpg">
       </picture>
-      <picture>
+      <picture class="carousel__slide">
         <source media="(min-width: 900px)"
             data-srcset="img/carousel/skirmish-960w-1x.jpg 960w,
                 img/carousel/skirmish-1920w-2x.jpg 1920w,
@@ -169,7 +176,7 @@
         <source data-srcset="img/carousel/skirmish-496w-1x.jpg 496w,
                 img/carousel/skirmish-992w-2x.jpg 992w"
             srcset="img/carousel/skirmish-992w-min.jpg">
-        <img class="background lazyload" alt="Лазертаг перестрелка на закрытой арене" data-src="img/glide/skirmish-1920w-2x.jpg">
+        <img class="background lazyload" alt="Лазертаг перестрелка на закрытой арене" data-src="img/carousel/skirmish-1920w-2x.jpg">
       </picture>
     </div>    
 	</header>
@@ -381,7 +388,7 @@
 								<p class="price-list__caption">
 									за два часа
 								</p>
-								<a class="price-list__sing-up-btn price-table__price" href="#request">
+								<a class="price-list__sing-up-btn price-table__price" data-scroll href="#request">
 									Записаться
 								</a>
 							</div>
@@ -425,12 +432,12 @@
 													час
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														500₽
 													</a>
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														400₽
 													</a>
 												</td>
@@ -442,12 +449,12 @@
 														часа
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														850₽
 													</a>
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														750₽
 													</a>
 												</td>
@@ -459,7 +466,7 @@
 													час
 												</td>
 												<td colspan="2">
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														150₽
 													</a>
 												</td>											
@@ -498,12 +505,12 @@
 													час
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														750₽
 													</a>
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														&nbsp;650₽&nbsp;
 													</a>
 												</td>
@@ -515,12 +522,12 @@
 														часа
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														1000₽
 													</a>
 												</td>
 												<td>
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														&nbsp;900₽&nbsp;
 													</a>
 												</td>
@@ -532,7 +539,7 @@
 													час
 												</td>
 												<td colspan="2">
-													<a class="price-table__price" href="#request">
+													<a class="price-table__price" data-scroll href="#request">
 														200₽
 													</a>
 												</td>											
@@ -572,7 +579,7 @@
 													часа
 											</td>
 											<td colspan="4">
-												<a class="price-table__price" href="#request">
+												<a class="price-table__price" data-scroll href="#request">
 													700₽
 												</a>
 											</td>
@@ -584,7 +591,7 @@
 												час
 											</td>
 											<td colspan="3">
-												<a class="price-table__price" href="#request">
+												<a class="price-table__price" data-scroll href="#request">
 													200₽
 												</a>
 											</td>											
@@ -671,7 +678,7 @@
 							<div class="references__socials-wrap">
 								<a class="social-vk references__social" href="https://vk.com/club.pantheon" target="_blank" rel="noopener" aria-label="Перейти в нашу группу во Вконтакте"></a>></a>
 								<a class="social-in references__social" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Перейти в наш Инстаграм"></a>></a>
-								<a class="references__btn" href="#request">
+								<a class="references__btn" data-scroll href="#request">
 									Заказать
 								</a>
 							</div>
@@ -688,11 +695,21 @@
 	</footer>
 
 
-
-	<script src="js/correct-view.js?v=1.2.1"></script>
-	<script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>
-  <script src="node_modules/siema/dist/siema.min.js?v=1.1.1"></script>
-  <script src="js/siema.js?v=1.1.1"></script> -->
-	<script src="js/index.js?v=1.1.3"></script>
+  <!-- Correct view port of the first screen -->
+  <script src="js/correct-view.js?v=1.2.1"></script>
+  <!-- Lazy load for images -->
+  <script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>
+  <!-- Carousel Siema -->
+  <script src="node_modules/siema/dist/siema.min.js"></script>
+  <script src="js/siema.js?v=1.1.4"></script> -->
+  <!-- Smooth scroll -->
+  <script src="node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      speed: 700
+    });
+  </script>
+  <!-- Main js -->
+	<script src="js/index.js?v=1.1.5"></script>
 </body>
 </html>

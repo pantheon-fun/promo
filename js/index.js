@@ -34,7 +34,7 @@ mapScript.src = `https://api-maps.yandex.ru/services/constructor/1.0/js/?um=cons
 const map = document.getElementById("map");
 
 const options = {
-  rootMargin: "0px 0px 250% 0px"
+  rootMargin: "0px 0px 100% 0px"
 };
 
 const observer = new IntersectionObserver(function(entries, observer) {

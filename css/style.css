@@ -33,6 +33,15 @@ a {
 	color: inherit;
 	display: inline-block;
 }
+button {
+  color: inherit;
+  font-size: inherit;
+  background: inherit;
+  border: inherit;
+}
+button:focus {
+  outline:0;
+}
 a, button {
   pointer-events: auto;
 }
@@ -307,7 +316,7 @@ a, button {
 	margin-bottom: 20px;
 }
 .first__heading {
-  font-size: 20em;
+  font-size: 19em;
 	font-weight: bold;
 	margin: auto;
 }
@@ -335,6 +344,12 @@ a, button {
 }
 .arrow-to-down__icon:hover {
   transform: translateY(4px);
+}
+
+
+/* === Swipe arrow === */
+.swipe-arrow {
+  display: none;
 }
 
 
@@ -396,7 +411,7 @@ a, button {
 /* Adaptive font size */
 @media (min-width: 320px) and (min-height: 475px) {
   .first__heading {
-    font-size: 6.4vw;
+    font-size: 6.2vw;
   }
   .first__events {
     font-size: 3.6vw;
@@ -412,10 +427,10 @@ a, button {
 		font-size: 1.2px;
 	}
 	.first__heading {
-		font-size: 33em;
+		font-size: 31em;
 	}
 	.first__events {
-    font-size: 17em;
+    font-size: 16.5em;
 		letter-spacing: 0.5rem;
 	}
 	.first__reservation-btn {
@@ -442,6 +457,41 @@ a, button {
   .arrow-to-down__icon {
     height: 40px;
     width: 50px;
+  }
+}
+
+/* Arrows for sliding */
+@media (min-width: 900px) {
+  .first__inner {
+    grid-template-columns: 90px 1fr auto 1fr 90px;
+    grid-template-areas: 
+      "swipe-arrow_left . contacts . swipe-arrow_right"
+      "swipe-arrow_left . content . swipe-arrow_right"
+      "swipe-arrow_left . arrow-to-down . swipe-arrow_right";
+  }
+  .swipe-arrow {
+    display: flex;
+    cursor: pointer;
+    transition: background 0.7s;
+  }
+  .swipe-arrow_left {
+    grid-area: swipe-arrow_left;
+  }
+  .swipe-arrow_right {
+    grid-area: swipe-arrow_right;
+  }
+  .swipe-arrow__icon {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    opacity: 0.25;
+    transition: opacity 0.5s;
+  }
+  .swipe-arrow:hover {
+    background: rgba(255,255,255,0.03);
+  }
+  .swipe-arrow:hover .swipe-arrow__icon {
+    opacity: 1;
   }
 }
 

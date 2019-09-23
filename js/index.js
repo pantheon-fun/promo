@@ -1,15 +1,15 @@
 "use strict";
 
 /* Swich img map and intaractive map */
-// let jmediaquery = window.matchMedia( "(min-width: 600px)" );
-// let map = document.getElementById('map');
-// window.addEventListener('resize', function() {
-//   if (jmediaquery.matches) {
-//     map.innerHTML = '<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>';
-//   } else {
-//     map.innerHTML = '<a href="https://yandex.ru/maps/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=600&amp;height=450&amp;lang=ru_RU" alt="" style="border: 0;" /></a>';
-//   }
-// });
+let jmediaquery = window.matchMedia( "(min-width: 768px)" );
+window.addEventListener('resize', function() {
+  if (jmediaquery.matches) {
+    loadMap();
+    map.style.zIndex = "2";
+  } else {
+    map.style.zIndex = "0";
+  }
+});
 // TODO: it later: img map for small screens
 
 
@@ -27,26 +27,46 @@
 //   }
 // });
 
+
+
+/* Widget map */
+const map = document.getElementById("widget-map");
+let mapStateIsLoaded = 0;
+let mapStateIsObserved = 0;
+
 const mapScript = document.createElement("script");
 mapScript.src = `https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"`;
 
+function loadMap() {
+  if (!(mapStateIsLoaded) && (mapStateIsObserved)) {
+    map.appendChild(mapScript);
+    mapStateIsLoaded = 1;
+  }
+}
 
-const map = document.getElementById("map");
 
+
+/* Observer */
 const options = {
-  rootMargin: "0px 0px 100% 0px"
+  rootMargin: "0px 0px 75% 0px"
 };
 
 const observer = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      entry.target.appendChild(mapScript);
+      // entry.target.appendChild(mapScript);
+      mapStateIsObserved = 1;
+      if (jmediaquery.matches) {
+        loadMap();
+        map.style.zIndex = "2";
+      }
       observer.unobserve(entry.target);
     }
   });
 }, options);
 
 observer.observe(map);
+
 
 
 // SOMENAME.forEach(SOMENAME => {

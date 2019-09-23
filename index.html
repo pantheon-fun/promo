@@ -37,9 +37,9 @@
 	<!-- Font Awesome -->
   <script async src="https://kit.fontawesome.com/24110dbf81.js"></script>
   <!-- Normalize.css -->
-  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+  <!-- <link rel="stylesheet" href="node_modules/normalize.css/normalize.css"> -->
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.4.13">
+	<link rel="stylesheet" href="css/style.css?v=1.4.14">
 	<!-- Bookform widget -->
 	<script>(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));</script>
 	<!-- End Bookform widget -->
@@ -54,7 +54,9 @@
         <br>
         <a href="tel:+79777220960" class="contacts__tel">
           <i class="contacts__fa fas fa-phone-alt"></i>
-          <span class="underline">+7 977 722 09 60</span>
+          <span class="underline">
+            +7 977 722 09 60
+          </span>
         </a>
       </div>
       <div class="first__content">
@@ -646,9 +648,35 @@
 		</section>
 		<section class="we-can-more"></section>
 		<section class="q-and-a"></section>
-		<section class="call-back"></section>
+    <section class="call-back"></section>
+    <div class="footer">
+      <p>
+        Сайт находится в стадии разработки
+      </p>
+    </div>
 		<section class="references">
-			<div class="references__map" id="map"></div>
+      <a class="references__img-map" href="https://yandex.ru/maps/org/pantheon/52710844172/?ll=37.765531%2C55.920992&z=18" target="_blank" rel="noopener">
+        <!-- <picture>
+            <source data-srcset="img/gallery/archer-1920w-3x.webp 1920w" type="image/webp">
+            <source data-srcset="img/gallery/archer-480w-1x.jpg 480w,
+                                  img/gallery/archer-960w-2x.jpg 960w,
+                                  img/gallery/archer-1920w-3x.jpg 1920w" type="image/jpeg">
+            <img data-src="img/gallery/archer-960w-2x.jpg" src="img/gallery/archer-960w-min.jpg"
+                 class="gallery__img lazyload" alt="Школьник в защитной маске натягивает лук">
+          </picture> -->
+        <picture>
+          <source data-srcset="img/backgrounds/map-384w-1x.webp 384w,
+                                img/backgrounds/map-768w-2x.webp 768w,
+                                img/backgrounds/map-1152w-3x.webp 1152w"
+                        srcset="img/backgrounds/map-768w-min.webp" type="image/webp">
+          <source data-srcset="img/backgrounds/map-384w-1x.jpg 384w,
+                                img/backgrounds/map-768w-2x.jpg 768w,
+                                img/backgrounds/map-1152w-3x.jpg 1152w"
+                        srcset="img/backgrounds/map-768w-min.jpg" type="image/jpeg">
+          <img data-src="img/backgrounds/map-768w-2x.jpg" class="background lazyload" alt="Наше расположение в Мытищах. Карта в красных тонах.">
+        </picture>
+      </a>
+			<div class="references__widget-map" id="widget-map"></div>
 			<div class="container references__inner">
 				<div class="references__card">
 					<h2 class="references__heading heading">
@@ -696,11 +724,7 @@
 			</div>
 		</section>	
 	</main>
-	<footer class="footer">
-		<p>
-			Сайт находится в стадии разработки
-    </p>
-	</footer>
+	
 
 
   <!-- Correct view port of the first screen -->
@@ -718,6 +742,6 @@
     });
   </script>
   <!-- Main js -->
-	<script src="js/index.js?v=1.1.6"></script>
+	<script src="js/index.js?v=1.2.1"></script>
 </body>
 </html>

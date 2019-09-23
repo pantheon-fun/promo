@@ -226,7 +226,7 @@ a, button {
 .first {
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
-	min-height: 300px;
+	min-height: 275px;
   position: relative;
   overflow: hidden;
 }
@@ -338,16 +338,15 @@ a, button {
 }
 
 
-/* === Background glide === */
-
-.siema,
-.siema * {
-  height: 100%;
-  width: 100%;
-}
-.siema {
+/* === Background carousel === */
+.carousel {
   position: absolute;
   top: 0;
+}
+.carousel,
+.carousel div {
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -375,7 +374,8 @@ a, button {
 }
 @media (max-height: 385px) {
 	.contacts {
-		margin-top: 5px;
+    margin-top: 5px;
+    font-size: 0.8px;
 	}
 	.contacts__tel {
 		margin-top: 2px;
@@ -388,8 +388,8 @@ a, button {
 		width: 75px;
 	}
 	.first__banner {
-		margin-top: 15px;
-		margin-bottom: 13px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 }
 

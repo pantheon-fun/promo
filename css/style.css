@@ -40,11 +40,11 @@ button {
   background: inherit;
   border: inherit;
 }
-button:focus {
-  outline:0;
-}
 a, button {
   pointer-events: auto;
+}
+:focus {
+  outline: 0;
 }
 
 
@@ -111,6 +111,13 @@ a, button {
 }
 
 
+/* === Useful styles === */
+.huge {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+
 /* === Background === */
 .background {
 	-o-object-fit: cover;
@@ -160,10 +167,12 @@ a, button {
 	transform: translateX(-50%) translateY(-50%);
 }
 .reservation-btn:hover,
+.reservation-btn:focus,
 .reservation-btn:active {
 	color: #750202;
 }
-.reservation-btn:hover:after {
+.reservation-btn:hover:after,
+.reservation-btn:focus:after {
 	width: 90%;
 	opacity: 1;
 }
@@ -265,7 +274,8 @@ a, button {
 	-webkit-transition: text-shadow 0.4s;
 	transition: text-shadow 0.4s;
 }
-.contacts__address:hover {
+.contacts__address:hover,
+.contacts__address:focus {
 	text-shadow: 0 0 6px white;
 }
 
@@ -285,12 +295,12 @@ a, button {
 
 /* Animation */
 .contacts__tel:hover .underline:after,
-.underline:hover:after {
+.contacts__tel:focus .underline:after {
 	height: 3px;
 	opacity: 1;
 	background: var(--red-color);
-	-webkit-transform: translateY(0px);
-	transform: translateY(0px);
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
 }
 .contacts__tel:active .contacts__fa {
 	-webkit-transform: rotate(-13deg);
@@ -335,17 +345,20 @@ a, button {
 /* === Arrow to down === */
 .arrow-to-down {
   grid-area: arrow-to-down;
-	margin: 15px auto 15px;
+  margin: 15px auto 15px;
 }
-.arrow-to-down__icon {
-  height: 30px;
-  width: 37px;
+.arrow-to-down__btn {
   -webkit-transition: -webkit-transform 0.4s ease-out;
   transition: -webkit-transform 0.4s ease-out;
   transition: transform 0.4s ease-out;
   transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
 }
-.arrow-to-down__icon:hover {
+.arrow-to-down__icon {
+  height: 30px;
+  width: 37px;
+}
+.arrow-to-down__btn:hover,
+.arrow-to-down__btn:focus {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
@@ -495,10 +508,12 @@ a, button {
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
-  .swipe-arrow:hover {
+  .swipe-arrow:hover,
+  .swipe-arrow:focus {
     background: rgba(255,255,255,0.03);
   }
-  .swipe-arrow:hover .swipe-arrow__icon {
+  .swipe-arrow:hover .swipe-arrow__icon,
+  .swipe-arrow:focus .swipe-arrow__icon {
     opacity: 1;
   }
 }
@@ -718,11 +733,16 @@ a, button {
 /*
 * _____ PRICE LIST _____
 */
+
+/* === Section === */
 .price-list {
 	background: var(--second-gray-color);
-	padding-bottom: 65px;
-	position: relative;
+  position: relative;
+  padding-bottom: 65px;
 }
+
+
+/* === Heading-arrow === */
 .price-list__heading {
 	position: absolute;
 	top: -70px;
@@ -743,132 +763,238 @@ a, button {
 	-webkit-filter: brightness(90%);
 	        filter: brightness(90%);
 }
+
+
+/* === Content === */
 .price-list__content {
-	display: grid;
-	grid-template-rows: auto 2px auto;
-	gap: 20px;
-	padding-top: 40px;
+  display: grid;
+  gap: 20px;
+  padding-top: 40px;
 }
-.price-list__type {
-	color: white;
+.price-list__dividing-line {
+  display: none;
+}
+.price-list__game-heading {
+  color: white;
 	text-shadow: none;
-	padding-top: 20px;
-	padding-bottom: 40px;
+	padding-top: 10px;
+	padding-bottom: 30px;
 }
 .price-list__cards {
-	display: grid;
-	grid-template-rows: 2fr 1fr;
-	gap: 15px;
-}
-.price-list__line {
-	display: hidden;
-	background: #fff;
-	margin-top: 85px;
-	border-radius: 10px;
-}
-.price-list__holidays {
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	gap: 15px;
-}
-.price-list__card {
-	background: #fff;
-	color: var(--second-gray-color);
-	height: 300px;
-	border-radius: 20px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	position: relative;
-}
-.price-list__card-wrap {
-	margin: auto;
-	font-size: 20em;
-	padding-bottom: 2.8em;
-}
-.huge {
-	font-size: 3em;
-}
-.price-list__sing-up-btn {
-	font-size: 0.8em;
-	position: absolute;
-	right: 20px;
-	bottom: 22px;
-	left: 20px;
-	margin: auto;
-	width: calc(100% - 55px) !important;
-	text-transform: uppercase;
+  display: grid;
+  gap: 15px;
 }
 
-/* === Table with praces === */
-.price-table {
-	color: var(--second-gray-color);
-	width: 100%;
-	padding: 10px;
+
+/* === Prices card === */
+
+/* Card structure */
+.prices-card {
+  display: grid;
+  gap: 5px;
+  background: #fff;
+  border-radius: 20px;
+  color: var(--second-gray-color);
+  font-size: 15rem;
+  font-weight: bold;
+  padding: 23px 20px;
 }
-.price-table__title {
-	padding-top: 13px;
-	padding-bottom: 15px;
+.prices-card_weekdays,
+.prices-card_weekends {
+  grid-template-columns: 1fr 3.5fr;
+  grid-template-rows: 0.78fr 0.5fr 3fr;
+  grid-template-areas: 
+    ".... heading"
+    ".... players"
+    "session prices";
+}
+.prices-card_groups {
+  grid-template-columns: 1.75fr 2.75fr;
+  grid-template-rows: 2fr 0.5fr 2fr;
+  grid-template-areas: 
+    "heading heading"
+    ".... players"
+    "session prices";
+}
+.prices-card_open {
+  display: block;
+  height: calc(100% - 64px);
+}
+
+/* Card heading */
+.price-card__heading {
+  grid-area: heading;
+  margin: 0 auto;
 	text-transform: uppercase;
 	font-weight: 300;
-	font-size: 22em;
+	font-size: 22rem;
 }
-.price-table__tbody {
-	font-size: 15em;
-	font-weight: bold;
+
+/* Card players */
+.price-card__players {
+  grid-area: players;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
 }
-.price-table__time {
-	line-height: 1.1em;
-	padding-top: 15px;
-	padding-bottom: 15px;
+.prices-card_groups__players {
+  grid-template-columns: 1fr;
 }
-.price-table__price {
-	border: 2px solid rgba(0,0,0,0.4);
-	border-radius: 10px;
-	width: calc(100% - 18px);
-	padding: 9px 0;
-	margin: 9px;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
+
+/* Card play session */
+.price-card__session {
+  grid-area: session;
+  display: grid;
+  gap: 15px;
+  grid-template-rows: repeat(3, 1fr);
 }
-.price-table__price:hover {
-	border-color: var(--red-color);
+.prices-card_group__session {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* Card prices */
+.price-card__prices {
+  grid-area: prices;
+  display: grid;
+  gap: 15px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 
+    "sm-1h b-1h"
+    "sm-2h b-2h"
+    "add-h add-h";
+}
+.price-card_group__prices {
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "b-2h"
+    "add-h";
+}
+.price-card__price_small-1hour {
+  grid-area: sm-1h;
+}
+.price-card__price_big-1hour {
+  grid-area: b-1h;
+}
+.price-card__price_small-2hours {
+  grid-area: sm-2h;
+}
+.price-card__price_big-2hours {
+  grid-area: b-2h;
+}
+.price-card__price_add-hour {
+  grid-area: add-h;
+}
+.price-card__price {
+  padding-left: 3px;
+}
+.price-card__price,
+.price-card__sing-up-btn,
+.price-card__vk-btn {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  line-height: 2.5em;
+  transition: border-color 0.3s;
+}
+.price-card__price:hover,
+.price-card__price:focus,
+.price-card__sing-up-btn:hover,
+.price-card__sing-up-btn:focus,
+.price-card__vk-btn:hover,
+.price-card__vk-btn:focus {
+  border-color: var(--red-color);
+}
+
+
+/* === Open games card === */
+.price-card__advertisement {
+  font-size: 1.2em;
+  margin: 0 auto;
+  padding-top: 7px;
+  padding-bottom: 25px;
+}
+.price-card__caption {
+  padding-top: 5px;
+  font-weight: 400;
+}
+.price-card__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.price-card__sing-up-btn {
+  padding: 0 19px 0 23px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+.price-card__vk-btn {
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+}
+.price-card__vk-img {
+  opacity: 0.75;
+}
+.price-card__under-caption {
+  padding: 12px 9px 0;
+  font-weight: 300;
+
 }
 
 
 /* === Media === */
 
-/* 1 above, 3 below */
+/* 3 above, 1 below */
 @media (min-width: 660px) {
-	.price-list__content {
-		grid-template-rows: auto 2px auto;
-	}
-	.price-list__cards {
-		grid-template-columns: 2fr 1fr;
-		grid-template-rows: auto;
-	}
-	.price-list__holidays {
-		grid-template-columns: 1fr 0.77fr;
-		grid-template-rows: auto;
-		padding-right: 12px;
-		border-radius: 20px;
-		background: #fff;
-		gap: 0;
-	}
-	.hiding-time {
-		display: none;
-	}
+  .price-list__cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .prices-card_weekdays {
+    border-radius: 20px 0 0 20px;
+    padding-right: 0;
+  }
+  .prices-card_weekends {
+    border-radius: 0 20px 20px 0;
+    margin-left: -1px;
+    margin-right: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    grid-template-columns: 3.5fr;
+    grid-template-areas:
+      "heading"
+      "players"
+      "prices";
+  }
+  .prices-card_weekends .price-card__session {
+    display: none;
+  }
+
+
 }
 
 /* One row */
 @media (min-width: 992px) {
 	.price-list__content {
-		grid-template-columns: 1fr 2px 3fr;
-		grid-template-rows: auto;
-	}
-	.huge {
-		font-size: 2.25em;
-	}
+    grid-template-columns: 1fr 2px 3fr;
+    grid-template-areas: 
+      "open line privat";
+  }
+  .price-list__game-type_privat {
+    grid-area: privat;
+  }
+  .price-list__dividing-line {
+    grid-area: line;
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 64px;
+  }
+  .price-list__game-type_open {
+    grid-area: open;
+  }
 }
 
 
@@ -972,7 +1098,8 @@ a, button {
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
-.references__link:hover {
+.references__link:hover,
+.references__link:focus {
 	text-shadow: 0 0 7px white;
 }
 
@@ -997,7 +1124,7 @@ a, button {
 	overflow: hidden;
 }
 .references__btn {
-	padding: 10px 13px;
+	padding: 12px 13px;
 	font-weight: bold;
 	font-size: 14em;
 	color: var(--bg-page-color);
@@ -1007,34 +1134,30 @@ a, button {
 	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 }
-.references__btn:hover {
+.references__btn:hover,
+.references__btn:focus {
 	background: var(--red-color);
 	color: white;
-}
-.social-in {
-	-webkit-transition: all 0.25s;
-	transition: all 0.25s;
-	background-image: url(../img/references/in-logo.svg);
-}
-.social-in:hover {
-	background-image: url(../img/references/in-logo-active.svg);
-}
-.social-fb {
-	-webkit-transition: all 0.25s;
-	transition: all 0.25s;
-	background-image: url(../img/references/fb-logo.svg);
-}
-.social-fb:hover {
-	background-image: url(../img/references/fb-logo-active.svg);
 }
 .social-vk {
 	-webkit-transition: all 0.25s;
 	transition: all 0.25s;
 	background-image: url(../img/references/vk-logo.svg);
 }
-.social-vk:hover {
+.social-vk:hover,
+.social-vk:focus {
 	background-image: url(../img/references/vk-logo-active.svg);
 }
+.social-in {
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+	background-image: url(../img/references/in-logo.svg);
+}
+.social-in:hover,
+.social-in:focus {
+	background-image: url(../img/references/in-logo-active.svg);
+}
+
 
 
 /* === Media === */

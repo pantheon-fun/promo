@@ -37,7 +37,7 @@
 	<!-- Font Awesome -->
   <script async src="https://kit.fontawesome.com/24110dbf81.js"></script>
   <!-- Normalize.css -->
-  <!-- <link rel="stylesheet" href="node_modules/normalize.css/normalize.css"> -->
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css?v=1.4.14">
 	<!-- Bookform widget -->
@@ -83,17 +83,17 @@
           Забронировать игру
         </a>
       </div>
-      <div class="arrow-to-down">
-        <a data-scroll href="#about-us" class="arrow-to-down__btn">
-          <img class="arrow-to-down__icon" src="img/icons/angel-down-icon.svg" alt="Стрелочка вниз. Листайте дальше, там много интересного!">
-        </a>
-      </div>
       <button class="swipe-arrow swipe-arrow_left" onclick="mySiema.prev()">
         <img class="swipe-arrow__icon" src="img/icons/care-left-icon.svg" alt="Стрелочка влево. Посмотреть предыдущую фотографию в слайдере.">
       </button>
       <button class="swipe-arrow swipe-arrow_right" onclick="mySiema.next()">
         <img class="swipe-arrow__icon" src="img/icons/care-right-icon.svg" alt="Стрелочка вправо. Посмотреть следующую фотографию в слайдере.">
       </button>
+      <div class="arrow-to-down">
+        <a data-scroll href="#about-us" class="arrow-to-down__btn">
+          <img class="arrow-to-down__icon" src="img/icons/angel-down-icon.svg" alt="Стрелочка вниз. Листайте дальше, там много интересного!">
+        </a>
+      </div>
     </div>
     <div class="carousel">
       <picture class="carousel__slide">
@@ -383,235 +383,177 @@
 				  Цены
 				</h2>
 				<div class="price-list__content">
-					<div class="price-list__item">
-						<h3 class="price-list__type heading heading_sub">
+          <div class="price-list__game-type price-list__game-type_privat">
+            <h3 class="price-list__game-heading heading heading_sub">
+              Приватные игры
+            </h3>
+            <div class="price-list__cards">
+              <div class="prices-card prices-card_weekdays">
+                <h4 class="price-card__heading">
+                  Будни
+                </h4>
+                <div class="price-card__players">
+                  <p class="price-card__players-number">
+                    <i class="fas fa-user"></i>
+                    4-10
+                  </p>
+                  <p class="price-card__players-number">
+                    <i class="fas fa-user"></i>
+                    11+
+                  </p>
+                </div>
+                <div class="price-card__session">
+                  <p class="price-card__time">
+                    1
+                    <br>
+                    час
+                  </p>
+                  <p class="price-card__time">
+                    2
+                    <br>
+                    часа
+                  </p>
+                  <p class="price-card__time">
+                    <i class="fas fa-plus"></i>
+                    <br>
+                    час
+                  </p>
+                </div>
+                <div class="price-card__prices">
+                  <a class="price-card__price price-card__price_small-1hour" data-scroll href="#request">
+                    500₽
+                  </a>
+                  <a class="price-card__price price-card__price_big-1hour" data-scroll href="#request">
+                    400₽
+                  </a>
+                  <a class="price-card__price price-card__price_small-2hours" data-scroll href="#request">
+                    850₽
+                  </a>
+                  <a class="price-card__price price-card__price_big-2hours" data-scroll href="#request">
+                    750₽
+                  </a>
+                  <a class="price-card__price price-card__price_add-hour" data-scroll href="#request">
+                    150₽
+                  </a>
+                </div>
+              </div>
+              <div class="prices-card prices-card_weekends">
+                <h4 class="price-card__heading">
+                  Выходные
+                </h4>
+                <div class="price-card__players">
+                  <p class="price-card__players-number">
+                    <i class="fas fa-user"></i>
+                    4-10
+                  </p>
+                  <p class="price-card__players-number">
+                    <i class="fas fa-user"></i>
+                    11+
+                  </p>
+                </div>
+                <div class="price-card__session">
+                  <p class="price-card__time">
+                    1
+                    <br>
+                    час
+                  </p>
+                  <p class="price-card__time">
+                    2
+                    <br>
+                    часа
+                  </p>
+                  <p class="price-card__time">
+                    <i class="fas fa-plus"></i>
+                    <br>
+                    час
+                  </p>
+                </div>
+                <div class="price-card__prices">
+                  <a class="price-card__price price-card__price_small-1hour" data-scroll href="#request">
+                    750₽
+                  </a>
+                  <a class="price-card__price price-card__price_big-1hour" data-scroll href="#request">
+                    650₽
+                  </a>
+                  <a class="price-card__price price-card__price_small-2hours" data-scroll href="#request">
+                    1000₽
+                  </a>
+                  <a class="price-card__price price-card__price_big-2hours" data-scroll href="#request">
+                    900₽
+                  </a>
+                  <a class="price-card__price price-card__price_add-hour" data-scroll href="#request">
+                    200₽
+                  </a>
+                </div>
+              </div>
+              <div class="prices-card prices-card_groups">
+                <h4 class="price-card__heading">
+                  Школьные
+                  <br>
+                  Студенческие
+                  <br>
+                  Группы
+                </h4>
+                <div class="price-card__players prices-card_groups__players">
+                  <p class="price-card__players-number">
+                    <i class="fas fa-user"></i>
+                    12+
+                  </p>
+                </div>
+                <div class="price-card__session prices-card_group__session">
+                  <p class="price-card__time">
+                    2
+                    <br>
+                    часа
+                  </p>
+                  <p class="price-card__time">
+                    <i class="fas fa-plus"></i>
+                    <br>
+                    час
+                  </p>
+                </div>
+                <div class="price-card__prices price-card_group__prices">
+                  <a class="price-card__price price-card__price_big-2hours" data-scroll href="#request">
+                    400₽
+                  </a>
+                  <a class="price-card__price price-card__price_add-hour" data-scroll href="#request">
+                    200₽
+                  </a>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="price-list__dividing-line"></div>
+          <div class="price-list__game-type price-list__game-type_open">
+            <h3 class="price-list__game-heading heading heading_sub">
 							Открытые игры
-						</h3>
-						<div class="price-list__card">
-							<div class="price-list__card-wrap">
-								<h4 class="price-list__title">
-									всего 
-									<span class="huge">
-										400₽
-									</span>
-								</h4>
-								<p class="price-list__caption">
-									за два часа
-								</p>
-								<a class="price-list__sing-up-btn price-table__price" data-scroll href="#request">
-									Записаться
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="price-list__line"></div>
-					<div class="price-list__item">
-						<h3 class="price-list__type heading heading_sub">
-							Приватные игры
-						</h3>
-						<div class="price-list__cards">
-							<div class="price-list__holidays">
-								<div class="price-list__card">
-									<table class="price-list__table price-table">
-										<thead>
-											<tr>
-												<th></th>
-												<th colspan="2">
-													<h4 class="price-table__title">
-														Будни
-													</h4>
-												</th>
-											</tr>
-										</thead>
-										<tbody class="price-table__tbody">
-											<tr>
-												<td></td>
-												<td>
-													<i class="fas fa-user"></i>
-													4-10
-												</td>
-												<td>
-													<i class="fas fa-user"></i>
-													11+
-												</td>
-											</tr>
-											<tr>
-												<td class="price-table__time">
-													1
-													<br>
-													час
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														500₽
-													</a>
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														400₽
-													</a>
-												</td>
-											</tr>
-											<tr>
-												<td class="price-table__time">
-														2
-														<br>
-														часа
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														850₽
-													</a>
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														750₽
-													</a>
-												</td>
-											</tr>
-											<tr>
-												<td class="price-table__time">
-													<i class="fas fa-plus"></i>
-													<br>
-													час
-												</td>
-												<td colspan="2">
-													<a class="price-table__price" data-scroll href="#request">
-														150₽
-													</a>
-												</td>											
-											</tr>
-										</tbody>										
-									</table>
-								</div>
-								<div class="price-list__card">
-									<table class="price-list__table price-table">
-										<thead>
-											<tr>
-												<th class="hiding-time"></th>
-												<th colspan="2">
-													<h4 class="price-table__title">
-														Выходные
-													</h4>
-												</th>
-											</tr>
-										</thead>
-										<tbody class="price-table__tbody">
-											<tr>
-												<td class="hiding-time"></td>
-												<td>
-													<i class="fas fa-user"></i>
-													4-10
-												</td>
-												<td>
-													<i class="fas fa-user"></i>
-													11+
-												</td>
-											</tr>
-											<tr>
-												<td class="price-table__time hiding-time">
-													1
-													<br>
-													час
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														750₽
-													</a>
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														&nbsp;650₽&nbsp;
-													</a>
-												</td>
-											</tr>
-											<tr>
-												<td class="price-table__time hiding-time">
-														2
-														<br>
-														часа
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														1000₽
-													</a>
-												</td>
-												<td>
-													<a class="price-table__price" data-scroll href="#request">
-														&nbsp;900₽&nbsp;
-													</a>
-												</td>
-											</tr>
-											<tr>
-												<td class="price-table__time hiding-time">
-													<i class="fas fa-plus"></i>
-													<br>
-													час
-												</td>
-												<td colspan="2">
-													<a class="price-table__price" data-scroll href="#request">
-														200₽
-													</a>
-												</td>											
-											</tr>
-										</tbody>										
-									</table>
-								</div>
-							</div>
-							<div class="price-list__card">
-								<table class="price-list__table price-table">
-									<thead>
-										<tr>
-											<!-- <th></th> -->
-											<th colspan="5">
-												<h4 class="price-table__title">
-													Школьные
-													<br>
-													Студенческие
-													<br>
-													Группы
-												</h4>
-											</th>
-										</tr>
-									</thead>
-									<tbody class="price-table__tbody">
-										<tr>
-											<td></td>
-											<td colspan="4">
-												<i class="fas fa-user"></i>
-												12+
-											</td>
-										</tr>
-										<tr>
-											<td class="price-table__time">
-													2
-													<br>
-													часа
-											</td>
-											<td colspan="4">
-												<a class="price-table__price" data-scroll href="#request">
-													700₽
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="price-table__time">
-												<i class="fas fa-plus"></i>
-												<br>
-												час
-											</td>
-											<td colspan="3">
-												<a class="price-table__price" data-scroll href="#request">
-													200₽
-												</a>
-											</td>											
-										</tr>
-									</tbody>										
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
+            </h3>
+            <div class="prices-card prices-card_open">
+              <div class="price-card__advertisement">
+                <h4>
+                  всего 
+                  <span class="huge">
+                    400₽
+                  </span>
+                </h4>
+                <p class="price-card__caption">
+                  за два часа
+                </p>
+              </div>
+              <div class="price-card__buttons">
+                <a class="price-card__sing-up-btn" data-scroll href="#request">
+                  Записаться
+                </a>
+                <a class="price-card__vk-btn" href="https://vk.com/club.pantheon" target="_blank" rel="noopener">
+                  <img class="price-card__vk-img" src="img/references/vk-simple-logo.svg" alt="Логотип социальной сети Вконтакте">
+                </a>
+              </div>
+              <p class="price-card__under-caption">
+                Следите за расписанием игр в группе во Вконтакте
+              </p>
+            </div>
+          </div>
+        </div>
 			</div>
 		</section>
 		<section class="request" id=request>
@@ -631,24 +573,25 @@
 					В какой день планируете мероприятие?
 				</h2>
 				<p class="request__caption">
-					Сделаем выгодное предложение специально для вас!
+					Оставьте заявку через Яндекс форму!
 				</p>
 				<div class="request__widget">
 					<div id="bookform-embedded-widget-3458"></div>
 					<script>Bookform('embedded',{id:3458});</script>
 				</div>
-				<!-- 
+			</div>
+		</section>
+		<section class="we-can-more"></section>
+		<section class="q-and-a"></section>
+    <section class="call-back">
+      <!-- 
 				<form action="" class="request__form form">
 					<input type="text" name="username" id="username" placeholder="Ваше имя" class="form__input">
 					<input type="tel" name="tel" id="tel" placeholder="Телефон" required class="form__input">
 					<input type="submit" value="Получить предложение" class="form__input">
 				</form>
-			  -->
-			</div>
-		</section>
-		<section class="we-can-more"></section>
-		<section class="q-and-a"></section>
-    <section class="call-back"></section>
+      -->
+    </section>
     <div class="footer">
       <p>
         Сайт находится в стадии разработки
@@ -656,14 +599,6 @@
     </div>
 		<section class="references">
       <a class="references__img-map" href="https://yandex.ru/maps/org/pantheon/52710844172/?ll=37.765531%2C55.920992&z=18" target="_blank" rel="noopener">
-        <!-- <picture>
-            <source data-srcset="img/gallery/archer-1920w-3x.webp 1920w" type="image/webp">
-            <source data-srcset="img/gallery/archer-480w-1x.jpg 480w,
-                                  img/gallery/archer-960w-2x.jpg 960w,
-                                  img/gallery/archer-1920w-3x.jpg 1920w" type="image/jpeg">
-            <img data-src="img/gallery/archer-960w-2x.jpg" src="img/gallery/archer-960w-min.jpg"
-                 class="gallery__img lazyload" alt="Школьник в защитной маске натягивает лук">
-          </picture> -->
         <picture>
           <source data-srcset="img/backgrounds/map-384w-1x.webp 384w,
                                 img/backgrounds/map-768w-2x.webp 768w,
@@ -712,8 +647,8 @@
 								Мы в соцсетях
 							</h3>
 							<div class="references__socials-wrap">
-								<a class="social-vk references__social" href="https://vk.com/club.pantheon" target="_blank" rel="noopener" aria-label="Перейти в нашу группу во Вконтакте"></a>></a>
-								<a class="social-in references__social" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Перейти в наш Инстаграм"></a>></a>
+								<a class="social-vk references__social" href="https://vk.com/club.pantheon" target="_blank" rel="noopener" aria-label="Перейти в нашу группу во Вконтакте"></a>
+								<a class="social-in references__social" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Перейти в наш Инстаграм"></a>
 								<a class="references__btn" data-scroll href="#request">
 									Заказать
 								</a>
@@ -738,7 +673,7 @@
   <script src="node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
   <script>
     var scroll = new SmoothScroll('a[href*="#"]', {
-      speed: 700
+      speed: 300
     });
   </script>
   <!-- Main js -->

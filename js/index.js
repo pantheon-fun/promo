@@ -19,7 +19,7 @@ let mapStateIsLoaded = 0;
 let mapStateIsObserved = 0;
 
 const mapScript = document.createElement("script");
-mapScript.src = `https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true`;
+mapScript.src = `https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false`;
 
 function loadMap() {
   if (!(mapStateIsLoaded) && (mapStateIsObserved)) {
@@ -32,11 +32,6 @@ function loadMap() {
 
 /* Widget bookform */
 const bookform = document.getElementById("bookform");
-
-const bookScriptInit = document.createElement("script");
-bookScriptInit.innerHTML = `(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`;
-const bookScriptForm = document.createElement("script");
-bookScriptForm.innerHTML = `Bookform('embedded',{id:3458});`;
 
 
 
@@ -56,8 +51,8 @@ const observer = new IntersectionObserver(function(entries, observer) {
         }
       }
       if (entry.target === bookform) {
-        bookform.appendChild(bookScriptInit);
-        bookform.appendChild(bookScriptForm);
+        eval(`(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`);
+        eval(`Bookform('embedded',{id:3458});`);
       }
       observer.unobserve(entry.target);
     }

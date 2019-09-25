@@ -4,7 +4,7 @@ const mySiema = new Siema({
   loop: true,
 });
 
-const delay = 3000;
+const delay = 2500;
 let autoplay = setInterval(() => mySiema.next(), delay);
 function cancelAutoplay(e) {
   clearInterval(autoplay);

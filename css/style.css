@@ -654,6 +654,12 @@ a, button {
 	   object-fit: cover;
   height: 100%;
   cursor: pointer;
+	-webkit-transition: all 0.8s;
+	transition: all 0.8s;
+}
+.gallery__img:hover {
+	-webkit-transform: scale(1.04);
+	        transform: scale(1.04);
 }
 
 /* === Lightbox === */
@@ -728,7 +734,7 @@ a, button {
 	font-size: 28em;
 	font-weight: bold;
 	margin-top: 35px;
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 }
 .prices__advantages {
 	display: grid;

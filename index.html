@@ -40,7 +40,7 @@
   <!-- Normalize.css -->
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.4.28">
+	<link rel="stylesheet" href="css/style.css?v=1.4.29">
 	<!-- Bookform widget -->
 	<script>(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));</script>
 	<!-- End Bookform widget -->
@@ -62,11 +62,16 @@
       </div>
       <div class="first__content">
         <div class="first__logo">
-          <img data-srcset="img/logo/logo-345w-1x.png 345w,
-                          img/logo/logo-690w-2x.png 690w"
-                data-src="img/logo/logo-690w-2x.png"
-                src="img/logo/logo-690w-min.png"
-                class="logo__img lazyload" alt="Логотип клуба активно-тактических игр «Pantheon»">
+          <picture class="carousel__slide">   
+            <source srcset="img/logo/logo-690w-min.webp" type="image/webp"
+               data-srcset="img/logo/logo-345w-1x.webp 345w,
+                            img/logo/logo-690w-2x.webp 690w">    
+            <source srcset="img/logo/logo-690w-min.png" type="image/png"
+               data-srcset="img/logo/logo-345w-1x.png 345w,
+                            img/logo/logo-690w-2x.png 690w">
+            <img src="img/logo/logo-690w-2x.png" class="logo__img lazyload"
+                 alt="Логотип клуба активно-тактических игр «Pantheon»">
+          </picture>
         </div>
         <div class="first__banner">
           <h1 class="first__heading">
@@ -99,87 +104,143 @@
     <div class="carousel">
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-            data-srcset="img/carousel/roar-960w-1x.jpg 960w,
-                img/carousel/roar-1920w-2x.jpg 1920w,
-                img/carousel/roar-2560w-3x.webp 2560w,
-                img/carousel/roar-2560w-3x.jpg 2560w"
-            srcset="img/carousel/roar-1920w-min.jpg">
-        <source data-srcset="img/carousel/roar-496w-1x.jpg 496w,
-                img/carousel/roar-992w-2x.jpg 992w"
-            srcset="img/carousel/roar-992w-min.jpg">
-        <img class="background lazyload" alt="Возбужденный мальчишка воинственно рычит с лазертаг автоматом в руках" data-src="img/carousel/roar-1920w-2x.jpg">
+                srcset="img/carousel/roar-1920w-min.webp" type="image/webp"
+           data-srcset="img/carousel/roar-960w-1x.webp 960w,
+                        img/carousel/roar-1920w-2x.webp 1920w,
+                        img/carousel/roar-2560w-3x.webp 2560w">      
+        <source srcset="img/carousel/roar-992w-min.webp" type="image/webp"
+           data-srcset="img/carousel/roar-496w-1x.webp 496w,
+                        img/carousel/roar-992w-2x.webp 992w">
+        <source media="(min-width: 900px)"
+                srcset="img/carousel/roar-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/roar-960w-1x.jpg 960w,
+                        img/carousel/roar-1920w-2x.jpg 1920w,
+                        img/carousel/roar-2560w-3x.jpg 2560w">      
+        <source srcset="img/carousel/roar-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/roar-496w-1x.jpg 496w,
+                        img/carousel/roar-992w-2x.jpg 992w">
+        <img src="img/carousel/roar-1920w-2x.jpg" class="background lazyload"
+             alt="Возбужденный мальчишка воинственно рычит с лазертаг автоматом в руках">
       </picture>
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-            data-srcset="img/carousel/aim-960w-1x.jpg 960w,
-                img/carousel/aim-1920w-2x.jpg 1920w,
-                img/carousel/aim-2560w-3x.webp 2560w,
-                img/carousel/aim-2560w-3x.jpg 2560w"
-            srcset="img/carousel/aim-1920w-min.jpg">
-        <source data-srcset="img/carousel/aim-496w-1x.jpg 496w,
-                img/carousel/aim-992w-2x.jpg 992w"
-            srcset="img/carousel/aim-992w-min.jpg">
-        <img class="background lazyload" alt="Маленький ребенок целится из Лазертаг тагера" data-src="img/carousel/aim-1920w-2x.jpg">
+                srcset="img/carousel/aim-1920w-min.webp" type="image/webp"
+           data-srcset="img/carousel/aim-960w-1x.webp 960w,
+                        img/carousel/aim-1920w-2x.webp 1920w,
+                        img/carousel/aim-2560w-3x.webp 2560w">      
+        <source srcset="img/carousel/aim-992w-min.webp" type="image/webp"
+           data-srcset="img/carousel/aim-496w-1x.webp 496w,
+                        img/carousel/aim-992w-2x.webp 992w">
+        <source media="(min-width: 900px)"
+                srcset="img/carousel/aim-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/aim-960w-1x.jpg 960w,
+                        img/carousel/aim-1920w-2x.jpg 1920w,
+                        img/carousel/aim-2560w-3x.jpg 2560w">      
+        <source srcset="img/carousel/aim-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/aim-496w-1x.jpg 496w,
+                        img/carousel/aim-992w-2x.jpg 992w">
+        <img src="img/carousel/aim-1920w-2x.jpg" class="background lazyload" 
+             alt="Маленький ребенок целится из Лазертаг тагера">
       </picture>
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-            data-srcset="img/carousel/capture-960w-1x.jpg 960w,
-                img/carousel/capture-1920w-2x.jpg 1920w,
-                img/carousel/capture-2560w-3x.webp 2560w,
-                img/carousel/capture-2560w-3x.jpg 2560w"
-            srcset="img/carousel/capture-1920w-min.jpg">
-        <source data-srcset="img/carousel/capture-496w-1x.jpg 496w,
-                img/carousel/capture-992w-2x.jpg 992w"
-            srcset="img/carousel/capture-992w-min.jpg">
-        <img class="background lazyload" alt="День рождения в стиле Нерф" data-src="img/carousel/capture-1920w-2x.jpg">
+                srcset="img/carousel/capture-1920w-min.webp" type="image/webp"
+           data-srcset="img/carousel/capture-960w-1x.webp 960w,
+                        img/carousel/capture-1920w-2x.webp 1920w,
+                        img/carousel/capture-2560w-3x.webp 2560w">      
+        <source srcset="img/carousel/capture-992w-min.webp" type="image/webp"
+           data-srcset="img/carousel/capture-496w-1x.webp 496w,
+                        img/carousel/capture-992w-2x.webp 992w">
+        <source media="(min-width: 900px)"
+                srcset="img/carousel/capture-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/capture-960w-1x.jpg 960w,
+                        img/carousel/capture-1920w-2x.jpg 1920w,
+                        img/carousel/capture-2560w-3x.jpg 2560w">      
+        <source srcset="img/carousel/capture-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/capture-496w-1x.jpg 496w,
+                        img/carousel/capture-992w-2x.jpg 992w">
+        <img src="img/carousel/capture-1920w-2x.jpg" class="background lazyload" 
+             alt="День рождения в стиле Нерф">
       </picture>
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-            data-srcset="img/carousel/smile-960w-1x.jpg 960w,
-                img/carousel/smile-1920w-2x.jpg 1920w,
-                img/carousel/smile-2560w-3x.webp 2560w,
-                img/carousel/smile-2560w-3x.jpg 2560w"
-            srcset="img/carousel/smile-1920w-min.jpg">
-        <source data-srcset="img/carousel/smile-496w-1x.jpg 496w,
-                img/carousel/smile-992w-2x.jpg 992w"
-            srcset="img/carousel/smile-992w-min.jpg">
-        <img class="background lazyload" alt="Довольный школьник после игры в Нерф" data-src="img/carousel/smile-1920w-2x.jpg">
+                srcset="img/carousel/smile-1920w-min.webp" type="image/webp"
+           data-srcset="img/carousel/smile-960w-1x.webp 960w,
+                        img/carousel/smile-1920w-2x.webp 1920w,
+                        img/carousel/smile-2560w-3x.webp 2560w">      
+        <source srcset="img/carousel/smile-992w-min.webp" type="image/webp"
+           data-srcset="img/carousel/smile-496w-1x.webp 496w,
+                        img/carousel/smile-992w-2x.webp 992w">
+        <source media="(min-width: 900px)"
+                srcset="img/carousel/smile-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/smile-960w-1x.jpg 960w,
+                        img/carousel/smile-1920w-2x.jpg 1920w,
+                        img/carousel/smile-2560w-3x.jpg 2560w">      
+        <source srcset="img/carousel/smile-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/smile-496w-1x.jpg 496w,
+                        img/carousel/smile-992w-2x.jpg 992w">
+        <img src="img/carousel/smile-1920w-2x.jpg" class="background lazyload" 
+             alt="Довольный школьник после игры в Нерф">
       </picture>
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-            data-srcset="img/carousel/madness-960w-1x.jpg 960w,
-                img/carousel/madness-1920w-2x.jpg 1920w,
-                img/carousel/madness-2560w-3x.webp 2560w,
-                img/carousel/madness-2560w-3x.jpg 2560w"
-            srcset="img/carousel/madness-1920w-min.jpg">
-        <source data-srcset="img/carousel/madness-496w-1x.jpg 496w,
-                img/carousel/madness-992w-2x.jpg 992w"
-            srcset="img/carousel/madness-992w-min.jpg">
-        <img class="background lazyload" alt="Захват точки во время игры в Лазертаг" data-src="img/carousel/madness-1920w-2x.jpg">
+                srcset="img/carousel/madness-1920w-min.webp" type="image/webp"
+           data-srcset="img/carousel/madness-960w-1x.webp 960w,
+                        img/carousel/madness-1920w-2x.webp 1920w,
+                        img/carousel/madness-2560w-3x.webp 2560w">      
+        <source srcset="img/carousel/madness-992w-min.webp" type="image/webp"
+           data-srcset="img/carousel/madness-496w-1x.webp 496w,
+                        img/carousel/madness-992w-2x.webp 992w">
+        <source media="(min-width: 900px)"
+                srcset="img/carousel/madness-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/madness-960w-1x.jpg 960w,
+                        img/carousel/madness-1920w-2x.jpg 1920w,
+                        img/carousel/madness-2560w-3x.jpg 2560w">      
+        <source srcset="img/carousel/madness-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/madness-496w-1x.jpg 496w,
+                        img/carousel/madness-992w-2x.jpg 992w">
+        <img src="img/carousel/madness-1920w-2x.jpg" class="background lazyload"
+             alt="Захват точки во время игры в Лазертаг">
       </picture>
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-            data-srcset="img/carousel/horor-960w-1x.jpg 960w,
-                img/carousel/horor-1920w-2x.jpg 1920w,
-                img/carousel/horor-2560w-3x.webp 2560w,
-                img/carousel/horor-2560w-3x.jpg 2560w"
-            srcset="img/carousel/horor-1920w-min.jpg">
-        <source data-srcset="img/carousel/horor-496w-1x.jpg 496w,
-                img/carousel/horor-992w-2x.jpg 992w"
-            srcset="img/carousel/horor-992w-min.jpg">
-        <img class="background lazyload" alt="Люди в страшных клоунских масках выглядывают из тьмы" data-src="img/carousel/horor-1920w-2x.jpg">
+                srcset="img/carousel/horor-1920w-min.webp" type="image/webp"
+           data-srcset="img/carousel/horor-960w-1x.webp 960w,
+                        img/carousel/horor-1920w-2x.webp 1920w,
+                        img/carousel/horor-2560w-3x.webp 2560w">      
+        <source srcset="img/carousel/horor-992w-min.webp" type="image/webp"
+           data-srcset="img/carousel/horor-496w-1x.webp 496w,
+                        img/carousel/horor-992w-2x.webp 992w">
+        <source media="(min-width: 900px)"
+                srcset="img/carousel/horor-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/horor-960w-1x.jpg 960w,
+                        img/carousel/horor-1920w-2x.jpg 1920w,
+                        img/carousel/horor-2560w-3x.jpg 2560w">      
+        <source srcset="img/carousel/horor-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/horor-496w-1x.jpg 496w,
+                        img/carousel/horor-992w-2x.jpg 992w">
+        <img src="img/carousel/horor-1920w-2x.jpg" class="background lazyload"
+             alt="Люди в страшных клоунских масках выглядывают из тьмы">
       </picture>
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-            data-srcset="img/carousel/skirmish-960w-1x.jpg 960w,
-                img/carousel/skirmish-1920w-2x.jpg 1920w,
-                img/carousel/skirmish-2560w-3x.webp 2560w,
-                img/carousel/skirmish-2560w-3x.jpg 2560w"
-            srcset="img/carousel/skirmish-1920w-min.jpg">
-        <source data-srcset="img/carousel/skirmish-496w-1x.jpg 496w,
-                img/carousel/skirmish-992w-2x.jpg 992w"
-            srcset="img/carousel/skirmish-992w-min.jpg">
-        <img class="background lazyload" alt="Лазертаг перестрелка на закрытой арене" data-src="img/carousel/skirmish-1920w-2x.jpg">
+                srcset="img/carousel/skirmish-1920w-min.webp" type="image/webp"
+           data-srcset="img/carousel/skirmish-960w-1x.webp 960w,
+                        img/carousel/skirmish-1920w-2x.webp 1920w,
+                        img/carousel/skirmish-2560w-3x.webp 2560w">      
+        <source srcset="img/carousel/skirmish-992w-min.webp" type="image/webp"
+           data-srcset="img/carousel/skirmish-496w-1x.webp 496w,
+                        img/carousel/skirmish-992w-2x.webp 992w">
+        <source media="(min-width: 900px)"
+                srcset="img/carousel/skirmish-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/skirmish-960w-1x.jpg 960w,
+                        img/carousel/skirmish-1920w-2x.jpg 1920w,
+                        img/carousel/skirmish-2560w-3x.jpg 2560w">      
+        <source srcset="img/carousel/skirmish-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/carousel/skirmish-496w-1x.jpg 496w,
+                        img/carousel/skirmish-992w-2x.jpg 992w">
+        <img src="img/carousel/skirmish-1920w-2x.jpg" class="background lazyload"
+             alt="Лазертаг перестрелка на закрытой арене">
       </picture>
     </div>    
 	</header>
@@ -250,12 +311,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/archer-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/archer-400w-1x.webp 400w,
-                              img/gallery/archer-800w-2x.webp 800w,
-                              img/gallery/archer-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/archer-400w-1x.webp 400w,
+                            img/gallery/archer-800w-2x.webp 800w,
+                            img/gallery/archer-1280w-3x.webp 1280w">
             <source srcset="img/gallery/archer-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/archer-400w-1x.jpg 400w,
-                              img/gallery/archer-800w-2x.jpg 800w">
+               data-srcset="img/gallery/archer-400w-1x.jpg 400w,
+                            img/gallery/archer-800w-2x.jpg 800w">
             <img data-src="img/gallery/archer-800w-2x.jpg" data-expand="800"
                   class="gallery__img lazyload" alt="Школьник в защитной маске натягивает лук">
           </picture>
@@ -263,12 +324,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/big-gun-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/big-gun-400w-1x.webp 400w,
-                              img/gallery/big-gun-800w-2x.webp 800w,
-                              img/gallery/big-gun-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/big-gun-400w-1x.webp 400w,
+                            img/gallery/big-gun-800w-2x.webp 800w,
+                            img/gallery/big-gun-1280w-3x.webp 1280w">
             <source srcset="img/gallery/big-gun-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/big-gun-400w-1x.jpg 400w,
-                              img/gallery/big-gun-800w-2x.jpg 800w">
+                data-srcset="img/gallery/big-gun-400w-1x.jpg 400w,
+                            img/gallery/big-gun-800w-2x.jpg 800w">
             <img data-src="img/gallery/big-gun-800w-2x.jpg" data-expand="700"
                   class="gallery__img lazyload" alt="Мальчики держат большие редкие виды оружия Нерф">
           </picture>
@@ -276,12 +337,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/guy-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/guy-400w-1x.webp 400w,
-                              img/gallery/guy-800w-2x.webp 800w,
-                              img/gallery/guy-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/guy-400w-1x.webp 400w,
+                            img/gallery/guy-800w-2x.webp 800w,
+                            img/gallery/guy-1280w-3x.webp 1280w">
             <source srcset="img/gallery/guy-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/guy-400w-1x.jpg 400w,
-                              img/gallery/guy-800w-2x.jpg 800w">
+               data-srcset="img/gallery/guy-400w-1x.jpg 400w,
+                            img/gallery/guy-800w-2x.jpg 800w">
             <img data-src="img/gallery/guy-800w-2x.jpg" data-expand="600"
                   class="gallery__img lazyload" alt="Парень с лазертаг винтовкой">
           </picture>
@@ -289,12 +350,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/midder-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/midder-400w-1x.webp 400w,
-                              img/gallery/midder-800w-2x.webp 800w,
-                              img/gallery/midder-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/midder-400w-1x.webp 400w,
+                            img/gallery/midder-800w-2x.webp 800w,
+                            img/gallery/midder-1280w-3x.webp 1280w">
             <source srcset="img/gallery/midder-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/midder-400w-1x.jpg 400w,
-                              img/gallery/midder-800w-2x.jpg 800w">
+               data-srcset="img/gallery/midder-400w-1x.jpg 400w,
+                            img/gallery/midder-800w-2x.jpg 800w">
             <img data-src="img/gallery/midder-800w-2x.jpg" data-expand="500"
                   class="gallery__img lazyload" alt="Веселая заварушка за центральную точку">
           </picture>
@@ -302,12 +363,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/nekit-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/nekit-400w-1x.webp 400w,
-                              img/gallery/nekit-800w-2x.webp 800w,
-                              img/gallery/nekit-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/nekit-400w-1x.webp 400w,
+                            img/gallery/nekit-800w-2x.webp 800w,
+                            img/gallery/nekit-1280w-3x.webp 1280w">
             <source srcset="img/gallery/nekit-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/nekit-400w-1x.jpg 400w,
-                              img/gallery/nekit-800w-2x.jpg 800w">
+               data-srcset="img/gallery/nekit-400w-1x.jpg 400w,
+                            img/gallery/nekit-800w-2x.jpg 800w">
             <img data-src="img/gallery/nekit-800w-2x.jpg" data-expand="400"
                   class="gallery__img lazyload" alt="Суровый боец с современным оборудованием">
           </picture>
@@ -315,12 +376,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/camper-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/camper-400w-1x.webp 400w,
-                              img/gallery/camper-800w-2x.webp 800w,
-                              img/gallery/camper-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/camper-400w-1x.webp 400w,
+                            img/gallery/camper-800w-2x.webp 800w,
+                            img/gallery/camper-1280w-3x.webp 1280w">
             <source srcset="img/gallery/camper-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/camper-400w-1x.jpg 400w,
-                              img/gallery/camper-800w-2x.jpg 800w">
+               data-srcset="img/gallery/camper-400w-1x.jpg 400w,
+                            img/gallery/camper-800w-2x.jpg 800w">
             <img data-src="img/gallery/camper-800w-2x.jpg" data-expand="300"
                   class="gallery__img lazyload" alt="Шестилетний мальчик бдительно выцеливает врага">
           </picture>
@@ -328,12 +389,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/shine-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/shine-400w-1x.webp 400w,
-                              img/gallery/shine-800w-2x.webp 800w,
-                              img/gallery/shine-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/shine-400w-1x.webp 400w,
+                            img/gallery/shine-800w-2x.webp 800w,
+                            img/gallery/shine-1280w-3x.webp 1280w">
             <source srcset="img/gallery/shine-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/shine-400w-1x.jpg 400w,
-                              img/gallery/shine-800w-2x.jpg 800w">
+               data-srcset="img/gallery/shine-400w-1x.jpg 400w,
+                            img/gallery/shine-800w-2x.jpg 800w">
             <img data-src="img/gallery/shine-800w-2x.jpg" data-expand="200"
                   class="gallery__img lazyload" alt="Парень захватывает центральную точку во время игры в стрелялку">
           </picture>
@@ -341,12 +402,12 @@
 				<li class="gallery__item">
           <picture>
             <source srcset="img/gallery/dark-gun-800w-min.webp" type="image/webp"
-                 data-srcset="img/gallery/dark-gun-400w-1x.webp 400w,
-                              img/gallery/dark-gun-800w-2x.webp 800w,
-                              img/gallery/dark-gun-1280w-3x.webp 1280w">
+               data-srcset="img/gallery/dark-gun-400w-1x.webp 400w,
+                            img/gallery/dark-gun-800w-2x.webp 800w,
+                            img/gallery/dark-gun-1280w-3x.webp 1280w">
             <source srcset="img/gallery/dark-gun-800w-min.jpg" type="image/jpeg"
-                 data-srcset="img/gallery/dark-gun-400w-1x.jpg 400w,
-                              img/gallery/dark-gun-800w-2x.jpg 800w">
+               data-srcset="img/gallery/dark-gun-400w-1x.jpg 400w,
+                            img/gallery/dark-gun-800w-2x.jpg 800w">
             <img data-src="img/gallery/dark-gun-800w-2x.jpg" data-expand="100"
                 class="gallery__img lazyload" alt="Мальчик целится из грозного оружия">
           </picture>
@@ -356,16 +417,24 @@
 		<section class="reviews"></section>
 		<section class="prices">
 			<picture>
-				<source media="(min-width: 992px)"
-					data-srcset="img/backgrounds/prices-960w-1x.jpg 960w,
-									    img/backgrounds/prices-1920w-2x.jpg 1920w,
-											img/backgrounds/prices-2560w-3x.webp 2560w,
-											img/backgrounds/prices-2560w-3x.jpg 2560w"
-							srcset="img/backgrounds/prices-1920w-min.jpg">
-				<source data-srcset="img/backgrounds/prices-496w-1x.jpg 496w,
-														img/backgrounds/prices-992w-2x.jpg 992w"
-										srcset="img/backgrounds/prices-992w-min.jpg">
-				<img data-src="img/backgrounds/prices-1920w-2x.jpg" class="background background_img lazyload" alt="Грозный боец выглядывает из тьмы">
+        <source media="(min-width: 992px)"
+                srcset="img/backgrounds/prices-1920w-min.webp" type="image/webp"
+					 data-srcset="img/backgrounds/prices-960w-1x.webp 960w,
+									      img/backgrounds/prices-1920w-2x.webp 1920w,
+											  img/backgrounds/prices-2560w-3x.webp 2560w">
+        <source srcset="img/backgrounds/prices-992w-min.webp" type="image/webp"
+           data-srcset="img/backgrounds/prices-496w-1x.webp 496w,
+												img/backgrounds/prices-992w-2x.webp 992w">
+        <source media="(min-width: 992px)"
+                srcset="img/backgrounds/prices-1920w-min.jpg" type="image/jpeg"
+					 data-srcset="img/backgrounds/prices-960w-1x.jpg 960w,
+									      img/backgrounds/prices-1920w-2x.jpg 1920w,
+											  img/backgrounds/prices-2560w-3x.jpg 2560w">
+        <source srcset="img/backgrounds/prices-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/backgrounds/prices-496w-1x.jpg 496w,
+												img/backgrounds/prices-992w-2x.jpg 992w">
+        <img src="img/backgrounds/prices-1920w-2x.jpg" class="background background_img lazyload" 
+             alt="Грозный боец выглядывает из тьмы">
 			</picture>
 			<div class="prices__inner container">
 				<h2 class="prices__heading heading heading__section">
@@ -583,15 +652,22 @@
 		</section>
 		<section class="request" id=request>
 			<picture>
-				<source media="(min-width: 992px)"
-					data-srcset="img/backgrounds/request-960w-1x.jpg 960w,
-											img/backgrounds/request-1920w-2x.webp 1920w,
-											img/backgrounds/request-1920w-2x.jpg 1920w"
-							srcset="img/backgrounds/request-1920w-min.jpg">
-				<source data-srcset="img/backgrounds/request-496w-1x.jpg 496w,
-														img/backgrounds/request-992w-2x.jpg 992w"
-										srcset="img/backgrounds/request-992w-min.jpg">
-				<img data-src="img/backgrounds/request-1920w-2x.jpg" class="background background_img lazyload" alt="Наш арсенал разнообразного оружия Нерф, что смог влезть в кадр">
+        <source media="(min-width: 992px)"
+                srcset="img/backgrounds/request-1920w-min.webp" type="image/webp"
+           data-srcset="img/backgrounds/request-960w-1x.webp 960w,
+                        img/backgrounds/request-1920w-2x.webp 1920w">      
+        <source srcset="img/backgrounds/request-992w-min.webp" type="image/webp"
+           data-srcset="img/backgrounds/request-496w-1x.webp 496w,
+                        img/backgrounds/request-992w-2x.webp 992w">
+        <source media="(min-width: 992px)"
+                srcset="img/backgrounds/request-1920w-min.jpg" type="image/jpeg"
+           data-srcset="img/backgrounds/request-960w-1x.jpg 960w,
+                        img/backgrounds/request-1920w-2x.jpg 1920w">      
+        <source srcset="img/backgrounds/request-992w-min.jpg" type="image/jpeg"
+           data-srcset="img/backgrounds/request-496w-1x.jpg 496w,
+                        img/backgrounds/request-992w-2x.jpg 992w">
+        <img src="img/backgrounds/request-1920w-2x.jpg" class="background background_img lazyload" 
+             alt="Наш арсенал разнообразного оружия Нерф, что смог влезть в кадр">
 			</picture>
 			<div class="request__inner container">
 				<h2 class="request__heading heading heading_section">
@@ -625,15 +701,16 @@
 		<section class="references">
       <a class="references__img-map" href="https://yandex.ru/maps/org/pantheon/52710844172/?ll=37.765531%2C55.920992&z=18" target="_blank" rel="noopener">
         <picture>
-          <source data-srcset="img/backgrounds/map-384w-1x.webp 384w,
-                                img/backgrounds/map-768w-2x.webp 768w,
-                                img/backgrounds/map-1152w-3x.webp 1152w"
-                        srcset="img/backgrounds/map-768w-min.webp" type="image/webp">
-          <source data-srcset="img/backgrounds/map-384w-1x.jpg 384w,
-                                img/backgrounds/map-768w-2x.jpg 768w,
-                                img/backgrounds/map-1152w-3x.jpg 1152w"
-                        srcset="img/backgrounds/map-768w-min.jpg" type="image/jpeg">
-          <img data-src="img/backgrounds/map-768w-2x.jpg" class="background lazyload" alt="Наше расположение в Мытищах. Карта в красных тонах.">
+          <source srcset="img/backgrounds/map-768w-min.webp" type="image/webp"
+             data-srcset="img/backgrounds/map-384w-1x.webp 384w,
+                          img/backgrounds/map-768w-2x.webp 768w,
+                          img/backgrounds/map-1152w-3x.webp 1152w">
+          <source srcset="img/backgrounds/map-768w-min.jpg" type="image/jpeg"
+             data-srcset="img/backgrounds/map-384w-1x.jpg 384w,
+                          img/backgrounds/map-768w-2x.jpg 768w,
+                          img/backgrounds/map-1152w-3x.jpg 1152w">
+          <img src="img/backgrounds/map-768w-2x.jpg" class="background lazyload"
+               alt="Наше расположение в Мытищах. Карта в красных тонах.">
         </picture>
       </a>
 			<div class="references__widget-map" id="widget-map"></div>
@@ -693,7 +770,7 @@
   <script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>
   <!-- Carousel Siema -->
   <script src="node_modules/siema/dist/siema.min.js?v=1.1.1"></script>
-  <script src="js/siema.js?v=1.1.8"></script> -->
+  <script src="js/siema.js?v=1.1.9"></script> -->
   <!-- Smooth scroll -->
   <script src="node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
   <script>

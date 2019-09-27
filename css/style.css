@@ -205,8 +205,8 @@ a, button {
 
 /* === Text === */
 .text {
-	font-size: 16em;
-	text-align: justify;
+  font-size: 16em;
+  line-height: 1.35em;
 	letter-spacing: 0.5px;
 }
 
@@ -985,7 +985,6 @@ a, button {
   border: 3px dashed var(--red-color);
   width: 100%;
   height: calc(100% - 20px);
-  max-height: 260px;
   margin-top: 20px;
   }
   .x img {
@@ -994,7 +993,6 @@ a, button {
     max-width: 100%;
   }
 }
-
 
 
 /* === Calculator === */

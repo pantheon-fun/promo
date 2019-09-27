@@ -30,8 +30,9 @@ function loadMap() {
 
 
 
-/* Widget bookform */
+/* Widget's parent */
 const bookform = document.getElementById("bookform");
+const calculator = document.getElementById("calculator");
 
 
 
@@ -54,6 +55,9 @@ const observer = new IntersectionObserver(function(entries, observer) {
         eval(`(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`);
         eval(`Bookform('embedded',{id:3458});`);
       }
+      if (entry.target === calculator) {
+        eval(`var widgetOptions231405 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=231405&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();`);
+      }
       observer.unobserve(entry.target);
     }
   });
@@ -61,7 +65,7 @@ const observer = new IntersectionObserver(function(entries, observer) {
 
 observer.observe(map);
 observer.observe(bookform);
-
+observer.observe(calculator);
 // SOMENAME.forEach(SOMENAME => {
 //   observer.observe(section);
 // });

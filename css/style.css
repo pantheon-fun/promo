@@ -1,6 +1,6 @@
 :root {
-	--red-color: #F44336;
-	--bg-page-color: #231c1c;
+	--red-color: #f44336;
+	--bg-page-color: #211B1B;
 	--second-gray-color: #2c2424;
 	--soft-orange-color: #f9da84;
 }
@@ -17,7 +17,7 @@ html {
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+          box-sizing: border-box;
 }
 img {
 	font-size: 14em;
@@ -42,6 +42,7 @@ button {
 }
 a, button {
   pointer-events: auto;
+  cursor: pointer;
 }
 :focus {
   outline: 0;
@@ -145,7 +146,7 @@ a, button {
 	font-size: 14em;
 	font-weight: bold;
 	letter-spacing: 0.5px;
-	border: 1px solid white;
+	border: 2px solid white;
 	-webkit-transition: color 0.5s ease-in-out;
 	transition: color 0.5s ease-in-out;
 }
@@ -574,10 +575,9 @@ a, button {
 }
 .games__card {
 	padding: 19px 15px;
-	border: 2px solid var(--second-gray-color);
-	border-radius: 20px;
-	-webkit-transition: all 0.1s;
-	transition: all 0.1s;
+	border: 3px solid var(--second-gray-color);
+	-webkit-transition: all 0.05s;
+	transition: all 0.05s;
 }
 .games__card:hover {
 	-webkit-transform: scale(1.01);
@@ -757,7 +757,7 @@ a, button {
 /* === Media === */
 @media (min-width: 768px) {
 	.prices__per-person {
-		margin-bottom: 100px;
+		margin-bottom: 75px;
 	}
 	.prices__advantages {
 		grid-template-rows: 1fr;
@@ -776,7 +776,7 @@ a, button {
 .price-list {
 	background: var(--second-gray-color);
   position: relative;
-  padding-bottom: 65px;
+  padding-bottom: 40px;
 }
 
 
@@ -807,6 +807,11 @@ a, button {
 .price-list__content {
   display: grid;
   gap: 20px;
+  grid-template-areas: 
+    "privat"
+    "open"
+    "x"
+    "calculator";
   padding-top: 40px;
 }
 .price-list__dividing-line {
@@ -820,7 +825,7 @@ a, button {
 }
 .price-list__cards {
   display: grid;
-  gap: 15px;
+  gap: 20px;
 }
 
 
@@ -829,13 +834,12 @@ a, button {
 /* Card structure */
 .prices-card {
   display: grid;
-  gap: 5px;
+  gap: 10px;
   background: #fff;
-  border-radius: 20px;
   color: var(--second-gray-color);
   font-size: 15rem;
   font-weight: bold;
-  padding: 23px 20px;
+  padding: 28px 25px;
 }
 .prices-card_weekdays,
 .prices-card_weekends {
@@ -843,14 +847,6 @@ a, button {
   grid-template-rows: 0.78fr 0.5fr 3fr;
   grid-template-areas: 
     ".... heading"
-    ".... players"
-    "session prices";
-}
-.prices-card_groups {
-  grid-template-columns: 1.75fr 2.75fr;
-  grid-template-rows: 2fr 0.5fr 2fr;
-  grid-template-areas: 
-    "heading heading"
     ".... players"
     "session prices";
 }
@@ -874,9 +870,6 @@ a, button {
   display: grid;
   gap: 15px;
   grid-template-columns: repeat(2, 1fr);
-}
-.prices-card_groups__players {
-  grid-template-columns: 1fr;
 }
 
 /* Card play session */
@@ -931,7 +924,6 @@ a, button {
 .price-card__sing-up-btn,
 .price-card__vk-btn {
   border: 2px solid rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
   line-height: 2.5em;
   transition: border-color 0.3s;
 }
@@ -963,7 +955,6 @@ a, button {
 }
 .price-card__sing-up-btn {
   padding: 0 19px 0 23px;
-  font-weight: 300;
   text-transform: uppercase;
   margin-right: 10px;
 }
@@ -973,12 +964,34 @@ a, button {
   padding: 6px;
 }
 .price-card__vk-img {
-  opacity: 0.75;
+  opacity: 0.85;
 }
 .price-card__under-caption {
   padding: 12px 9px 0;
   font-weight: 300;
+}
 
+
+/* === Some block === */
+.x {
+  grid-area: x;
+  border: 3px dashed var(--red-color);
+  width: 100%;
+  height: calc(100% - 20px);
+  min-height: 50px;
+  margin-top: 20px;
+}
+
+
+/* === Calculator === */
+.price-list__calculator {
+  margin: 20px auto 0;
+}
+
+@media (min-width: 550px) and (max-width: 659px){
+  .price-list__calculator {
+    width: 505px;
+  } 
 }
 
 
@@ -986,54 +999,43 @@ a, button {
 
 /* 3 above, 1 below */
 @media (min-width: 660px) {
-  .price-list__cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-  }
-  .prices-card_weekdays {
-    border-radius: 20px 0 0 20px;
-    padding-right: 0;
-  }
-  .prices-card_weekends {
-    border-radius: 0 20px 20px 0;
-    margin-left: -1px;
-    margin-right: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
-    grid-template-columns: 3.5fr;
-    grid-template-areas:
-      "heading"
-      "players"
-      "prices";
-  }
-  .prices-card_weekends .price-card__session {
-    display: none;
-  }
-
-
-}
-
-/* One row */
-@media (min-width: 992px) {
-	.price-list__content {
-    grid-template-columns: 1fr 2px 3fr;
+  .price-list__content {
+    margin-left: 25px;
+    column-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas: 
-      "open line privat";
+      "privat calculator"
+      "open calculator"
+      "x calculator";
+  }
+  .price-list__cards {
+    gap: 40px;
   }
   .price-list__game-type_privat {
     grid-area: privat;
   }
-  .price-list__dividing-line {
-    grid-area: line;
-    display: block;
-    background: #fff;
-    border-radius: 10px;
-    margin-top: 64px;
-  }
   .price-list__game-type_open {
     grid-area: open;
   }
+  .price-list__calculator {
+    grid-area: calculator;
+    margin-top: 64px;
+  }
 }
+
+/* One row */
+/* @media (min-width: 992px) {
+  .price-list__content {
+    grid-template-areas: 
+      "privat calculator"
+      "open calculator"
+      "open x";
+  }
+  
+
+  
+} */
 
 
 
@@ -1064,22 +1066,6 @@ a, button {
 .book__price-list:hover,
 .book__price-list:focus {
   border-bottom: 1.5px solid;
-}
-
-
-
-/*
-* ___ VK ___
-*/
-.vk {
-  background: var(--second-gray-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 0;
-}
-.vk_groups {
-  margin: 20px auto;
 }
 
 

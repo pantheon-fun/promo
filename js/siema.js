@@ -1,6 +1,6 @@
 const mySiema = new Siema({
   selector: '.carousel',
-  duration: 300,
+  duration: 350,
   loop: true,
 });
 

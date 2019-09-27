@@ -40,7 +40,7 @@
   <!-- Normalize.css -->
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.4.33">
+	<link rel="stylesheet" href="css/style.css?v=1.5.1">
 </head>
 <body class="page">
 	<header class="first">
@@ -243,17 +243,15 @@
 	</header>
 	<main>
 		<section class="about-us" id="about-us">
-			<div class="container">
-				<div class="about-us__inner inner-container">
-					<h2 class="about-us__heading heading heading_section">
-						О нас
-					</h2>
-					<p class="about-us__text text">
-						PANTHEON — это крытая арена спортивно-тактических игр в Мытищах и отличное место активного отдыха как для детей, так и для взрослых.
-						<br><br>
-						Площадка 400кв.м, в 10 минутах ходьбы от станции Мытищи и ТЦ Красный Кит.
-					</p>
-				</div>
+      <h2 class="about-us__heading heading heading_section">
+        О нас
+      </h2>
+			<div class="container">					
+        <p class="about-us__text text inner-container">
+          PANTHEON — это крытая арена спортивно-тактических игр в Мытищах и отличное место активного отдыха как для детей, так и для взрослых.
+          <br><br>
+          Площадка 400кв.м, в 10 минутах ходьбы от станции Мытищи и ТЦ Красный Кит.
+        </p>
 			</div>
 		</section>
 		<section class="games">
@@ -299,11 +297,9 @@
 			</div>
 		</section>
 		<section class="gallery">
-			<div class="container">
-				<h2 class="heading heading_section">
-					Стань частью сражения
-				</h2>
-			</div>
+      <h2 class="heading heading_section">
+        Стань частью сражения
+      </h2>
 			<ul class="gallery__list">
 				<li class="gallery__item">
           <picture>
@@ -434,7 +430,7 @@
              alt="Грозный боец выглядывает из тьмы">
 			</picture>
 			<div class="prices__inner container">
-				<h2 class="prices__heading heading heading__section">
+				<h2 class="prices__heading heading heading_section">
 					Стоимость часа игры
 				</h2>
 				<p class="prices__per-person">
@@ -608,7 +604,18 @@
               </p>
             </div>
           </div>
-          <div class="x"></div>
+          <div class="x">
+            <picture>   
+              <source srcset="img/logo/logo-690w-min.webp" type="image/webp"
+                data-srcset="img/logo/logo-345w-1x.webp 345w,
+                              img/logo/logo-690w-2x.webp 690w">    
+              <source srcset="img/logo/logo-690w-min.png" type="image/png"
+                data-srcset="img/logo/logo-345w-1x.png 345w,
+                              img/logo/logo-690w-2x.png 690w">
+              <img src="img/logo/logo-690w-2x.png" class="x__img lazyload"
+                  alt="Логотип клуба активно-тактических игр «Pantheon»">
+            </picture>
+          </div>
           <div class="price-list__calculator">
             <div class="uCalc_231405"></div>
             <script> var widgetOptions231405 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=231405&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();</script>
@@ -651,7 +658,78 @@
 			</div>
 		</section>
 		<section class="we-can-more">
-      
+      <h2 class="we-can-more__heading heading heading_section">
+        Мы можем больше
+      </h2>
+      <div class="container">					
+        <p class="we-can-more__text text inner-container">
+          Мы знаем как сделать ваше мероприятие еще лучше!
+          <br><br>
+          Атмосферное музыкальное сопровождение, статистика игр, различные вариации освещения, фоторепортаж в течение всей игры, комната отдыха с увлекательными настольными играми, сушками и приставкой — мы с удовольствием организует всё это и многое другое для вас и ваших гостей.
+        </p>
+      </div>
+      <ul class="we-can-more__list">
+        <li class="we-can-more__item">
+          <h3 class="we-can-more__title heading heading_sub">
+            Вариативное освещение
+          </h3>
+          <picture>
+            <source srcset="img/we-can-more/light-960w-min.webp" type="image/webp"
+               data-srcset="img/we-can-more/light-480w-1x.webp 480w,
+                            img/we-can-more/light-960w-2x.webp 960w">
+            <source srcset="img/we-can-more/light-960w-min.jpg" type="image/jpeg"
+               data-srcset="img/we-can-more/light-480w-1x.jpg 480w,
+                            img/we-can-more/light-960w-2x.jpg 960w">
+            <img data-src="img/we-can-more/light-960w-2x.jpg" data-expand="400"
+                  class="we-can-more__img background_img lazyload" alt="Боец крадется во тьме, и на него падают пурпурные лучи прожекторов">
+          </picture>
+        </li>
+        <li class="we-can-more__item">
+          <h3 class="we-can-more__title heading heading_sub">
+            Статистика игр
+          </h3>
+          <picture>
+            <source srcset="img/we-can-more/statistic-960w-min.webp" type="image/webp"
+               data-srcset="img/we-can-more/statistic-480w-1x.webp 480w,
+                            img/we-can-more/statistic-960w-2x.webp 960w">
+            <source srcset="img/we-can-more/statistic-960w-min.jpg" type="image/jpeg"
+               data-srcset="img/we-can-more/statistic-480w-1x.jpg 480w,
+                            img/we-can-more/statistic-960w-2x.jpg 960w">
+            <img data-src="img/we-can-more/statistic-960w-2x.jpg" data-expand="300"
+                  class="we-can-more__img background_img lazyload" alt="Экран со статистикой игры, которая собирается автоматически во время каждого раунда">
+          </picture>
+        </li>
+        <li class="we-can-more__item">
+          <h3 class="we-can-more__title heading heading_sub">
+            Фоторепортаж
+          </h3>
+          <picture>
+            <source srcset="img/we-can-more/photo-960w-min.webp" type="image/webp"
+               data-srcset="img/we-can-more/photo-480w-1x.webp 480w,
+                            img/we-can-more/photo-960w-2x.webp 960w">
+            <source srcset="img/we-can-more/photo-960w-min.jpg" type="image/jpeg"
+               data-srcset="img/we-can-more/photo-480w-1x.jpg 480w,
+                            img/we-can-more/photo-960w-2x.jpg 960w">
+            <img data-src="img/we-can-more/photo-960w-2x.jpg" data-expand="200"
+                  class="we-can-more__img background_img lazyload" alt="Мы делаем фотографии во время игры, а также фотосессии после">
+          </picture>
+        </li>
+        <li class="we-can-more__item">
+          <h3 class="we-can-more__title heading heading_sub">
+            Комната отдыха
+          </h3>
+          <picture>
+            <source srcset="img/we-can-more/birthday-960w-min.webp" type="image/webp"
+               data-srcset="img/we-can-more/birthday-480w-1x.webp 480w,
+                            img/we-can-more/birthday-960w-2x.webp 960w">
+            <source srcset="img/we-can-more/birthday-960w-min.jpg" type="image/jpeg"
+               data-srcset="img/we-can-more/birthday-480w-1x.jpg 480w,
+                            img/we-can-more/birthday-960w-2x.jpg 960w">
+            <img data-src="img/we-can-more/birthday-960w-2x.jpg" data-expand="100"
+                  class="we-can-more__img background_img lazyload" alt="Комната отдыха во время игры и час после в подарок">
+          </picture>
+        </li>
+      </ul>
     </section>
 		<section class="q-and-a"></section>
     <section class="call-back">

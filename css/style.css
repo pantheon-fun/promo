@@ -1,3 +1,4 @@
+@charset "utf-8"; 
 :root {
 	--red-color: #f44336;
 	--bg-page-color: #211B1B;
@@ -242,7 +243,8 @@ a, button {
 .first {
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
-	min-height: 275px;
+  min-height: 275px;
+  max-height: 130%;
   position: relative;
   overflow: hidden;
 }
@@ -697,6 +699,12 @@ a, button {
   max-height: 70vh;
   cursor: default;
 }
+#lightbox > div {
+  position: relative;
+  width: 90vw;
+  max-width: 1050px;
+  height: 75vh;
+}
 
 
 /* === Media === */
@@ -775,7 +783,7 @@ a, button {
 .price-list {
 	background: var(--second-gray-color);
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 75px;
 }
 
 
@@ -809,8 +817,8 @@ a, button {
   grid-template-areas: 
     "privat"
     "open"
-    "x"
-    "calculator";
+    "calculator"
+    "reservation";
   padding-top: 40px;
 }
 .price-list__dividing-line {
@@ -940,79 +948,163 @@ a, button {
 .price-card__advertisement {
   font-size: 1.2em;
   margin: 0 auto;
-  padding-top: 7px;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 .price-card__caption {
-  padding-top: 5px;
+  padding-top: 7px;
   font-weight: 400;
 }
-.price-card__buttons {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-}
-.price-card__sing-up-btn {
-  padding: 0 19px 0 23px;
-  text-transform: uppercase;
-  margin-right: 10px;
-}
-.price-card__vk-btn {
-  width: 42px;
-  height: 42px;
-  padding: 6px;
-}
-.price-card__vk-img {
-  opacity: 0.85;
-}
 .price-card__under-caption {
-  padding: 12px 9px 0;
+  padding: 25px 9px 0;
   font-weight: 300;
 }
 
 
-/* === Some block === */
-.x {
-  display: none;
-}
-@media (min-width: 660px) {
-  .x {
-  grid-area: x;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px;
-  border: 3px dashed var(--red-color);
-  width: 100%;
-  height: calc(100% - 20px);
-  margin-top: 20px;
-  }
-  .x img {
-    width: 130px;
-    max-height: 100%;
-    max-width: 100%;
-  }
-}
-
-
 /* === Calculator === */
-.price-list__calculator {
+.calculator {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.calculator__container {
+  width: 100%;
+  max-width: 488px;
+  height: 100%;
+  min-height: 950px;
+  background: var(--bg-page-color);
+}
+
+
+/* === reservation button === */
+.reservation {
+  grid-area: reservation;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  transform: translateY(30px);
+  border: 4px dashed var(--red-color);
+  width: 87vw;
+  min-width: 275px;
+  height: 58vw;
+  min-height: 185px;
+  transition: border 0.15s, transform 0.3s;
+  font-size: 5.5vw;
+}
+.reservation__title {
+  text-transform: uppercase;
+  color: var(--red-color);
+  position: relative;
+  transition: opacity 0.07s ease;
+}
+.reservation__title::after {
+  display: block;
+  content: "это кнопка";
+  position: absolute;
+  text-transform: none;
+  font-size: 0.9em;
+  font-weight: normal;
+  bottom: -0.8em;
+  right: -0.54em;
+  color: rgb(95, 86, 86);
+}
+.reservation__click-preventer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.reservation__options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  grid-template-areas: 
+    "vk tel tel"
+    "form form inst";
+}
+
+
+/* === reservation option === */
+.reservation-option {
+  background: var(--red-color);
+  border: 7px solid var(--red-color);
+  color: var(--second-gray-color);
+  letter-spacing: -.01em;
+  font-size: 0.8em;
+  font-weight: bold;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.15s, opacity 0.2s, background 0.175s, color 0.25s;
+  padding: 0 .6em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto 0;
+}
+.reservation-option_icon {
+  font-size: 2em;
+  padding: 0;
+}
+.reservation-option_icon_vk {
+  grid-area: vk;
+}
+.reservation-option_icon_inst {
+  grid-area: inst;
+}
+.reservation-option_text__small {
+  font-size: .6em;
+  position: absolute;
+  top: 0;
+  left: 0.3em;
+}
+.reservation-option_text_tel {
+  grid-area: tel;
 }
 
-@media (min-width: 550px) and (max-width: 659px){
-  .price-list__calculator {
-    width: 505px;
-  } 
+.reservation-option_text_form {
+  grid-area: form;
+}
+
+
+/* Animation */
+.reservation:hover {
+  border-color: var(--second-gray-color);
+  transform: scale(1.05) translateY(30px);
+}
+.reservation:hover .reservation__title {
+  opacity: 0;
+}
+.reservation:hover .reservation-option {
+  transform: scale(1);
+  opacity: 1;
+}
+.reservation:hover .reservation__click-preventer {
+  z-index: -10;
+  transition: z-index 0.07s .01s;
+}
+.reservation-option:hover,
+.reservation-option:focus {
+  background: none;
+  color: #fff;
+}
+.reservation-option:active {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 
 /* === Media === */
 
-/* 3 above, 1 below */
+/* 3 left, calculator right */
 @media (min-width: 660px) {
   .price-list__content {
     margin-left: 25px;
@@ -1022,7 +1114,7 @@ a, button {
     grid-template-areas: 
       "privat calculator"
       "open calculator"
-      "x calculator";
+      "reservation calculator";
   }
   .price-list__cards {
     gap: 40px;
@@ -1033,54 +1125,56 @@ a, button {
   .price-list__game-type_open {
     grid-area: open;
   }
-  .price-list__calculator {
+  .calculator {
     grid-area: calculator;
     margin-top: 64px;
   }
+  .reservation {
+    width: 100%;
+    height: calc(100% - 25px);
+    transform: translateY(25px);
+    font-size: 2.2vw;
+  }
+  .reservation:hover {
+    transform: scale(1.01) translateY(25px);
+  }
+  .reservation__title::after {
+    bottom: -18px;
+    right: -13px;
+  }
+  .reservation__title {
+    text-transform: uppercase;
+  }
 }
 
-/* One row */
-/* @media (min-width: 992px) {
+/* reservation button bottom */
+@media (min-width: 992px) {
+  .price-list {
+    padding-bottom: 130px;
+  }
   .price-list__content {
     grid-template-areas: 
       "privat calculator"
       "open calculator"
-      "open x";
+      "reservation reservation";
   }
-  
-
-  
-} */
-
-
-
-/*
-* _____ BOOK _____
-*/
-.book {
-	padding-bottom: 45px;
-	position: relative;
-}
-.book__heading {
-	color: var(--soft-orange-color);
-	text-transform: none;
-	text-shadow: none;
-	padding-top: 1.2em;
-	padding-bottom: 0.6em;
-}
-.book__caption {
-	font-size: 20rem;
-}
-.book__widget {
-	margin: 30px auto 24px;
-}
-.book__price-list {
-  font-size: 14rem;
-  border-bottom: 1.5px dotted #fff;
-}
-.book__price-list:hover,
-.book__price-list:focus {
-  border-bottom: 1.5px solid;
+  .reservation {
+    font-size: 28rem;
+    transform: translateY(60px);
+    width: 41vw;
+    max-width: 628px;
+    height: 26.8vw;
+  }
+  .reservation:hover {
+    transform: scale(1.05) translateY(60px);
+  }
+  .reservation__title::after {
+    bottom: -25px;
+    right: -20px;
+  }
+  .reservation__options {
+    gap: 25px;
+  }
 }
 
 

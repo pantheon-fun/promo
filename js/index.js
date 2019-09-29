@@ -12,7 +12,6 @@ window.addEventListener('resize', function() {
 });
 
 
-
 /* Widget map */
 const map = document.getElementById("widget-map");
 let mapStateIsLoaded = 0;
@@ -29,11 +28,8 @@ function loadMap() {
 }
 
 
-
-/* Widget's parent */
-const bookform = document.getElementById("bookform");
+/* Calculator's parent */
 const calculator = document.getElementById("calculator");
-
 
 
 /* Observer */
@@ -41,6 +37,8 @@ const options = {
   rootMargin: "0px 0px 75% 0px"
 };
 
+
+/* TODO: Use switch */
 const observer = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -51,10 +49,6 @@ const observer = new IntersectionObserver(function(entries, observer) {
           map.style.zIndex = "2";
         }
       }
-      if (entry.target === bookform) {
-        eval(`(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`);
-        eval(`Bookform('embedded',{id:3458});`);
-      }
       if (entry.target === calculator) {
         eval(`var widgetOptions231405 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=231405&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();`);
       }
@@ -64,8 +58,8 @@ const observer = new IntersectionObserver(function(entries, observer) {
 }, options);
 
 observer.observe(map);
-observer.observe(bookform);
 observer.observe(calculator);
+
 // SOMENAME.forEach(SOMENAME => {
 //   observer.observe(section);
 // });

@@ -36,11 +36,11 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<!-- Icomoon -->
-  <link rel="stylesheet" href="icomoon/style.css">
+  <link rel="stylesheet" href="icomoon/style.css?v=1.1.1">
   <!-- Normalize.css -->
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.5.3">
+	<link rel="stylesheet" href="css/style.css?v=1.5.6">
 </head>
 <body class="page">
 	<header class="first">
@@ -82,7 +82,7 @@
             Открытые игры
           </p>
         </div>
-        <a id="reservation-btn" class="reservation-btn first__reservation-btn" data-scroll href="#book">
+        <a id="reservation-btn" class="reservation-btn first__reservation-btn" data-scroll href="#reservation">
           Забронировать игру
         </a>
       </div>
@@ -507,19 +507,19 @@
                   </p>
                 </div>
                 <div class="price-card__prices">
-                  <a class="price-card__price price-card__price_small-1hour" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_small-1hour" data-scroll href="#reservation">
                     500₽
                   </a>
-                  <a class="price-card__price price-card__price_big-1hour" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_big-1hour" data-scroll href="#reservation">
                     400₽
                   </a>
-                  <a class="price-card__price price-card__price_small-2hours" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_small-2hours" data-scroll href="#reservation">
                     750₽
                   </a>
-                  <a class="price-card__price price-card__price_big-2hours" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_big-2hours" data-scroll href="#reservation">
                     650₽
                   </a>
-                  <a class="price-card__price price-card__price_add-hour" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_add-hour" data-scroll href="#reservation">
                     150₽
                   </a>
                 </div>
@@ -556,19 +556,19 @@
                   </p>
                 </div>
                 <div class="price-card__prices">
-                  <a class="price-card__price price-card__price_small-1hour" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_small-1hour" data-scroll href="#reservation">
                     750₽
                   </a>
-                  <a class="price-card__price price-card__price_big-1hour" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_big-1hour" data-scroll href="#reservation">
                     650₽
                   </a>
-                  <a class="price-card__price price-card__price_small-2hours" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_small-2hours" data-scroll href="#reservation">
                     1000₽
                   </a>
-                  <a class="price-card__price price-card__price_big-2hours" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_big-2hours" data-scroll href="#reservation">
                     900₽
                   </a>
-                  <a class="price-card__price price-card__price_add-hour" data-scroll href="#book">
+                  <a class="price-card__price price-card__price_add-hour" data-scroll href="#reservation">
                     200₽
                   </a>
                 </div>
@@ -591,69 +591,39 @@
                   за два часа
                 </p>
               </div>
-              <div class="price-card__buttons">
-                <a class="price-card__sing-up-btn" data-scroll href="#book">
-                  Записаться
-                </a>
-                <a class="price-card__vk-btn" href="https://vk.com/club.pantheon" target="_blank" rel="noopener">
-                  <img class="price-card__vk-img" src="img/references/vk-simple-logo.svg" alt="Логотип социальной сети Вконтакте">
-                </a>
-              </div>
               <p class="price-card__under-caption">
                 Следите за расписанием игр в группе во Вконтакте
               </p>
             </div>
           </div>
-          <div class="x">
-            <picture>   
-              <source srcset="img/logo/logo-690w-min.webp" type="image/webp"
-                data-srcset="img/logo/logo-345w-1x.webp 345w,
-                              img/logo/logo-690w-2x.webp 690w">    
-              <source srcset="img/logo/logo-690w-min.png" type="image/png"
-                data-srcset="img/logo/logo-345w-1x.png 345w,
-                              img/logo/logo-690w-2x.png 690w">
-              <img src="img/logo/logo-690w-2x.png" class="x__img lazyload"
-                  alt="Логотип клуба активно-тактических игр «Pantheon»">
-            </picture>
+          <div class="calculator">
+            <div class="calculator__container" id="calculator">
+              <div class="uCalc_231405"></div>
+            </div>
           </div>
-          <div class="price-list__calculator" id="calculator">
-            <div class="uCalc_231405"></div>
+          <div class="reservation" id="reservation">
+            <h3 class="reservation__title">
+              Забронировать
+            </h3>
+            <div class="reservation__options">
+              <a class="reservation-option reservation-option_icon reservation-option_icon_vk" href="https://vk.com/im?media=&sel=-97450505" target="_blank" rel="noopener">
+                <i class="icon-vk"></i>
+              </a>
+              <a class="reservation-option reservation-option_text reservation-option_text_tel" href="tel:+79777220960">
+                <span class="reservation-option_text__small">по</span> 
+                Телефону
+              </a>
+              <a class="reservation-option reservation-option_icon reservation-option_icon_inst" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener">
+                <i class="icon-instagram"></i>
+              </a>
+              <a class="reservation-option reservation-option_text reservation-option_text_form">
+                <span class="reservation-option_text__small">через</span>
+                Яндекс форму
+              </a>
+            </div>
+            <div class="reservation__click-preventer"></div>
           </div>
         </div>
-			</div>
-		</section>
-		<section class="book" id=book>
-			<picture>
-        <source media="(min-width: 992px)"
-                srcset="img/backgrounds/book-1920w-min.webp" type="image/webp"
-           data-srcset="img/backgrounds/book-960w-1x.webp 960w,
-                        img/backgrounds/book-1920w-2x.webp 1920w">      
-        <source srcset="img/backgrounds/book-992w-min.webp" type="image/webp"
-           data-srcset="img/backgrounds/book-496w-1x.webp 496w,
-                        img/backgrounds/book-992w-2x.webp 992w">
-        <source media="(min-width: 992px)"
-                srcset="img/backgrounds/book-1920w-min.jpg" type="image/jpeg"
-           data-srcset="img/backgrounds/book-960w-1x.jpg 960w,
-                        img/backgrounds/book-1920w-2x.jpg 1920w">      
-        <source srcset="img/backgrounds/book-992w-min.jpg" type="image/jpeg"
-           data-srcset="img/backgrounds/book-496w-1x.jpg 496w,
-                        img/backgrounds/book-992w-2x.jpg 992w">
-        <img src="img/backgrounds/book-1920w-2x.jpg" class="background background_img lazyload" 
-             alt="Наш арсенал разнообразного оружия Нерф, что смог влезть в кадр">
-			</picture>
-			<div class="book__inner container">
-				<h2 class="book__heading heading heading_section">
-					В какой день планируете мероприятие?
-				</h2>
-				<p class="book__caption">
-					Оставьте заявку через Яндекс форму!
-				</p>
-				<div class="book__widget script" id="bookform">
-					<div id="bookform-embedded-widget-3458"></div>
-        </div>
-        <a class="book__price-list" data-scroll href="#price-list">
-					Наш прайс-лист
-				</a>
 			</div>
 		</section>
 		<section class="we-can-more">
@@ -733,7 +703,7 @@
 		<section class="q-and-a"></section>
     <section class="call-back">
       <!-- 
-				<form action="" class="book__form form">
+				<form action="" class="reservation__form form">
 					<input type="text" name="username" id="username" placeholder="Ваше имя" class="form__input">
 					<input type="tel" name="tel" id="tel" placeholder="Телефон" required class="form__input">
 					<input type="submit" value="Получить предложение" class="form__input">
@@ -793,7 +763,7 @@
 							<div class="references__socials-wrap">
 								<a class="social-vk references__social" href="https://vk.com/club.pantheon" target="_blank" rel="noopener" aria-label="Перейти в нашу группу во Вконтакте"></a>
 								<a class="social-in references__social" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Перейти в наш Инстаграм"></a>
-								<a class="references__btn" data-scroll href="#book">
+								<a class="references__btn" data-scroll href="#reservation">
 									Заказать
 								</a>
 							</div>
@@ -808,7 +778,6 @@
       Сайт находится в стадии разработки
     </p>
   </footer>
-	
 
 
   <!-- Correct view port of the first screen -->
@@ -816,7 +785,7 @@
   <!-- Lazy load for images -->
   <script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>
   <!-- Carousel Siema -->
-  <script src="node_modules/siema/dist/siema.min.js?v=1.1.1"></script>
+  <script src="node_modules/siema/dist/siema.min.js"></script>
   <script src="js/siema.js?v=1.1.10"></script>
   <!-- Smooth scroll -->
   <script src="node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
@@ -826,8 +795,8 @@
     });
   </script>
   <!-- Lightbox -->
-  <script src="js/lightbox.js?v=1.1.5"></script>
+  <script src="js/lightbox.js?v=1.1.7"></script>
   <!-- Main js -->
-	<script src="js/index.js?v=1.2.3"></script>
+	<script src="js/index.js?v=1.2.7"></script>
 </body>
 </html>

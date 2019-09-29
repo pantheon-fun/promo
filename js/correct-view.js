@@ -1,10 +1,11 @@
 'use strict';
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-	correctSizing();
+  correctSizing();
+  document.querySelector(".first").style.maxHeight = `${window.screen.height}px`;
 	window.addEventListener('orientationchange', function() {
 		let afterOrientationChange = function() {
-			correctSizing();
+      correctSizing();
 			window.removeEventListener('resize', afterOrientationChange);
 		};
 		window.addEventListener('resize', afterOrientationChange);

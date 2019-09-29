@@ -212,7 +212,7 @@ a, button {
 }
 
 
-/* Underline animation */
+/* === Underline animation === */
 .underline {
 	position: relative;
 	padding-bottom: 5px;
@@ -234,6 +234,16 @@ a, button {
 }
 
 
+/* === Link === */
+.link {
+  border-bottom: 1px dashed #000;
+}
+.link:hover,
+.link:focus {
+  border-bottom: 1px solid #000;
+}
+
+
 
 /*
 * _____ FIRST _____
@@ -244,7 +254,6 @@ a, button {
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
   min-height: 275px;
-  max-height: 130%;
   position: relative;
   overflow: hidden;
 }
@@ -966,6 +975,7 @@ a, button {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 .calculator__container {
   width: 100%;
@@ -1090,7 +1100,7 @@ a, button {
 }
 .reservation:hover .reservation__click-preventer {
   z-index: -10;
-  transition: z-index 0.07s .01s;
+  transition: z-index 0s .35s;
 }
 .reservation-option:hover,
 .reservation-option:focus {

@@ -1110,7 +1110,7 @@ a, button {
   font-weight: normal;
   bottom: -0.8em;
   right: -0.54em;
-  color: rgb(95, 86, 86);
+  color: rgba(255, 255, 255, 0.55);
 }
 .reservation__click-preventer {
   position: absolute;
@@ -1276,6 +1276,96 @@ a, button {
   }
   .reservation__options {
     gap: 25px;
+  }
+}
+
+
+
+/*
+* _____ HOW TO FIND _____
+*/
+.how-to-find {
+  background: var(--bg-page-color);
+  font-size: 18rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.how-to-find__lable {
+  font-weight: 300;
+  padding: 1.5em 0 1em;
+}
+.how-to-find__btn-wrap {
+  background: white;
+  overflow: hidden;
+  margin: 0 15px 2em;
+}
+.how-to-find__btn {
+  position: relative;
+  color: var(--bg-page-color);
+  font-weight: bold;
+  padding: 1.2em 0 2.4em;
+  width: 100%;
+  transition: transform 0.25s ease-in-out;
+}
+.how-to-find__btn::before {
+  display: block;
+  font-family: 'icomoon';
+  content: "\e900";
+  position: absolute;
+  bottom: 100%;
+  padding-top: 25%;
+  width: 100%;
+  height: 175%;
+  font-size: 2.5em;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.how-to-find__caption {
+  content: 'подробный';
+  display: block;
+  text-transform: none;
+  font-size: .94em;
+  margin-bottom: 0.1em;
+  margin-right: 4.5em;
+  font-weight: 300;
+}
+
+/* Animation */ 
+.how-to-find__btn:hover,
+.how-to-find__btn:focus {
+	-webkit-transform: translateY(200%);
+	-moz-transform: translateY(200%);
+	-ms-transform: translateY(200%);
+	transform: translateY(200%);
+}
+
+
+/* === Media === */
+@media (min-width: 576px) {
+  .how-to-find {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .how-to-find__lable {
+    width: 65%;
+    padding: 0;
+    margin-right: 2em;
+    text-align: right;
+  }
+  .how-to-find__btn-wrap {
+    width: 35%;
+    margin: 0;
+  }
+  .how-to-find__btn {
+    padding: 1.4em 0 2.4em 2.6em;
+    text-align: left;
+  }
+  .how-to-find__btn::before {
+    width: calc(100% + 46.8px);
+    transform: translateX(-46.8px);
+    padding-left: calc(46.8px + 20px);
   }
 }
 

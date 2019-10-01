@@ -60,6 +60,11 @@ const observer = new IntersectionObserver(function(entries, observer) {
 observer.observe(map);
 observer.observe(calculator);
 
-// SOMENAME.forEach(SOMENAME => {
-//   observer.observe(section);
-// });
+
+/* FAQ animation */
+const faqItems = document.querySelectorAll(".accordion__question");
+function toggleAccordion(){
+  this.classList.toggle('active');
+  this.nextElementSibling.classList.toggle('active');
+}
+faqItems.forEach(item => item.addEventListener('click', toggleAccordion));

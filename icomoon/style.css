@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?eecbci') format('truetype'),
-    url('fonts/icomoon.woff?eecbci') format('woff'),
-    url('fonts/icomoon.svg?eecbci#icomoon') format('svg');
+    url('fonts/icomoon.ttf?eisk6i') format('truetype'),
+    url('fonts/icomoon.woff?eisk6i') format('woff'),
+    url('fonts/icomoon.svg?eisk6i#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -29,6 +29,9 @@ i {
 }
 .icon-plus:before {
   content: "\f067";
+}
+.icon-minus:before {
+  content: "\f068";
 }
 .icon-user:before {
   content: "\f007";

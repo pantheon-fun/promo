@@ -10,15 +10,17 @@ function cancelAutoplay(e) {
   clearInterval(autoplay);
 }
 function reAutoplay() {
+  clearInterval(autoplay);
   autoplay = setInterval(() => mySiema.next(), delay);
 }
 
-let items = document.querySelectorAll(".carousel__slide");
-items.forEach(function(item) {
-  item.addEventListener("mousedown", cancelAutoplay);
-  item.addEventListener("touchstart", cancelAutoplay);
-  item.addEventListener("mouseup", reAutoplay);
-  item.addEventListener("touchend", reAutoplay);
+let slides = document.querySelectorAll(".carousel__slide");
+slides.forEach(function(slide) {
+  slide.addEventListener("mousedown", cancelAutoplay);
+  slide.addEventListener("mouseup", reAutoplay);
+  slide.addEventListener("mouseleave", reAutoplay);
+  slide.addEventListener("touchstart", cancelAutoplay);
+  slide.addEventListener("touchend", reAutoplay);
 });
 
 let arrows = document.querySelectorAll(".swipe-arrow");

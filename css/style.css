@@ -142,8 +142,8 @@ a, button {
 /* === Anchor === */
 .anchor {
   display: block;
-  height: 45vh;
-  margin-top: -45vh;
+  height: 50vh;
+  margin-top: -50vh;
   visibility: hidden;
 }
 @media (min-width: 576px) {
@@ -164,7 +164,7 @@ a, button {
 }
 .heading_section {
 	font-size: 32rem;
-	padding-top: 3em;
+	padding-top: 2.8em;
 	padding-bottom: 1.2em;
 }
 .heading_sub {
@@ -254,6 +254,27 @@ a, button {
   width: 90vw;
   max-width: 1050px;
   height: 75vh;
+  cursor: default;
+}
+
+
+/* === Privacy === */
+.privacy__lightbox {
+  overflow: auto;
+  background: var(--bg-page-color);
+  font-size: 14rem;
+  padding: 3em;
+  line-height: 1.2em;
+  height: 100%;
+  text-align: left;
+}
+.privacy__lightbox p {
+  padding-bottom: 0.3em;
+}
+.privacy__heading {
+  font-size: 1.5em;
+  text-align: center;
+  padding-bottom: 1em;
 }
 
 
@@ -678,7 +699,7 @@ main {
 }
 .masthead__reservation-btn:hover,
 .masthead__reservation-btn:focus {
-  --btn-color: var(--soft-orange-color);
+  --btn-color: var(--red-color);
 }
 .masthead__reservation-btn:active {
   background: var(--second-gray-color);
@@ -691,6 +712,13 @@ main {
     display: block;
     height: 36px;
     width: auto;
+  }
+  .masthead__logo-link {
+    transition: transform 0.3s;
+  }
+  .masthead__logo-link:hover,
+  .masthead__logo-link:focus {
+    transform: scale(1.1);
   }
   .masthead__tel {
     margin: 0;
@@ -862,6 +890,9 @@ main {
 */
 .we-can-more__text {
   margin-bottom: 50px;
+}
+.we-can-more__heading {
+  padding-top: 1.8em;
 }
 .we-can-more__item {
   position: relative;
@@ -1728,15 +1759,55 @@ main {
 
 
 
-
-
-
-
+/*
+* _____ FOOTER _____
+*/
 .footer {
-	background: var(--bg-page-color);
+  background: var(--bg-page-color);
+  font-size: 12rem;
+  padding: 0.5em 0 1.5em;
 }
-.footer p {
-	font-size: 16em;
-	padding: 20px;
-	text-transform: uppercase;
+.footer__inner > * {
+  margin-top: 1em;
+  font-weight: 300;
+}
+.footer__company {
+  font-size: 1em;
+  font-weight: 400;
+}
+.footer__creator {
+  padding: 0.75em 1em;
+  border: 1px solid white;
+  transition: all 0.3s;
+  border-radius: 10em;
+}
+.footer__creator:hover,
+.footer__creator:focus {
+  border-color: var(--red-color);
+}
+.footer__creator:active {
+  color: var(--red-color);
+}
+
+
+/* === Privacy === */
+.privacy {
+  transition: text-shadow 0.3s;
+}
+.privacy:hover,
+.privacy:focus {
+  text-shadow: 0 0 7px white;
+}
+
+
+/* === Media === */
+@media (min-width: 576px) {
+  .footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__company {
+    margin-right: 40px;
+  }
 }

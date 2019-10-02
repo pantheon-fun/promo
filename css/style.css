@@ -1550,7 +1550,7 @@ main {
 .how-to-find__btn-wrap {
   background: white;
   overflow: hidden;
-  margin: 0 15px 2em;
+  margin-left: 5em;
 }
 .how-to-find__btn {
   position: relative;
@@ -1580,7 +1580,6 @@ main {
   text-transform: none;
   font-size: .94em;
   margin-bottom: 0.1em;
-  margin-right: 4.5em;
   font-weight: 300;
 }
 

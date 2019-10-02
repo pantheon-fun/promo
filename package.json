@@ -20,8 +20,7 @@
   "dependencies": {
     "lazysizes": "^5.1.1",
     "normalize.css": "^8.0.1",
-    "siema": "^1.5.1",
-    "smooth-scroll": "^16.1.0"
+    "siema": "^1.5.1"
   },
   "devDependencies": {}
 }

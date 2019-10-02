@@ -226,9 +226,15 @@ a, button {
   display: none;
 }
 #lightbox.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #lightbox.active::after {
   content: '';
@@ -284,6 +290,7 @@ a, button {
   padding: 0.77em 0.968em;
   border: 2px dotted var(--btn-color);
   color: var(--btn-color);
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -374,7 +381,7 @@ a, button {
 .first__content {
   grid-area: content;
   padding-top: 37px;
-  /* margin: auto; */
+  margin: auto;
   align-self: center;
 }
 .first__logo {
@@ -455,10 +462,12 @@ a, button {
   margin: 15px auto 15px;
 }
 .arrow-to-down__btn {
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-  transition: -webkit-transform 0.4s ease-out;
-  transition: transform 0.4s ease-out;
-  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-animation: moveUpDown 1s infinite alternate;
+  animation: moveUpDown 1s infinite alternate;
+  -webkit-filter: brightness(10);
+          filter: brightness(10);
 }
 .arrow-to-down__icon {
   height: 30px;
@@ -466,8 +475,18 @@ a, button {
 }
 .arrow-to-down__btn:hover,
 .arrow-to-down__btn:focus {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+/* Animation */
+@-webkit-keyframes moveUpDown {
+  0% { -webkit-transform: translateY(0); transform: translateY(0); }
+  100% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+}
+@keyframes moveUpDown {
+  0% { -webkit-transform: translateY(0); transform: translateY(0); }
+  100% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
 }
 
 
@@ -662,16 +681,25 @@ main {
   top: 0;
   right: 0;
   left: 0;
-  transform: translateY(-110%);
+  -webkit-transform: translateY(-110%);
+          transform: translateY(-110%);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
   z-index: 10;
 }
 .masthead.shown {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .masthead__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .masthead__logo {
   display: none;
@@ -683,6 +711,7 @@ main {
   font-size: 1.1em;
   margin: auto;
   padding-right: 1em;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .masthead__tel:hover,
@@ -693,7 +722,9 @@ main {
   --btn-color: white;
   border: solid;
   letter-spacing: 0;
-  tab-size: 0.9em;
+  -moz-tab-size: 0.9em;
+    -o-tab-size: 0.9em;
+       tab-size: 0.9em;
   text-transform: uppercase;
   padding: 0.4em 1em;
 }
@@ -714,11 +745,15 @@ main {
     width: auto;
   }
   .masthead__logo-link {
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
   }
   .masthead__logo-link:hover,
   .masthead__logo-link:focus {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   .masthead__tel {
     margin: 0;
@@ -735,11 +770,16 @@ main {
     margin: 0;
   }
   .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .navigation__link {
     margin: 0 1.2em;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
   .navigation__link:hover {
@@ -896,9 +936,15 @@ main {
 }
 .we-can-more__item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
   height: 65vw;
   min-height: 215px;
@@ -907,12 +953,14 @@ main {
 	-o-object-fit: cover;
 	   object-fit: cover;
   height: 100%;
-  filter: brightness(65%);
+  -webkit-filter: brightness(65%);
+          filter: brightness(65%);
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
 .we-can-more__item:hover .we-can-more__img {
-  filter: brightness(85%);
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
 	-webkit-transform: scale(1.05);
 	        transform: scale(1.05);
 }
@@ -981,7 +1029,6 @@ main {
 .accordion__question {
   position: relative;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
@@ -990,6 +1037,7 @@ main {
   font-size: 1.15em;
   font-weight: 400;
   text-align: left;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .accordion__question::after {
@@ -999,15 +1047,15 @@ main {
   right: 0.5em;
   font-size: 1em;
   line-height: 2.1em;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   width: 2em;
   height: 2em;
   color: white;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   border: 1px solid white;
   text-align: center;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .accordion__question.active::after {
@@ -1040,8 +1088,8 @@ main {
   text-align: left;
   font-weight: 300;
   -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  -webkit-transition: z-index 0s 0.15s;
   transition: z-index 0s 0.15s;
   max-height: 0;
 }
@@ -1053,7 +1101,6 @@ main {
   z-index: 1;
   max-height: 100%;
   -webkit-transition: all 0.35s ease;
-  -o-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
 
@@ -1285,6 +1332,7 @@ main {
 .price-card__vk-btn {
   border: 2px solid rgba(0, 0, 0, 0.4);
   line-height: 2.5em;
+  -webkit-transition: border-color 0.3s;
   transition: border-color 0.3s;
 }
 .price-card__price:hover,
@@ -1317,8 +1365,12 @@ main {
 /* === Calculator === */
 .calculator {
   margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   max-width: 100%;
 }
 .calculator__container {
@@ -1334,23 +1386,34 @@ main {
 .reservation {
   grid-area: reservation;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   justify-self: center;
-  align-items: center;
-  transform: translateY(30px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
   border: 4px dashed var(--red-color);
   width: 87vw;
   min-width: 275px;
   height: 58vw;
   min-height: 185px;
+  -webkit-transition: border 0.15s, -webkit-transform 0.3s;
+  transition: border 0.15s, -webkit-transform 0.3s;
   transition: border 0.15s, transform 0.3s;
+  transition: border 0.15s, transform 0.3s, -webkit-transform 0.3s;
   font-size: 5.5vw;
 }
 .reservation__title {
   text-transform: uppercase;
   color: var(--red-color);
   position: relative;
+  -webkit-transition: opacity 0.07s ease;
   transition: opacity 0.07s ease;
 }
 .reservation__title::after {
@@ -1397,13 +1460,23 @@ main {
   letter-spacing: -.01em;
   font-size: 0.8em;
   font-weight: bold;
-  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   opacity: 0;
+  -webkit-transition: opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
+  transition: opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
   transition: transform 0.15s, opacity 0.2s, background 0.175s, color 0.25s;
+  transition: transform 0.15s, opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
   padding: 0 .6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .reservation-option_icon {
   font-size: 2em;
@@ -1433,17 +1506,20 @@ main {
 /* Animation */
 .reservation:hover {
   border-color: var(--second-gray-color);
-  transform: scale(1.05) translateY(30px);
+  -webkit-transform: scale(1.05) translateY(30px);
+          transform: scale(1.05) translateY(30px);
 }
 .reservation:hover .reservation__title {
   opacity: 0;
 }
 .reservation:hover .reservation-option {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 .reservation:hover .reservation__click-preventer {
   z-index: -10;
+  -webkit-transition: z-index 0s .35s;
   transition: z-index 0s .35s;
 }
 .reservation-option:hover,
@@ -1462,7 +1538,8 @@ main {
 @media (min-width: 660px) {
   .price-list__content {
     margin-left: 25px;
-    column-gap: 40px;
+    -webkit-column-gap: 40px;
+            column-gap: 40px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto 1fr;
     grid-template-areas: 
@@ -1486,11 +1563,13 @@ main {
   .reservation {
     width: 100%;
     height: calc(100% - 25px);
-    transform: translateY(25px);
+    -webkit-transform: translateY(25px);
+            transform: translateY(25px);
     font-size: 2.2vw;
   }
   .reservation:hover {
-    transform: scale(1.01) translateY(25px);
+    -webkit-transform: scale(1.01) translateY(25px);
+            transform: scale(1.01) translateY(25px);
   }
   .reservation__title::after {
     bottom: -18px;
@@ -1514,14 +1593,16 @@ main {
   }
   .reservation {
     font-size: 28rem;
-    transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
     width: 41vw;
     max-width: 628px;
     height: 26.8vw;
     max-height: 388px;
   }
   .reservation:hover {
-    transform: scale(1.05) translateY(60px);
+    -webkit-transform: scale(1.05) translateY(60px);
+            transform: scale(1.05) translateY(60px);
   }
   .reservation__title::after {
     bottom: -25px;
@@ -1545,7 +1626,7 @@ main {
 }
 .how-to-find__lable {
   font-weight: 300;
-  padding: 1.5em 0 1em;
+  padding: 1.25em 0 1.25em;
 }
 .how-to-find__btn-wrap {
   background: white;
@@ -1558,7 +1639,10 @@ main {
   font-weight: bold;
   padding: 1.2em 0 2.4em;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
 }
 .how-to-find__btn::before {
   display: block;
@@ -1571,7 +1655,6 @@ main {
   height: 175%;
   font-size: 2.5em;
 	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
 .how-to-find__caption {
@@ -1587,8 +1670,6 @@ main {
 .how-to-find__btn:hover,
 .how-to-find__btn:focus {
 	-webkit-transform: translateY(200%);
-	-moz-transform: translateY(200%);
-	-ms-transform: translateY(200%);
 	transform: translateY(200%);
 }
 
@@ -1596,9 +1677,15 @@ main {
 /* === Media === */
 @media (min-width: 576px) {
   .how-to-find {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .how-to-find__lable {
     width: 65%;
@@ -1616,7 +1703,8 @@ main {
   }
   .how-to-find__btn::before {
     width: calc(100% + 46.8px);
-    transform: translateX(-46.8px);
+    -webkit-transform: translateX(-46.8px);
+            transform: translateX(-46.8px);
     padding-left: calc(46.8px + 20px);
   }
 }
@@ -1777,6 +1865,7 @@ main {
 .footer__creator {
   padding: 0.75em 1em;
   border: 1px solid white;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border-radius: 10em;
 }
@@ -1791,6 +1880,7 @@ main {
 
 /* === Privacy === */
 .privacy {
+  -webkit-transition: text-shadow 0.3s;
   transition: text-shadow 0.3s;
 }
 .privacy:hover,
@@ -1802,9 +1892,15 @@ main {
 /* === Media === */
 @media (min-width: 576px) {
   .footer__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .footer__company {
     margin-right: 40px;

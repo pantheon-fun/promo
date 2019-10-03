@@ -21,7 +21,7 @@ html {
           box-sizing: border-box;
 }
 img {
-	font-size: 14em;
+	font-size: 14rem;
 	color: inherit;
 	max-width: 100%;
 	max-height: 100%;
@@ -383,6 +383,7 @@ a, button {
   padding-top: 37px;
   margin: auto;
   align-self: center;
+  justify-self: center;
 }
 .first__logo {
 	width: 160px;

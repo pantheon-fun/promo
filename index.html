@@ -849,13 +849,13 @@
         </div>
 			</div>
 		</section>
-    <section class="call-back">
+    <section class="contact">
       
-				<!-- <form name="htmlform" method="post" action="html_form_send.php" class="reservation__form form">
-					<input type="text" name="username" id="username" placeholder="Ваше имя" class="form__input">
-					<input type="tel" name="tel" id="tel" placeholder="Телефон" required class="form__input">
-					<input type="submit" name="submit" value="Получить предложение" class="form__input">
-				</form> -->
+			<form style="font-size: 14px;" id="sendForm" class="contact__form form">
+				<input type="text" name="username" id="username" placeholder="Ваше имя" class="form__input">
+				<input type="tel" name="tel" id="tel" placeholder="Телефон" required class="form__input">
+				<input type="submit" name="submit" value="Получить предложение" class="form__input">
+      </form>
 
     </section>
     <section class="how-to-find">
@@ -948,7 +948,16 @@
     </div>
   </footer>
 
-
+  <!-- Ajax -->
+  <script src="node_modules/jquery//dist/jquery.min.js"></script>
+  <script>
+  	$(function () {
+      $("#sendForm").submit(function (event) {
+        event.preventDefault();
+        $.post("/", $(this).serialize());
+      });
+    });
+  </script>
   <!-- Correct view port of the first screen -->
   <script async src="js/correct-view.js?v=1.0.0"></script>
   <!-- Lazy load for images -->
@@ -963,6 +972,6 @@
   <!-- Lightbox -->
   <script src="js/lightbox.js?v=1.0.0"></script>
   <!-- Main js -->
-	<script src="js/index.js?v=1.0.0"></script>
+	<script src="js/main.js?v=1.0.0"></script>
 </body>
 </html>

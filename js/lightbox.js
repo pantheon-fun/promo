@@ -46,14 +46,16 @@ bookformBtn.addEventListener('click', e => {
 /* Privacy */
 const privacyText = document.createElement('div');
 
-const privacy = document.querySelector('.privacy');
+const privacyBtns = document.querySelectorAll('.privacy');
 
-privacy.addEventListener('click', e => {
-  lightbox.classList.add('active');
-  while (lightbox.firstChild)
-    lightbox.removeChild(lightbox.firstChild);
-  lightbox.appendChild(privacyText);
-  page.style.overflow = "hidden";
+privacyBtns.forEach(privacy => {
+  privacy.addEventListener('click', e => {
+    lightbox.classList.add('active');
+    while (lightbox.firstChild)
+      lightbox.removeChild(lightbox.firstChild);
+    lightbox.appendChild(privacyText);
+    page.style.overflow = "hidden";
+  });
 });
 
 

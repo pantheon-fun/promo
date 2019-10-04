@@ -37,11 +37,11 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<!-- Icomoon -->
-  <link rel="stylesheet" href="icomoon/style.css?v=1.0.0">
+  <link rel="stylesheet" href="icomoon/style.css?v=1.1.0">
   <!-- Normalize.css -->
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.1.0">
+	<link rel="stylesheet" href="css/style.css?v=1.1.1">
 </head>
 <body class="page">
 	<header class="first" id="first">
@@ -649,7 +649,7 @@
 					Стоимость часа игры
 				</h2>
 				<p class="prices__per-person">
-					от 200 ₽ за человека
+					от 200 <i class="icon-rouble"></i> за человека
 				</p>
 				<ul class="prices__advantages">
 					<li class="advantage">
@@ -723,19 +723,24 @@
                 </div>
                 <div class="price-card__prices">
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-1hour">
-                    500₽
+                    500
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-1hour">
-                    400₽
+                    400
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-2hours">
-                    750₽
+                    750
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-2hours">
-                    650₽
+                    650
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_add-hour">
-                    150₽
+                    150
+                    <i class="icon-rouble"></i>
                   </button>
                 </div>
               </div>
@@ -772,19 +777,24 @@
                 </div>
                 <div class="price-card__prices">
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-1hour">
-                    750₽
+                    750
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-1hour">
-                    650₽
+                    650
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-2hours">
-                    1000₽
+                    1000
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-2hours">
-                    900₽
+                    900
+                    <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_add-hour">
-                    200₽
+                    200
+                    <i class="icon-rouble"></i>
                   </button>
                 </div>
               </div>
@@ -799,7 +809,8 @@
                 <h4>
                   всего
                   <span class="huge">
-                    400₽
+                    400
+                    <i class="icon-rouble"></i>
                   </span>
                 </h4>
                 <p class="price-card__caption">
@@ -858,9 +869,11 @@
           Мы свяжемся с вами в ближайшее время и ответим на любые вопросы!
         </p>
 				<form id="sendForm" class="contactform form" onsubmit="return false;">
-          <input type="text" name="username" placeholder="Ваше имя" maxlength="24" class="form__input form__input_name_username">
-          <input type="tel" name="tel" placeholder="Телефон *" minlength="16" required class="form__input form__input_name_tel">
-          <input type="button" name="submit" value="Заказать звонок" class="form__input form__input_name_submit" onclick="sendForm()">
+          <input type="text" placeholder="Ваше имя" maxlength="24" class="form__input form__input_name_username">
+          <input type="tel" placeholder="Телефон *" minlength="16" required class="form__input form__input_name_tel">
+          <button type="button" class="form__input form__input_name_submit" onclick="sendForm()">
+            Заказать звонок
+          </button>
         </form>
         <p class="contact__privacy">
           Данные пользователей защищены <span class="privacy">Политикой&nbsp;конфиденциальности</span>.
@@ -981,22 +994,22 @@
   <!-- Correct view port of the first screen -->
   <script async src="js/correct-view.js?v=1.0.0"></script>
   <!-- Lazy load for images -->
-  <script src="../node_modules/lazysizes/lazysizes.min.js" async></script>
+  <script src="node_modules/lazysizes/lazysizes.min.js" async></script>
   <!-- Carousel Siema -->
-  <script src="../node_modules/siema/dist/siema.min.js"></script>
+  <script src="node_modules/siema/dist/siema.min.js"></script>
   <script src="js/siema.js?v=1.0.0"></script>
   <!-- Smooth scroll through anchors-->
   <script src="js/smooth-scroll-to.js?v=1.0.0"></script>
   <!-- Navbar animation -->
   <script src="js/navbar.js?v=1.1.0"></script>
   <!-- Mask for input -->
-  <script src="../node_modules/imask/dist/imask.min.js"></script>
+  <script src="node_modules/imask/dist/imask.min.js"></script>
   <script>
-    let element = document.querySelector('.form__input_name_tel');
-    let maskOptions = {
+    const element = document.querySelector('.form__input_name_tel');
+    const maskOptions = {
       mask: '+{7}(000)000-00-00'
     };
-    let mask = IMask(element, maskOptions);
+    const mask = IMask(element, maskOptions);
   </script>
   <!-- Lightbox -->
   <script src="js/lightbox.js?v=1.1.0"></script>

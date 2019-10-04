@@ -1,7 +1,7 @@
 function sender(text) {
-  let nodemailer = require('nodemailer');
+  const nodemailer = require('nodemailer');
 
-  let transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'send.company.bot@gmail.com',
@@ -9,7 +9,7 @@ function sender(text) {
     }
   });
 
-  let mailOptions = {
+  const mailOptions = {
     from: 'send.company.bot@gmail.com',
     to: 'gabi.broun@gmail.com, dmirddz@gmail.com',
     subject: 'Sending Email using Node.js',

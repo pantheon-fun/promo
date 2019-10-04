@@ -381,7 +381,7 @@ a, button {
 .first__content {
   grid-area: content;
   padding-top: 37px;
-  margin: auto;
+  /* margin: auto; */
   align-self: center;
   justify-self: center;
 }
@@ -1688,7 +1688,7 @@ main {
 
 
 /* === Media === */
-@media (min-width: 635px) {
+@media (min-width: 650px) {
   .form {
     flex-direction: row;
   }
@@ -1698,7 +1698,12 @@ main {
     margin-right: 1em;
   }
   .form__input_name_submit {
-    flex: 1;
+    flex: 1.9;
+  }
+}
+@media (min-width: 768px) {
+  .form__input_name_submit {
+    flex: 1.5;
   }
 }
 

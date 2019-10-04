@@ -1,9 +1,9 @@
-let express =  require('express');
-let bodyParser = require('body-parser');
-let sender = require('./js/sender');
-let app = express();
-let urlencodedParser = bodyParser.urlencoded({ extended: true });
-let path = require('path')
+const express =  require('express');
+const bodyParser = require('body-parser');
+const sender = require('./js/sender');
+const app = express();
+const urlencodedParser = bodyParser.urlencoded({ extended: true });
+const path = require('path')
 
 app.set('view engine', 'ejs');
 app.use(express.static('public_html'));

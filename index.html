@@ -852,8 +852,8 @@
     <section class="contact">
       
 			<form style="font-size: 14px;" id="sendForm" class="contact__form form">
-				<input type="text" name="username" id="username" placeholder="Ваше имя" class="form__input">
-				<input type="tel" name="tel" id="tel" placeholder="Телефон" required class="form__input">
+				<input type="text" name="username" placeholder="Ваше имя" maxlength="20" class="form__input form__input_name_username">
+				<input type="tel" name="tel" placeholder="Телефон" minlength="16" required class="form__input form__input_name_tel">
 				<input type="submit" name="submit" value="Получить предложение" class="form__input">
       </form>
 
@@ -969,6 +969,15 @@
   <script src="js/smooth-scroll-to.js?v=1.0.0"></script>
   <!-- Navbar animation -->
   <script src="js/navbar.js?v=1.0.1"></script>
+  <!-- Mask for input -->
+  <script src="node_modules/imask/dist/imask.min.js"></script>
+  <script>
+    let element = document.querySelector('.form__input_name_tel');
+    let maskOptions = {
+      mask: '+{7}(000)000-00-00'
+    };
+    let mask = IMask(element, maskOptions);
+  </script>
   <!-- Lightbox -->
   <script src="js/lightbox.js?v=1.0.0"></script>
   <!-- Main js -->

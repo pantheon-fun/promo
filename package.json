@@ -19,7 +19,6 @@
   "homepage": "https://github.com/DZakh/Pantheon#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "imask": "^5.2.1",
     "jquery": "^3.4.1",
     "lazysizes": "^5.1.1",
     "nodemailer": "^6.3.0",

@@ -1,41 +1,13 @@
 let express =  require('express');
 let bodyParser = require('body-parser');
-//
-//
+let sender = require('./js/sender');
 let app = express();
-
 let urlencodedParser = bodyParser.urlencoded({ extended: false });
+let path = require('path')
 
 app.set('view engine', 'ejs');
-
-function sender(text) {
-  let nodemailer = require('nodemailer');
-
-  let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'send.company.bot@gmail.com',
-      pass: 'javaservelet'
-    }
-  });
-
-  let mailOptions = {
-    from: 'send.company.bot@gmail.com',
-    to: 'gabi.broun@gmail.com, dmirddz@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: text
-  };
-
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-}
-  
-
+app.use(express.static('public'));
+app.use('/node_modules',express.static(path.join(__dirname, 'node_modules')));
   app.use('/', bodyParser.urlencoded({
       extended: true
   }));
@@ -51,8 +23,6 @@ function sender(text) {
   });
 
   app.get('/', function(req, res) {
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/public/index.html");
   });
-
-
 app.listen(5500);

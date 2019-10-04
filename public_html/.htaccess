@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+PassengerStartupFile index.js
+PassengerResolveSymlinksInDocumentRoot on
+Require all granted
+PassengerAppType node
+PassengerAppRoot /home/a0318870/domains/dzakh.dev
+Options -MultiViews

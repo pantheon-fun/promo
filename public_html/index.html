@@ -981,6 +981,9 @@
         user: username,
         tel: tel
       };
+
+      if (tel.length != 16) return;
+
       fetch('/', {
         method: 'post',
         headers: {

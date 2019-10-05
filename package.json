@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/DZakh/Pantheon#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "imask": "^5.2.1",
     "lazysizes": "^5.1.1",

@@ -1,11 +1,12 @@
 const express =  require('express');
 const bodyParser = require('body-parser');
-const sender = require('./js/sender');
+const compression = require('compression');
+const sender = require('js/sender');
 const app = express();
-const urlencodedParser = bodyParser.urlencoded({ extended: true });
+app.use(compression());
+// const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const path = require('path')
 
-app.set('view engine', 'ejs');
 app.use(express.static('public_html'));
 app.use('/node_modules',express.static(path.join(__dirname, 'node_modules')));
 
@@ -14,7 +15,8 @@ app.use(bodyParser.json());
 
 
   app.post('/', function(req, res, next) {
-      if(!req.body)return res.sendStatus(400);
+      if (!req.body)
+        return res.sendStatus(400);
       console.log(req.body);
       let obj = req.body;
       sender("Имя: " + obj.user + "\nНомер телефона: " + obj.tel);

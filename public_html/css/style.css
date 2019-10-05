@@ -1,6 +1,6 @@
 @charset "utf-8"; 
 :root {
-	--red-color: #f44336;
+	--red-color: #f8473a;
 	--bg-page-color: #211B1B;
 	--second-gray-color: #2c2424;
   --soft-orange-color: #f9da84;
@@ -1616,7 +1616,7 @@ main {
 .contact {
   background: #262020;
   font-size: 14rem;
-  padding: 2em 0;
+  padding: 4em 0;
   letter-spacing: 0;
 }
 .contact__heading {

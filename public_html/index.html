@@ -245,7 +245,7 @@
 	<main>
     <section class="masthead">
       <div class="masthead__inner container">
-        <button onclick="scrollSmoothTo('first')" class="masthead__logo-link">
+        <button onclick="scrollSmoothTo('first')" aria-label="Кнопка в виде маленького логотипа, что ведет на верх страницы" class="masthead__logo-link">
           <img class="masthead__logo" src="img/logo/logo.svg" alt="Маленький логотип лазертаг-клуба Пантеон">
         </button>
         <nav class="masthead__navigation">
@@ -869,8 +869,8 @@
           Мы свяжемся с вами в ближайшее время и ответим на любые вопросы!
         </p>
 				<form id="sendForm" class="contactform form" onsubmit="return false;">
-          <input type="text" placeholder="Ваше имя" maxlength="24" class="form__input form__input_name_username">
-          <input type="tel" placeholder="Телефон *" minlength="16" required class="form__input form__input_name_tel">
+          <input type="text" aria-label="Введите имя" placeholder="Ваше имя" maxlength="24" class="form__input form__input_name_username">
+          <input type="tel" aria-label="Введите телефон (обязательный пункт)" placeholder="Телефон *" minlength="16" required class="form__input form__input_name_tel">
           <button type="submit" class="form__input form__input_name_submit" onclick="sendForm()">
             Заказать звонок
           </button>

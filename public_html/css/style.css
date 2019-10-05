@@ -1032,7 +1032,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  align-content: cover;
   padding: 1.4em 3em 1.1em 1em;
   color: #fff;
   font-size: 1.15em;
@@ -1081,28 +1081,22 @@ main {
 /* Answer */
 .accordion__answer {
   padding: 0 1.3em 0 1.3em;
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: -10em 0;
   font-size: 0.9em;
+  max-height: 0;
   text-align: left;
   font-weight: 300;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  -webkit-transition: z-index 0s 0.15s;
-  transition: z-index 0s 0.15s;
-  max-height: 0;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .accordion__answer.active {
-  position: relative;
-  opacity: 1;
+  transform: scaleY(1);
   padding-bottom: 1.5em;
-  z-index: 1;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
   max-height: 100%;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
 }
 
 

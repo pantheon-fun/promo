@@ -41,7 +41,7 @@
   <!-- Normalize.css -->
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.1.1">
+	<link rel="stylesheet" href="css/style.css?v=1.1.0">
 </head>
 <body class="page">
 	<header class="first" id="first">
@@ -869,7 +869,7 @@
           Мы свяжемся с вами в ближайшее время и ответим на любые вопросы!
         </p>
 				<form class="contactform form">
-          <input type="text" aria-label="Введите имя" placeholder="Ваше имя" maxlength="24" class="form__input form__input_name_username">
+          <input type="text" aria-label="Введите имя" placeholder="Ваше имя" maxlength="24" pattern="[A-Za-zА-Яа-я]*" class="form__input form__input_name_username">
           <input type="tel" aria-label="Введите телефон (обязательный пункт)" placeholder="Телефон *" minlength="16" required class="form__input form__input_name_tel">
           <button type="submit" class="form__input form__input_name_submit">
             Заказать звонок
@@ -972,61 +972,23 @@
 
 
 
-  <!--fetish-->
-	<script>
-    const form = document.querySelector("form");
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      sendForm();
-    })
-    function sendForm() {
-      const username = document.querySelector(".form__input_name_username");
-      const tel = document.querySelector(".form__input_name_tel");
-      const user = {
-        user: username.value,
-        tel: tel.value
-      };
-      fetch("/mail", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(function(res) {
-        return res.json()
-      }).then(function(res) {
-        // console.log(res);
-        if (res.status == "ok") {
-          // console.log(form);
-          form.removeEventListener("submit", sendForm, false);
-          form.classList.add("active");
-        }
-      })
-    };
-	</script>
+  <!-- Form processing -->
+  <script src="../node_modules/imask/dist/imask.min.js"></script>
+  <script src="js/send-form.js?v=1.1.0"></script>
   <!-- Correct view port of the first screen -->
-  <script src="js/correct-view.js?v=1.0.0"></script>
+  <script src="js/correct-view.js?v=1.1.0"></script>
   <!-- Lazy load for images -->
   <script src="../node_modules/lazysizes/lazysizes.min.js"></script>
   <!-- Carousel Siema -->
   <script src="../node_modules/siema/dist/siema.min.js"></script>
-  <script src="js/siema.js?v=1.0.0"></script>
+  <script src="js/siema.js?v=1.1.0"></script>
   <!-- Smooth scroll through anchors-->
-  <script src="js/smooth-scroll-to.js?v=1.0.0"></script>
+  <script src="js/smooth-scroll-to.js?v=1.1.0"></script>
   <!-- Navbar animation -->
   <script src="js/navbar.js?v=1.1.0"></script>
-  <!-- Mask for input -->
-  <script src="../node_modules/imask/dist/imask.min.js"></script>
-  <script>
-    const element = document.querySelector('.form__input_name_tel');
-    const maskOptions = {
-      mask: '+{7}(000)000-00-00'
-    };
-    const mask = IMask(element, maskOptions);
-  </script>
   <!-- Lightbox -->
   <script src="js/lightbox.js?v=1.1.0"></script>
   <!-- Main js -->
-	<script src="js/main.js?v=1.0.0"></script>
+	<script src="js/main.js?v=1.1.0"></script>
 </body>
 </html>

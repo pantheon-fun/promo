@@ -1,4 +1,4 @@
-function sender(text) {
+function sender(message) {
   const nodemailer = require('nodemailer');
 
   const transporter = nodemailer.createTransport({
@@ -10,10 +10,10 @@ function sender(text) {
   });
 
   const mailOptions = {
-    from: 'send.company.bot@gmail.com',
-    to: 'gabi.broun@gmail.com, dmirddz@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: text
+    from: 'Pantheon - контактная форма',
+    to: 'gabi.broun@gmail.com, dmirddz@gmail.com, corp.pantheon@yandex.ru, corp.pantheon@gmail.com',
+    subject: 'Новый запрос звонка',
+    text: message
   };
 
   transporter.sendMail(mailOptions, function(error, info){

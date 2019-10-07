@@ -1646,6 +1646,27 @@ main {
   display: flex;
   align-items: stretch;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.form::after {
+  content: 'Спасибо! Мы свяжемся с вами в ближайшее время!';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: calc(100% - (1.5em / 1.3));
+  font-size: 1.3em;
+  padding: 0 2em;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  background: var(--red-color);
+  transition: all 0.4s;
+}
+.form.active::after {
+  bottom: calc(0.75em / 1.3);
 }
 .form__input {
   padding: 1.2em;

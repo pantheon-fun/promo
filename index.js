@@ -34,11 +34,11 @@ app.get('/', function(req, res) {
 
 app.get('/test', function(req, res) {
   res.send({
-    pe: "wrewr"
+    test: "Ok"
   })
 })
 
-app.listen(5500);
+app.listen(3000);
 
 
 // process.chdir('/home/a0318870/domains/dzakh.dev/public_html');

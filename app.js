@@ -18,8 +18,9 @@ app.post('/mail', function(req, res, next) {
   if (!req.body)
     return res.sendStatus(400);
   console.log(req.body);
-  let obj = req.body;
-  sender("Имя: " + obj.user + "\nНомер телефона: " + obj.tel);
+  const obj = req.body;
+  const message = "Имя: " + obj.user + "; \nНомер телефона: " + obj.tel + ";";
+  sender(message);
   // res.type('text/plain');
   // res.json(req.body);
   res.status(201).send({

@@ -11,7 +11,13 @@ function sender(message) {
 
   const mailOptions = {
     from: 'Pantheon - контактная форма',
-    to: 'yanhun@yandex.ru, gabi.broun@gmail.com, dmirddz@gmail.com, corp.pantheon@yandex.ru, corp.pantheon@gmail.com, geohun1404@yandex.ru, natgreek@yandex.ru',
+    to: 'yanhun@yandex.ru, \
+         gabi.broun@gmail.com, \
+         dmirddz@gmail.com, \
+         corp.pantheon@yandex.ru, \
+         corp.pantheon@gmail.com, \
+         geohun1404@yandex.ru, \
+         natgreek@yandex.ru',
     subject: 'Новый запрос звонка',
     text: message
   };

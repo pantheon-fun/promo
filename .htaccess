@@ -6,5 +6,5 @@ PassengerStartupFile app.js
 PassengerResolveSymlinksInDocumentRoot on
 Require all granted
 PassengerAppType node
-PassengerAppRoot /home/a0318870/domains/pantheon.fun
+PassengerAppRoot /home/a0318870/domains/pantheon.fun/public_html
 Options -MultiViews

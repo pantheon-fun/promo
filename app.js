@@ -7,7 +7,7 @@ app.use(compression());
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const path = require('path')
 
-app.use(express.static('public_html'));
+app.use(express.static('public'));
 app.use('/node_modules',express.static(path.join(__dirname, 'node_modules')));
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,7 +30,7 @@ app.post('/mail', function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-  res.sendFile(dirname + "/public_html/index.html");
+  res.sendFile(dirname + "/public/index.html");
 });
 
 app.get('/test', function(req, res) {

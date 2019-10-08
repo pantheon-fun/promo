@@ -1,9 +1,14 @@
 const express =  require('express');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const sender = require('./js/sender');
+const sender = require('./senders/main.js');
+
+const zlib = require('zlib');
 const app = express();
-app.use(compression());
+app.use(compression({
+  //level: 7
+}));
+
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const path = require('path')
 

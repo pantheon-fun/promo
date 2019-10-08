@@ -18,13 +18,18 @@
   },
   "homepage": "https://github.com/DZakh/Pantheon#readme",
   "dependencies": {
+    "botact": "^2.4.2",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "imask": "^5.2.1",
     "lazysizes": "^5.1.1",
+    "node-telegram-bot-api": "^0.30.0",
     "nodemailer": "^6.3.0",
     "normalize.css": "^8.0.1",
-    "siema": "^1.5.1"
+    "siema": "^1.5.1",
+    "tunnel": "0.0.6",
+    "vk-io": "^4.0.0-rc.21",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {}
 }

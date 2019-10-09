@@ -31,6 +31,8 @@ function loadMap() {
 /* Calculator's parent */
 const calculator = document.getElementById("calculator");
 
+/* Schedule's parent */
+const schedule = document.getElementById("schedule");
 
 /* Observer */
 const options = {
@@ -42,23 +44,34 @@ const options = {
 const observer = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      if (entry.target === map) {
-        mapStateIsObserved = 1;
-        if (jmediaquery.matches) {
-          loadMap();
-          map.style.zIndex = "2";
-        }
+      switch (entry.target) {
+        case map:
+          mapStateIsObserved = 1;
+          if (jmediaquery.matches) {
+            loadMap();
+            map.style.zIndex = "2";
+          }
+          break;
+        case calculator:
+          eval(`var widgetOptions231405 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=231405&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();`);
+          break;
+        case schedule:
+          eval(`(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/4487/js'));`);
+          eval(`Bookform('embedded',{id:4487});`);
+          const scheduleContainer = document.querySelector(".schedule");
+          scheduleContainer.removeChild(scheduleContainer.firstChild);
+          scheduleContainer.removeChild(scheduleContainer.firstChild);
+          break;
+        default: console.log('Switch error');
       }
-      if (entry.target === calculator) {
-        eval(`var widgetOptions231405 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=231405&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();`);
-      }
-      observer.unobserve(entry.target);
+      observer.unobserve(entry.target);      
     }
   });
 }, options);
 
 observer.observe(map);
 observer.observe(calculator);
+observer.observe(schedule);
 
 
 /* FAQ animation */

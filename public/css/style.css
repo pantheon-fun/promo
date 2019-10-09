@@ -142,8 +142,8 @@ a, button {
 /* === Anchor === */
 .anchor {
   display: block;
-  height: 50vh;
-  margin-top: -50vh;
+  height: 60vh;
+  margin-top: -60vh;
   visibility: hidden;
 }
 @media (min-width: 576px) {
@@ -264,6 +264,58 @@ a, button {
 }
 
 
+/* === Loading === */
+.loading {
+  position: absolute !important;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* === Script === */
+.script {
+  display: flex;
+}
+
 /* === Privacy === */
 .privacy__lightbox {
   overflow: auto;
@@ -383,7 +435,6 @@ a, button {
   padding-top: 37px;
   /* margin: auto; */
   align-self: center;
-  justify-self: center;
 }
 .first__logo {
 	width: 160px;
@@ -1178,7 +1229,7 @@ main {
 .price-list {
 	background: var(--second-gray-color);
   position: relative;
-  padding-bottom: 75px;
+  padding-bottom: 55px;
 }
 
 
@@ -1213,6 +1264,7 @@ main {
     "privat"
     "open"
     "calculator"
+    "schedule"
     "reservation";
   padding-top: 40px;
 }
@@ -1357,6 +1409,25 @@ main {
 }
 
 
+/* === Schedule === */
+.schedule {
+  grid-area: schedule;
+  position: relative;
+}
+.schedule__heading {
+  padding-top: 2em;
+  padding-bottom: 1.2em;
+}
+.schedule__widget {
+  margin: 0 auto;
+  max-width: 261px;
+}
+.schedule__widget div {
+  height: 400px;
+}
+
+
+
 /* === Calculator === */
 .calculator {
   margin-top: 20px;
@@ -1369,11 +1440,35 @@ main {
   max-width: 100%;
 }
 .calculator__container {
+  position: relative;
   width: 100%;
   max-width: 488px;
   height: 100%;
   min-height: 950px;
   background: var(--bg-page-color);
+  margin-bottom: -80px;
+}
+
+/* Advertisement disable */
+.calculator__container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  transform: scale(1.03);
+  background: var(--second-gray-color);
+}
+@media (min-width: 399px) and (max-width: 660px),
+       (min-width: 992px) {
+  .calculator__container {
+    margin-bottom: -60px;
+  }
+  .calculator__container::after {
+    height: 60px;
+  }
 }
 
 
@@ -1391,9 +1486,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
-  border: 4px dashed var(--red-color);
+  border: 6px dashed var(--red-color);
+  margin-top: 50px;
   width: 87vw;
   min-width: 275px;
   height: 58vw;
@@ -1447,7 +1541,7 @@ main {
 }
 
 
-/* === reservation option === */
+/* === Reservation option === */
 .reservation-option {
   background: var(--red-color);
   border: 7px solid var(--red-color);
@@ -1492,17 +1586,15 @@ main {
 .reservation-option_text_tel {
   grid-area: tel;
 }
-
 .reservation-option_text_form {
   grid-area: form;
 }
 
-
 /* Animation */
 .reservation:hover {
   border-color: var(--second-gray-color);
-  -webkit-transform: scale(1.05) translateY(30px);
-          transform: scale(1.05) translateY(30px);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .reservation:hover .reservation__title {
   opacity: 0;
@@ -1536,11 +1628,12 @@ main {
     -webkit-column-gap: 40px;
             column-gap: 40px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas: 
       "privat calculator"
       "open calculator"
-      "reservation calculator";
+      "reservation calculator"
+      "schedule schedule";
   }
   .price-list__cards {
     gap: 40px;
@@ -1555,16 +1648,17 @@ main {
     grid-area: calculator;
     margin-top: 64px;
   }
+  .schedule__widget {
+    max-width: 381px;
+  }
   .reservation {
     width: 100%;
-    height: calc(100% - 25px);
-    -webkit-transform: translateY(25px);
-            transform: translateY(25px);
+    height: calc(100% - 50px);
     font-size: 2.2vw;
   }
   .reservation:hover {
-    -webkit-transform: scale(1.01) translateY(25px);
-            transform: scale(1.01) translateY(25px);
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
   }
   .reservation__title::after {
     bottom: -18px;
@@ -1578,26 +1672,25 @@ main {
 /* reservation button bottom */
 @media (min-width: 992px) {
   .price-list {
-    padding-bottom: 130px;
+    padding-bottom: 50px;
   }
   .price-list__content {
     grid-template-areas: 
       "privat calculator"
       "open calculator"
+      "schedule schedule"
       "reservation reservation";
   }
   .reservation {
     font-size: 28rem;
-    -webkit-transform: translateY(60px);
-            transform: translateY(60px);
     width: 41vw;
     max-width: 628px;
     height: 26.8vw;
     max-height: 388px;
   }
   .reservation:hover {
-    -webkit-transform: scale(1.05) translateY(60px);
-            transform: scale(1.05) translateY(60px);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   .reservation__title::after {
     bottom: -25px;
@@ -1607,7 +1700,6 @@ main {
     gap: 25px;
   }
 }
-
 
 
 /*

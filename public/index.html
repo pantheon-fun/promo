@@ -37,11 +37,11 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<!-- Icomoon -->
-  <link rel="stylesheet" href="icomoon/style.css?v=1.1.0">
+  <link rel="stylesheet" href="icomoon/style.css?v=1.3.0">
   <!-- Normalize.css -->
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.1.0">
+	<link rel="stylesheet" href="css/style.css?v=1.3.0">
 </head>
 <body class="page">
 	<header class="first" id="first">
@@ -102,22 +102,22 @@
     <div class="carousel">
       <picture class="carousel__slide">
         <source media="(min-width: 900px)"
-                srcset="img/carousel/roar-1920w-min.webp" type="image/webp"
+                type="image/webp"
            data-srcset="img/carousel/roar-960w-1x.webp 960w,
                         img/carousel/roar-1920w-2x.webp 1920w,
                         img/carousel/roar-2560w-3x.webp 2560w">
-        <source srcset="img/carousel/roar-992w-min.webp" type="image/webp"
+        <source type="image/webp"
            data-srcset="img/carousel/roar-496w-1x.webp 496w,
                         img/carousel/roar-992w-2x.webp 992w">
         <source media="(min-width: 900px)"
-                srcset="img/carousel/roar-1920w-min.jpg" type="image/jpeg"
+                type="image/jpeg"
            data-srcset="img/carousel/roar-960w-1x.jpg 960w,
                         img/carousel/roar-1920w-2x.jpg 1920w,
                         img/carousel/roar-2560w-3x.jpg 2560w">
-        <source srcset="img/carousel/roar-992w-min.jpg" type="image/jpeg"
+        <source type="image/jpeg"
            data-srcset="img/carousel/roar-496w-1x.jpg 496w,
                         img/carousel/roar-992w-2x.jpg 992w">
-        <img src="img/carousel/roar-1920w-2x.jpg" class="background lazyload"
+        <img src="img/carousel/roar-960w-1x.jpg" class="background lazyload"
              alt="Возбужденный мальчишка воинственно рычит с лазертаг автоматом в руках">
       </picture>
       <picture class="carousel__slide">
@@ -830,6 +830,15 @@
               <div class="uCalc_231405"></div>
             </div>
           </div>
+          <div class="schedule">
+            <div class="loading"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+            <h2 class="schedule__heading heading_sub">
+              Выберите удобное время игры
+            </h2>
+            <div class="schedule__widget" id="schedule">
+              <div id="bookform-embedded-widget-4487"></div>
+            </div>
+          </div>
           <span id="reservation" class="anchor"></span>
           <div class="reservation">
             <h3 class="reservation__title">
@@ -908,7 +917,11 @@
                alt="Наше расположение в Мытищах. Карта в красных тонах.">
         </picture>
       </a>
-			<div class="references__widget-map script" id="widget-map"></div>
+			<div class="references__widget-map script" id="widget-map">
+        <div class="loading">
+          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+      </div>
 			<div class="container references__inner">
 				<div class="references__card">
 					<h2 class="references__heading heading">
@@ -974,21 +987,21 @@
 
   <!-- Form processing -->
   <script src="../node_modules/imask/dist/imask.min.js"></script>
-  <script src="js/send-form.js?v=1.1.0"></script>
+  <script src="js/send-form.js?v=1.3.0"></script>
   <!-- Correct view port of the first screen -->
-  <script src="js/correct-view.js?v=1.1.0"></script>
+  <script src="js/correct-view.js?v=1.3.0"></script>
   <!-- Lazy load for images -->
   <script src="../node_modules/lazysizes/lazysizes.min.js"></script>
   <!-- Carousel Siema -->
   <script src="../node_modules/siema/dist/siema.min.js"></script>
-  <script src="js/siema.js?v=1.1.0"></script>
+  <script src="js/siema.js?v=1.3.0"></script>
   <!-- Smooth scroll through anchors-->
-  <script src="js/smooth-scroll-to.js?v=1.1.0"></script>
+  <script src="js/smooth-scroll-to.js?v=1.3.0"></script>
   <!-- Navbar animation -->
-  <script src="js/navbar.js?v=1.1.0"></script>
+  <script src="js/navbar.js?v=1.3.0"></script>
   <!-- Lightbox -->
-  <script src="js/lightbox.js?v=1.1.0"></script>
+  <script src="js/lightbox.js?v=1.3.0"></script>
   <!-- Main js -->
-	<script src="js/main.js?v=1.1.0"></script>
+	<script src="js/main.js?v=1.3.0"></script>
 </body>
 </html>

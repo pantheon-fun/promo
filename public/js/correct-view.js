@@ -1,18 +1,22 @@
 'use strict';
 
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  correctSizing();
-	window.addEventListener('orientationchange', function() {
-		let afterOrientationChange = function() {
-      correctSizing();
-			window.removeEventListener('resize', afterOrientationChange);
-		};
-		window.addEventListener('resize', afterOrientationChange);
-	});
+setTimeout(firstViewportCorrection(), 0);
+
+function firstViewportCorrection() {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    correctSizing();
+    window.addEventListener('orientationchange', function() {
+      const afterOrientationChange = function() {
+        correctSizing();
+        window.removeEventListener('resize', afterOrientationChange);
+      };
+      window.addEventListener('resize', afterOrientationChange);
+    });
+  }
 }
 
 function correctSizing() {
-	let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-  document.querySelector(".first").style.maxHeight = `${window.screen.height}px`;
+  const vh = window.innerHeight;
+  if (vh > window.screen.height) vh /= window.devicePixelRatio;
+  document.documentElement.style.setProperty('--vh', `${vh * 0.01}px`);
 }

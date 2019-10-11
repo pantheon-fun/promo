@@ -1,5 +1,5 @@
 window.onscroll = function() {
-  let scroll = document.documentElement.scrollTop;
+  let scroll = document.body.scrollTop || document.documentElement.scrollTop;
   let objectHeight = document.querySelector(".first").offsetHeight;
   const masthead = document.querySelector(".masthead");
   

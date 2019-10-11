@@ -1,6 +1,6 @@
 @charset "utf-8"; 
 :root {
-	--red-color: #f44336;
+	--red-color: #f8473a;
 	--bg-page-color: #211B1B;
 	--second-gray-color: #2c2424;
   --soft-orange-color: #f9da84;
@@ -21,7 +21,7 @@ html {
           box-sizing: border-box;
 }
 img {
-	font-size: 14em;
+	font-size: 14rem;
 	color: inherit;
 	max-width: 100%;
 	max-height: 100%;
@@ -142,8 +142,8 @@ a, button {
 /* === Anchor === */
 .anchor {
   display: block;
-  height: 50vh;
-  margin-top: -50vh;
+  height: 60vh;
+  margin-top: -60vh;
   visibility: hidden;
 }
 @media (min-width: 576px) {
@@ -226,9 +226,15 @@ a, button {
   display: none;
 }
 #lightbox.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #lightbox.active::after {
   content: '';
@@ -258,6 +264,83 @@ a, button {
 }
 
 
+/* === Loading === */
+.loading {
+  position: absolute !important;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+/* === Script === */
+.script {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* === Privacy === */
 .privacy__lightbox {
   overflow: auto;
@@ -284,6 +367,7 @@ a, button {
   padding: 0.77em 0.968em;
   border: 2px dotted var(--btn-color);
   color: var(--btn-color);
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -455,10 +539,12 @@ a, button {
   margin: 15px auto 15px;
 }
 .arrow-to-down__btn {
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-  transition: -webkit-transform 0.4s ease-out;
-  transition: transform 0.4s ease-out;
-  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-animation: moveUpDown 1s infinite alternate;
+  animation: moveUpDown 1s infinite alternate;
+  -webkit-filter: brightness(10);
+          filter: brightness(10);
 }
 .arrow-to-down__icon {
   height: 30px;
@@ -466,8 +552,18 @@ a, button {
 }
 .arrow-to-down__btn:hover,
 .arrow-to-down__btn:focus {
-  -webkit-transform: translateY(4px);
-          transform: translateY(4px);
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+}
+
+/* Animation */
+@-webkit-keyframes moveUpDown {
+  0% { -webkit-transform: translateY(0); transform: translateY(0); }
+  100% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+}
+@keyframes moveUpDown {
+  0% { -webkit-transform: translateY(0); transform: translateY(0); }
+  100% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
 }
 
 
@@ -662,16 +758,25 @@ main {
   top: 0;
   right: 0;
   left: 0;
-  transform: translateY(-110%);
+  -webkit-transform: translateY(-110%);
+          transform: translateY(-110%);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
   z-index: 10;
 }
 .masthead.shown {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .masthead__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .masthead__logo {
   display: none;
@@ -683,6 +788,7 @@ main {
   font-size: 1.1em;
   margin: auto;
   padding-right: 1em;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .masthead__tel:hover,
@@ -693,7 +799,9 @@ main {
   --btn-color: white;
   border: solid;
   letter-spacing: 0;
-  tab-size: 0.9em;
+  -moz-tab-size: 0.9em;
+    -o-tab-size: 0.9em;
+       tab-size: 0.9em;
   text-transform: uppercase;
   padding: 0.4em 1em;
 }
@@ -714,11 +822,15 @@ main {
     width: auto;
   }
   .masthead__logo-link {
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
   }
   .masthead__logo-link:hover,
   .masthead__logo-link:focus {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   .masthead__tel {
     margin: 0;
@@ -735,11 +847,16 @@ main {
     margin: 0;
   }
   .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .navigation__link {
     margin: 0 1.2em;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
   .navigation__link:hover {
@@ -896,9 +1013,15 @@ main {
 }
 .we-can-more__item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
   height: 65vw;
   min-height: 215px;
@@ -907,12 +1030,14 @@ main {
 	-o-object-fit: cover;
 	   object-fit: cover;
   height: 100%;
-  filter: brightness(65%);
+  -webkit-filter: brightness(65%);
+          filter: brightness(65%);
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
 .we-can-more__item:hover .we-can-more__img {
-  filter: brightness(85%);
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
 	-webkit-transform: scale(1.05);
 	        transform: scale(1.05);
 }
@@ -981,15 +1106,16 @@ main {
 .accordion__question {
   position: relative;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -ms-flex-line-pack: cover;
+      align-content: cover;
   padding: 1.4em 3em 1.1em 1em;
   color: #fff;
   font-size: 1.15em;
   font-weight: 400;
   text-align: left;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .accordion__question::after {
@@ -999,15 +1125,15 @@ main {
   right: 0.5em;
   font-size: 1em;
   line-height: 2.1em;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   width: 2em;
   height: 2em;
   color: white;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   border: 1px solid white;
   text-align: center;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 .accordion__question.active::after {
@@ -1032,29 +1158,25 @@ main {
 /* Answer */
 .accordion__answer {
   padding: 0 1.3em 0 1.3em;
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-  overflow: hidden;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: -10em 0;
+          transform-origin: -10em 0;
   font-size: 0.9em;
+  max-height: 0;
   text-align: left;
   font-weight: 300;
-  -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  transition: z-index 0s 0.15s;
-  max-height: 0;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .accordion__answer.active {
-  position: relative;
-  opacity: 1;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
   padding-bottom: 1.5em;
-  z-index: 1;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
   max-height: 100%;
-  -webkit-transition: all 0.35s ease;
-  -o-transition: all 0.35s ease;
-  transition: all 0.35s ease;
 }
 
 
@@ -1136,7 +1258,7 @@ main {
 .price-list {
 	background: var(--second-gray-color);
   position: relative;
-  padding-bottom: 75px;
+  padding-bottom: 55px;
 }
 
 
@@ -1171,6 +1293,7 @@ main {
     "privat"
     "open"
     "calculator"
+    "schedule"
     "reservation";
   padding-top: 40px;
 }
@@ -1285,6 +1408,7 @@ main {
 .price-card__vk-btn {
   border: 2px solid rgba(0, 0, 0, 0.4);
   line-height: 2.5em;
+  -webkit-transition: border-color 0.3s;
   transition: border-color 0.3s;
 }
 .price-card__price:hover,
@@ -1314,19 +1438,67 @@ main {
 }
 
 
+/* === Schedule === */
+.schedule {
+  grid-area: schedule;
+  position: relative;
+}
+.schedule__heading {
+  padding-top: 2em;
+  padding-bottom: 1.2em;
+}
+.schedule__widget {
+  margin: 0 auto;
+  max-width: 261px;
+}
+.schedule__widget div {
+  height: 400px;
+}
+
+
+
 /* === Calculator === */
 .calculator {
   margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   max-width: 100%;
 }
 .calculator__container {
+  position: relative;
   width: 100%;
   max-width: 488px;
   height: 100%;
   min-height: 950px;
   background: var(--bg-page-color);
+  margin-bottom: -80px;
+}
+
+/* Advertisement disable */
+.calculator__container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  background: var(--second-gray-color);
+}
+@media (min-width: 399px) and (max-width: 660px),
+       (min-width: 992px) {
+  .calculator__container {
+    margin-bottom: -60px;
+  }
+  .calculator__container::after {
+    height: 60px;
+  }
 }
 
 
@@ -1334,23 +1506,33 @@ main {
 .reservation {
   grid-area: reservation;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   justify-self: center;
-  align-items: center;
-  transform: translateY(30px);
-  border: 4px dashed var(--red-color);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 6px dashed var(--red-color);
+  margin-top: 50px;
   width: 87vw;
   min-width: 275px;
   height: 58vw;
   min-height: 185px;
+  -webkit-transition: border 0.15s, -webkit-transform 0.3s;
+  transition: border 0.15s, -webkit-transform 0.3s;
   transition: border 0.15s, transform 0.3s;
+  transition: border 0.15s, transform 0.3s, -webkit-transform 0.3s;
   font-size: 5.5vw;
 }
 .reservation__title {
   text-transform: uppercase;
   color: var(--red-color);
   position: relative;
+  -webkit-transition: opacity 0.07s ease;
   transition: opacity 0.07s ease;
 }
 .reservation__title::after {
@@ -1389,7 +1571,7 @@ main {
 }
 
 
-/* === reservation option === */
+/* === Reservation option === */
 .reservation-option {
   background: var(--red-color);
   border: 7px solid var(--red-color);
@@ -1397,13 +1579,23 @@ main {
   letter-spacing: -.01em;
   font-size: 0.8em;
   font-weight: bold;
-  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   opacity: 0;
+  -webkit-transition: opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
+  transition: opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
   transition: transform 0.15s, opacity 0.2s, background 0.175s, color 0.25s;
+  transition: transform 0.15s, opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
   padding: 0 .6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .reservation-option_icon {
   font-size: 2em;
@@ -1424,26 +1616,27 @@ main {
 .reservation-option_text_tel {
   grid-area: tel;
 }
-
 .reservation-option_text_form {
   grid-area: form;
 }
 
-
 /* Animation */
 .reservation:hover {
   border-color: var(--second-gray-color);
-  transform: scale(1.05) translateY(30px);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 .reservation:hover .reservation__title {
   opacity: 0;
 }
 .reservation:hover .reservation-option {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 .reservation:hover .reservation__click-preventer {
   z-index: -10;
+  -webkit-transition: z-index 0s .35s;
   transition: z-index 0s .35s;
 }
 .reservation-option:hover,
@@ -1462,13 +1655,15 @@ main {
 @media (min-width: 660px) {
   .price-list__content {
     margin-left: 25px;
-    column-gap: 40px;
+    -webkit-column-gap: 40px;
+            column-gap: 40px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas: 
       "privat calculator"
       "open calculator"
-      "reservation calculator";
+      "reservation calculator"
+      "schedule schedule";
   }
   .price-list__cards {
     gap: 40px;
@@ -1483,14 +1678,17 @@ main {
     grid-area: calculator;
     margin-top: 64px;
   }
+  .schedule__widget {
+    max-width: 381px;
+  }
   .reservation {
     width: 100%;
-    height: calc(100% - 25px);
-    transform: translateY(25px);
+    height: calc(100% - 50px);
     font-size: 2.2vw;
   }
   .reservation:hover {
-    transform: scale(1.01) translateY(25px);
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
   }
   .reservation__title::after {
     bottom: -18px;
@@ -1504,24 +1702,25 @@ main {
 /* reservation button bottom */
 @media (min-width: 992px) {
   .price-list {
-    padding-bottom: 130px;
+    padding-bottom: 50px;
   }
   .price-list__content {
     grid-template-areas: 
       "privat calculator"
       "open calculator"
+      "schedule schedule"
       "reservation reservation";
   }
   .reservation {
     font-size: 28rem;
-    transform: translateY(60px);
     width: 41vw;
     max-width: 628px;
     height: 26.8vw;
     max-height: 388px;
   }
   .reservation:hover {
-    transform: scale(1.05) translateY(60px);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   .reservation__title::after {
     bottom: -25px;
@@ -1529,6 +1728,177 @@ main {
   }
   .reservation__options {
     gap: 25px;
+  }
+}
+
+
+/*
+* _____ CONTACT _____
+*/
+.contact {
+  background: #262020;
+  font-size: 14rem;
+  padding: 4em 0;
+  letter-spacing: 0;
+}
+.contact__heading {
+  padding-top: 0;
+  padding-bottom: 0.6em;
+  text-transform: none;
+  font-size: 2em;
+}
+.contact__caption {
+  font-size: 1.3em;
+  padding-bottom: 0.8em;
+  font-weight: 300;
+}
+.contact__privacy {
+  font-size: 0.8em;
+  font-weight: 300;
+  padding-top: 0.3em;
+}
+.contact__privacy .privacy {
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+
+/* === Form === */
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.form::after {
+  content: 'Спасибо! Мы свяжемся с вами в ближайшее время!';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  height: calc(100% - (1.5em / 1.3));
+  font-size: 1.3em;
+  padding: 0 2em;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  background: var(--red-color);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.form.active::after {
+  bottom: calc(0.75em / 1.3);
+}
+.form__input {
+  padding: 1.2em;
+  margin: 0.75em 0;
+  border: none;
+  background: white;
+}
+.form__input_name_username::-webkit-input-placeholder,
+.form__input_name_tel::-webkit-input-placeholder {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.form__input_name_username:-ms-input-placeholder,
+.form__input_name_tel:-ms-input-placeholder {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.form__input_name_username::-ms-input-placeholder,
+.form__input_name_tel::-ms-input-placeholder {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.form__input_name_username::placeholder,
+.form__input_name_tel::placeholder {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.form__input_name_username:hover::-webkit-input-placeholder,
+.form__input_name_username:focus::-webkit-input-placeholder,
+.form__input_name_tel:hover::-webkit-input-placeholder,
+.form__input_name_tel:focus::-webkit-input-placeholder {
+  color: black;
+}
+.form__input_name_username:hover:-ms-input-placeholder,
+.form__input_name_username:focus:-ms-input-placeholder,
+.form__input_name_tel:hover:-ms-input-placeholder,
+.form__input_name_tel:focus:-ms-input-placeholder {
+  color: black;
+}
+.form__input_name_username:hover::-ms-input-placeholder,
+.form__input_name_username:focus::-ms-input-placeholder,
+.form__input_name_tel:hover::-ms-input-placeholder,
+.form__input_name_tel:focus::-ms-input-placeholder {
+  color: black;
+}
+.form__input_name_username:hover::placeholder,
+.form__input_name_username:focus::placeholder,
+.form__input_name_tel:hover::placeholder,
+.form__input_name_tel:focus::placeholder {
+  color: black;
+}
+.form__input_name_submit {
+  background: transparent;
+  border: 2px solid var(--red-color);
+  color: var(--red-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.form__input_name_submit:hover,
+.form__input_name_submit:focus {
+  background: var(--second-gray-color);
+}
+.form__input_name_submit:active {
+  background: var(--bg-page-color);
+}
+
+
+/* === Media === */
+@media (min-width: 650px) {
+  .form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .form__input_name_username,
+  .form__input_name_tel {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    margin-right: 1em;
+  }
+  .form__input_name_submit {
+    -webkit-box-flex: 1.9;
+        -ms-flex: 1.9;
+            flex: 1.9;
+  }
+}
+@media (min-width: 768px) {
+  .form__input_name_submit {
+    -webkit-box-flex: 1.5;
+        -ms-flex: 1.5;
+            flex: 1.5;
   }
 }
 
@@ -1545,7 +1915,7 @@ main {
 }
 .how-to-find__lable {
   font-weight: 300;
-  padding: 1.5em 0 1em;
+  padding: 1.25em 0 1.25em;
 }
 .how-to-find__btn-wrap {
   background: white;
@@ -1558,7 +1928,10 @@ main {
   font-weight: bold;
   padding: 1.2em 0 2.4em;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
 }
 .how-to-find__btn::before {
   display: block;
@@ -1571,7 +1944,6 @@ main {
   height: 175%;
   font-size: 2.5em;
 	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
 .how-to-find__caption {
@@ -1587,8 +1959,6 @@ main {
 .how-to-find__btn:hover,
 .how-to-find__btn:focus {
 	-webkit-transform: translateY(200%);
-	-moz-transform: translateY(200%);
-	-ms-transform: translateY(200%);
 	transform: translateY(200%);
 }
 
@@ -1596,9 +1966,15 @@ main {
 /* === Media === */
 @media (min-width: 576px) {
   .how-to-find {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .how-to-find__lable {
     width: 65%;
@@ -1616,7 +1992,8 @@ main {
   }
   .how-to-find__btn::before {
     width: calc(100% + 46.8px);
-    transform: translateX(-46.8px);
+    -webkit-transform: translateX(-46.8px);
+            transform: translateX(-46.8px);
     padding-left: calc(46.8px + 20px);
   }
 }
@@ -1777,6 +2154,7 @@ main {
 .footer__creator {
   padding: 0.75em 1em;
   border: 1px solid white;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border-radius: 10em;
 }
@@ -1791,6 +2169,7 @@ main {
 
 /* === Privacy === */
 .privacy {
+  -webkit-transition: text-shadow 0.3s;
   transition: text-shadow 0.3s;
 }
 .privacy:hover,
@@ -1802,9 +2181,15 @@ main {
 /* === Media === */
 @media (min-width: 576px) {
   .footer__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .footer__company {
     margin-right: 40px;

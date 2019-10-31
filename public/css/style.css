@@ -207,11 +207,11 @@ a, button {
 
 /* === Link === */
 .link {
-  border-bottom: 1px dashed #000;
+  border-bottom: 1px dashed #fff;
 }
 .link:hover,
 .link:focus {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #fff;
 }
 
 
@@ -1339,12 +1339,12 @@ main {
 .price-card__heading {
   grid-area: heading;
   text-align: left;
-  margin-top: -10rem;
-  margin-left: -5rem;
+  margin-top: -8rem;
+  margin-left: -3rem;
   text-transform: uppercase;
   color: var(--soft-red);
 	font-weight: 300;
-	font-size: 22rem;
+	font-size: 18rem;
 }
 
 /* Card players */

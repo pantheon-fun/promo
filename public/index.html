@@ -37,11 +37,11 @@
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<!-- Icomoon -->
-  <link rel="stylesheet" href="icomoon/style.css?v=1.3.11">
+  <link rel="stylesheet" href="icomoon/style.css?v=1.4.2">
   <!-- Normalize.css -->
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
 	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css?v=1.3.11">
+	<link rel="stylesheet" href="css/style.css?v=1.4.2">
 </head>
 <body class="page">
 	<header class="first" id="first">
@@ -243,9 +243,9 @@
     </div>
   </header>
   <!-- Correct view port of the first screen -->
-  <script src="js/correct-view.js?v=1.3.11"></script>
+  <script src="js/correct-view.js?v=1.4.2"></script>
 	<main>
-    <section class="masthead">
+    <div class="masthead">
       <div class="masthead__inner container">
         <button onclick="scrollSmoothTo('first')" aria-label="Кнопка в виде маленького логотипа, что ведет на верх страницы" class="masthead__logo-link">
           <img class="masthead__logo" src="img/logo/logo.svg" alt="Маленький логотип лазертаг-клуба Пантеон">
@@ -286,7 +286,7 @@
           Заказать
         </button>
       </div>
-    </section>
+    </div>
 		<section class="about-us" id="about-us">
       <h2 class="about-us__heading heading heading_section">
         О нас
@@ -463,7 +463,7 @@
         <p class="we-can-more__text text inner-container">
           Мы знаем как сделать ваше мероприятие еще лучше!
           <br><br>
-          Атмосферное музыкальное сопровождение, статистика игр, различные вариации освещения, фоторепортаж в течение всей игры, комната отдыха с увлекательными настольными играми, сладостями и приставкой — мы с удовольствием организует всё это и многое другое для вас и ваших гостей.
+          Атмосферное музыкальное сопровождение, статистика игр, различные вариации освещения, фоторепортаж в течение всей игры, комната отдыха с увлекательными настольными играми, сладостями и приставкой — мы с удовольствием организует все это и многое другое для вас и ваших гостей.
         </p>
       </div>
       <ul class="we-can-more__list">
@@ -651,7 +651,7 @@
 					Стоимость часа игры
 				</h2>
 				<p class="prices__per-person">
-					от 200 <i class="icon-rouble"></i> за человека
+					от 300 <i class="icon-rouble"></i> за человека
 				</p>
 				<ul class="prices__advantages">
 					<li class="advantage">
@@ -694,7 +694,7 @@
             <div class="price-list__cards">
               <div class="prices-card prices-card_weekdays">
                 <h4 class="price-card__heading">
-                  Будни
+                  Понедельник - Четверг
                 </h4>
                 <div class="price-card__players">
                   <p class="price-card__players-number">
@@ -725,30 +725,30 @@
                 </div>
                 <div class="price-card__prices">
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-1hour">
-                    500
+                    600
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-1hour">
-                    400
+                    500
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-2hours">
-                    750
+                    900
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-2hours">
-                    650
+                    800
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_add-hour">
-                    150
+                    200
                     <i class="icon-rouble"></i>
                   </button>
                 </div>
               </div>
               <div class="prices-card prices-card_weekends">
                 <h4 class="price-card__heading">
-                  Выходные
+                  Пятница - Воскресенье
                 </h4>
                 <div class="price-card__players">
                   <p class="price-card__players-number">
@@ -779,23 +779,23 @@
                 </div>
                 <div class="price-card__prices">
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-1hour">
-                    750
+                    800
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-1hour">
-                    650
+                    700
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_small-2hours">
-                    1000
+                    1200
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_big-2hours">
-                    900
+                    1100
                     <i class="icon-rouble"></i>
                   </button>
                   <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_add-hour">
-                    200
+                    300
                     <i class="icon-rouble"></i>
                   </button>
                 </div>
@@ -811,7 +811,7 @@
                 <h4>
                   всего
                   <span class="huge">
-                    400
+                    600
                     <i class="icon-rouble"></i>
                   </span>
                 </h4>
@@ -979,7 +979,7 @@
       <h3 class="footer__company">
         «Pantheon», 2019
       </h3>
-      <a href="https://dzakh.dev" class="footer__creator" target="_blank" rel="noopener">
+      <a href="https://dzakh.github.io" class="footer__creator" target="_blank" rel="noopener">
         Разработал @DZakh
       </a>
     </div>
@@ -989,19 +989,19 @@
 
   <!-- Form processing -->
   <script src="../node_modules/imask/dist/imask.min.js"></script>
-  <script src="js/send-form.js?v=1.3.11"></script>
+  <script src="js/send-form.js?v=1.4.2"></script>
   <!-- Lazy load for images -->
   <script src="../node_modules/lazysizes/lazysizes.min.js"></script>
   <!-- Carousel Siema -->
   <script src="../node_modules/siema/dist/siema.min.js"></script>
-  <script src="js/siema.js?v=1.3.11"></script>
+  <script src="js/siema.js?v=1.4.2"></script>
   <!-- Smooth scroll through anchors-->
-  <script src="js/smooth-scroll-to.js?v=1.3.11"></script>
+  <script src="js/smooth-scroll-to.js?v=1.4.2"></script>
   <!-- Navbar animation -->
-  <script src="js/navbar.js?v=1.3.11"></script>
+  <script src="js/navbar.js?v=1.4.2"></script>
   <!-- Lightbox -->
-  <script src="js/lightbox.js?v=1.3.11"></script>
+  <script src="js/lightbox.js?v=1.4.2"></script>
   <!-- Main js -->
-	<script src="js/main.js?v=1.3.11"></script>
+	<script src="js/main.js?v=1.4.2"></script>
 </body>
 </html>

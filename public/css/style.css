@@ -1,6 +1,7 @@
 @charset "utf-8"; 
 :root {
-	--red-color: #f8473a;
+  --red-color: #f8473a;
+  --soft-red: rgb(244, 67, 54);
 	--bg-page-color: #211B1B;
 	--second-gray-color: #2c2424;
   --soft-orange-color: #f9da84;
@@ -206,11 +207,11 @@ a, button {
 
 /* === Link === */
 .link {
-  border-bottom: 1px dashed #000;
+  border-bottom: 1px dashed #fff;
 }
 .link:hover,
 .link:focus {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #fff;
 }
 
 
@@ -443,10 +444,6 @@ a, button {
 	background: var(--red-color);
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
-}
-.underline:hover::after,
-.underline:focus::after {
-  height: 1.5px;
 }
 .contacts__tel:active .contacts__tel-icon {
 	-webkit-transform: rotate(-13deg);
@@ -1318,8 +1315,8 @@ main {
 .prices-card {
   display: grid;
   gap: 10px;
-  background: #fff;
-  color: var(--second-gray-color);
+  background: var(--bg-page-color);
+  color: #fff;
   font-size: 15rem;
   font-weight: bold;
   padding: 28px 25px;
@@ -1329,7 +1326,7 @@ main {
   grid-template-columns: 1fr 3.5fr;
   grid-template-rows: 0.78fr 0.5fr 3fr;
   grid-template-areas: 
-    ".... heading"
+    "heading heading"
     ".... players"
     "session prices";
 }
@@ -1341,10 +1338,13 @@ main {
 /* Card heading */
 .price-card__heading {
   grid-area: heading;
-  margin: 0 auto;
-	text-transform: uppercase;
+  text-align: left;
+  margin-top: -8rem;
+  margin-left: -3rem;
+  text-transform: uppercase;
+  color: var(--soft-red);
 	font-weight: 300;
-	font-size: 22rem;
+	font-size: 18rem;
 }
 
 /* Card players */
@@ -1404,20 +1404,20 @@ main {
   padding-left: 3px;
 }
 .price-card__price,
-.price-card__sing-up-btn,
-.price-card__vk-btn {
-  border: 2px solid rgba(0, 0, 0, 0.4);
+.price-card__sing-up-btn {
+  color: white;
+  border: 2px solid var(--soft-red); 
+  font-weight: lighter;
   line-height: 2.5em;
-  -webkit-transition: border-color 0.3s;
-  transition: border-color 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .price-card__price:hover,
 .price-card__price:focus,
 .price-card__sing-up-btn:hover,
-.price-card__sing-up-btn:focus,
-.price-card__vk-btn:hover,
-.price-card__vk-btn:focus {
-  border-color: var(--red-color);
+.price-card__sing-up-btn:focus {
+  background: var(--second-gray-color);
+  font-weight: bold;
 }
 
 
@@ -1471,7 +1471,7 @@ main {
 .calculator__container {
   position: relative;
   width: 100%;
-  max-width: 488px;
+  max-width: 433px;
   height: 100%;
   min-height: 950px;
   background: var(--bg-page-color);
@@ -1683,7 +1683,8 @@ main {
   }
   .reservation {
     width: 100%;
-    height: calc(100% - 50px);
+    margin-top: 20px;
+    height: calc(100% - 20px);
     font-size: 2.2vw;
   }
   .reservation:hover {

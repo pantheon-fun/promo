@@ -1,5 +1,3 @@
-'use strict';
-
 setTimeout(firstViewportCorrection(), 0);
 
 function firstViewportCorrection() {

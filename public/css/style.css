@@ -1269,17 +1269,17 @@ main {
   gap: 10px;
   background: var(--bg-page-color);
   color: #fff;
-  font-size: 15rem;
+  font-size: 14rem;
   font-weight: bold;
   padding: 28px 25px;
 }
 .prices-card_weekdays,
 .prices-card_weekends {
-  grid-template-columns: 1fr 3.5fr;
+  grid-template-columns: 1fr 6fr;
   grid-template-rows: 0.78fr 0.5fr 3fr;
   grid-template-areas:
     'heading heading'
-    '.... players'
+    '....... players'
     'session prices';
 }
 .prices-card_open {
@@ -1304,7 +1304,8 @@ main {
   grid-area: players;
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 1em;
 }
 
 /* Card play session */
@@ -1314,9 +1315,6 @@ main {
   gap: 15px;
   grid-template-rows: repeat(3, 1fr);
 }
-.prices-card_group__session {
-  grid-template-rows: repeat(2, 1fr);
-}
 
 /* Card prices */
 .price-card__prices {
@@ -1324,50 +1322,52 @@ main {
   display: grid;
   gap: 15px;
   grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    'sm-1h b-1h'
-    'sm-2h b-2h'
-    'add-h add-h';
+    'sm-1h md-1h lg-1h'
+    'sm-2h md-2h lg-2h'
+    'add-h add-h add-h';
 }
 .price-card_group__prices {
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: 1fr;
   grid-template-areas:
-    'b-2h'
+    'md-2h'
     'add-h';
 }
-.price-card__price_small-1hour {
+.price-card__price_sm-1h {
   grid-area: sm-1h;
 }
-.price-card__price_big-1hour {
-  grid-area: b-1h;
+.price-card__price_md-1h {
+  grid-area: md-1h;
 }
-.price-card__price_small-2hours {
+.price-card__price_lg-1h {
+  grid-area: lg-1h;
+}
+.price-card__price_sm-2h {
   grid-area: sm-2h;
 }
-.price-card__price_big-2hours {
-  grid-area: b-2h;
+.price-card__price_md-2h {
+  grid-area: md-2h;
+}
+.price-card__price_lg-2h {
+  grid-area: lg-2h;
 }
 .price-card__price_add-hour {
   grid-area: add-h;
 }
 .price-card__price {
   padding-left: 3px;
-}
-.price-card__price,
-.price-card__sing-up-btn {
   color: white;
   border: 2px solid var(--soft-red);
   font-weight: lighter;
   line-height: 2.5em;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  font-size: 0.8em;
 }
 .price-card__price:hover,
-.price-card__price:focus,
-.price-card__sing-up-btn:hover,
-.price-card__sing-up-btn:focus {
+.price-card__price:focus {
   background: var(--second-gray-color);
   font-weight: bold;
 }
@@ -1440,6 +1440,9 @@ main {
   background: var(--second-gray-color);
 }
 @media (min-width: 399px) and (max-width: 660px), (min-width: 992px) {
+  .price-card__price {
+    font-size: 1.1em;
+  }
   .calculator__container {
     margin-bottom: -60px;
   }

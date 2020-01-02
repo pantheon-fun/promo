@@ -1,7 +1,9 @@
-import { renderHtmlInApp } from './appHandler';
+import { activateRealVhHeight } from '../helpers/realVhHeight';
+import { activateSmoothScroll } from '../helpers/smoothScrollTo';
+import { activateSiemaSlider } from '../packages/siema';
 
 export const activateInterface = () => {
-  const greeting = '<h1>Hello World!</h1>';
-
-  renderHtmlInApp(greeting);
+  activateRealVhHeight();
+  activateSmoothScroll();
+  activateSiemaSlider();
 };

@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 
+@import 'old-css';
+
 // 1. Configuration and helpers
 @import
   'abstracts/variables', 
@@ -26,8 +28,8 @@
   'layout/footer';
 
 // 5. Components
-@import
-  'components/button';
+// @import
+//   'components/button';
 
 // 6. Page-specific styles
 @import

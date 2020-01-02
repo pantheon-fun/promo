@@ -6,13 +6,28 @@
   max-width: v(max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   width: 100%;
+}
+
+.inner-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.huge {
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .darkmode {

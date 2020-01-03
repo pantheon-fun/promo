@@ -1,9 +1,11 @@
-import './stylesheets/main.scss';
-
 import '@babel/polyfill';
 
 import './js/packages/lazysizes';
 
-import { activateInterface } from './js/handlers/interfaceHandler';
+import { activateRealVhHeight } from './js/helpers/realVhHeight';
+import { activateSmoothScroll } from './js/helpers/smoothScrollTo';
+import { activateSiemaSlider } from './js/packages/siema';
 
-activateInterface();
+activateRealVhHeight();
+activateSmoothScroll();
+activateSiemaSlider();

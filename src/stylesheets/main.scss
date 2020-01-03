@@ -24,12 +24,16 @@
 
 // 4. Layout-related sections
 @import
-  'layout/header',
+  'layout/first',
   'layout/footer';
 
 // 5. Components
-// @import
-//   'components/button';
+@import
+  'components/contacts',
+  'components/reservation-btn',
+  'components/arrow-to-down',
+  'components/swipe-arrow',
+  'components/carousel';
 
 // 6. Page-specific styles
 @import

@@ -32,36 +32,36 @@
   <meta name="description" content="Отметьте праздник на крытой лазертаг арене в 10-ти минутах от станции Мытищи. Вы выбираете во что играть, а с нас остальное."/>
   <meta name="keywords" content="Лазертаг,Нерф,Лазерный пейнтбол,для детей,день рождения,праздник,Мытищи,куда сходить,развлечения,как отметить,где отметить,где отпраздновать,Лазер таг,безопасная игра,активные игры" />
   <title>Праздник с Лазертаг и Нерф в Мытищах «Pantheon»</title>
-	<!-- Icon -->
+	<!-- Favicon -->
 	<link rel="icon" href="./images/logo/favicon.ico">
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./stylesheets/main.scss">
 </head>
 <body class="page">
-	<header class="first" id="first">
+	<header class="first" id="first-section">
     <div class="first__inner">
-      <div class="contacts">
-        <a class="contacts__address" href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18" target="_blank" rel="noopener">
+      <div class="first__contacts contacts">
+        <button onclick="scrollSmoothTo('references')" class="contacts__address">
           Олимпийский проспект 20к1, Мытищи
-        </a>
+        </button>
         <br>
         <a href="tel:+79777220960" class="contacts__tel">
           <i class="icon-phone contacts__tel-icon"></i>
-          <span class="underline">
+          <span class="contacts__tel-number">
             +7 977 722 09 60
           </span>
         </a>
       </div>
       <div class="first__content">
-        <div class="first__logo">
+        <div class="first__site-logo site-logo">
           <picture>
             <source type="image/webp"
-                    srcset="./images/logo/logo-345w-1x.webp 345w,
-                            ./images/logo/logo-690w-2x.webp 690w">
+                    srcset="./images/logo/logo-345w-2x.webp 345w">
             <source type="image/png"
-                    srcset="./images/logo/logo-345w-1x.png 345w,
-                            ./images/logo/logo-690w-2x.png 690w">
-            <img src="./images/logo/logo-690w-2x.png" class="logo__img lazyload"
+                    srcset="./images/logo/logo-345w-2x.png 345w">
+            <img src="./images/logo/logo-345w-2x.png" class="site-logo__img lazyload"
                  alt="Логотип клуба активно-тактических игр «Pantheon»">
           </picture>
         </div>
@@ -87,7 +87,7 @@
       <button class="swipe-arrow swipe-arrow_right" onclick="mySiema.next()">
         <img class="swipe-arrow__icon" src="./images/icons/care-right-icon.svg" alt="Стрелочка вправо. Посмотреть следующую фотографию в слайдере.">
       </button>
-      <div class="arrow-to-down">
+      <div class="first__arrow-to-down arrow-to-down">
         <button onclick="scrollSmoothTo('about-us')" class="arrow-to-down__btn">
           <img class="arrow-to-down__icon" src="./images/icons/angel-down-icon.svg" alt="Стрелочка вниз. Листайте дальше, там много интересного!">
         </button>
@@ -111,7 +111,7 @@
         <source type="image/jpeg"
                 srcset="./images/carousel/roar-496w-1x.jpg 496w,
                         ./images/carousel/roar-992w-2x.jpg 992w">
-        <img src="./images/carousel/roar-960w-1x.jpg" class="background lazyload"
+        <img src="./images/carousel/roar-960w-1x.jpg" class="carousel__image lazyload"
              alt="Возбужденный мальчишка воинственно рычит с лазертаг автоматом в руках">
       </picture>
       <picture class="carousel__slide">
@@ -131,7 +131,7 @@
         <source srcset="./images/carousel/aim-992w-min.jpg" type="image/jpeg"
            data-srcset="./images/carousel/aim-496w-1x.jpg 496w,
                         ./images/carousel/aim-992w-2x.jpg 992w">
-        <img src="./images/carousel/aim-1920w-2x.jpg" class="background lazyload"
+        <img src="./images/carousel/aim-1920w-2x.jpg" class="carousel__image lazyload"
              alt="Маленький ребенок целится из Лазертаг тагера">
       </picture>
       <picture class="carousel__slide">
@@ -151,7 +151,7 @@
         <source srcset="./images/carousel/capture-992w-min.jpg" type="image/jpeg"
            data-srcset="./images/carousel/capture-496w-1x.jpg 496w,
                         ./images/carousel/capture-992w-2x.jpg 992w">
-        <img src="./images/carousel/capture-1920w-2x.jpg" class="background lazyload"
+        <img src="./images/carousel/capture-1920w-2x.jpg" class="carousel__image lazyload"
              alt="День рождения в стиле Нерф">
       </picture>
       <picture class="carousel__slide">
@@ -171,7 +171,7 @@
         <source srcset="./images/carousel/smile-992w-min.jpg" type="image/jpeg"
            data-srcset="./images/carousel/smile-496w-1x.jpg 496w,
                         ./images/carousel/smile-992w-2x.jpg 992w">
-        <img src="./images/carousel/smile-1920w-2x.jpg" class="background lazyload"
+        <img src="./images/carousel/smile-1920w-2x.jpg" class="carousel__image lazyload"
              alt="Довольный школьник после игры в Нерф">
       </picture>
       <picture class="carousel__slide">
@@ -191,7 +191,7 @@
         <source srcset="./images/carousel/madness-992w-min.jpg" type="image/jpeg"
            data-srcset="./images/carousel/madness-496w-1x.jpg 496w,
                         ./images/carousel/madness-992w-2x.jpg 992w">
-        <img src="./images/carousel/madness-1920w-2x.jpg" class="background lazyload"
+        <img src="./images/carousel/madness-1920w-2x.jpg" class="carousel__image lazyload"
              alt="Захват точки во время игры в Лазертаг">
       </picture>
       <picture class="carousel__slide">
@@ -211,7 +211,7 @@
         <source srcset="./images/carousel/horor-992w-min.jpg" type="image/jpeg"
            data-srcset="./images/carousel/horor-496w-1x.jpg 496w,
                         ./images/carousel/horor-992w-2x.jpg 992w">
-        <img src="./images/carousel/horor-1920w-2x.jpg" class="background lazyload"
+        <img src="./images/carousel/horor-1920w-2x.jpg" class="carousel__image lazyload"
              alt="Люди в страшных клоунских масках выглядывают из тьмы">
       </picture>
       <picture class="carousel__slide">
@@ -231,13 +231,11 @@
         <source srcset="./images/carousel/skirmish-992w-min.jpg" type="image/jpeg"
            data-srcset="./images/carousel/skirmish-496w-1x.jpg 496w,
                         ./images/carousel/skirmish-992w-2x.jpg 992w">
-        <img src="./images/carousel/skirmish-1920w-2x.jpg" class="background lazyload"
+        <img src="./images/carousel/skirmish-1920w-2x.jpg" class="carousel__image lazyload"
              alt="Лазертаг перестрелка на закрытой арене">
       </picture>
     </div>
   </header>
-  <!-- Correct view port of the first screen -->
-  <!-- <script src="js/correct-view.js?v=1.5.0"></script> -->
 	<main>
     <div class="masthead">
       <div class="masthead__inner container">
@@ -1014,13 +1012,13 @@
   <!-- <script src="../node_modules/siema/dist/siema.min.js"></script>
   <script src="js/siema.js?v=1.5.0"></script> -->
   <!-- Smooth scroll through anchors-->
-  <!-- <!-- <script src="js/smooth-scroll-to.js?v=1.5.0"></script> --> -->
+  <!-- <script src="js/smooth-scroll-to.js?v=1.5.0"></script> -->
   <!-- Navbar animation -->
-  <!-- <!-- <script src="js/navbar.js?v=1.5.0"></script> --> -->
+  <!-- <script src="js/navbar.js?v=1.5.0"></script> -->
   <!-- Lightbox -->
-  <!-- <!-- <script src="js/lightbox.js?v=1.5.0"></script> --> -->
+  <!-- <script src="js/lightbox.js?v=1.5.0"></script> -->
   <!-- Main js -->
-  <!-- <!-- <script src="js/main.js?v=1.5.0"></script> --> -->
+  <!-- <script src="js/main.js?v=1.5.0"></script> -->
   <script src="./index.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@
 /// @param {Color} $safe-bg-color
 @mixin full-screen-bg($safe-bg-color: white) {
   position: relative;
+
   &__background {
     background: $safe-bg-color;
     position: absolute;
@@ -23,6 +24,13 @@
     object-fit: cover;
     z-index: -10;
   }
+}
+
+@mixin bg-image($brightness: 40%) {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness($brightness);
 }
 
 /// Center children vertically, horizontally or both
@@ -53,5 +61,78 @@
 @mixin v-init($vs) {
   @each $property, $value in $vs {
     --#{$property}: #{$value};
+  }
+}
+
+/// Appearing underline on hover
+/// @param {String} $underline-clr
+@mixin init-underline($underlined-element: &, $underline-clr: #FFFFFF) {
+  #{$underlined-element} {
+    position: relative;
+    padding-bottom: 0.13em;
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      opacity: 0;
+      border-radius: 1em;
+      background: $underline-clr;
+      transition: all 0.3s;
+      transform: translateY(-0.25em);
+    }
+  }
+
+  &:hover #{$underlined-element}::after,
+  &:focus #{$underlined-element}::after {
+    height: 0.1em;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:active #{$underlined-element}::after {
+    transform: scaleX(1.05);
+  }
+}
+
+/// Btn interactive effects
+@mixin btn-interactive($bg-clr: v(white-clr), $contrast-clr: v(dark-red-clr)) {
+  position: relative;
+  transition: color 0.5s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -10;
+    transition: all 0.3s;
+    width: 0;
+    height: 103%;
+    top: 50%;
+    left: 50%;
+    background: $bg-clr;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $contrast-clr;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 90%;
+    opacity: 1;
+  }
+  
+  &:active::after {
+    width: 101%;
+    opacity: 1;
   }
 }

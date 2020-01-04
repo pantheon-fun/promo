@@ -49,6 +49,18 @@
   }
 }
 
+@mixin inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @each $breakpoint, $value in $breakpoints {
+    @include respond-above($breakpoint) {
+      width: calc(#{$value} / 3 * 2);
+    }
+  }
+}
+
 /// Center children vertically, horizontally or both
 /// @param {String} $position
 @mixin center($position: both) {
@@ -183,4 +195,34 @@
     width: 101%;
     opacity: 1;
   }
+}
+
+@mixin heading-style {
+  text-transform: uppercase;
+  color: v(red-clr);
+  font-weight: normal;
+  line-height: 1em;
+  // TODO: https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
+  text-shadow: 0 0 5rem v(dark-red-clr);
+}
+
+@mixin heading_section {
+  @include heading-style;
+
+  font-size: 32rem;
+  padding-top: 2em;
+  padding-bottom: 1.2em;
+}
+
+@mixin heading_sub {
+  @include heading-style;
+
+  font-size: 24rem;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+@mixin text-style {
+  line-height: 1.35em;
+  letter-spacing: 0.033em;
 }

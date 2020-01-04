@@ -851,69 +851,69 @@
 /*
 * _____ GAMES _____
 */
-.games {
-  letter-spacing: 0.5px;
-}
-.games__list {
-  display: grid;
-  gap: 25px;
-  margin: 5px auto 65px auto;
-}
-.games__card {
-  padding: 19px 15px;
-  border: 3px solid var(--second-gray-clr);
-  -webkit-transition: all 0.05s;
-  transition: all 0.05s;
-}
-.games__card:hover {
-  -webkit-transform: scale(1.01);
-  transform: scale(1.01);
-  -webkit-box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
-}
-.games__img-wrap {
-  height: 100px;
-  width: 140px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-}
-.games__img-wrap_correction {
-  width: 90px;
-}
-.games__img {
-  -ms-flex-item-align: center;
-  align-self: center;
-  margin: auto;
-}
-.games__description {
-  text-align: center;
-}
+// .games {
+//   letter-spacing: 0.5px;
+// }
+// .games__list {
+//   display: grid;
+//   gap: 25px;
+//   margin: 5px auto 65px auto;
+// }
+// .games__card {
+//   padding: 19px 15px;
+//   border: 3px solid var(--second-gray-clr);
+//   -webkit-transition: all 0.05s;
+//   transition: all 0.05s;
+// }
+// .games__card:hover {
+//   -webkit-transform: scale(1.01);
+//   transform: scale(1.01);
+//   -webkit-box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+//   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+// }
+// .games__img-wrap {
+//   height: 100px;
+//   width: 140px;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   margin: auto;
+// }
+// .games__img-wrap_correction {
+//   width: 90px;
+// }
+// .games__img {
+//   -ms-flex-item-align: center;
+//   align-self: center;
+//   margin: auto;
+// }
+// .games__description {
+//   text-align: center;
+// }
 
-/* === Media === */
+// /* === Media === */
 
-/* Narrow cards */
-@media (min-width: 520px) {
-  .games__list {
-    width: 471px;
-  }
-}
+// /* Narrow cards */
+// @media (min-width: 520px) {
+//   .games__list {
+//     width: 471px;
+//   }
+// }
 
-/* Horizontal cards */
-@media (min-width: 800px) {
-  .games__list {
-    width: auto;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+// /* Horizontal cards */
+// @media (min-width: 800px) {
+//   .games__list {
+//     width: auto;
+//     grid-template-columns: repeat(3, 1fr);
+//   }
+// }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .games__list {
-    gap: 40px;
-  }
-}
+// /* Large devices (desktops, 992px and up) */
+// @media (min-width: 992px) {
+//   .games__list {
+//     gap: 40px;
+//   }
+// }
 
 /*
 * _____ GALLERY _____

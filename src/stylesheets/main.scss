@@ -26,7 +26,8 @@
 @import
   'layout/first',
   'layout/masthead',
-  'layout/about-us';
+  'layout/about-us',
+  'layout/games';
 
 // 5. Components
 @import
@@ -35,7 +36,8 @@
   'components/arrow-to-down',
   'components/swipe-arrow',
   'components/carousel',
-  'components/navigation';
+  'components/navigation',
+  'components/game-card';
 
 // 6. Page-specific styles
 @import

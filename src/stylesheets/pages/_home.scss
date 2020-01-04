@@ -1,5 +1,9 @@
-.page__home {
+.page-home {
   letter-spacing: 0;
   text-align: center;
   background: v(bg-page-clr);
+
+  &__content {
+    position: relative;
+  }
 }

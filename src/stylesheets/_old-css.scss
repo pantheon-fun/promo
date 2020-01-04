@@ -722,126 +722,126 @@
 /*
 * _____ MAIN _____
 */
-main {
-  position: relative;
-}
+// main {
+//   position: relative;
+// }
 
 /*
 * _____ MASTHEAD _____
 */
-.masthead {
-  background: rgb(20, 17, 17);
-  font-size: 16rem;
-  padding: 1em 0;
-  position: fixed;
-  min-width: 303px;
-  top: 0;
-  right: 0;
-  left: 0;
-  -webkit-transform: translateY(-110%);
-  transform: translateY(-110%);
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
-  z-index: 10;
-}
-.masthead.shown {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-.masthead__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.masthead__logo {
-  display: none;
-}
-.masthead__navigation {
-  display: none;
-}
-.masthead__tel {
-  font-size: 1.1rem;
-  margin: auto;
-  padding-right: 1rem;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.masthead__tel:hover,
-.masthead__tel:focus {
-  color: var(--red-clr);
-}
-.masthead__reservation-btn {
-  --btn-color: white;
-  border: solid;
-  letter-spacing: 0;
-  -moz-tab-size: 0.9rem;
-  -o-tab-size: 0.9rem;
-  tab-size: 0.9rem;
-  text-transform: uppercase;
-  padding: 0.4em 1rem;
-}
-.masthead__reservation-btn:hover,
-.masthead__reservation-btn:focus {
-  --btn-color: var(--red-clr);
-}
-.masthead__reservation-btn:active {
-  background: var(--second-gray-clr);
-}
+// .masthead {
+//   background: rgb(20, 17, 17);
+//   font-size: 16rem;
+//   padding: 1em 0;
+//   position: fixed;
+//   min-width: 303px;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   -webkit-transform: translateY(-110%);
+//   transform: translateY(-110%);
+//   -webkit-transition: -webkit-transform 0.4s;
+//   transition: -webkit-transform 0.4s;
+//   transition: transform 0.4s;
+//   transition: transform 0.4s, -webkit-transform 0.4s;
+//   z-index: 10;
+// }
+// .masthead.shown {
+//   -webkit-transform: translateY(0);
+//   transform: translateY(0);
+// }
+// .masthead__inner {
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+// }
+// .masthead__logo {
+//   display: none;
+// }
+// .masthead__navigation {
+//   display: none;
+// }
+// .masthead__tel {
+//   font-size: 1.1rem;
+//   margin: auto;
+//   padding-right: 1rem;
+//   -webkit-transition: all 0.3s;
+//   transition: all 0.3s;
+// }
+// .masthead__tel:hover,
+// .masthead__tel:focus {
+//   color: var(--red-clr);
+// }
+// .masthead__reservation-btn {
+//   --btn-color: white;
+//   border: solid;
+//   letter-spacing: 0;
+//   -moz-tab-size: 0.9rem;
+//   -o-tab-size: 0.9rem;
+//   tab-size: 0.9rem;
+//   text-transform: uppercase;
+//   padding: 0.4em 1rem;
+// }
+// .masthead__reservation-btn:hover,
+// .masthead__reservation-btn:focus {
+//   --btn-color: var(--red-clr);
+// }
+// .masthead__reservation-btn:active {
+//   background: var(--second-gray-clr);
+// }
 
 /* === Media === */
-@media (min-width: 360px) {
-  .masthead__logo {
-    display: block;
-    height: 36px;
-    width: auto;
-  }
-  .masthead__logo-link {
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
-  }
-  .masthead__logo-link:hover,
-  .masthead__logo-link:focus {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  .masthead__tel {
-    margin: 0;
-    margin-left: auto;
-    padding-right: 1rem;
-  }
-}
-@media (min-width: 992px) {
-  .masthead__navigation {
-    display: block;
-    margin: auto;
-  }
-  .masthead__tel {
-    margin: 0;
-  }
-  .navigation {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-  .navigation__link {
-    margin: 0 1.2rem;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .navigation__link:hover {
-    color: var(--red-clr);
-  }
-}
+// @media (min-width: 360px) {
+//   .masthead__logo {
+//     display: block;
+//     height: 36px;
+//     width: auto;
+//   }
+//   .masthead__logo-link {
+//     -webkit-transition: -webkit-transform 0.3s;
+//     transition: -webkit-transform 0.3s;
+//     transition: transform 0.3s;
+//     transition: transform 0.3s, -webkit-transform 0.3s;
+//   }
+//   .masthead__logo-link:hover,
+//   .masthead__logo-link:focus {
+//     -webkit-transform: scale(1.1);
+//     transform: scale(1.1);
+//   }
+//   .masthead__tel {
+//     margin: 0;
+//     margin-left: auto;
+//     padding-right: 1rem;
+//   }
+// }
+// @media (min-width: 992px) {
+//   .masthead__navigation {
+//     display: block;
+//     margin: auto;
+//   }
+//   .masthead__tel {
+//     margin: 0;
+//   }
+//   .navigation {
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -webkit-box-pack: justify;
+//     -ms-flex-pack: justify;
+//     justify-content: space-between;
+//   }
+//   .navigation__link {
+//     margin: 0 1.2rem;
+//     -webkit-transition: all 0.3s;
+//     transition: all 0.3s;
+//   }
+//   .navigation__link:hover {
+//     color: var(--red-clr);
+//   }
+// }
 
 /*
 * _____ ABOUT US _____

@@ -35,8 +35,8 @@ export const activateSiemaSlider = () => {
     arrow.addEventListener('touchstart', cancelAutoplay);
     arrow.addEventListener('mouseleave', reAutoplay);
     arrow.addEventListener('touchend', reAutoplay);
-    arrow.addEventListener('click', e => {
-      switch (e.target.dataset.siemaArrow) {
+    arrow.addEventListener('click', () => {
+      switch (arrow.dataset.siemaArrow) {
         case 'next':
           mySiema.next();
           break;

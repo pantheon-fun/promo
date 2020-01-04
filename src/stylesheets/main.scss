@@ -25,6 +25,7 @@
 // 4. Layout-related sections
 @import
   'layout/first',
+  'layout/masthead',
   'layout/footer';
 
 // 5. Components
@@ -33,7 +34,8 @@
   'components/reservation-btn',
   'components/arrow-to-down',
   'components/swipe-arrow',
-  'components/carousel';
+  'components/carousel',
+  'components/navigation';
 
 // 6. Page-specific styles
 @import

@@ -1,6 +1,7 @@
 const elementsAndTheirIdsFromTemplate = {
-  app: 'app'
-  // Add elements for js here
+  app: 'app',
+  firstSection: 'first-section',
+  mastheadElement: 'masthead-element'
 };
 
 export const elements = Object.fromEntries(

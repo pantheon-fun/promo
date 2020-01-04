@@ -1,3 +1,5 @@
-// -----------------------------------------------------------------------------
-// This file contains styles that are specific to the home page.
-// -----------------------------------------------------------------------------
+.page__home {
+  letter-spacing: 0;
+  text-align: center;
+  background: v(bg-page-clr);
+}

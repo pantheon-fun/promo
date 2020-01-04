@@ -1,13 +1,12 @@
-const page = document.querySelector(".page");
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
-lightbox.innerHTML = `
-  <div class="loading">
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-  </div>
-`;
-
+// const page = document.querySelector(".page");
+// const lightbox = document.createElement('div');
+// lightbox.id = 'lightbox';
+// document.body.appendChild(lightbox);
+// lightbox.innerHTML = `
+//   <div class="loading">
+//     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+//   </div>
+// `;
 
 /* Gallery */
 const images = document.querySelectorAll('.gallery__img');
@@ -17,19 +16,16 @@ images.forEach(image => {
     const img = document.createElement('img');
     img.src = image.currentSrc;
     lightbox.appendChild(img);
-    page.style.overflow = "hidden";
+    page.style.overflow = 'hidden';
   });
 });
 
 lightbox.addEventListener('click', e => {
-  if (e.target !== e.currentTarget)
-    return;
-  while (lightbox.childElementCount > 1)
-    lightbox.removeChild(lightbox.lastChild);
+  if (e.target !== e.currentTarget) return;
+  while (lightbox.childElementCount > 1) lightbox.removeChild(lightbox.lastChild);
   lightbox.classList.remove('active');
-  page.style.overflow = "auto";
-})
-
+  page.style.overflow = 'auto';
+});
 
 /* Bookform */
 const bookform = document.createElement('div');
@@ -40,11 +36,12 @@ const bookformBtn = document.querySelector('.reservation-option_text_form');
 bookformBtn.addEventListener('click', e => {
   lightbox.classList.add('active');
   lightbox.appendChild(bookform);
-  eval(`(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`);
+  eval(
+    `(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`
+  );
   eval(`Bookform('embedded',{id:3458});`);
-  page.style.overflow = "hidden";
+  page.style.overflow = 'hidden';
 });
-
 
 /* Privacy */
 const privacyText = document.createElement('div');
@@ -55,11 +52,9 @@ privacyBtns.forEach(privacy => {
   privacy.addEventListener('click', e => {
     lightbox.classList.add('active');
     lightbox.appendChild(privacyText);
-    page.style.overflow = "hidden";
+    page.style.overflow = 'hidden';
   });
 });
-
-
 
 privacyText.innerHTML = `
   <section class="privacy__lightbox">

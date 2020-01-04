@@ -27,10 +27,13 @@
   'layout/first',
   'layout/masthead',
   'layout/about-us',
-  'layout/games';
+  'layout/games',
+  'layout/gallery';
 
 // 5. Components
 @import
+  'components/lightbox',
+  'components/spinner',
   'components/contacts',
   'components/reservation-btn',
   'components/arrow-to-down',

@@ -1,5 +1,5 @@
 const elementsAndTheirIdsFromTemplate = {
-  app: 'app',
+  page: 'page',
   firstSection: 'first-section',
   mastheadElement: 'masthead-element'
 };

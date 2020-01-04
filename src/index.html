@@ -39,7 +39,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./stylesheets/main.scss">
 </head>
-<body class="page page-home">
+<body class="page page-home" id="page">
 	<header class="first" id="first-section">
     <div class="first__inner">
       <div class="first__contacts contacts">
@@ -273,6 +273,7 @@
           +7 977 722 09 60
         </a>
         <button data-smooth-scroll-to="reservation-section" class="masthead__reservation-btn btn">
+          <!-- TODO: replace by "забронировать", remove phone number and add burger -->
           Заказать
         </button>
       </div>
@@ -331,8 +332,8 @@
 				</ul>
 			</div>
 		</section>
-		<section class="gallery" id="gallery">
-      <h2 class="heading heading_section">
+		<section class="gallery" id="gallery-section">
+      <h2 class="gallery__heading">
         Стань частью сражения
       </h2>
 			<ul class="gallery__list">
@@ -346,7 +347,7 @@
                data-srcset="./images/gallery/archer-400w-1x.jpg 400w,
                             ./images/gallery/archer-800w-2x.jpg 800w">
             <img src="./images/gallery/archer-800w-2x.jpg" data-expand="640"
-                  class="gallery__img lazyload" alt="Школьник в защитной маске натягивает лук">
+                  class="gallery__image lazyload" alt="Школьник в защитной маске натягивает лук">
           </picture>
 				</li>
 				<li class="gallery__item">
@@ -359,7 +360,7 @@
                 data-srcset="./images/gallery/big-gun-400w-1x.jpg 400w,
                             ./images/gallery/big-gun-800w-2x.jpg 800w">
             <img src="./images/gallery/big-gun-800w-2x.jpg" data-expand="560"
-                  class="gallery__img lazyload" alt="Мальчики держат большие редкие виды оружия Нерф">
+                  class="gallery__image lazyload" alt="Мальчики держат большие редкие виды оружия Нерф">
           </picture>
 				</li>
 				<li class="gallery__item">
@@ -372,7 +373,7 @@
                data-srcset="./images/gallery/guy-400w-1x.jpg 400w,
                             ./images/gallery/guy-800w-2x.jpg 800w">
             <img src="./images/gallery/guy-800w-2x.jpg" data-expand="480"
-                  class="gallery__img lazyload" alt="Парень с лазертаг винтовкой">
+                  class="gallery__image lazyload" alt="Парень с лазертаг винтовкой">
           </picture>
         </li>
 				<li class="gallery__item">
@@ -385,7 +386,7 @@
                data-srcset="./images/gallery/midder-400w-1x.jpg 400w,
                             ./images/gallery/midder-800w-2x.jpg 800w">
             <img src="./images/gallery/midder-800w-2x.jpg" data-expand="400"
-                  class="gallery__img lazyload" alt="Веселая заварушка за центральную точку">
+                  class="gallery__image lazyload" alt="Веселая заварушка за центральную точку">
           </picture>
 				</li>
 				<li class="gallery__item">
@@ -398,7 +399,7 @@
                data-srcset="./images/gallery/nekit-400w-1x.jpg 400w,
                             ./images/gallery/nekit-800w-2x.jpg 800w">
             <img src="./images/gallery/nekit-800w-2x.jpg" data-expand="320"
-                  class="gallery__img lazyload" alt="Суровый боец с современным оборудованием">
+                  class="gallery__image lazyload" alt="Суровый боец с современным оборудованием">
           </picture>
 				</li>
 				<li class="gallery__item">
@@ -411,7 +412,7 @@
                data-srcset="./images/gallery/camper-400w-1x.jpg 400w,
                             ./images/gallery/camper-800w-2x.jpg 800w">
             <img src="./images/gallery/camper-800w-2x.jpg" data-expand="240"
-                  class="gallery__img lazyload" alt="Шестилетний мальчик бдительно выцеливает врага">
+                  class="gallery__image lazyload" alt="Шестилетний мальчик бдительно выцеливает врага">
           </picture>
 				</li>
 				<li class="gallery__item">
@@ -424,7 +425,7 @@
                data-srcset="./images/gallery/shine-400w-1x.jpg 400w,
                             ./images/gallery/shine-800w-2x.jpg 800w">
             <img src="./images/gallery/shine-800w-2x.jpg" data-expand="160"
-                  class="gallery__img lazyload" alt="Парень захватывает центральную точку во время игры в стрелялку">
+                  class="gallery__image lazyload" alt="Парень захватывает центральную точку во время игры в стрелялку">
           </picture>
 				</li>
 				<li class="gallery__item">
@@ -437,12 +438,12 @@
                data-srcset="./images/gallery/dark-gun-400w-1x.jpg 400w,
                             ./images/gallery/dark-gun-800w-2x.jpg 800w">
             <img src="./images/gallery/dark-gun-800w-2x.jpg" data-expand="80"
-                class="gallery__img lazyload" alt="Мальчик целится из грозного оружия">
+                class="gallery__image lazyload" alt="Мальчик целится из грозного оружия">
           </picture>
 				</li>
       </ul>
-      <a href="https://vk.com/albums-97450505" class="gallery__more-photo-btn btn" target="_blank" rel="noopener">
-        Еще фото
+      <a href="https://vk.com/albums-97450505" class="gallery__more-photo-btn" target="_blank" rel="noopener">
+        Фото с игр
       </a>
     </section>
     <section class="we-can-more">

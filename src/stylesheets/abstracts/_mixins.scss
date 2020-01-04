@@ -33,6 +33,15 @@
   filter: brightness($brightness);
 }
 
+@mixin bg-behind {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
 @mixin container {
   max-width: v(max-width);
   margin-left: auto;

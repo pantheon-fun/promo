@@ -9,23 +9,23 @@
 // `;
 
 /* Gallery */
-const images = document.querySelectorAll('.gallery__img');
-images.forEach(image => {
-  image.addEventListener('click', e => {
-    lightbox.classList.add('active');
-    const img = document.createElement('img');
-    img.src = image.currentSrc;
-    lightbox.appendChild(img);
-    page.style.overflow = 'hidden';
-  });
-});
+// const images = document.querySelectorAll('.gallery__img');
+// images.forEach(image => {
+//   image.addEventListener('click', e => {
+//     lightbox.classList.add('active');
+//     const img = document.createElement('img');
+//     img.src = image.currentSrc;
+//     lightbox.appendChild(img);
+//     page.style.overflow = 'hidden';
+//   });
+// });
 
-lightbox.addEventListener('click', e => {
-  if (e.target !== e.currentTarget) return;
-  while (lightbox.childElementCount > 1) lightbox.removeChild(lightbox.lastChild);
-  lightbox.classList.remove('active');
-  page.style.overflow = 'auto';
-});
+// lightbox.addEventListener('click', e => {
+//   if (e.target !== e.currentTarget) return;
+//   while (lightbox.childElementCount > 1) lightbox.removeChild(lightbox.lastChild);
+//   lightbox.classList.remove('active');
+//   page.style.overflow = 'auto';
+// });
 
 /* Bookform */
 const bookform = document.createElement('div');

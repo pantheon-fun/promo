@@ -49,10 +49,14 @@ const observer = new IntersectionObserver(function(entries, observer) {
           }
           break;
         case calculator:
-          eval(`var widgetOptions231405 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=231405&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();`);
+          eval(
+            `var widgetOptions231405 = { bg_color: "transparent" }; (function() { var a = document.createElement("script"), h = "head"; a.async = true; a.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//ucalc.pro/api/widget.js?id=231405&t="+Math.floor(new Date()/18e5); document.getElementsByTagName(h)[0].appendChild(a) })();`
+          );
           break;
         case schedule:
-          eval(`(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/4487/js'));`);
+          eval(
+            `(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/4487/js'));`
+          );
           eval(`Bookform('embedded',{id:4487});`);
           const scheduleContainer = document.querySelector('.schedule');
           scheduleContainer.removeChild(scheduleContainer.firstChild);
@@ -71,9 +75,9 @@ observer.observe(calculator);
 observer.observe(schedule);
 
 /* FAQ animation */
-const faqItems = document.querySelectorAll('.accordion__question');
-function toggleAccordion() {
-  this.classList.toggle('active');
-  this.nextElementSibling.classList.toggle('active');
-}
-faqItems.forEach(item => item.addEventListener('click', toggleAccordion));
+// const faqItems = document.querySelectorAll('.accordion__question');
+// function toggleAccordion() {
+//   this.classList.toggle('active');
+//   this.nextElementSibling.classList.toggle('active');
+// }
+// faqItems.forEach(item => item.addEventListener('click', toggleAccordion));

@@ -29,7 +29,8 @@
   'layout/about-us',
   'layout/games',
   'layout/gallery',
-  'layout/we-can-more';
+  'layout/we-can-more',
+  'layout/faq';
 
 // 5. Components
 @import
@@ -42,7 +43,8 @@
   'components/carousel',
   'components/navigation',
   'components/game-card',
-  'components/advantage';
+  'components/advantage',
+  'components/accordion';
 
 // 6. Page-specific styles
 @import

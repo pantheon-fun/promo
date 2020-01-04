@@ -9,6 +9,7 @@ import { activateSiemaSlider } from './js/packages/siema';
 
 import { activateMasthead } from './js/handlers/mastheadHandler';
 import { activateGallery } from './js/handlers/galleryHandler';
+import { activateAccordion } from './js/handlers/accordionHandler';
 
 activateRealVhHeight();
 activateSmoothScroll();
@@ -16,5 +17,5 @@ activateSmoothScroll();
 activateSiemaSlider();
 
 activateMasthead();
-
 activateGallery();
+activateAccordion();

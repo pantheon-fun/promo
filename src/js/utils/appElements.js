@@ -1,7 +1,8 @@
 const elementsAndTheirIdsFromTemplate = {
   page: 'page',
   firstSection: 'first-section',
-  mastheadElement: 'masthead-element'
+  mastheadElement: 'masthead-element',
+  accordion: 'accordion'
 };
 
 export const elements = Object.fromEntries(

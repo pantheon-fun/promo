@@ -43,7 +43,7 @@
 	<header class="first" id="first-section">
     <div class="first__inner">
       <div class="first__contacts contacts">
-        <button onclick="scrollSmoothTo('references')" class="contacts__address">
+        <button data-smooth-scroll-to="references-section" class="contacts__address">
           Олимпийский проспект 20к1, Мытищи
         </button>
         <br>
@@ -77,7 +77,7 @@
             Открытые игры
           </p>
         </div>
-        <button onclick="scrollSmoothTo('reservation')" class="reservation-btn first__reservation-btn">
+        <button data-smooth-scroll-to="reservation-section" class="reservation-btn first__reservation-btn">
           Забронировать игру
         </button>
       </div>
@@ -88,7 +88,7 @@
         <img class="swipe-arrow__icon" src="./images/icons/care-right-icon.svg" alt="Стрелочка вправо. Посмотреть следующую фотографию в слайдере.">
       </button>
       <div class="first__arrow-to-down arrow-to-down">
-        <button onclick="scrollSmoothTo('about-us')" class="arrow-to-down__btn">
+        <button class="arrow-to-down__btn" data-smooth-scroll-to="about-us-section">
           <img class="arrow-to-down__icon" src="./images/icons/angel-down-icon.svg" alt="Стрелочка вниз. Листайте дальше, там много интересного!">
         </button>
       </div>
@@ -279,7 +279,7 @@
         </button>
       </div>
     </div>
-		<section class="about-us" id="about-us">
+		<section class="about-us" id="about-us-section">
       <h2 class="about-us__heading heading heading_section">
         О нас
       </h2>
@@ -857,7 +857,7 @@
               <div id="bookform-embedded-widget-4487"></div>
             </div>
           </div>
-          <span id="reservation" class="anchor"></span>
+          <span id="reservation-section" class="anchor"></span>
           <div class="reservation">
             <h3 class="reservation__title">
               Забронировать
@@ -920,7 +920,7 @@
         </a>
       </div>
     </section>
-		<section class="references" id="references">
+		<section class="references" id="references-section">
       <a class="references__img-map" href="https://yandex.ru/maps/org/pantheon/52710844172/?ll=37.765531%2C55.920992&z=18" target="_blank" rel="noopener">
         <picture>
           <source srcset="./images/backgrounds/map-768w-min.webp" type="image/webp"

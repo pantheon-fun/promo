@@ -23,9 +23,9 @@ export const activateSiemaSlider = () => {
   const slides = document.querySelectorAll('.carousel__slide');
   slides.forEach(slide => {
     slide.addEventListener('mousedown', cancelAutoplay);
+    slide.addEventListener('touchstart', cancelAutoplay);
     slide.addEventListener('mouseup', reAutoplay);
     slide.addEventListener('mouseleave', reAutoplay);
-    slide.addEventListener('touchstart', cancelAutoplay);
     slide.addEventListener('touchend', reAutoplay);
   });
 

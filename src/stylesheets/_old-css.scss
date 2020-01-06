@@ -1146,52 +1146,52 @@
 /*
 * _____ PRICES _____
 */
-.prices {
-  position: relative;
-}
-.prices__inner {
-  margin: auto;
-  padding-top: 60px;
-  padding-bottom: 160px;
-}
-.prices__heading {
-  font-size: 34rem;
-  color: #fff;
-  font-weight: 300;
-  padding-top: 1.7rem;
-}
-.prices__per-person {
-  font-size: 28rem;
-  font-weight: bold;
-  margin-bottom: 60px;
-}
-.prices__advantages {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 30px;
-}
+// .prices {
+//   position: relative;
+// }
+// .prices__inner {
+//   margin: auto;
+//   padding-top: 60px;
+//   padding-bottom: 160px;
+// }
+// .prices__heading {
+//   font-size: 34rem;
+//   color: #fff;
+//   font-weight: 300;
+//   padding-top: 1.7rem;
+// }
+// .prices__per-person {
+//   font-size: 28rem;
+//   font-weight: bold;
+//   margin-bottom: 60px;
+// }
+// .prices__advantages {
+//   display: grid;
+//   grid-template-rows: repeat(3, 1fr);
+//   gap: 30px;
+// }
 
-/* === Advantage === */
-.advantage__heading {
-  font-size: 24rem;
-  color: var(--soft-orange-clr);
-}
-.advantage__caption {
-  font-size: 16rem;
-  margin-top: 1rem;
-}
+// /* === Advantage === */
+// .advantage__heading {
+//   font-size: 24rem;
+//   color: var(--soft-orange-clr);
+// }
+// .advantage__caption {
+//   font-size: 16rem;
+//   margin-top: 1rem;
+// }
 
-/* === Media === */
-@media (min-width: 768px) {
-  .prices__per-person {
-    margin-bottom: 75px;
-  }
-  .prices__advantages {
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-}
+// /* === Media === */
+// @media (min-width: 768px) {
+//   .prices__per-person {
+//     margin-bottom: 75px;
+//   }
+//   .prices__advantages {
+//     grid-template-rows: 1fr;
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 40px;
+//   }
+// }
 
 /*
 * _____ PRICE LIST _____

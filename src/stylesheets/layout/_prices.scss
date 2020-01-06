@@ -1,0 +1,49 @@
+.prices {
+  @include full-screen-bg(v(bg-page-clr));
+
+  &__background {
+    // TODO: вынести в переменную
+    filter: brightness(40%);
+  }
+
+  &__inner {
+    @include container;
+
+    padding-top: 60rem;
+    padding-bottom: 150rem;
+  }
+
+  &__heading {
+    @include heading_section;
+
+    font-size: 2.1em;
+    color: v(white-clr);
+    font-weight: 300;
+    padding-top: 1.7em;
+  }
+
+  &__per-person {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding-bottom: 3em;
+  }
+
+  &__plus-points {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 30rem;
+  }
+
+  @include respond-above(sm) {
+    &__per-person {
+      padding-bottom: 2.5em;
+    }
+
+    &__plus-points {
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40rem;
+    }
+  }
+}

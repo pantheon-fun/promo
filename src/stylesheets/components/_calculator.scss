@@ -1,0 +1,30 @@
+.calculator {
+  grid-area: calculator;
+
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 433rem;
+    height: 100%;
+    min-height: 950rem;
+    background: v(bg-page-clr);
+    margin-bottom: -80rem;
+  
+    /* Advertisement disabler */
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 80rem;
+      transform: scale(1.03);
+      background: v(second-gray-clr);
+    }
+  }
+}

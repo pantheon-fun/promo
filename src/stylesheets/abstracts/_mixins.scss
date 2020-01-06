@@ -236,3 +236,10 @@
   line-height: 1.35em;
   letter-spacing: 0.033em;
 }
+
+@mixin price-list-card {
+  background: v(bg-page-clr);
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 2em 1.9em;
+}

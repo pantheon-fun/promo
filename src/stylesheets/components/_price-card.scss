@@ -1,0 +1,106 @@
+.price-card {
+  @include price-list-card;
+
+  display: grid;
+  gap: 10rem;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 0.5fr 0.4fr 3fr;
+  grid-template-areas:
+    'heading heading'
+    '....... players'
+    'session prices';
+
+  &_weekdays {
+    grid-area: price-card_weekdays;
+  }
+
+  &_weekends {
+    grid-area: price-card_weekends;
+  }
+  
+  &__heading {
+    grid-area: heading;
+
+    text-align: left;
+    margin-top: -8rem;
+    margin-left: -3rem;
+    text-transform: uppercase;
+    color: v(soft-red-clr);
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+  
+  &__players {
+    grid-area: players;
+
+    display: grid;
+    gap: 15rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  &__session {
+    grid-area: session;
+
+    display: grid;
+    gap: 15rem;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  
+  &__prices {
+    grid-area: prices;
+
+    display: grid;
+    gap: 15rem;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'sm-1h md-1h lg-1h'
+      'sm-2h md-2h lg-2h'
+      'add-h add-h add-h';
+  }
+
+  &_group__prices {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'md-2h'
+      'add-h';
+  }
+
+  &__price_sm-1h {
+    grid-area: sm-1h;
+  }
+  &__price_md-1h {
+    grid-area: md-1h;
+  }
+  &__price_lg-1h {
+    grid-area: lg-1h;
+  }
+  &__price_sm-2h {
+    grid-area: sm-2h;
+  }
+  &__price_md-2h {
+    grid-area: md-2h;
+  }
+  &__price_lg-2h {
+    grid-area: lg-2h;
+  }
+  &__price_add-hour {
+    grid-area: add-h;
+  }
+
+  &__price {
+    padding-left: 3rem;
+    border: 2rem solid v(soft-red-clr);
+    font-weight: lighter;
+    line-height: 2.5em;
+    transition: background 0.3s, font-weight 0.3s;
+    font-size: 0.9em;
+
+    &:hover,
+    &:focus {
+      background: v(second-gray-clr);
+      font-weight: bold;
+    }
+  }
+}

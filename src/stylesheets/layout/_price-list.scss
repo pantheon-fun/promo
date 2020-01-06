@@ -1,0 +1,118 @@
+.price-list {
+  background: v(second-gray-clr);
+
+  &__inner {
+    @include container;
+    
+    padding-bottom: 55rem;
+    position: relative;
+  }
+
+  &__heading {
+    $triangle-width: 112rem;
+    $triangle-height: 66rem;
+    $letter-spacing: 8rem;
+
+    @include heading-style;
+
+    position: absolute;
+    top: -70rem;
+    right: 0;
+    left: $letter-spacing;
+    margin: 0 auto;
+    font-size: 30rem;
+    letter-spacing: $letter-spacing;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 40rem;
+      right: 0;
+      left: -$letter-spacing;
+      margin: 0 auto;
+
+      width: $triangle-width;
+      border-width: $triangle-height $triangle-width / 2;
+      border-style: solid;
+      border-color: v(bg-page-clr) transparent transparent transparent ;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 40rem;
+      right: 0;
+      left: -$letter-spacing;
+      margin: 0 auto;
+
+      width: $triangle-width;
+      border-width: $triangle-height - 6rem $triangle-width / 2;
+      border-style: solid;
+      border-color: v(soft-red-clr) transparent transparent transparent;
+    }
+  }
+  
+  &__content {
+    padding-top: 45rem;
+    display: grid;
+    gap: 20rem;
+    grid-template-areas:
+      "game-heading_privat"
+      "price-card_weekdays"
+      "price-card_weekends"
+      "game-heading_open"
+      "notification-card"
+      "calculator"
+      "schedule"
+      "reservation";
+  }
+
+  &__game-heading {    
+    @include heading_sub;
+
+    color: v(white-clr);
+    text-shadow: none;
+    padding-top: 0.7em;
+    padding-bottom: 0;
+
+    &_privat {
+      grid-area: game-heading_privat;
+    }
+
+    &_open {
+      grid-area: game-heading_open;
+    }
+  }
+
+  // TODO: Correct
+  @include respond-above(sm) {
+    &__content {
+      column-gap: 40rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(5, auto) 1fr auto;
+      grid-template-areas:
+        "game-heading_privat ."
+        "price-card_weekdays calculator"
+        "price-card_weekends calculator"
+        "game-heading_open calculator"
+        "notification-card calculator"
+        "reservation calculator"
+        "schedule schedule";
+    }
+  }
+
+  @include respond-above(md) {
+    padding-bottom: 50rem;
+    
+    &__content {
+      grid-template-areas:
+        "game-heading_privat ."
+        "price-card_weekdays calculator"
+        "price-card_weekends calculator"
+        "game-heading_open calculator"
+        "notification-card calculator"
+        "reservation reservation"
+        "schedule schedule";
+    }
+  }
+}

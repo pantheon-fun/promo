@@ -31,7 +31,8 @@
   'layout/gallery',
   'layout/we-can-more',
   'layout/faq',
-  'layout/prices';;
+  'layout/prices',
+  'layout/price-list';
 
 // 5. Components
 @import
@@ -46,7 +47,10 @@
   'components/game-card',
   'components/advantage',
   'components/accordion',
-  'components/plus-point';
+  'components/plus-point',
+  'components/price-card',
+  'components/notification-card',
+  'components/calculator';
 
 // 6. Page-specific styles
 @import

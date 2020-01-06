@@ -1198,186 +1198,186 @@
 */
 
 /* === Section === */
-.price-list {
-  background: var(--second-gray-clr);
-  position: relative;
-  padding-bottom: 55px;
-}
+// .price-list {
+//   background: var(--second-gray-clr);
+//   position: relative;
+//   padding-bottom: 55px;
+// }
 
-/* === Heading-arrow === */
-.price-list__heading {
-  position: absolute;
-  top: -70px;
-  margin: auto;
-  font-size: 30rem;
-  letter-spacing: 8px;
-  position: relative;
-}
-.price-list__heading::after {
-  content: '';
-  display: block;
-  position: absolute;
-  margin-top: 7px;
-  background: url(../images/backgrounds/triangle.svg) center center no-repeat;
-  background-size: 300px 70px;
-  height: 100px;
-  width: 100%;
-  -webkit-filter: brightness(90%);
-  filter: brightness(90%);
-}
+// /* === Heading-arrow === */
+// .price-list__heading {
+//   position: absolute;
+//   top: -70px;
+//   margin: auto;
+//   font-size: 30rem;
+//   letter-spacing: 8px;
+//   position: relative;
+// }
+// .price-list__heading::after {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   margin-top: 7px;
+//   background: url(../images/backgrounds/triangle.svg) center center no-repeat;
+//   background-size: 300px 70px;
+//   height: 100px;
+//   width: 100%;
+//   -webkit-filter: brightness(90%);
+//   filter: brightness(90%);
+// }
 
-/* === Content === */
-.price-list__content {
-  display: grid;
-  gap: 20px;
-  grid-template-areas:
-    'privat'
-    'open'
-    'calculator'
-    'schedule'
-    'reservation';
-  padding-top: 40px;
-}
-.price-list__dividing-line {
-  display: none;
-}
-.price-list__game-heading {
-  color: white;
-  text-shadow: none;
-  padding-top: 10px;
-  padding-bottom: 30px;
-}
-.price-list__cards {
-  display: grid;
-  gap: 20px;
-}
+// /* === Content === */
+// .price-list__content {
+//   display: grid;
+//   gap: 20px;
+//   grid-template-areas:
+//     'privat'
+//     'open'
+//     'calculator'
+//     'schedule'
+//     'reservation';
+//   padding-top: 40px;
+// }
+// .price-list__dividing-line {
+//   display: none;
+// }
+// .price-list__game-heading {
+//   color: white;
+//   text-shadow: none;
+//   padding-top: 10px;
+//   padding-bottom: 30px;
+// }
+// .price-list__cards {
+//   display: grid;
+//   gap: 20px;
+// }
 
 /* === Prices card === */
 
 /* Card structure */
-.prices-card {
-  display: grid;
-  gap: 10px;
-  background: var(--bg-page-clr);
-  color: #fff;
-  font-size: 14rem;
-  font-weight: bold;
-  padding: 28px 25px;
-}
-.prices-card_weekdays,
-.prices-card_weekends {
-  grid-template-columns: 1fr 6fr;
-  grid-template-rows: 0.78fr 0.5fr 3fr;
-  grid-template-areas:
-    'heading heading'
-    '....... players'
-    'session prices';
-}
-.prices-card_open {
-  display: block;
-  height: calc(100% - 64px);
-}
+// .prices-card {
+//   display: grid;
+//   gap: 10px;
+//   background: var(--bg-page-clr);
+//   color: #fff;
+//   font-size: 14rem;
+//   font-weight: bold;
+//   padding: 28px 25px;
+// }
+// .prices-card_weekdays,
+// .prices-card_weekends {
+//   grid-template-columns: 1fr 6fr;
+//   grid-template-rows: 0.78fr 0.5fr 3fr;
+//   grid-template-areas:
+//     'heading heading'
+//     '....... players'
+//     'session prices';
+// }
+// .prices-card_open {
+//   display: block;
+//   height: calc(100% - 64px);
+// }
 
-/* Card heading */
-.price-card__heading {
-  grid-area: heading;
-  text-align: left;
-  margin-top: -8rem;
-  margin-left: -3rem;
-  text-transform: uppercase;
-  color: var(--soft-red);
-  font-weight: 300;
-  font-size: 18rem;
-}
+// /* Card heading */
+// .price-card__heading {
+//   grid-area: heading;
+//   text-align: left;
+//   margin-top: -8rem;
+//   margin-left: -3rem;
+//   text-transform: uppercase;
+//   color: var(--soft-red);
+//   font-weight: 300;
+//   font-size: 18rem;
+// }
 
-/* Card players */
-.price-card__players {
-  grid-area: players;
-  display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(3, 1fr);
-  font-size: 1rem;
-}
+// /* Card players */
+// .price-card__players {
+//   grid-area: players;
+//   display: grid;
+//   gap: 15px;
+//   grid-template-columns: repeat(3, 1fr);
+//   font-size: 1rem;
+// }
 
-/* Card play session */
-.price-card__session {
-  grid-area: session;
-  display: grid;
-  gap: 15px;
-  grid-template-rows: repeat(3, 1fr);
-}
+// /* Card play session */
+// .price-card__session {
+//   grid-area: session;
+//   display: grid;
+//   gap: 15px;
+//   grid-template-rows: repeat(3, 1fr);
+// }
 
-/* Card prices */
-.price-card__prices {
-  grid-area: prices;
-  display: grid;
-  gap: 15px;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    'sm-1h md-1h lg-1h'
-    'sm-2h md-2h lg-2h'
-    'add-h add-h add-h';
-}
-.price-card_group__prices {
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    'md-2h'
-    'add-h';
-}
-.price-card__price_sm-1h {
-  grid-area: sm-1h;
-}
-.price-card__price_md-1h {
-  grid-area: md-1h;
-}
-.price-card__price_lg-1h {
-  grid-area: lg-1h;
-}
-.price-card__price_sm-2h {
-  grid-area: sm-2h;
-}
-.price-card__price_md-2h {
-  grid-area: md-2h;
-}
-.price-card__price_lg-2h {
-  grid-area: lg-2h;
-}
-.price-card__price_add-hour {
-  grid-area: add-h;
-}
-.price-card__price {
-  padding-left: 3px;
-  color: white;
-  border: 2px solid var(--soft-red);
-  font-weight: lighter;
-  line-height: 2.5rem;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  font-size: 0.8rem;
-}
-.price-card__price:hover,
-.price-card__price:focus {
-  background: var(--second-gray-clr);
-  font-weight: bold;
-}
+// /* Card prices */
+// .price-card__prices {
+//   grid-area: prices;
+//   display: grid;
+//   gap: 15px;
+//   grid-template-rows: repeat(3, 1fr);
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-template-areas:
+//     'sm-1h md-1h lg-1h'
+//     'sm-2h md-2h lg-2h'
+//     'add-h add-h add-h';
+// }
+// .price-card_group__prices {
+//   grid-template-rows: repeat(2, 1fr);
+//   grid-template-columns: 1fr;
+//   grid-template-areas:
+//     'md-2h'
+//     'add-h';
+// }
+// .price-card__price_sm-1h {
+//   grid-area: sm-1h;
+// }
+// .price-card__price_md-1h {
+//   grid-area: md-1h;
+// }
+// .price-card__price_lg-1h {
+//   grid-area: lg-1h;
+// }
+// .price-card__price_sm-2h {
+//   grid-area: sm-2h;
+// }
+// .price-card__price_md-2h {
+//   grid-area: md-2h;
+// }
+// .price-card__price_lg-2h {
+//   grid-area: lg-2h;
+// }
+// .price-card__price_add-hour {
+//   grid-area: add-h;
+// }
+// .price-card__price {
+//   padding-left: 3px;
+//   color: white;
+//   border: 2px solid var(--soft-red);
+//   font-weight: lighter;
+//   line-height: 2.5rem;
+//   -webkit-transition: all 0.3s;
+//   transition: all 0.3s;
+//   font-size: 0.8rem;
+// }
+// .price-card__price:hover,
+// .price-card__price:focus {
+//   background: var(--second-gray-clr);
+//   font-weight: bold;
+// }
 
-/* === Open games card === */
-.price-card__advertisement {
-  font-size: 1.2rem;
-  margin: 0 auto;
-  padding-top: 15px;
-  padding-bottom: 10px;
-}
-.price-card__caption {
-  padding-top: 7px;
-  font-weight: 400;
-}
-.price-card__under-caption {
-  padding: 25px 9px 0;
-  font-weight: 300;
-}
+// /* === Open games card === */
+// .price-card__advertisement {
+//   font-size: 1.2rem;
+//   margin: 0 auto;
+//   padding-top: 15px;
+//   padding-bottom: 10px;
+// }
+// .price-card__caption {
+//   padding-top: 7px;
+//   font-weight: 400;
+// }
+// .price-card__under-caption {
+//   padding: 25px 9px 0;
+//   font-weight: 300;
+// }
 
 /* === Schedule === */
 .schedule {
@@ -1396,40 +1396,41 @@
   height: 400px;
 }
 
-/* === Calculator === */
-.calculator {
-  margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  max-width: 100%;
-}
-.calculator__container {
-  position: relative;
-  width: 100%;
-  max-width: 433px;
-  height: 100%;
-  min-height: 950px;
-  background: var(--bg-page-clr);
-  margin-bottom: -80px;
-}
+// /* === Calculator === */
+// .calculator {
+//   margin-top: 20px;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   max-width: 100%;
+// }
+// .calculator__container {
+//   position: relative;
+//   width: 100%;
+//   max-width: 433px;
+//   height: 100%;
+//   min-height: 950px;
+//   background: var(--bg-page-clr);
+//   margin-bottom: -80px;
+// }
 
-/* Advertisement disable */
-.calculator__container::after {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 80px;
-  -webkit-transform: scale(1.03);
-  transform: scale(1.03);
-  background: var(--second-gray-clr);
-}
+// /* Advertisement disable */
+// .calculator__container::after {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   height: 80px;
+//   -webkit-transform: scale(1.03);
+//   transform: scale(1.03);
+//   background: var(--second-gray-clr);
+// }
+/* TODO: Look at this
 @media (min-width: 399px) and (max-width: 660px), (min-width: 992px) {
   .price-card__price {
     font-size: 1.1rem;
@@ -1441,6 +1442,7 @@
     height: 60px;
   }
 }
+*/
 
 /* === reservation button === */
 .reservation {
@@ -1480,10 +1482,10 @@
   content: 'это кнопка';
   position: absolute;
   text-transform: none;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   font-weight: normal;
-  bottom: -0.8rem;
-  right: -0.54rem;
+  bottom: -0.8em;
+  right: -0.54em;
   color: rgba(255, 255, 255, 0.55);
 }
 .reservation__click-preventer {
@@ -1515,8 +1517,8 @@
   background: var(--red-clr);
   border: 7px solid var(--red-clr);
   color: var(--second-gray-clr);
-  letter-spacing: -0.01rem;
-  font-size: 0.8rem;
+  letter-spacing: -0.01em;
+  font-size: 0.8em;
   font-weight: bold;
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
@@ -1525,7 +1527,7 @@
   transition: opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
   transition: transform 0.15s, opacity 0.2s, background 0.175s, color 0.25s;
   transition: transform 0.15s, opacity 0.2s, background 0.175s, color 0.25s, -webkit-transform 0.15s;
-  padding: 0 0.6rem;
+  padding: 0 0.6em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1537,7 +1539,7 @@
   align-items: center;
 }
 .reservation-option_icon {
-  font-size: 2rem;
+  font-size: 2em;
   padding: 0;
 }
 .reservation-option_icon_vk {
@@ -1547,10 +1549,10 @@
   grid-area: inst;
 }
 .reservation-option_text__small {
-  font-size: 0.6rem;
+  font-size: 0.6em;
   position: absolute;
   top: 0;
-  left: 0.3rem;
+  left: 0.3em;
 }
 .reservation-option_text_tel {
   grid-area: tel;
@@ -1591,31 +1593,31 @@
 
 /* 3 left, calculator right */
 @media (min-width: 660px) {
-  .price-list__content {
-    margin-left: 25px;
-    -webkit-column-gap: 40px;
-    column-gap: 40px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-areas:
-      'privat calculator'
-      'open calculator'
-      'reservation calculator'
-      'schedule schedule';
-  }
-  .price-list__cards {
-    gap: 40px;
-  }
-  .price-list__game-type_privat {
-    grid-area: privat;
-  }
-  .price-list__game-type_open {
-    grid-area: open;
-  }
-  .calculator {
-    grid-area: calculator;
-    margin-top: 64px;
-  }
+  // .price-list__content {
+  //   margin-left: 25px;
+  //   -webkit-column-gap: 40px;
+  //   column-gap: 40px;
+  //   grid-template-columns: 1fr 1fr;
+  //   grid-template-rows: auto auto 1fr auto;
+  //   grid-template-areas:
+  //     'privat calculator'
+  //     'open calculator'
+  //     'reservation calculator'
+  //     'schedule schedule';
+  // }
+  // .price-list__cards {
+  //   gap: 40px;
+  // }
+  // .price-list__game-type_privat {
+  //   grid-area: privat;
+  // }
+  // .price-list__game-type_open {
+  //   grid-area: open;
+  // }
+  // .calculator {
+  //   // grid-area: calculator;
+  //   margin-top: 64px;
+  // }
   .schedule__widget {
     max-width: 381px;
   }
@@ -1640,16 +1642,16 @@
 
 /* reservation button bottom */
 @media (min-width: 992px) {
-  .price-list {
-    padding-bottom: 50px;
-  }
-  .price-list__content {
-    grid-template-areas:
-      'privat calculator'
-      'open calculator'
-      'schedule schedule'
-      'reservation reservation';
-  }
+  // .price-list {
+  //   padding-bottom: 50px;
+  // }
+  // .price-list__content {
+  //   grid-template-areas:
+  //     'privat calculator'
+  //     'open calculator'
+  //     'schedule schedule'
+  //     'reservation reservation';
+  // }
   .reservation {
     font-size: 28rem;
     width: 41vw;
@@ -1681,19 +1683,19 @@
 }
 .contact__heading {
   padding-top: 0;
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.6em;
   text-transform: none;
-  font-size: 2rem;
+  font-size: 2em;
 }
 .contact__caption {
-  font-size: 1.3rem;
-  padding-bottom: 0.8rem;
+  font-size: 1.3em;
+  padding-bottom: 0.8em;
   font-weight: 300;
 }
 .contact__privacy {
-  font-size: 0.8rem;
+  font-size: 0.8em;
   font-weight: 300;
-  padding-top: 0.3rem;
+  padding-top: 0.3em;
 }
 .contact__privacy .privacy {
   border-bottom: 1px solid white;

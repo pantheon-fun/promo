@@ -243,3 +243,12 @@
   font-weight: bold;
   padding: 2em 1.9em;
 }
+
+@mixin privacy-animation {
+  transition: text-shadow 0.3s;
+
+  &:hover,
+  &:focus {
+    text-shadow: 0 0 7rem v(white-clr);
+  }
+}

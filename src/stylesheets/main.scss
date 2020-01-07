@@ -32,7 +32,8 @@
   'layout/we-can-more',
   'layout/faq',
   'layout/prices',
-  'layout/price-list';
+  'layout/price-list',
+  'layout/contact';
 
 // 5. Components
 @import
@@ -52,7 +53,8 @@
   'components/notification-card',
   'components/calculator',
   'components/reservation',
-  'components/schedule';
+  'components/schedule',
+  'components/form';
 
 // 6. Page-specific styles
 @import

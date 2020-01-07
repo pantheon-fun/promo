@@ -132,18 +132,18 @@
 // }
 
 /* === Anchor === */
-.anchor {
-  display: block;
-  height: 60vh;
-  margin-top: -60vh;
-  visibility: hidden;
-}
-@media (min-width: 576px) {
-  .anchor {
-    height: 67vh;
-    margin-top: -67vh;
-  }
-}
+// .anchor {
+//   display: block;
+//   height: 60vh;
+//   margin-top: -60vh;
+//   visibility: hidden;
+// }
+// @media (min-width: 576px) {
+//   .anchor {
+//     height: 67vh;
+//     margin-top: -67vh;
+//   }
+// }
 
 /* === Heading === */
 // .heading {
@@ -192,14 +192,14 @@
 //   transform: translateY(-10px);
 // }
 
-/* === Link === */
-.link {
-  border-bottom: 1px dashed #fff;
-}
-.link:hover,
-.link:focus {
-  border-bottom: 1px solid #fff;
-}
+// /* === Link === */
+// .link {
+//   border-bottom: 1px dashed #fff;
+// }
+// .link:hover,
+// .link:focus {
+//   border-bottom: 1px solid #fff;
+// }
 
 /* === Lightbox === */
 // #lightbox {
@@ -318,23 +318,23 @@
 // }
 
 /* === Privacy === */
-.privacy__lightbox {
-  overflow: auto;
-  background: var(--bg-page-clr);
-  font-size: 14rem;
-  padding: 3rem;
-  line-height: 1.2rem;
-  height: 100%;
-  text-align: left;
-}
-.privacy__lightbox p {
-  padding-bottom: 0.3rem;
-}
-.privacy__heading {
-  font-size: 1.5rem;
-  text-align: center;
-  padding-bottom: 1rem;
-}
+// .privacy__lightbox {
+//   overflow: auto;
+//   background: var(--bg-page-clr);
+//   font-size: 14rem;
+//   padding: 3rem;
+//   line-height: 1.2rem;
+//   height: 100%;
+//   text-align: left;
+// }
+// .privacy__lightbox p {
+//   padding-bottom: 0.3rem;
+// }
+// .privacy__heading {
+//   font-size: 1.5rem;
+//   text-align: center;
+//   padding-bottom: 1rem;
+// }
 
 // /* === Button === */
 // .btn {
@@ -1430,7 +1430,7 @@
 //   transform: scale(1.03);
 //   background: var(--second-gray-clr);
 // }
-/* TODO: Look at this
+/* : Look at this
 @media (min-width: 399px) and (max-width: 660px), (min-width: 992px) {
   .price-card__price {
     font-size: 1.1rem;
@@ -2073,58 +2073,58 @@
 /*
 * _____ FOOTER _____
 */
-.footer {
-  background: var(--bg-page-clr);
-  font-size: 12rem;
-  padding: 0.5em 0 1.5rem;
-}
-.footer__inner > * {
-  margin-top: 1rem;
-  font-weight: 300;
-}
-.footer__company {
-  font-size: 1rem;
-  font-weight: 400;
-}
-.footer__creator {
-  padding: 0.75em 1rem;
-  border: 1px solid white;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border-radius: 10rem;
-}
-.footer__creator:hover,
-.footer__creator:focus {
-  border-color: var(--red-clr);
-}
-.footer__creator:active {
-  color: var(--red-clr);
-}
-
-/* === Privacy === */
-// .privacy {
-//   -webkit-transition: text-shadow 0.3s;
-//   transition: text-shadow 0.3s;
+// .footer {
+//   background: var(--bg-page-clr);
+//   font-size: 12rem;
+//   padding: 0.5em 0 1.5rem;
 // }
-// .privacy:hover,
-// .privacy:focus {
-//   text-shadow: 0 0 7px white;
+// .footer__inner > * {
+//   margin-top: 1rem;
+//   font-weight: 300;
+// }
+// .footer__company {
+//   font-size: 1rem;
+//   font-weight: 400;
+// }
+// .footer__creator {
+//   padding: 0.75em 1rem;
+//   border: 1px solid white;
+//   -webkit-transition: all 0.3s;
+//   transition: all 0.3s;
+//   border-radius: 10rem;
+// }
+// .footer__creator:hover,
+// .footer__creator:focus {
+//   border-color: var(--red-clr);
+// }
+// .footer__creator:active {
+//   color: var(--red-clr);
 // }
 
-/* === Media === */
-@media (min-width: 576px) {
-  .footer__inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-  .footer__company {
-    margin-right: 40px;
-  }
-}
+// /* === Privacy === */
+// // .privacy {
+// //   -webkit-transition: text-shadow 0.3s;
+// //   transition: text-shadow 0.3s;
+// // }
+// // .privacy:hover,
+// // .privacy:focus {
+// //   text-shadow: 0 0 7px white;
+// // }
+
+// /* === Media === */
+// @media (min-width: 576px) {
+//   .footer__inner {
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -webkit-box-pack: justify;
+//     -ms-flex-pack: justify;
+//     justify-content: space-between;
+//     -webkit-box-align: center;
+//     -ms-flex-align: center;
+//     align-items: center;
+//   }
+//   .footer__company {
+//     margin-right: 40px;
+//   }
+// }

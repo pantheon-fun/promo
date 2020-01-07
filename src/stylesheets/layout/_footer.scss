@@ -1,0 +1,49 @@
+.footer {
+  background: v(bg-page-clr);
+  font-size: 0.8em;
+  padding: 1.2em 0;
+
+  &__inner {
+    @include container;
+
+    font-weight: 300;
+  }
+
+  &__privacy {
+    @include privacy-animation;
+  }
+
+  &__company {
+    font-size: 1.1em;
+    padding: 1.1em 0;
+    font-weight: 400;
+  }
+
+  &__creator {
+    padding: 0.75em 1em;
+    border: 1rem solid v(white-clr);
+    transition: all 0.3s;
+    border-radius: 10em;
+
+    &:hover,
+    &:focus {
+      border-color: v(red-clr);
+    }
+
+    &:active {
+      color: v(red-clr);
+    }
+  }
+  
+  @include respond-above(sm) {
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__company {
+      margin-right: 40rem;
+    }
+  }
+}

@@ -35,7 +35,8 @@
   'layout/price-list',
   'layout/contact',
   'layout/how-to-find',
-  'layout/references';
+  'layout/references',
+  'layout/footer';
 
 // 5. Components
 @import
@@ -56,7 +57,8 @@
   'components/calculator',
   'components/reservation',
   'components/schedule',
-  'components/form';
+  'components/form',
+  'components/privacy';
 
 // 6. Page-specific styles
 @import

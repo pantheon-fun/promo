@@ -1,5 +1,6 @@
 import { loadCalculator, observeCalculator, getCalculator } from '../handlers/calculatorHandler';
 import { loadSchedule, observeSchedule, getSchedule } from '../handlers/scheduleHandler';
+import { loadMap, observeMap, getMap } from '../handlers/mapHandler';
 
 export const activateLazyloadObserver = () => {
   const options = {
@@ -16,6 +17,9 @@ export const activateLazyloadObserver = () => {
           case getSchedule():
             loadSchedule();
             break;
+          case getMap():
+            loadMap();
+            break;
           default:
             throw new Error('lazyloadObserver error');
         }
@@ -27,4 +31,5 @@ export const activateLazyloadObserver = () => {
 
   observeCalculator(lazyloadObserver);
   observeSchedule(lazyloadObserver);
+  observeMap(lazyloadObserver);
 };

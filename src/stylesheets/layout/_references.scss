@@ -1,0 +1,158 @@
+.references {
+  @include full-screen-bg;
+  
+  height: 500rem;
+  overflow: hidden;
+
+  &__background {
+    filter: brightness(40%);
+  }
+
+  &__map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    z-index: 1;
+
+    &-widget {
+      height: 100%;
+    }
+  }
+  
+  /* === References card === */
+  &__inner {
+    @include container;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__card {
+    position: absolute;
+    z-index: 2;
+    color: v(white-clr);
+    background: v(bg-page-clr);
+    border: 3rem solid v(red-clr);
+    width: 320px;
+    margin: 0 auto;
+    
+    @include respond-below(sm) {
+      right: -282px;
+      transform: rotate(-90deg);
+      transition: all 0.3s;
+
+      &.active {
+        right: 0;
+        left: 0;
+        transform: none;
+      }
+    }
+
+    @include respond-above(sm) {
+      margin-left: 200rem;
+    }
+
+    @include respond-above(md) {
+      margin-left: 300rem;
+    }
+  }
+
+  &__heading {
+    @include heading-style;
+
+    font-size: 28rem;
+    background: v(red-clr);
+    margin: 4rem;
+    color: v(bg-page-clr);
+    height: 2em;
+    line-height: 2em;
+  }
+
+  &__list {
+    padding: 10rem 13rem;
+  }
+
+  &__type {
+    @include heading_sub;
+
+    text-shadow: none;
+    font-size: 22rem;
+    padding: 0;
+  }
+
+  &__link {
+    font-size: 16rem;
+    padding-top: 6rem;
+    padding-bottom: 1em;
+    transition: all 0.4s;
+
+    &:hover,
+    &:focus {
+      text-shadow: 0 0 7rem v(white-clr);
+    }
+  }
+
+  /* Socials */
+  &__socials-wrap {
+    display: flex;
+    height: 40rem;
+    margin: 13rem auto 10rem;
+    justify-content: center;
+  }
+
+  &__social {
+    min-width: 40rem;
+    min-height: 40rem;
+    margin-right: 10rem;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &-vk {
+      transition: background 0.25s;
+      background-image: url(../images/references/vk-logo.svg);
+
+      &:hover,
+      &:focus {
+        background-image: url(../images/references/vk-logo-active.svg);
+      }
+    }
+
+    &-in {
+      transition: background 0.25s;
+      background-image: url(../images/references/in-logo.svg);
+
+      &:hover,
+      &:focus {
+        background-image: url(../images/references/in-logo-active.svg);
+      }
+    }
+  }
+
+  &__btn {
+    padding: 12rem 13rem;
+    font-weight: bold;
+    font-size: 14rem;
+    color: v(bg-page-clr);
+    text-transform: uppercase;
+    background: v(white-clr);
+    border-radius: 20rem;
+    transition: all 0.25s;
+
+    &:hover,
+    &:focus {
+      background: v(red-clr);
+      color: v(white-clr);
+    }
+  }
+
+  @include respond-above(sm) {
+    &__card {
+      margin-right: 0;
+    }
+  }
+}

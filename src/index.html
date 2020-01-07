@@ -922,33 +922,35 @@
       </div>
     </section>
 		<section class="references" id="references-section">
-      <a class="references__img-map" href="https://yandex.ru/maps/org/pantheon/52710844172/?ll=37.765531%2C55.920992&z=18" target="_blank" rel="noopener">
-        <picture>
-          <source srcset="./images/backgrounds/map-768w-min.webp" type="image/webp"
-             data-srcset="./images/backgrounds/map-384w-1x.webp 384w,
-                          ./images/backgrounds/map-768w-2x.webp 768w,
-                          ./images/backgrounds/map-1152w-3x.webp 1152w">
-          <source srcset="./images/backgrounds/map-768w-min.jpg" type="image/jpeg"
-             data-srcset="./images/backgrounds/map-384w-1x.jpg 384w,
-                          ./images/backgrounds/map-768w-2x.jpg 768w,
-                          ./images/backgrounds/map-1152w-3x.jpg 1152w">
-          <img src="./images/backgrounds/map-768w-2x.jpg" class="background lazyload"
-               alt="Наше расположение в Мытищах. Карта в красных тонах.">
-        </picture>
-      </a>
-			<div class="references__widget-map script" id="widget-map">
-        <div class="loading">
-          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      <picture>
+        <source srcset="./images/backgrounds/map-768w-min.webp" type="image/webp"
+            data-srcset="./images/backgrounds/map-384w-1x.webp 384w,
+                        ./images/backgrounds/map-768w-2x.webp 768w,
+                        ./images/backgrounds/map-1152w-3x.webp 1152w">
+        <source srcset="./images/backgrounds/map-768w-min.jpg" type="image/jpeg"
+            data-srcset="./images/backgrounds/map-384w-1x.jpg 384w,
+                        ./images/backgrounds/map-768w-2x.jpg 768w,
+                        ./images/backgrounds/map-1152w-3x.jpg 1152w">
+        <img src="./images/backgrounds/map-768w-2x.jpg" class="references__background lazyload"
+              alt="Наше расположение в Мытищах. Карта в красных тонах.">
+      </picture>
+      <div class="references__map">
+        <div class="references__map-widget" id="map">
+          <div class="spinner">
+            <div class="spinner__ring">
+              <div></div><div></div><div></div><div></div>
+            </div>
+          </div>
         </div>
       </div>
-			<div class="container references__inner">
-				<div class="references__card">
-					<h2 class="references__heading heading">
+			<div class="references__inner">
+				<div class="references__card" id="contact-card">
+					<h2 class="references__heading">
 						Контакты
 					</h2>
 					<ul class="references__list">
 						<li class="references__item">
-							<h3 class="references__type heading heading_sub">
+							<h3 class="references__type">
 								Телефон
 							</h3>
 							<a class="references__link" href="tel:+79777220960">
@@ -956,7 +958,7 @@
 							</a>
 						</li>
 						<li class="references__item">
-							<h3 class="references__type heading heading_sub">
+							<h3 class="references__type">
 								Почта
 							</h3>
 							<a class="references__link" href="mailto:corp.pantheon@yandex.ru">
@@ -964,7 +966,7 @@
 							</a>
 						</li>
 						<li class="references__item">
-							<h3 class="references__type heading heading_sub">
+							<h3 class="references__type">
 								Адрес
 							</h3>
 							<a class="references__link" href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18" target="_blank" rel="noopener">
@@ -972,12 +974,12 @@
 							</a>
 						</li>
 						<li class="references__item">
-							<h3 class="references__type heading heading_sub">
+							<h3 class="references__type">
 								Мы в соцсетях
 							</h3>
 							<div class="references__socials-wrap">
-								<a class="social-vk references__social" href="https://vk.com/club.pantheon" target="_blank" rel="noopener" aria-label="Перейти в нашу группу во Вконтакте"></a>
-								<a class="social-in references__social" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Перейти в наш Инстаграм"></a>
+								<a class="references__social references__social-vk" href="https://vk.com/club.pantheon" target="_blank" rel="noopener" aria-label="Перейти в нашу группу во Вконтакте"></a>
+								<a class="references__social references__social-in" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Перейти в наш Инстаграм"></a>
 								<button data-smooth-scroll-to="reservation-section" class="references__btn">
 									Заказать
                 </button>

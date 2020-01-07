@@ -9,7 +9,7 @@
 
 /// Place child img as a full screen background
 /// @param {Color} $safe-bg-color
-@mixin full-screen-bg($safe-bg-color: white) {
+@mixin full-screen-bg($safe-bg-color: transparent) {
   position: relative;
 
   &__background {

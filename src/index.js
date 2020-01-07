@@ -11,6 +11,7 @@ import { activateMasthead } from './js/handlers/mastheadHandler';
 import { activateGallery } from './js/handlers/galleryHandler';
 import { activateAccordion } from './js/handlers/accordionHandler';
 import { activateBookform } from './js/handlers/bookformHandler';
+import { activateContactCard } from './js/handlers/contactCardHandler';
 
 import { activateLazyloadObserver } from './js/observers/lazyload';
 
@@ -23,5 +24,6 @@ activateMasthead();
 activateGallery();
 activateAccordion();
 activateBookform();
+activateContactCard();
 
 activateLazyloadObserver();

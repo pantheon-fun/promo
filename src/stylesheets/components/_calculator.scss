@@ -5,14 +5,16 @@
   justify-content: center;
   max-width: 100%;
 
-  &__container {
+  &__widget {
+    --ad-block-el-height: 58px;
+
     position: relative;
     width: 100%;
-    max-width: 433rem;
+    max-width: 433px;
     height: 100%;
-    min-height: 950rem;
+    min-height: 993px;
     background: v(bg-page-clr);
-    margin-bottom: -80rem;
+    margin-bottom: calc(var(--ad-block-el-height) * -1);
   
     /* Advertisement disabler */
     &::after {
@@ -22,9 +24,14 @@
       right: 0;
       bottom: 0;
       left: 0;
-      height: 80rem;
+      height: v(ad-block-el-height);
       transform: scale(1.03);
       background: v(second-gray-clr);
+    }
+
+    @media screen and (max-width: 400px),
+           screen and (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
+      --ad-block-el-height: 83px;
     }
   }
 }

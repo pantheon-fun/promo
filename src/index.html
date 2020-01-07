@@ -718,31 +718,31 @@
               </p>
             </div>
             <div class="price-card__prices">
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_sm-1h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_sm-1h">
                 600
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_md-1h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_md-1h">
                 500
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_lg-1h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_lg-1h">
                 400
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_sm-2h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_sm-2h">
                 900
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_md-2h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_md-2h">
                 800
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_lg-2h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_lg-2h">
                 700
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_add-hour">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_add-hour">
                 200
                 <i class="icon-rouble"></i>
               </button>
@@ -784,31 +784,31 @@
               </p>
             </div>
             <div class="price-card__prices">
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_sm-1h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_sm-1h">
                 800
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_md-1h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_md-1h">
                 700
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_lg-1h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_lg-1h">
                 600
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_sm-2h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_sm-2h">
                 1200
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_md-2h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_md-2h">
                 1100
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_lg-2h">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_lg-2h">
                 1000
                 <i class="icon-rouble"></i>
               </button>
-              <button onclick="scrollSmoothTo('reservation')" class="price-card__price price-card__price_add-hour">
+              <button data-smooth-scroll-to="reservation-section" class="price-card__price price-card__price_add-hour">
                 300
                 <i class="icon-rouble"></i>
               </button>
@@ -838,17 +838,24 @@
             </p>
           </div>
           <div class="calculator">
-            <div class="calculator__container" id="calculator">
-              <div class="uCalc_231405"></div>
+            <div class="calculator__widget" id="calculator">
+              <div class="spinner">
+                <div class="spinner__ring">
+                  <div></div><div></div><div></div><div></div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="schedule">
-            <div class="loading"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
             <h2 class="schedule__heading heading_sub">
               Выберите удобное время игры
             </h2>
             <div class="schedule__widget" id="schedule">
-              <div id="bookform-embedded-widget-4487"></div>
+              <div class="spinner">
+                <div class="spinner__ring">
+                  <div></div><div></div><div></div><div></div>
+                </div>
+              </div>
             </div>
           </div>
           <span id="reservation-section" class="anchor"></span>
@@ -869,7 +876,7 @@
               <a class="reservation-option reservation-option_icon reservation-option_icon_inst" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Забронируйте игру через Инстаграм">
                 <i class="icon-instagram"></i>
               </a>
-              <a class="reservation-option reservation-option_text reservation-option_text_form" aria-label="Забронируйте игру через Яндекс форму">
+              <a id="bookform" class="reservation-option reservation-option_text reservation-option_text_form" aria-label="Забронируйте игру через Яндекс форму">
                 <span class="reservation-option_text__small">
                   через
                 </span>
@@ -971,7 +978,7 @@
 							<div class="references__socials-wrap">
 								<a class="social-vk references__social" href="https://vk.com/club.pantheon" target="_blank" rel="noopener" aria-label="Перейти в нашу группу во Вконтакте"></a>
 								<a class="social-in references__social" href="https://www.instagram.com/club.pantheon/" target="_blank" rel="noopener" aria-label="Перейти в наш Инстаграм"></a>
-								<button onclick="scrollSmoothTo('reservation')" class="references__btn">
+								<button data-smooth-scroll-to="reservation-section" class="references__btn">
 									Заказать
                 </button>
 							</div>

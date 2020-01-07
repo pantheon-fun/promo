@@ -2,12 +2,15 @@ const elementsAndTheirIdsFromTemplate = {
   page: 'page',
   firstSection: 'first-section',
   mastheadElement: 'masthead-element',
-  accordion: 'accordion'
+  accordion: 'accordion',
+  calculator: 'calculator',
+  schedule: 'schedule',
+  bookform: 'bookform',
 };
 
 export const elements = Object.fromEntries(
   Object.entries(elementsAndTheirIdsFromTemplate).map(([name, id]) => [
     name,
-    document.getElementById(id)
+    document.getElementById(id),
   ])
 );

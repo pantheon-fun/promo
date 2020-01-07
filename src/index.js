@@ -10,6 +10,9 @@ import { activateSiemaSlider } from './js/packages/siema';
 import { activateMasthead } from './js/handlers/mastheadHandler';
 import { activateGallery } from './js/handlers/galleryHandler';
 import { activateAccordion } from './js/handlers/accordionHandler';
+import { activateBookform } from './js/handlers/bookformHandler';
+
+import { activateLazyloadObserver } from './js/observers/lazyload';
 
 activateRealVhHeight();
 activateSmoothScroll();
@@ -19,3 +22,6 @@ activateSiemaSlider();
 activateMasthead();
 activateGallery();
 activateAccordion();
+activateBookform();
+
+activateLazyloadObserver();

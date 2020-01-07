@@ -28,20 +28,20 @@
 // });
 
 /* Bookform */
-const bookform = document.createElement('div');
-bookform.id = 'bookform-embedded-widget-3458';
+// const bookform = document.createElement('div');
+// bookform.id = 'bookform-embedded-widget-3458';
 
-const bookformBtn = document.querySelector('.reservation-option_text_form');
+// const bookformBtn = document.querySelector('.reservation-option_text_form');
 
-bookformBtn.addEventListener('click', e => {
-  lightbox.classList.add('active');
-  lightbox.appendChild(bookform);
-  eval(
-    `(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`
-  );
-  eval(`Bookform('embedded',{id:3458});`);
-  page.style.overflow = 'hidden';
-});
+// bookformBtn.addEventListener('click', e => {
+//   lightbox.classList.add('active');
+//   lightbox.appendChild(bookform);
+//   eval(
+//     `(function (w,d,s,o,f,js,fjs){w['BookformObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);}(window,document,'script','Bookform','https://widget.bookform.ru/3458/js'));`
+//   );
+//   eval(`Bookform('embedded',{id:3458});`);
+//   page.style.overflow = 'hidden';
+// });
 
 /* Privacy */
 const privacyText = document.createElement('div');

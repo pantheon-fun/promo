@@ -59,41 +59,11 @@
       'add-h add-h add-h';
   }
 
-  &_group__prices {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'md-2h'
-      'add-h';
-  }
-
-  &__price_sm-1h {
-    grid-area: sm-1h;
-  }
-  &__price_md-1h {
-    grid-area: md-1h;
-  }
-  &__price_lg-1h {
-    grid-area: lg-1h;
-  }
-  &__price_sm-2h {
-    grid-area: sm-2h;
-  }
-  &__price_md-2h {
-    grid-area: md-2h;
-  }
-  &__price_lg-2h {
-    grid-area: lg-2h;
-  }
-  &__price_add-hour {
-    grid-area: add-h;
-  }
-
   &__price {
     padding-left: 3rem;
     border: 2rem solid v(soft-red-clr);
     font-weight: lighter;
-    line-height: 2.5em;
+    line-height: 2.6em;
     transition: background 0.3s, font-weight 0.3s;
     font-size: 0.9em;
 
@@ -101,6 +71,34 @@
     &:focus {
       background: v(second-gray-clr);
       font-weight: bold;
+    }
+
+    &_sm-1h {
+      grid-area: sm-1h;
+    }
+    &_md-1h {
+      grid-area: md-1h;
+    }
+    &_lg-1h {
+      grid-area: lg-1h;
+    }
+    &_sm-2h {
+      grid-area: sm-2h;
+    }
+    &_md-2h {
+      grid-area: md-2h;
+    }
+    &_lg-2h {
+      grid-area: lg-2h;
+    }
+    &_add-hour {
+      grid-area: add-h;
+    }
+  }
+
+  @include respond-above(sm) {
+    &__price {
+      font-size: 0.95em;
     }
   }
 }

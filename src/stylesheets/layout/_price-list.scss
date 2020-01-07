@@ -55,7 +55,7 @@
   &__content {
     padding-top: 45rem;
     display: grid;
-    gap: 20rem;
+    gap: 25rem;
     grid-template-areas:
       "game-heading_privat"
       "price-card_weekdays"
@@ -84,12 +84,12 @@
     }
   }
 
-  // TODO: Correct
   @include respond-above(sm) {
     &__content {
       column-gap: 40rem;
+      row-gap: 30rem;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(5, auto) 1fr auto;
+      grid-template-rows: repeat(5, auto) 1fr repeat(1, auto);
       grid-template-areas:
         "game-heading_privat ."
         "price-card_weekdays calculator"
@@ -101,18 +101,18 @@
     }
   }
 
-  @include respond-above(md) {
-    padding-bottom: 50rem;
-    
+  @include respond-above(md) {    
     &__content {
+      padding-left: 42rem;
+      grid-template-rows: repeat(4, auto) 1fr repeat(2, auto);
       grid-template-areas:
         "game-heading_privat ."
         "price-card_weekdays calculator"
         "price-card_weekends calculator"
         "game-heading_open calculator"
         "notification-card calculator"
-        "reservation reservation"
-        "schedule schedule";
+        "schedule schedule"
+        "reservation reservation";
     }
   }
 }

@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
-    "imask": "^6.0.0",
+    "imask": "^6.0.1",
     "lazysizes": "^5.1.2",
     "normalize.css": "^8.0.1",
     "siema": "^1.5.1"

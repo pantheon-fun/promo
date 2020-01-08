@@ -8,6 +8,7 @@ const elementsAndTheirIdsFromTemplate = {
   bookform: 'bookform',
   map: 'map',
   contactCard: 'contact-card',
+  form: 'form',
 };
 
 export const elements = Object.fromEntries(

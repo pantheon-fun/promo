@@ -7,7 +7,7 @@ export const activateMasthead = () => {
     const scroll = document.body.scrollTop || document.documentElement.scrollTop;
     const firstSectionHeight = firstSection.offsetHeight;
 
-    if (scroll > firstSectionHeight - 10) {
+    if (scroll > firstSectionHeight - mastheadElement.offsetHeight) {
       mastheadElement.classList.add('shown');
     } else {
       mastheadElement.classList.remove('shown');

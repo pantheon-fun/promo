@@ -32,6 +32,8 @@
     @media screen and (max-width: 400px),
            screen and (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
       --ad-block-el-height: 83px;
+
+      min-height: 1232px;
     }
   }
 }

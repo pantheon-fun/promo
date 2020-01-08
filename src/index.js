@@ -2,11 +2,10 @@ import '@babel/polyfill';
 
 import './js/packages/lazysizes';
 
-import { activateRealVhHeight } from './js/functions/realVhHeight';
-import { activateSmoothScroll } from './js/functions/smoothScrollTo';
-
 import { activateSiemaSlider } from './js/packages/siema';
 
+import { activateRealVhHeight } from './js/handlers/realVhHeight';
+import { activateSmoothScroll } from './js/handlers/smoothScroll';
 import { activateMasthead } from './js/handlers/mastheadHandler';
 import { activateGallery } from './js/handlers/galleryHandler';
 import { activateAccordion } from './js/handlers/accordionHandler';
@@ -17,11 +16,10 @@ import { activateForm } from './js/handlers/formHandler';
 
 import { activateLazyloadObserver } from './js/observers/lazyload';
 
-activateRealVhHeight();
-activateSmoothScroll();
-
 activateSiemaSlider();
 
+activateRealVhHeight();
+activateSmoothScroll();
 activateMasthead();
 activateGallery();
 activateAccordion();

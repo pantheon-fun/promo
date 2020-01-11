@@ -2,15 +2,24 @@ import { elements } from '../utils/appElements';
 
 const { firstSection, mastheadElement } = elements;
 
-export const activateMasthead = () => {
-  window.addEventListener('scroll', () => {
-    const scroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const firstSectionHeight = firstSection.offsetHeight;
+const firstSectionHeight = firstSection.offsetHeight;
+const mastheadElementHeight = mastheadElement.offsetHeight;
 
-    if (scroll > firstSectionHeight - mastheadElement.offsetHeight) {
-      mastheadElement.classList.add('shown');
-    } else {
-      mastheadElement.classList.remove('shown');
-    }
+const processMasthead = () => {
+  const scroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+  if (scroll > firstSectionHeight - mastheadElementHeight) {
+    mastheadElement.classList.add('shown');
+  } else {
+    mastheadElement.classList.remove('shown');
+  }
+};
+
+export const activateMasthead = () => {
+  let scrollTimeout;
+
+  window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(processMasthead, 300);
   });
 };

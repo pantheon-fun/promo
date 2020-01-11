@@ -2,21 +2,18 @@ require('dotenv').config();
 
 module.exports.config = {
   port: process.env.PORT,
-  /* Doesn't work for now
   sender: {
-    email: 'YOUR_EMAIL',
-    password: 'YOUR_PASSWORD',
-  },
-  */
-  transporter: {
-    service: 'YOUR_SERVICE',
+    direct: true,
+    host: 'smtp.yandex.ru',
+    port: 465,
     auth: {
       user: 'YOUR_EMAIL',
-      pass: 'YOUR_PASSWORD',
+      pass: 'YOUR_PASS',
     },
+    secure: true,
   },
   mailOptions: {
-    from: 'PANTHEON - форма обратной связи',
+    from: 'YOUR_EMAIL',
     to: 'some@email.com, another@email.com',
     subject: 'Запрос звонка!',
     text: '...',

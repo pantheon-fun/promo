@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const { config } = require('../../config');
 
 const sendEmail = message => {
-  const transporter = nodemailer.createTransport(config.transporter);
+  const transporter = nodemailer.createTransport(config.sender);
 
   const mailOptions = {
     ...config.mailOptions,

@@ -2,7 +2,7 @@
   @include full-screen-bg(v(bg-page-clr));
 
   &__background {
-    // TODO: вынести в переменную
+    // TODO: Move to variables
     filter: brightness(40%);
   }
 

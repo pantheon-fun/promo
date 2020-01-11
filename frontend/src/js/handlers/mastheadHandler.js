@@ -20,6 +20,6 @@ export const activateMasthead = () => {
 
   window.addEventListener('scroll', () => {
     clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(processMasthead, 300);
+    scrollTimeout = setTimeout(processMasthead, 100);
   });
 };

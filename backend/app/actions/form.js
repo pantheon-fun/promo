@@ -1,14 +1,9 @@
+const { sendEmail } = require('../handler/nodemailer').nodemailer;
+
 const sendFormData = ({ user, tel }) => {
-  const message = `Имя: ${user}; \nНомер телефона: ${tel};`;
-  console.log(message);
-  //   sender(message);
-  //   // res.type('text/plain');
-  //   // res.json(req.body);
-  //   res.status(201).send({
-  //     message: 'Почта отправлена',
-  //     status: 'ok',
-  //   });
-  // });
+  const message = `Имя: ${user.trim() || 'Не указано'}; \nНомер телефона: ${tel};`;
+
+  sendEmail(message);
 };
 
 module.exports.form = {

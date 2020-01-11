@@ -17,19 +17,20 @@ const sendForm = async () => {
 
   const res = await Ajax.post('/form', user);
 
-  // TODO: fix it and here and also on server
   if (res.ok) {
-    form.removeEventListener('submit', sendForm, false);
+    form.removeEventListener('submit', processSubmit);
     form.classList.add('active');
   }
+};
+
+const processSubmit = async e => {
+  e.preventDefault();
+
+  await sendForm(e);
 };
 
 export const activateForm = () => {
   activateIMask();
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-
-    await sendForm();
-  });
+  form.addEventListener('submit', processSubmit);
 };

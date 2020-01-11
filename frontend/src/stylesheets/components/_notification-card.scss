@@ -1,0 +1,31 @@
+.notification-card {
+  grid-area: notification-card;
+
+  @include price-list-card;
+  @include center;
+  flex-direction: column;
+
+  // height: calc(100% - 64rem);
+
+  &__advertisement {
+    font-size: 1.2em;
+    margin: 0 auto;
+    padding-top: 0.7em;
+    padding-bottom: 0.5em;
+  }
+  
+  &__accent {
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  &__caption {
+    padding-top: 0.5em;
+    font-weight: 400;
+  }
+
+  &__under-caption {
+    padding: 2.2em 0.5em 0;
+    font-weight: 300;
+  }
+}

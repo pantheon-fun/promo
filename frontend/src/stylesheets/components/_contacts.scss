@@ -1,0 +1,36 @@
+.contacts {
+  transition: margin 0.3s;
+  
+  &__address {
+    font-size: 0.8em;
+    line-height: 2.2em;
+    text-transform: uppercase;
+    transition: text-shadow 0.4s;
+  
+    &:hover,
+    &:focus {
+      text-shadow: 0 0 0.4em v(white-clr);
+    }
+  }
+
+  &__tel {
+    $underlined-element: '#{&}-number';
+
+    @include init-underline($underlined-element);
+
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    
+    &-icon {
+      font-size: 0.9em;
+      padding-right: 0.3em;
+      color: v(red-clr);
+    }
+  }
+
+  @include respond-above(xs) {
+    font-size: 1.2em;
+  }
+}

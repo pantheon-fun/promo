@@ -1,0 +1,31 @@
+.advantage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__title {
+    padding: 1.2em;
+    pointer-events: none;
+    color: v(soft-orange-clr);
+    transition: text-shadow 0.6s, transform 0.6s;
+
+    .advantage:hover & {
+      text-shadow: 0 0 30px v(black-clr);
+      transform: scale(1.1);
+    }
+  }
+
+  &__image {
+    @include bg-image(65%);
+    @include bg-behind;
+
+    transition: filter 0.4s, transform 0.4s;
+
+    .advantage:hover & {
+      filter: brightness(85%);
+      transform: scale(1.05);
+    }
+  }
+}

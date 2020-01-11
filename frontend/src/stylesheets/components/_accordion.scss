@@ -1,0 +1,96 @@
+// TODO: complete
+.accordion {
+  &__item {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 1.3em;
+  }
+
+  &__inner-list {
+    list-style: disc inside;
+    padding: 0.3em;
+    padding-left: 0;
+    font-weight: 400;
+  }
+
+  &__question {
+    position: relative;
+    display: flex;
+    align-content: cover;
+    padding: 1.4em 3em 1.1em 1em;
+    color: v(white-clr);
+    font-size: 1.15em;
+    font-weight: 400;
+    text-align: left;
+    transition: color 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--red-clr);
+    }
+
+    .accordion__item.active & {
+      color: #ff7777;
+      border-bottom: none;
+    }
+
+    &::after {
+      font-family: "icomoon", serif;
+      content: '\f067';
+      position: absolute;
+      right: 0.5em;
+      line-height: 2em;
+      align-self: center;
+      width: 2em;
+      height: 2em;
+      color: white;
+      border-radius: 50%;
+      border: 1px solid white;
+      text-align: center;
+      transition: color 0.3s;
+
+      &:hover::after {
+        cursor: pointer;
+        color: var(--red-clr);
+        border: 1px solid var(--red-clr);
+      }
+
+      .accordion__item.active & {
+        font-family: 'icomoon', serif;
+        content: '\f068';
+        color: #ff7777;
+        border: 1px solid #ff7777;
+      }
+    }
+  }
+
+
+  &__answer {
+    padding: 0 1.3em 0 1.3em;
+    transform: scaleY(0);
+    transform-origin: -10em 0;
+    max-height: 0;
+    text-align: left;
+    font-weight: 300;
+    transition: all 0.15s ease;
+
+    .accordion__item.active & {
+      transform: scaleY(1);
+      padding-bottom: 1.5em;
+      transition: all 0.15s ease;
+      max-height: 100%;
+    }
+  }
+  
+  
+  /* === Media === */
+  @include respond-above(xs) {
+    &__question::after {
+      right: 1em;
+    }
+
+    &__answer {
+      padding-right: 6em;
+    }
+  }
+}

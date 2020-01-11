@@ -6,7 +6,7 @@ export const activateSiemaSlider = () => {
   const mySiema = new Siema({
     selector: '.carousel',
     duration: 350,
-    loop: true
+    loop: true,
   });
 
   let autoplay = setInterval(() => mySiema.next(), DELAY_TIME);
@@ -20,7 +20,7 @@ export const activateSiemaSlider = () => {
     autoplay = setInterval(() => mySiema.next(), DELAY_TIME);
   };
 
-  const slides = document.querySelectorAll('.carousel__slide');
+  const slides = [...document.querySelectorAll('.carousel__slide')];
   slides.forEach(slide => {
     slide.addEventListener('mousedown', cancelAutoplay);
     slide.addEventListener('touchstart', cancelAutoplay);
@@ -29,7 +29,7 @@ export const activateSiemaSlider = () => {
     slide.addEventListener('touchend', reAutoplay);
   });
 
-  const arrows = document.querySelectorAll('.swipe-arrow');
+  const arrows = [...document.querySelectorAll('.swipe-arrow')];
   arrows.forEach(arrow => {
     arrow.addEventListener('mouseenter', cancelAutoplay);
     arrow.addEventListener('touchstart', cancelAutoplay);

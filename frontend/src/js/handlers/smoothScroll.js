@@ -1,5 +1,9 @@
+import smoothscroll from 'smoothscroll-polyfill';
+
 import { getOffsetTop } from '../helpers/getOffsetTop';
 import { elements } from '../utils/appElements';
+
+smoothscroll.polyfill();
 
 const { mastheadElement } = elements;
 
@@ -22,7 +26,7 @@ const smoothScrollTo = elementId => {
 };
 
 export const activateSmoothScroll = () => {
-  const links = document.querySelectorAll('[data-smooth-scroll-to]');
+  const links = [...document.querySelectorAll('[data-smooth-scroll-to]')];
 
   links.forEach(link => {
     link.addEventListener('click', e => {

@@ -5,6 +5,8 @@ const sendFormData = ({ user, tel }) => {
   const message = `
     Имя: ${user.trim() || 'Не указано'};
     Телефон: ${tel};
+
+    ${Date(Date.now())}
   `;
 
   sendEmail(message);

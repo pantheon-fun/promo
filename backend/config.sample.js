@@ -21,4 +21,6 @@ module.exports.config = {
     subject: 'Запрос звонка!',
     text: '...',
   },
+  vkAdmins: ['YOUR_VK_ADMINS'],
+  vkToken: 'YOUR_VK_TOKEN',
 };

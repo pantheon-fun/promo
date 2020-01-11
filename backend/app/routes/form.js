@@ -1,6 +1,6 @@
 const app = (module.exports = require('express')());
 
-const { sendFormData } = require('../actions/form').form;
+const { sendFormData } = require('../actions/form');
 
 app.post('/', async (req, res, next) => {
   if (!req.body) {

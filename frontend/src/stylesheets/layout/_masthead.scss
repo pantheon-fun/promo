@@ -37,6 +37,7 @@
     &-img {
       height: 100%;
       width: auto;
+      pointer-events: none;
     }
   }
 
@@ -69,12 +70,11 @@
     &:focus {
       --btn-clr: var(--red-clr);
     }
-  
+
     &:active {
       --btn-clr: var(--dark-red-clr);
     }
   }
-
 
   @include respond-above(sm) {
     &__navigation {
@@ -93,4 +93,3 @@
     }
   }
 }
-

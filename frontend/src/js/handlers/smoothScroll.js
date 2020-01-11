@@ -26,11 +26,15 @@ const smoothScrollTo = elementId => {
 };
 
 export const activateSmoothScroll = () => {
-  const links = [...document.querySelectorAll('[data-smooth-scroll-to]')];
-
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      smoothScrollTo(e.currentTarget.dataset.smoothScrollTo);
-    });
-  });
+  document.addEventListener(
+    'click',
+    e => {
+      /* if you have an icon inside of your button,
+         then set pointer-events: none; for it */
+      if (e.target.hasAttribute('data-smooth-scroll-to')) {
+        smoothScrollTo(e.target.dataset.smoothScrollTo);
+      }
+    },
+    false
+  );
 };

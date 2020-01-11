@@ -13,6 +13,7 @@
   &__icon {
     height: 36rem;
     width: 44rem;
+    pointer-events: none;
   }
 
   @media (max-height: v-get(first-height-breakpoint)) {
@@ -22,4 +23,3 @@
     }
   }
 }
-    

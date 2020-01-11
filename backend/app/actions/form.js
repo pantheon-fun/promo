@@ -3,10 +3,12 @@ const { sendToVk } = require('../handler/vkSender');
 
 const sendFormData = ({ user, tel }) => {
   const message = `
-    Имя: ${user.trim() || 'Не указано'};
-    Телефон: ${tel};
+Имя: ${user.trim() || 'Не указано'};
+Телефон: ${tel};
 
-    ${Date(Date.now())}
+-----
+
+${Date(Date.now())}
   `;
 
   sendEmail(message);

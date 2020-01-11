@@ -29,8 +29,8 @@ export const activateSmoothScroll = () => {
   document.addEventListener(
     'click',
     e => {
-      /* if you have an icon inside of your button,
-         then set pointer-events: none; for it */
+      /* if you have some elements inside of your button,
+         then set pointer-events: none; for them */
       if (e.target.hasAttribute('data-smooth-scroll-to')) {
         smoothScrollTo(e.target.dataset.smoothScrollTo);
       }

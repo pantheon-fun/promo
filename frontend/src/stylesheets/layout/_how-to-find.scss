@@ -25,6 +25,7 @@
       &::before {
         display: flex;
         align-items: center;
+        justify-content: center;
         font-family: 'icomoon', serif;
         content: '\e900';
         position: absolute;
@@ -73,6 +74,7 @@
         &::before {
           $smth: 46.8rem;
 
+          justify-content: flex-start;
           width: calc(100% + #{$smth});
           transform: translateX(-#{$smth});
           padding-left: calc(#{$smth} + 20rem);

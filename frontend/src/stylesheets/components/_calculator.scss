@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   max-width: 100%;
+  overflow: hidden;
 
   &__widget {
     --ad-block-el-height: 58px;
@@ -15,7 +16,7 @@
     min-height: 993px;
     background: v(bg-page-clr);
     margin-bottom: calc(var(--ad-block-el-height) * -1);
-  
+
     /* Advertisement disabler */
     &::after {
       content: '';
@@ -30,7 +31,7 @@
     }
 
     @media screen and (max-width: 400px),
-           screen and (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
+      screen and (min-width: map-get($breakpoints, 'sm')) and (max-width: map-get($breakpoints, 'md')) {
       --ad-block-el-height: 83px;
 
       min-height: 1232px;

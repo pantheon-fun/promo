@@ -1,6 +1,6 @@
 .references {
   @include full-screen-bg;
-  
+
   height: 500rem;
   overflow: hidden;
 
@@ -19,7 +19,7 @@
       height: 100%;
     }
   }
-  
+
   /* === References card === */
   &__inner {
     @include container;
@@ -38,11 +38,11 @@
     border: 3rem solid v(red-clr);
     width: 320px;
     margin: 0 auto;
-    
+
     @include respond-below(sm) {
       right: -282px;
       transform: rotate(-90deg);
-      transition: all 0.3s;
+      transition: all 0.2s cubic-bezier(0.01, 0.96, 0.25, 0.94);
 
       &.active {
         right: 0;

@@ -1,6 +1,6 @@
 import { showLightbox, fillLightboxWithChild } from './lightboxHandler';
 
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 const { bookform } = elements;
 

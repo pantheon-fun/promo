@@ -2,7 +2,7 @@ import { renderHtmlInContainer } from '../helpers/renderHelpers';
 
 // import { spinnerHtml } from '../data/spinnerData';
 
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 const { schedule } = elements;
 

@@ -1,16 +1,25 @@
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 const { accordion } = elements;
 
-export const toggleAccordionElement = el => {
-  el.classList.toggle('active');
-};
-export const activateAccordion = () => {
-  const accordionElements = [...accordion.children];
+const onAccordionElClick = (el, allEls) => {
+  const isClickOnActive = el.classList.contains('active');
 
-  accordionElements.forEach(item => {
-    item.addEventListener('click', e => {
-      toggleAccordionElement(e.currentTarget);
+  allEls.forEach((tmpEl) => {
+    tmpEl.classList.remove('active');
+  });
+
+  if (!isClickOnActive) {
+    el.classList.add('active');
+  }
+};
+
+export const activateAccordion = () => {
+  const accordionEls = [...accordion.children];
+
+  accordionEls.forEach((el, i, allEls) => {
+    el.addEventListener('click', e => {
+      onAccordionElClick(e.currentTarget, allEls);
     });
   });
 };

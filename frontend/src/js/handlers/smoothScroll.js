@@ -1,7 +1,7 @@
 import smoothscroll from 'smoothscroll-polyfill';
 
 import { getOffsetTop } from '../helpers/getOffsetTop';
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 smoothscroll.polyfill();
 

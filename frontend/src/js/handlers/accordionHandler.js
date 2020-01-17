@@ -2,24 +2,32 @@ import { elements } from '../utils/elements';
 
 const { accordion } = elements;
 
-const onAccordionElClick = (el, allEls) => {
-  const isClickOnActive = el.classList.contains('active');
+const getContent = el => el.children[1];
 
-  allEls.forEach((tmpEl) => {
-    tmpEl.classList.remove('active');
+const toggleAccordionPanel = (curPanel, panels) => {
+  const HEIGHT_CORRECTION = 20;
+
+  const isCurActive = curPanel.classList.contains('active');
+
+  panels.forEach(el => {
+    el.classList.remove('active');
+    getContent(el).style.height = null;
   });
 
-  if (!isClickOnActive) {
-    el.classList.add('active');
+  if (!isCurActive) {
+    curPanel.classList.add('active');
+    getContent(curPanel).style.height = `
+      ${getContent(curPanel).scrollHeight + HEIGHT_CORRECTION}px
+    `;
   }
 };
 
 export const activateAccordion = () => {
-  const accordionEls = [...accordion.children];
+  const panels = [...accordion.children];
 
-  accordionEls.forEach((el, i, allEls) => {
+  panels.forEach((el, i, els) => {
     el.addEventListener('click', e => {
-      onAccordionElClick(e.currentTarget, allEls);
+      toggleAccordionPanel(e.currentTarget, els);
     });
   });
 };

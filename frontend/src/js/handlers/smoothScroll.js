@@ -12,7 +12,7 @@ const prepareSmoothScroll = linkEl => {
   const destinationEl = document.getElementById(linkEl.dataset.smoothScrollTo);
   const blockOption = linkEl.dataset.smoothScrollBlock || 'start';
 
-  if (blockOption === 'start' || (blockOption === 'end' && EXTRA_OFFSET)) {
+  if ((blockOption === 'start' || blockOption === 'end') && EXTRA_OFFSET) {
     const anchorEl = document.createElement('div');
 
     destinationEl.setAttribute('style', 'position: relative;');

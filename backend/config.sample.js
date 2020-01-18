@@ -22,7 +22,6 @@ module.exports.config = {
   vkToken: 'YOUR_VK_TOKEN',
 };
 
-
 module.exports.config = {
   development: {
     port: process.env.PORT || 3000,
@@ -42,9 +41,7 @@ module.exports.config = {
       subject: 'Запрос звонка!',
       text: null,
     },
-    vkAdmins: [
-      'DEVELOPER_VK_ID',
-    ],
+    vkAdmins: ['DEVELOPER_VK_ID'],
     vkToken: 'VK_TOKEN',
   },
   production: {
@@ -67,9 +64,7 @@ module.exports.config = {
       subject: 'Запрос звонка!',
       text: null,
     },
-    vkAdmins: [
-      SITE_OWNER_VK_IDS
-    ],
+    vkAdmins: [SITE_OWNER_VK_IDS],
     vkToken: 'VK_TOKEN',
-  }
+  },
 }[process.env.NODE_ENV || 'production'];

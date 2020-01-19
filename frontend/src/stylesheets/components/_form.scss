@@ -18,7 +18,7 @@
     right: 0;
     bottom: 100%;
     left: 0;
-    background: v(red-clr);
+    background: v(color-primary);
     transition: all 0.4s;
   }
 
@@ -30,7 +30,7 @@
     padding: 1.2em;
     margin: 0.75em 0;
     border: none;
-    background: v(white-clr);
+    background: v(color-contrast);
 
     &_name {
       &_username::placeholder,
@@ -47,8 +47,8 @@
 
       &_submit {
         background: transparent;
-        border: 2rem solid v(red-clr);
-        color: v(red-clr);
+        border: 2rem solid v(color-primary);
+        color: v(color-primary);
         font-weight: bold;
         text-transform: uppercase;
         cursor: pointer;
@@ -56,11 +56,11 @@
 
         &:hover,
         &:focus {
-          background: v(second-gray-clr);
+          background: v(color-bg-light);
         }
 
         &:active {
-          background: v(bg-page-clr);
+          background: v(color-bg);
         }
       }
     }

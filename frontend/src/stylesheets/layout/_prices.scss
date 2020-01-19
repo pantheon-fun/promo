@@ -1,5 +1,5 @@
 .prices {
-  @include full-screen-bg(v(bg-page-clr));
+  @include full-screen-bg(v(color-bg));
 
   &__background {
     // TODO: Move to variables
@@ -17,7 +17,7 @@
     @include heading_section;
 
     font-size: 2.1em;
-    color: v(white-clr);
+    color: v(color-contrast);
     font-weight: 300;
     padding-top: 1.7em;
   }

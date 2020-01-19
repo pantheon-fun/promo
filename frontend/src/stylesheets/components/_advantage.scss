@@ -8,11 +8,11 @@
   &__title {
     padding: 1.2em;
     pointer-events: none;
-    color: v(soft-orange-clr);
+    color: v(color-contrast-weird);
     transition: text-shadow 0.6s, transform 0.6s;
 
     .advantage:hover & {
-      text-shadow: 0 0 30px v(black-clr);
+      text-shadow: 0 0 30px v(color-bg-darker);
       transform: scale(1.1);
     }
   }

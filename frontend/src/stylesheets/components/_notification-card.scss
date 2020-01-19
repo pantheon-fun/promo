@@ -30,11 +30,11 @@
   }
 
   &__link {
-    border-bottom: 1px dashed v(white-clr);
+    border-bottom: 1px dashed v(color-contrast);
 
     &:hover,
     &:focus {
-      border-bottom: 1px solid v(white-clr);
+      border-bottom: 1px solid v(color-contrast);
     }
   }
 }

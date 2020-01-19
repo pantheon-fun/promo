@@ -27,5 +27,3 @@ app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 app.use(routes);
 
 app.listen(port || 3000, () => console.log(`listening to http://localhost:${port || 3000}/`));
-
-// process.chdir('/home/a0318870/domains/dzakh.dev/public_html');

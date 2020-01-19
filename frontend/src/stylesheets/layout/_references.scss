@@ -33,9 +33,9 @@
   &__card {
     position: absolute;
     z-index: 2;
-    color: v(white-clr);
-    background: v(bg-page-clr);
-    border: 3rem solid v(red-clr);
+    color: v(color-contrast);
+    background: v(color-bg);
+    border: 3rem solid v(color-primary);
     width: 320px;
     margin: 0 auto;
 
@@ -64,9 +64,9 @@
     @include heading-style;
 
     font-size: 28rem;
-    background: v(red-clr);
+    background: v(color-primary);
     margin: 4rem;
-    color: v(bg-page-clr);
+    color: v(color-bg);
     height: 2em;
     line-height: 2em;
   }
@@ -91,7 +91,7 @@
 
     &:hover,
     &:focus {
-      text-shadow: 0 0 7rem v(white-clr);
+      text-shadow: 0 0 7rem v(color-contrast);
     }
   }
 
@@ -137,16 +137,16 @@
     padding: 12rem 13rem;
     font-weight: bold;
     font-size: 14rem;
-    color: v(bg-page-clr);
+    color: v(color-bg);
     text-transform: uppercase;
-    background: v(white-clr);
+    background: v(color-contrast);
     border-radius: 20rem;
     transition: all 0.25s;
 
     &:hover,
     &:focus {
-      background: v(red-clr);
-      color: v(white-clr);
+      background: v(color-primary);
+      color: v(color-contrast);
     }
   }
 

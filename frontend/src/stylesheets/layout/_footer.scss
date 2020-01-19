@@ -1,5 +1,5 @@
 .footer {
-  background: v(bg-page-clr);
+  background: v(color-bg);
   font-size: 0.8em;
   padding: 1.2em 0;
 
@@ -21,20 +21,20 @@
 
   &__creator {
     padding: 0.75em 1em;
-    border: 1rem solid v(white-clr);
+    border: 1rem solid v(color-contrast);
     transition: all 0.3s;
     border-radius: 10em;
 
     &:hover,
     &:focus {
-      border-color: v(red-clr);
+      border-color: v(color-primary);
     }
 
     &:active {
-      color: v(red-clr);
+      color: v(color-primary);
     }
   }
-  
+
   @include respond-above(sm) {
     &__inner {
       display: flex;

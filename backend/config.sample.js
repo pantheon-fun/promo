@@ -1,26 +1,46 @@
-require('dotenv').config();
-
 module.exports.config = {
-  port: process.env.PORT,
-  /* Doesn't work for now
-  sender: {
-    email: 'YOUR_EMAIL',
-    password: 'YOUR_PASSWORD',
-  },
-  */
-  transporter: {
-    service: 'YOUR_SERVICE',
-    auth: {
-      user: 'YOUR_EMAIL',
-      pass: 'YOUR_PASSWORD',
+  development: {
+    port: process.env.PORT || 3000,
+    sender: {
+      direct: true,
+      host: 'smtp.yandex.ru',
+      port: 465,
+      auth: {
+        user: 'SENDER_EMAIL',
+        pass: 'SENDER_PASS',
+      },
+      secure: true,
     },
+    mailOptions: {
+      from: 'SENDER_EMAIL',
+      to: `DEVELOPER_EMAIL`,
+      subject: 'Запрос звонка!',
+      text: null,
+    },
+    vkAdmins: ['DEVELOPER_VK_ID'],
+    vkToken: 'VK_TOKEN',
   },
-  mailOptions: {
-    from: 'PANTHEON - форма обратной связи',
-    to: 'some@email.com, another@email.com',
-    subject: 'Запрос звонка!',
-    text: '...',
+  production: {
+    port: process.env.PORT || 3000,
+    sender: {
+      direct: true,
+      host: 'smtp.yandex.ru',
+      port: 465,
+      auth: {
+        user: 'SENDER_EMAIL',
+        pass: 'SENDER_PASS',
+      },
+      secure: true,
+    },
+    mailOptions: {
+      from: 'SENDER_EMAIL',
+      to: `
+        SITE_OWNER_EMAILS
+      `,
+      subject: 'Запрос звонка!',
+      text: null,
+    },
+    vkAdmins: [SITE_OWNER_VK_IDS],
+    vkToken: 'VK_TOKEN',
   },
-  vkAdmins: ['YOUR_VK_ADMINS'],
-  vkToken: 'YOUR_VK_TOKEN',
-};
+}[process.env.NODE_ENV || 'production'];

@@ -1,16 +1,33 @@
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 const { accordion } = elements;
 
-export const toggleAccordionElement = el => {
-  el.classList.toggle('active');
-};
-export const activateAccordion = () => {
-  const accordionElements = [...accordion.children];
+const getContent = el => el.children[1];
 
-  accordionElements.forEach(item => {
-    item.addEventListener('click', e => {
-      toggleAccordionElement(e.currentTarget);
+const toggleAccordionPanel = (curPanel, panels) => {
+  const HEIGHT_CORRECTION = 20;
+
+  const isCurActive = curPanel.classList.contains('active');
+
+  panels.forEach(el => {
+    el.classList.remove('active');
+    getContent(el).style.height = null;
+  });
+
+  if (!isCurActive) {
+    curPanel.classList.add('active');
+    getContent(curPanel).style.height = `
+      ${getContent(curPanel).scrollHeight + HEIGHT_CORRECTION}px
+    `;
+  }
+};
+
+export const activateAccordion = () => {
+  const panels = [...accordion.children];
+
+  panels.forEach((el, i, els) => {
+    el.addEventListener('click', e => {
+      toggleAccordionPanel(e.currentTarget, els);
     });
   });
 };

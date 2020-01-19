@@ -4,8 +4,9 @@ const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const routes = require('./routes');
 const { port } = require('../config').config;
+
+const routes = require('./routes');
 
 const app = express();
 
@@ -26,5 +27,3 @@ app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 app.use(routes);
 
 app.listen(port || 3000, () => console.log(`listening to http://localhost:${port || 3000}/`));
-
-// process.chdir('/home/a0318870/domains/dzakh.dev/public_html');

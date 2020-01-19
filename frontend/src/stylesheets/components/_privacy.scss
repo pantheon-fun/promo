@@ -1,7 +1,7 @@
-.privacy {  
+.privacy {
   &__lightbox {
     overflow: auto;
-    background: v(bg-page-clr);
+    background: v(color-bg);
     font-size: 14rem;
     padding: 3em;
     line-height: 1.2em;
@@ -12,7 +12,7 @@
       padding-bottom: 0.3em;
     }
   }
-  
+
   &__heading {
     font-size: 1.5em;
     text-align: center;

@@ -1,4 +1,4 @@
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 const { contactCard } = elements;
 

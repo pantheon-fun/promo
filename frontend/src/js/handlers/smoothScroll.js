@@ -1,32 +1,45 @@
-import { getOffsetTop } from '../helpers/getOffsetTop';
-import { elements } from '../utils/appElements';
+import smoothscroll from 'smoothscroll-polyfill';
+
+import { elements } from '../utils/elements';
+
+smoothscroll.polyfill();
 
 const { mastheadElement } = elements;
 
-const smoothScrollTo = elementId => {
-  const el = document.getElementById(elementId);
+const prepareSmoothScroll = linkEl => {
+  const EXTRA_OFFSET = mastheadElement.offsetHeight - 3;
 
-  const extraSpace = mastheadElement.offsetHeight - 1;
+  const destinationEl = document.getElementById(linkEl.dataset.smoothScrollTo);
+  const blockOption = linkEl.dataset.smoothScrollBlock || 'start';
 
-  if (el.id === 'reservation-section') {
-    el.scrollIntoView({
-      block: 'center',
-      behavior: 'smooth',
+  if ((blockOption === 'start' || blockOption === 'end') && EXTRA_OFFSET) {
+    const anchorEl = document.createElement('div');
+
+    destinationEl.setAttribute('style', 'position: relative;');
+    anchorEl.setAttribute('style', `position: absolute; top: -${EXTRA_OFFSET}px; left: 0;`);
+
+    destinationEl.appendChild(anchorEl);
+
+    linkEl.addEventListener('click', () => {
+      anchorEl.scrollIntoView({
+        block: blockOption,
+        behavior: 'smooth',
+      });
     });
-  } else {
-    window.scroll({
-      top: getOffsetTop(el) - extraSpace,
-      behavior: 'smooth',
+  }
+
+  if (blockOption === 'center' || !EXTRA_OFFSET) {
+    linkEl.addEventListener('click', () => {
+      destinationEl.scrollIntoView({
+        block: blockOption,
+        behavior: 'smooth',
+      });
     });
   }
 };
 
 export const activateSmoothScroll = () => {
-  const links = document.querySelectorAll('[data-smooth-scroll-to]');
+  const linkEls = [...document.querySelectorAll('[data-smooth-scroll-to]')];
 
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      smoothScrollTo(e.currentTarget.dataset.smoothScrollTo);
-    });
-  });
+  linkEls.forEach(linkEl => prepareSmoothScroll(linkEl));
 };

@@ -1,11 +1,11 @@
 .game-card {
   padding: 1.2em 1em;
-  border: 3rem solid v(second-gray-clr);
+  border: 3rem solid v(color-bg-light);
   transition: all 0.05s;
 
   &:hover {
     transform: scale(1.007);
-    box-shadow: 0 5rem 7rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5rem 7rem alpha(v(color-bg-darker), 0.2);
   }
 
   &__logo {

@@ -104,7 +104,7 @@
 
 /// Appearing underline on hover
 /// @param {String} $underline-clr
-@mixin init-underline($underlined-element: &, $underline-clr: #FFFFFF) {
+@mixin init-underline($underlined-element: &, $underline-clr: #ffffff) {
   @if (& == $underlined-element) {
     position: relative;
     padding-bottom: 0.13em;
@@ -139,7 +139,7 @@
     #{$underlined-element} {
       position: relative;
       padding-bottom: 0.13em;
-  
+
       &::after {
         display: block;
         content: '';
@@ -163,7 +163,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-  
+
     &:active #{$underlined-element}::after {
       transform: scaleX(1.05);
     }
@@ -171,7 +171,7 @@
 }
 
 /// Btn interactive effects
-@mixin btn-interactive($bg-clr: v(white-clr), $contrast-clr: v(dark-red-clr)) {
+@mixin btn-interactive($bg-clr: v(color-contrast), $contrast-clr: v(color-primary-dark)) {
   position: relative;
   transition: color 0.5s ease-in-out;
 
@@ -188,7 +188,7 @@
     opacity: 0;
     transform: translateX(-50%) translateY(-50%);
   }
-  
+
   &:hover,
   &:focus,
   &:active {
@@ -200,7 +200,7 @@
     width: 90%;
     opacity: 1;
   }
-  
+
   &:active::after {
     width: 101%;
     opacity: 1;
@@ -209,11 +209,11 @@
 
 @mixin heading-style {
   text-transform: uppercase;
-  color: v(red-clr);
+  color: v(color-primary);
   font-weight: normal;
   line-height: 1em;
   // TODO: https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
-  text-shadow: 0 0 5rem v(dark-red-clr);
+  text-shadow: 0 0 5rem v(color-primary-dark);
 }
 
 @mixin heading_section {
@@ -238,7 +238,7 @@
 }
 
 @mixin price-list-card {
-  background: v(bg-page-clr);
+  background: v(color-bg);
   font-size: 0.9em;
   font-weight: bold;
   padding: 2em 1.9em;
@@ -249,6 +249,14 @@
 
   &:hover,
   &:focus {
-    text-shadow: 0 0 7rem v(white-clr);
+    text-shadow: 0 0 7rem v(color-contrast);
   }
+}
+
+/* Color mixin */
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+  #{$color}: unquote('hsl(#{$hue}, #{$saturation}, #{$lightness})');
+  #{$color}-h: #{$hue};
+  #{$color}-s: #{$saturation};
+  #{$color}-l: #{$lightness};
 }

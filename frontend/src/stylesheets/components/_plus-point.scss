@@ -1,11 +1,11 @@
 .plus-point {
   &__heading {
     @include heading-style;
-  
+
     font-size: 1.5em;
-    color: v(soft-orange-clr);
+    color: v(color-contrast-weird);
   }
-  
+
   &__caption {
     padding-top: 1em;
   }

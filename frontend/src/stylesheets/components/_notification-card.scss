@@ -13,7 +13,7 @@
     padding-top: 0.7em;
     padding-bottom: 0.5em;
   }
-  
+
   &__accent {
     font-size: 3em;
     font-weight: bold;
@@ -27,5 +27,14 @@
   &__under-caption {
     padding: 2.2em 0.5em 0;
     font-weight: 300;
+  }
+
+  &__link {
+    border-bottom: 1px dashed v(color-contrast);
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid v(color-contrast);
+    }
   }
 }

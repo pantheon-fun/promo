@@ -2,7 +2,7 @@ import { activateIMask } from '../packages/imask';
 
 import { Ajax } from '../helpers/Ajax';
 
-import { elements } from '../utils/appElements';
+import { elements } from '../utils/elements';
 
 const { form } = elements;
 

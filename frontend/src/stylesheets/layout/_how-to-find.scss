@@ -1,8 +1,8 @@
 .how-to-find {
-  background: v(bg-page-clr);
+  background: v(color-bg);
   font-size: 1.1em;
   text-transform: uppercase;
-  color: v(white-clr);
+  color: v(color-contrast);
 
   &__lable {
     font-weight: 300;
@@ -10,13 +10,13 @@
   }
 
   &__route {
-    background: v(white-clr);
+    background: v(color-contrast);
     overflow: hidden;
     margin-left: 5em;
 
     &-link {
       position: relative;
-      color: v(bg-page-clr);
+      color: v(color-bg);
       font-weight: bold;
       padding: 1.2em 0 2.4em;
       width: 100%;
@@ -25,6 +25,7 @@
       &::before {
         display: flex;
         align-items: center;
+        justify-content: center;
         font-family: 'icomoon', serif;
         content: '\e900';
         position: absolute;
@@ -73,6 +74,7 @@
         &::before {
           $smth: 46.8rem;
 
+          justify-content: flex-start;
           width: calc(100% + #{$smth});
           transform: translateX(-#{$smth});
           padding-left: calc(#{$smth} + 20rem);

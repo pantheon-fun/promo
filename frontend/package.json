@@ -12,16 +12,17 @@
   "author": "Dmitry Zakharov <dzakh.dev@gmail.com> (https://dzakh.dev/)",
   "license": "MIT",
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
+    "@babel/polyfill": "^7.7.0",
     "imask": "^6.0.1",
     "lazysizes": "^5.1.2",
     "normalize.css": "^8.0.1",
-    "siema": "^1.5.1"
+    "siema": "^1.5.1",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.3",
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-node": "^4.0.0",

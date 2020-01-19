@@ -1,5 +1,5 @@
 .gallery {
-  background: var(--second-gray-clr);
+  background: v(color-bg-light);
   padding-bottom: 2.2em;
 
   &__heading {
@@ -31,7 +31,7 @@
   }
 
   &__more-photo-btn {
-    $btn-clr: v(soft-orange-clr);
+    $btn-clr: v(color-contrast-weird);
 
     border: 2rem dashed $btn-clr;
     color: $btn-clr;
@@ -42,16 +42,16 @@
 
     &:hover,
     &:focus {
-      background: v(bg-page-clr);
+      background: v(color-bg);
     }
-  
+
     &:active {
-      background: v(dark-gray-clr);
+      background: v(color-bg-dark);
     }
   }
-  
+
   /* === Media === */
-  
+
   /* 4 columns, 2 rows */
   @include respond-above(md) {
     &__list {

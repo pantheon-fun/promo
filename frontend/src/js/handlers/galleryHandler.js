@@ -1,7 +1,7 @@
 import { showLightbox, fillLightboxWithChild } from './lightboxHandler';
 
 export const activateGallery = () => {
-  const galleryImages = document.querySelectorAll('.gallery__image');
+  const galleryImages = [...document.querySelectorAll('.gallery__image')];
 
   galleryImages.forEach(galleryImage => {
     galleryImage.addEventListener('click', () => {

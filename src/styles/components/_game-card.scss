@@ -1,0 +1,31 @@
+.game-card {
+  padding: 1.2em 1em;
+  border: 3rem solid v(color-bg-light);
+  transition: all 0.05s;
+
+  &:hover {
+    transform: scale(1.007);
+    box-shadow: 0 5rem 7rem alpha(v(color-bg-darker), 0.2);
+  }
+
+  &__logo {
+    height: 100rem;
+    width: 140rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_archery-correction {
+      width: 90rem;
+    }
+  }
+
+  &__name {
+    @include heading_sub;
+  }
+
+  &__description {
+    @include text-style;
+  }
+}

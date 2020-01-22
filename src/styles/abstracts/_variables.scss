@@ -1,0 +1,34 @@
+// Use v(bg-color) to get var(--bg-color)
+// Use v-get(bg-color) to get $bg-color
+// Use v-init to initialize css variables
+$v-globals: (
+
+  /// Regular font family
+  text-font-stack: ('Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif),
+  
+  /// Code (monospace) font family
+  code-font-stack: ('Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace),
+  
+  /// Base font size
+  base-font-size: 16rem,
+
+  /// Container's minimum width
+  min-width: 320px,
+  max-width: 1180px,
+  min-height: 750px,
+
+  // Height breakpoints
+  first-height-breakpoint: 475px,
+  second-height-breakpoint: 385px,
+  xs-height-breakpoint: 530px,
+  md-height-breakpoint: 620px,
+
+) !default;
+
+// A map of breakpoints.
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+) !default;

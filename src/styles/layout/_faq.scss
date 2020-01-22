@@ -1,0 +1,17 @@
+.faq {
+  background: v(color-bg);
+  padding-bottom: 4em;
+
+  &__inner {
+    @include respond-below(sm) {
+      @include container;
+    }
+    @include respond-above(sm) {
+      @include inner-container;
+    }
+  }
+
+  &__heading {
+    @include heading_section;
+  }
+}

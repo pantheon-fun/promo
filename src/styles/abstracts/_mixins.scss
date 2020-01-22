@@ -1,0 +1,262 @@
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Place child img as a full screen background
+/// @param {Color} $safe-bg-color
+@mixin full-screen-bg($safe-bg-color: transparent) {
+  position: relative;
+
+  &__background {
+    background: $safe-bg-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+  }
+}
+
+@mixin bg-image($brightness: 40%) {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness($brightness);
+}
+
+@mixin bg-behind {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@mixin container($side-size: 1em) {
+  max-width: v(max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $side-size;
+  padding-right: $side-size;
+  width: 100%;
+
+  @each $breakpoint, $value in $breakpoints {
+    @include respond-above($breakpoint) {
+      padding-left: $side-size;
+      padding-right: $side-size;
+      width: calc(#{$value} - 2 * #{$side-size});
+    }
+  }
+}
+
+@mixin inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @each $breakpoint, $value in $breakpoints {
+    @include respond-above($breakpoint) {
+      width: calc(#{$value} / 3 * 2);
+    }
+  }
+}
+
+/// Center children vertically, horizontally or both
+/// @param {String} $position
+@mixin center($position: both) {
+  display: flex;
+  @if $position == 'both' {
+    align-items: center;
+    justify-content: center;
+  } @else if $position == 'vertical' {
+    align-items: center;
+  } @else if $position == 'horizontal' {
+    justify-content: center;
+  } @else if $position == 'none' {
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+}
+
+/// Works in tandem with the real-vh-height.js function to display sections correctly on mobiles
+/// @param {Number} $height
+@mixin real-vh-height($height: 100) {
+  height: #{$height}vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * #{$height});
+}
+
+/// Initialize css variables
+@mixin v-init($vs) {
+  @each $property, $value in $vs {
+    --#{$property}: #{$value};
+  }
+}
+
+/// Appearing underline on hover
+/// @param {String} $underline-clr
+@mixin init-underline($underlined-element: &, $underline-clr: #ffffff) {
+  @if (& == $underlined-element) {
+    position: relative;
+    padding-bottom: 0.13em;
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      opacity: 0;
+      border-radius: 1em;
+      background: $underline-clr;
+      transition: all 0.3s;
+      transform: translateY(-0.25em);
+    }
+
+    &:hover::after,
+    &:focus::after {
+      height: 0.1em;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:active::after {
+      transform: scaleX(1.05);
+    }
+  } @else {
+    #{$underlined-element} {
+      position: relative;
+      padding-bottom: 0.13em;
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        border-radius: 1em;
+        background: $underline-clr;
+        transition: all 0.3s;
+        transform: translateY(-0.25em);
+      }
+    }
+
+    &:hover #{$underlined-element}::after,
+    &:focus #{$underlined-element}::after {
+      height: 0.1em;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:active #{$underlined-element}::after {
+      transform: scaleX(1.05);
+    }
+  }
+}
+
+/// Btn interactive effects
+@mixin btn-interactive($bg-clr: v(color-contrast), $contrast-clr: v(color-primary-dark)) {
+  position: relative;
+  transition: color 0.5s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -10;
+    transition: all 0.3s;
+    width: 0;
+    height: 103%;
+    top: 50%;
+    left: 50%;
+    background: $bg-clr;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $contrast-clr;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 90%;
+    opacity: 1;
+  }
+
+  &:active::after {
+    width: 101%;
+    opacity: 1;
+  }
+}
+
+@mixin heading-style {
+  text-transform: uppercase;
+  color: v(color-primary);
+  font-weight: normal;
+  line-height: 1em;
+  // TODO: https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
+  text-shadow: 0 0 5rem v(color-primary-dark);
+}
+
+@mixin heading_section {
+  @include heading-style;
+
+  font-size: 32rem;
+  padding-top: 2em;
+  padding-bottom: 1.2em;
+}
+
+@mixin heading_sub {
+  @include heading-style;
+
+  font-size: 24rem;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+@mixin text-style {
+  line-height: 1.35em;
+  letter-spacing: 0.033em;
+}
+
+@mixin price-list-card {
+  background: v(color-bg);
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 2em 1.9em;
+}
+
+@mixin privacy-animation {
+  transition: text-shadow 0.3s;
+
+  &:hover,
+  &:focus {
+    text-shadow: 0 0 7rem v(color-contrast);
+  }
+}
+
+/* Color mixin */
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+  #{$color}: unquote('hsl(#{$hue}, #{$saturation}, #{$lightness})');
+  #{$color}-h: #{$hue};
+  #{$color}-s: #{$saturation};
+  #{$color}-l: #{$lightness};
+}

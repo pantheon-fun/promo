@@ -1,0 +1,65 @@
+.gallery {
+  background: v(color-bg-light);
+  padding-bottom: 2.2em;
+
+  &__heading {
+    @include heading_section;
+  }
+
+  &__list {
+    padding-bottom: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  &__item {
+    height: 35vw;
+    min-height: 130rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.8s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__more-photo-btn {
+    $btn-clr: v(color-contrast-weird);
+
+    border: 2rem dashed $btn-clr;
+    color: $btn-clr;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    transition: background 0.3s;
+
+    &:hover,
+    &:focus {
+      background: v(color-bg);
+    }
+
+    &:active {
+      background: v(color-bg-dark);
+    }
+  }
+
+  /* === Media === */
+
+  /* 4 columns, 2 rows */
+  @include respond-above(md) {
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    &__item {
+      height: 17.5vw;
+    }
+  }
+}

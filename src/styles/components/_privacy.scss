@@ -1,0 +1,21 @@
+.privacy {
+  &__lightbox {
+    overflow: auto;
+    background: v(color-bg);
+    font-size: 14rem;
+    padding: 3em;
+    line-height: 1.2em;
+    height: 100%;
+    text-align: left;
+
+    & p {
+      padding-bottom: 0.3em;
+    }
+  }
+
+  &__heading {
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+}

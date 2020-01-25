@@ -2,10 +2,12 @@ import '@babel/polyfill';
 
 import './js/packages/lazysizes';
 
+import 'smooth-smooth-scroll/polyfill';
+import { initSmoothScroll } from 'smooth-smooth-scroll';
+
 import { activateSiemaSlider } from './js/packages/siema';
 
 import { activateRealVhHeight } from './js/handlers/realVhHeight';
-import { activateSmoothScroll } from './js/handlers/smoothScroll';
 import { activateMasthead } from './js/handlers/mastheadHandler';
 import { activateGallery } from './js/handlers/galleryHandler';
 import { activateAccordion } from './js/handlers/accordionHandler';
@@ -16,10 +18,17 @@ import { activateForm } from './js/handlers/formHandler';
 
 import { activateLazyloadObserver } from './js/observers/lazyload';
 
-activateSiemaSlider();
+import { elements } from './js/utils/elements';
 
+const { mastheadElement } = elements;
+
+activateSiemaSlider();
 activateRealVhHeight();
-activateSmoothScroll();
+
+initSmoothScroll({
+  offsetTop: mastheadElement.offsetHeight - 3,
+});
+
 activateMasthead();
 activateGallery();
 activateAccordion();

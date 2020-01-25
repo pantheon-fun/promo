@@ -17,7 +17,7 @@
     "lazysizes": "^5.1.2",
     "normalize.css": "^8.0.1",
     "siema": "^1.5.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "smooth-smooth-scroll": "^1.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-bp": "^1.4.0",
     "parcel-plugin-clean-dist": "0.0.6",
     "postcss-modules": "^1.4.1",

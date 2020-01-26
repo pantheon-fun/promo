@@ -10,7 +10,13 @@ const routes = require('./routes');
 
 const app = express();
 
-app.use(morgan('dev'));
+app.use(
+  morgan('combined', {
+    skip: function(req, res) {
+      return res.statusCode < 400;
+    },
+  })
+);
 
 const corsOptions = {
   origin: 'https://pantheon.fun',

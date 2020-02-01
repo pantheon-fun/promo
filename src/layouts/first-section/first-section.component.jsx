@@ -1,16 +1,34 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './first-section.module.scss';
 
 import { Contacts } from '../../components/contacts/contacts.component';
 
-export const FirstSection = () => (
-  <header className={Styles.first}>
-    <div className={Styles.inner}>
-      <Contacts className={Styles.contacts} />
-    </div>
-  </header>
-);
+export const FirstSection = () => {
+  const { sanityReferences } = useStaticQuery(
+    graphql`
+      query {
+        sanityReferences {
+          address
+          telNumber
+        }
+      }
+    `
+  );
+
+  return (
+    <header className={Styles.first}>
+      <div className={Styles.inner}>
+        <Contacts
+          className={Styles.contacts}
+          address={sanityReferences.address}
+          telNumber={sanityReferences.telNumber}
+        />
+      </div>
+    </header>
+  );
+};
 
 // <div class="first__content">
 //         <div class="first__site-logo site-logo">

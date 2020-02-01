@@ -2,8 +2,15 @@ import S from '@sanity/desk-tool/structure-builder';
 
 export default () =>
   S.list()
-    .title('Pages')
+    .title('Content')
     .items([
+      S.listItem()
+        .title('References')
+        .child(
+          S.editor()
+            .schemaType('references')
+            .documentId('references')
+        ),
       S.listItem()
         .title('Landing')
         .child(

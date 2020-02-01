@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       title: 'Заголовок',
-      name: 'mainTitle',
+      name: 'siteTitle',
       type: 'string',
     },
     {
@@ -24,15 +24,22 @@ export default {
     {
       title: 'Логотип',
       description: 'Логотип арены',
-      name: 'mainLogo',
-      type: 'image',
+      name: 'siteLogo',
+      type: 'reference',
+      to: [{ type: 'picture' }],
     },
     {
       title: 'Карусель',
       description: 'Картинки для карусели',
       name: 'carousel',
       type: 'array',
-      of: [{ type: 'image' }],
+      of: [
+        {
+          title: 'Картинка карусели',
+          type: 'reference',
+          to: [{ type: 'picture' }],
+        },
+      ],
     },
   ],
 };

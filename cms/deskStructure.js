@@ -5,12 +5,16 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
+        .title('Pictures')
+        .child(S.documentTypeList('picture').title('Pictures')),
+      S.listItem()
         .title('References')
         .child(
           S.editor()
             .schemaType('references')
             .documentId('references')
         ),
+      S.divider(),
       S.listItem()
         .title('Landing')
         .child(

@@ -1,0 +1,29 @@
+@import '../../styles/abstracts.scss';
+
+.site-logo {
+  width: 160rem;
+  margin: 0 auto;
+}
+
+// .banner {
+//   padding-top: 22rem;
+//   padding-bottom: 20rem;
+// }
+
+.site-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.hints {
+  padding-top: 4rem;
+  font-size: 0.7em;
+  letter-spacing: -0.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.crosshairs-icon {
+  color: v(color-primary);
+}

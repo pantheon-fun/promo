@@ -1,11 +1,12 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
+
+import { ReservationButton } from '../reservation-button/reservation-button.component';
 
 import Styles from './banner.module.scss';
 
 export const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationButton }) => {
-  console.log(siteLogo.alt);
+  // console.log(siteLogo.alt);
   return (
     <div className={`${className} ${Styles.banner}`}>
       <Img fixed={siteLogo.img.asset.fixed} className={Styles.siteLogo} alt={siteLogo.alt} />
@@ -23,17 +24,9 @@ export const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationB
                 ];
           }, null)}
       </p>
-      <button
-        data-smooth-scroll-to="reservation-section"
-        data-smooth-scroll-block="center"
-        className="first__reservation-btn reservation-btn"
-      >
+      <ReservationButton className={Styles.reservationButton}>
         {mainReservationButton}
-      </button>
+      </ReservationButton>
     </div>
   );
-};
-
-Banner.propTypes = {
-  className: PropTypes.string,
 };

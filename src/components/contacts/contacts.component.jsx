@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -32,8 +31,4 @@ export const Contacts = ({ className }) => {
       </div>
     </div>
   );
-};
-
-Contacts.propTypes = {
-  className: PropTypes.string,
 };

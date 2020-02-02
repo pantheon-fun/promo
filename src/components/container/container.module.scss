@@ -1,6 +1,8 @@
 @import '../../styles/abstracts.scss';
 
 .container {
+  $side-size: 1em;
+
   max-width: v(max-width);
   margin-left: auto;
   margin-right: auto;

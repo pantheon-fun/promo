@@ -1,0 +1,86 @@
+@import '../../styles/abstracts.scss';
+
+.first {
+  height: calc(var(--vh, 1vh) * 100);
+  min-height: 275rem;
+  position: relative;
+  // overflow: hidden;
+}
+
+.inner {
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'contacts'
+    'banner'
+    'arrow-to-down';
+}
+
+.contacts {
+  grid-area: contacts;
+
+  margin: 1em auto 0;
+}
+
+.banner {
+  grid-area: banner;
+
+  margin-bottom: 13rem;
+  align-self: center;
+}
+
+.arrow-to-down {
+  grid-area: arrow-to-down;
+}
+
+.swipe-prev {
+  grid-area: swipe-prev;
+}
+
+.swipe-next {
+  grid-area: swipe-next;
+}
+
+/* Height breakpoints */
+@media (max-height: v-get(first-height-breakpoint)) {
+  .banner {
+    margin-top: 30rem;
+  }
+}
+@media (max-height: v-get(second-height-breakpoint)) {
+  .contacts {
+    margin-top: 5rem;
+    transform: scale(0.9);
+  }
+
+  .banner {
+    margin-top: 14rem;
+  }
+}
+
+/* Adaptive font-size */
+@include respond-below(xs) {
+  @media screen and (min-width: v-get(min-width)) and (min-height: v-get(first-height-breakpoint)) {
+    .heading {
+      font-size: 6.2vw;
+    }
+
+    .events {
+      font-size: 3.6vw;
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .inner {
+    grid-template-columns: 90rem 1fr auto 1fr 90rem;
+    grid-template-areas:
+      'swipe-prev . contacts . swipe-next'
+      'swipe-prev . banner . swipe-next'
+      'swipe-prev . arrow-to-down . swipe-next';
+  }
+}

@@ -28,6 +28,13 @@ export default () =>
                     .schemaType('first-section')
                     .documentId('first-section')
                 ),
+              S.listItem()
+                .title('About us')
+                .child(
+                  S.editor()
+                    .schemaType('about-us-section')
+                    .documentId('about-us-section')
+                ),
             ])
         ),
     ]);

@@ -42,6 +42,13 @@ export default () =>
                     .schemaType('gamesSection')
                     .documentId('gamesSection')
                 ),
+              S.listItem()
+                .title('Gallery')
+                .child(
+                  S.editor()
+                    .schemaType('gallerySection')
+                    .documentId('gallerySection')
+                ),
             ])
         ),
     ]);

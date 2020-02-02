@@ -1,0 +1,26 @@
+@import '../../styles/abstracts.scss';
+
+.game-card {
+  padding: 1.2em 1em;
+  border: 3rem solid v(color-bg-light);
+  transition: all 0.05s;
+
+  &:hover {
+    transform: scale(1.007);
+    box-shadow: 0 5rem 7rem alpha(v(color-bg-darker), 0.2);
+  }
+}
+
+.icon {
+  height: 100rem !important;
+  max-width: 140rem;
+  width: auto;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    object-fit: contain !important;
+  }
+}

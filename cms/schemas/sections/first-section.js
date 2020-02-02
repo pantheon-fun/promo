@@ -1,6 +1,6 @@
 export default {
   title: 'First section',
-  name: 'first-section',
+  name: 'firstSection',
   type: 'document',
   fields: [
     {

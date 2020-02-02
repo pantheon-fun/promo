@@ -25,15 +25,22 @@ export default () =>
                 .title('First')
                 .child(
                   S.editor()
-                    .schemaType('first-section')
-                    .documentId('first-section')
+                    .schemaType('firstSection')
+                    .documentId('firstSection')
                 ),
               S.listItem()
                 .title('About us')
                 .child(
                   S.editor()
-                    .schemaType('about-us-section')
-                    .documentId('about-us-section')
+                    .schemaType('aboutUsSection')
+                    .documentId('aboutUsSection')
+                ),
+              S.listItem()
+                .title('Games')
+                .child(
+                  S.editor()
+                    .schemaType('gamesSection')
+                    .documentId('gamesSection')
                 ),
             ])
         ),

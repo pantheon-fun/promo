@@ -49,6 +49,13 @@ export default () =>
                     .schemaType('gallerySection')
                     .documentId('gallerySection')
                 ),
+              S.listItem()
+                .title('FaQ')
+                .child(
+                  S.editor()
+                    .schemaType('faqSection')
+                    .documentId('faqSection')
+                ),
             ])
         ),
     ]);

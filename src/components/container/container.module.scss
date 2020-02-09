@@ -1,8 +1,8 @@
 @import '../../styles/abstracts.scss';
 
-.container {
-  $side-size: 1em;
+$side-size: 1em;
 
+.container {
   max-width: v(max-width);
   margin-left: auto;
   margin-right: auto;
@@ -12,8 +12,6 @@
 
   @each $breakpoint, $value in $breakpoints {
     @include respond-above($breakpoint) {
-      padding-left: $side-size;
-      padding-right: $side-size;
       width: calc(#{$value} - 2 * #{$side-size});
     }
   }
@@ -22,11 +20,19 @@
 .inner-container {
   margin-left: auto;
   margin-right: auto;
+  padding-left: $side-size;
+  padding-right: $side-size;
   width: 100%;
 
   @each $breakpoint, $value in $breakpoints {
-    @include respond-above($breakpoint) {
-      width: calc(#{$value} / 3 * 2);
+    @if ($breakpoint == 'xs') {
+      @include respond-above($breakpoint) {
+        width: calc(#{$value} - 2 * #{$side-size});
+      }
+    } @else {
+      @include respond-above($breakpoint) {
+        width: calc(#{$value} / 3 * 2);
+      }
     }
   }
 }

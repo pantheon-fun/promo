@@ -3,14 +3,4 @@
 .faq-section {
   background: v(color-bg);
   padding-bottom: 4em;
-
-  // TODO: сделать это
-  // &__inner {
-  //   @include respond-below(sm) {
-  //     @include container;
-  //   }
-  //   @include respond-above(sm) {
-  //     @include inner-container;
-  //   }
-  // }
 }

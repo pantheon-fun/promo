@@ -56,6 +56,13 @@ export default () =>
                     .schemaType('faqSection')
                     .documentId('faqSection')
                 ),
+              S.listItem()
+                .title('Price pluses')
+                .child(
+                  S.editor()
+                    .schemaType('priceSection')
+                    .documentId('priceSection')
+                ),
             ])
         ),
     ]);

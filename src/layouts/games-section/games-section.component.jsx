@@ -34,7 +34,7 @@ export const GamesSection = () => {
   );
 
   return (
-    <section id="games-section">
+    <section className={Styles.section} id="games-section">
       <Container>
         <Heading>{heading}</Heading>
         <ul className={Styles.gamesList}>

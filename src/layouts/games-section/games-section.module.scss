@@ -1,5 +1,9 @@
 @import '../../styles/abstracts.scss';
 
+.section {
+  background: v(color-bg);
+}
+
 .games-list {
   display: grid;
   gap: 25rem;

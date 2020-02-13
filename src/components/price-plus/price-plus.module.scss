@@ -1,0 +1,10 @@
+@import '../../styles/abstracts.scss';
+
+.heading {
+  font-size: 1.5em;
+  color: v(color-contrast-weird);
+}
+
+.description {
+  padding-top: 1em;
+}

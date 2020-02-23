@@ -1,23 +1,45 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 import { Text } from '../text/text.component';
 
 import Styles from './accordion.module.scss';
 
-import { handleAccordionPanelClick } from './accordion.actions';
-
 export const Accordion = ({ className, questionsAndAnswers }) => {
-  // TODO: onKeyDown and htmlFromMarkdown
+  const [openedPanel, setOpenedPanel] = useState(null);
+  const accordionRef = useRef(null);
+
   return (
-    <ul className={`${className} ${Styles.accodion}`} id="accordion">
-      {questionsAndAnswers.map((qa, i) => (
-        <li key={i} className={Styles.panel} onClick={handleAccordionPanelClick}>
-          <h3 className={Styles.question}>{qa.question}</h3>
-          <div className={Styles.answer}>
-            <Text>{qa.answer}</Text>
-          </div>
-        </li>
-      ))}
+    <ul ref={accordionRef} className={`${className} ${Styles.accodion}`}>
+      {questionsAndAnswers.map((qa, idx) => {
+        const isOpen = openedPanel === idx;
+        const getAnswerElHeight = () => {
+          const HEIGHT_CORRECTION = 20;
+
+          return (
+            accordionRef.current.children[idx].querySelector('div').scrollHeight + HEIGHT_CORRECTION
+          );
+        };
+
+        return (
+          <li
+            key={idx}
+            className={`${Styles.panel} ${isOpen ? Styles.opened : ''}`}
+            onClick={() => {
+              setOpenedPanel(isOpen ? null : idx);
+            }}
+          >
+            <h3 className={Styles.question}>{qa.question}</h3>
+            <div
+              className={Styles.answer}
+              style={{
+                height: isOpen ? getAnswerElHeight() : 0,
+              }}
+            >
+              <Text>{qa.answer}</Text>
+            </div>
+          </li>
+        );
+      })}
     </ul>
   );
 };

@@ -32,7 +32,7 @@
     color: v(color-primary);
   }
 
-  .panel.active & {
+  .panel.opened & {
     color: v(color-primary-light);
     border-bottom: none;
   }
@@ -58,7 +58,7 @@
       border: 1rem solid v(color-primary);
     }
 
-    .panel.active & {
+    .panel.opened & {
       font-family: 'icomoon', serif;
       content: '\f068';
       color: v(color-primary-light);
@@ -73,6 +73,5 @@
 
   padding: 0 4em 0 1.3em;
   overflow: hidden;
-  height: 0;
   transition: height 0.2s ease-out;
 }

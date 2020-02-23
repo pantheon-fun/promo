@@ -7,6 +7,7 @@ import gameCard from './components/game-card';
 import link from './components/link';
 import qa from './components/qa';
 import pricePlus from './components/price-plus';
+import priceTable from './components/price-table';
 
 import firstSection from './sections/first-section';
 import aboutUsSection from './sections/about-us-section';
@@ -25,6 +26,7 @@ export default createSchema({
     link,
     qa,
     pricePlus,
+    priceTable,
     /* sections */
     firstSection,
     aboutUsSection,

@@ -63,6 +63,13 @@ export default () =>
                     .schemaType('priceSection')
                     .documentId('priceSection')
                 ),
+              S.listItem()
+                .title('Price table')
+                .child(
+                  S.editor()
+                    .schemaType('priceTable')
+                    .documentId('priceTable')
+                ),
             ])
         ),
     ]);

@@ -1,7 +1,4 @@
 .cache
-package.json
-package-lock.json
-public
 
 main.scss
 abstracts.scss

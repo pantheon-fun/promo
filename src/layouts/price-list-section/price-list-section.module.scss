@@ -31,12 +31,12 @@
 
   @include respond-above(md) {
     padding-left: 42rem;
-    grid-template-rows: repeat(1, auto) 1fr repeat(2, auto);
+    grid-template-rows: repeat(2, auto) 1fr repeat(1, auto);
     grid-template-areas:
       'weekdays calculator'
       'weekends calculator'
-      'schedule schedule'
-      'reservation reservation';
+      'reservation calculator'
+      'schedule schedule';
   }
 }
 

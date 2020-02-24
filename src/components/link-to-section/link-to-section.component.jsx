@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const LinkToSection = ({ className, children, href }) => (
-  <button data-smooth-scroll-to={href} data-smooth-scroll-block="start" className={`${className}`}>
+export const LinkToSection = ({ className, children, to, block = 'start' }) => (
+  <button data-smooth-scroll-to={to} data-smooth-scroll-block={block} className={className}>
     {children}
   </button>
 );

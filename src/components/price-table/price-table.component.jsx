@@ -3,16 +3,13 @@ import React from 'react';
 import Styles from './price-table.module.scss';
 
 import { Icon } from '../../components/icon/icon.component';
+import { LinkToSection } from '../../components/link-to-section/link-to-section.component';
 
 const PriceElement = ({ price }) => {
   return (
-    <button
-      data-smooth-scroll-to="reservation-section"
-      data-smooth-scroll-block="center"
-      className={Styles.priceElement}
-    >
+    <LinkToSection to="reservation-section" block="center" className={Styles.priceElement}>
       {price} <Icon name="rouble" />
-    </button>
+    </LinkToSection>
   );
 };
 
@@ -71,60 +68,3 @@ export const PriceTable = ({ className, tableData, title }) => {
     </div>
   );
 };
-
-// <button
-//   data-smooth-scroll-to="reservation-section"
-//   data-smooth-scroll-block="center"
-//   className="price-card__price price-card__price_sm-1h"
-// >
-//   600
-//           <i className="icon-rouble"></i>
-// </button>
-//   <button
-//     data-smooth-scroll-to="reservation-section"
-//     data-smooth-scroll-block="center"
-//     className="price-card__price price-card__price_md-1h"
-//   >
-//     500
-//           <i className="icon-rouble"></i>
-//   </button>
-//   <button
-//     data-smooth-scroll-to="reservation-section"
-//     data-smooth-scroll-block="center"
-//     className="price-card__price price-card__price_lg-1h"
-//   >
-//     400
-//           <i className="icon-rouble"></i>
-//   </button>
-//   <button
-//     data-smooth-scroll-to="reservation-section"
-//     data-smooth-scroll-block="center"
-//     className="price-card__price price-card__price_sm-2h"
-//   >
-//     900
-//           <i className="icon-rouble"></i>
-//   </button>
-//   <button
-//     data-smooth-scroll-to="reservation-section"
-//     data-smooth-scroll-block="center"
-//     className="price-card__price price-card__price_md-2h"
-//   >
-//     800
-//           <i className="icon-rouble"></i>
-//   </button>
-//   <button
-//     data-smooth-scroll-to="reservation-section"
-//     data-smooth-scroll-block="center"
-//     className="price-card__price price-card__price_lg-2h"
-//   >
-//     700
-//           <i className="icon-rouble"></i>
-//   </button>
-//   <button
-//     data-smooth-scroll-to="reservation-section"
-//     data-smooth-scroll-block="center"
-//     className="price-card__price price-card__price_add-hour"
-//   >
-//     200
-//           <i className="icon-rouble"></i>
-//   </button>

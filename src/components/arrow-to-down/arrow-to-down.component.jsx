@@ -7,7 +7,7 @@ import icon from './arrow-to-down.icon.svg';
 
 export const ArrowToDown = ({ className }) => (
   <div className={`${className} ${Styles.arrowToDown}`}>
-    <LinkToSection href="about-us-section" className={Styles.button}>
+    <LinkToSection to="about-us-section" className={Styles.button}>
       <img
         className={Styles.icon}
         src={icon}

@@ -6,10 +6,7 @@ import Styles from './price-list-section.module.scss';
 import { Container } from '../../components/container/container.component';
 import { Heading } from '../../components/heading/heading.component';
 import { PriceTable } from '../../components/price-table/price-table.component';
-
-const Calculator = ({ className }) => {
-  return <div className={className}>calc</div>;
-};
+import { Calculator } from '../../components/calculator/calculator.component';
 
 const Schedule = ({ className }) => {
   return <div className={className}>calc</div>;
@@ -57,7 +54,6 @@ export const PriceListSection = () => {
           tableData={priceTable_weekends}
           title="Пятница - Воскресенье"
         />
-
         <Calculator className={Styles.calculator} />
         <Schedule className={Styles.schedule} />
         <Reservation className={Styles.reservation} />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { Icon } from '../icon/icon.component';
+
 import Styles from './contacts.module.scss';
 
 export const Contacts = ({ className }) => {
@@ -24,7 +26,7 @@ export const Contacts = ({ className }) => {
       </button>
       <br />
       <div className={Styles.tel}>
-        <i className={`icon-phone ${Styles.telIcon}`}></i>
+        <Icon className={Styles.telIcon} name="phone" />
         <a href={`tel:${telNumber.replace(/\s/g, '')}`} className={Styles.telNumber}>
           {telNumber}
         </a>

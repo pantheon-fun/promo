@@ -64,11 +64,11 @@ export default () =>
                     .documentId('priceSection')
                 ),
               S.listItem()
-                .title('Price table')
+                .title('Price list section')
                 .child(
                   S.editor()
-                    .schemaType('priceTable')
-                    .documentId('priceTable')
+                    .schemaType('priceListSection')
+                    .documentId('priceListSection')
                 ),
             ])
         ),

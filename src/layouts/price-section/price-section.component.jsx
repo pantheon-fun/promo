@@ -7,6 +7,7 @@ import Styles from './price-section.module.scss';
 import { Container } from '../../components/container/container.component';
 import { Heading } from '../../components/heading/heading.component';
 import { PricePlus } from '../../components/price-plus/price-plus.component';
+import { Icon } from '../../components/icon/icon.component';
 
 export const PriceSection = () => {
   const {
@@ -46,7 +47,7 @@ export const PriceSection = () => {
       <Container className={Styles.inner}>
         <Heading className={Styles.heading}>{heading}</Heading>
         <p className={Styles.perPerson}>
-          от {pricePerPerson} <i className="icon-rouble"></i> за человека
+          от {pricePerPerson} <Icon name="rouble" /> за человека
         </p>
         <ul className={Styles.plusPoints}>
           {pricePluses.map(({ plus, description }, i) => (

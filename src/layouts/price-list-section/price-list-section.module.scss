@@ -1,0 +1,105 @@
+@import '../../styles/abstracts.scss';
+
+.price-list-section {
+  background: v(color-bg-light);
+  position: relative;
+}
+
+.content {
+  padding-bottom: 55rem;
+  padding-top: 45rem;
+  display: grid;
+  gap: 25rem;
+  grid-template-areas:
+    'weekdays'
+    'weekends'
+    'calculator'
+    'schedule'
+    'reservation';
+
+  @include respond-above(sm) {
+    column-gap: 40rem;
+    row-gap: 30rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto) 1fr repeat(1, auto);
+    grid-template-areas:
+      'weekdays calculator'
+      'weekends calculator'
+      'schedule calculator'
+      'reservation reservation';
+  }
+
+  @include respond-above(md) {
+    padding-left: 42rem;
+    grid-template-rows: repeat(1, auto) 1fr repeat(2, auto);
+    grid-template-areas:
+      'weekdays calculator'
+      'weekends calculator'
+      'schedule schedule'
+      'reservation reservation';
+  }
+}
+
+.heading {
+  $triangle-width: 112rem;
+  $triangle-height: 66rem;
+  $letter-spacing: 8rem;
+
+  @include heading-style;
+
+  position: absolute;
+  top: -70rem;
+  right: 0;
+  left: $letter-spacing;
+  margin: 0 auto;
+  font-size: 30rem;
+  letter-spacing: $letter-spacing;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 40rem;
+    right: 0;
+    left: -$letter-spacing;
+    margin: 0 auto;
+
+    width: $triangle-width;
+    border-width: $triangle-height $triangle-width / 2;
+    border-style: solid;
+    border-color: v(color-bg) transparent transparent transparent;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 40rem;
+    right: 0;
+    left: -$letter-spacing;
+    margin: 0 auto;
+
+    width: $triangle-width;
+    border-width: $triangle-height - 6rem $triangle-width / 2;
+    border-style: solid;
+    border-color: v(color-primary) transparent transparent transparent;
+  }
+}
+
+.price-table_weekdays {
+  grid-area: weekdays;
+}
+
+.price-table_weekends {
+  grid-area: weekends;
+}
+
+.calculator {
+  grid-area: calculator;
+}
+
+.schedule {
+  grid-area: schedule;
+}
+
+.reservation {
+  grid-area: reservation;
+}

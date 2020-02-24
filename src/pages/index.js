@@ -6,6 +6,7 @@ import { GamesSection } from '../layouts/games-section/games-section.component';
 import { GallerySection } from '../layouts/gallery-section/gallery-section.component';
 import { FaqSection } from '../layouts/faq-section/faq-section.component';
 import { PriceSection } from '../layouts/price-section/price-section.component';
+import { PriceListSection } from '../layouts/price-list-section/price-list-section.component';
 
 import SEO from '../components/seo';
 
@@ -19,6 +20,7 @@ const IndexPage = () => (
       <GallerySection />
       <FaqSection />
       <PriceSection />
+      <PriceListSection />
     </main>
   </div>
 );

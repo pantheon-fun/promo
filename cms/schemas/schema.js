@@ -7,7 +7,6 @@ import gameCard from './components/game-card';
 import link from './components/link';
 import qa from './components/qa';
 import pricePlus from './components/price-plus';
-import priceTable from './components/price-table';
 
 import firstSection from './sections/first-section';
 import aboutUsSection from './sections/about-us-section';
@@ -15,6 +14,7 @@ import gamesSection from './sections/games-section';
 import gallerySection from './sections/gallery-section';
 import faqSection from './sections/faq-section';
 import priceSection from './sections/price-section';
+import priceListSection from './sections/price-list-section';
 
 export default createSchema({
   name: 'mySchema',
@@ -26,7 +26,6 @@ export default createSchema({
     link,
     qa,
     pricePlus,
-    priceTable,
     /* sections */
     firstSection,
     aboutUsSection,
@@ -34,5 +33,6 @@ export default createSchema({
     gallerySection,
     faqSection,
     priceSection,
+    priceListSection,
   ]),
 });

@@ -5,7 +5,7 @@ import Styles from './gallery-section.module.scss';
 import { Heading } from '../../components/heading/heading.component';
 import { Gallery } from '../../components/gallery/gallery.component';
 
-export const GallerySection = () => {
+const GallerySection = () => {
   const {
     sanityGallerySection: { heading, galleryImages, albumBtn },
   } = useStaticQuery(
@@ -47,3 +47,5 @@ export const GallerySection = () => {
     </section>
   );
 };
+
+export default GallerySection;

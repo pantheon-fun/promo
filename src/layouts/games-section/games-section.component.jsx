@@ -1,12 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import map from 'lodash/map';
 
 import Styles from './games-section.module.scss';
 import { Container } from '../../components/container/container.component';
 import { Heading } from '../../components/heading/heading.component';
 import { GameCard } from '../../components/game-card/game-card.component';
 
-export const GamesSection = () => {
+const GamesSection = () => {
   const {
     sanityGamesSection: { heading, gameCards },
   } = useStaticQuery(
@@ -38,7 +39,7 @@ export const GamesSection = () => {
       <Container>
         <Heading>{heading}</Heading>
         <ul className={Styles.gamesList}>
-          {gameCards.map((cardData, i) => (
+          {map(gameCards, (cardData, i) => (
             <GameCard key={i} cardData={cardData} />
           ))}
         </ul>
@@ -46,3 +47,5 @@ export const GamesSection = () => {
     </section>
   );
 };
+
+export default GamesSection;

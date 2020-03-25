@@ -16,7 +16,7 @@ const Reservation = ({ className }) => {
   return <div className={className}>calc</div>;
 };
 
-export const PriceListSection = () => {
+const PriceListSection = () => {
   const {
     sanityPriceListSection: { priceTable_weekdays, priceTable_weekends },
   } = useStaticQuery(
@@ -61,3 +61,5 @@ export const PriceListSection = () => {
     </section>
   );
 };
+
+export default PriceListSection;

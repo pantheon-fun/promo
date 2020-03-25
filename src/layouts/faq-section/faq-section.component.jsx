@@ -6,7 +6,7 @@ import { Container } from '../../components/container/container.component';
 import { Heading } from '../../components/heading/heading.component';
 import { Accordion } from '../../components/accordion/accordion.component';
 
-export const FaqSection = () => {
+const FaqSection = () => {
   const {
     sanityFaqSection: { heading, faq },
   } = useStaticQuery(
@@ -32,3 +32,5 @@ export const FaqSection = () => {
     </section>
   );
 };
+
+export default FaqSection;

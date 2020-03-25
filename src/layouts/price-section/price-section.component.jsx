@@ -1,5 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import map from 'lodash/map';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './price-section.module.scss';
@@ -9,7 +10,7 @@ import { Heading } from '../../components/heading/heading.component';
 import { PricePlus } from '../../components/price-plus/price-plus.component';
 import { Icon } from '../../components/icon/icon.component';
 
-export const PriceSection = () => {
+const PriceSection = () => {
   const {
     sanityPriceSection: { heading, pricePerPerson, pricePluses, backgroundImage },
   } = useStaticQuery(
@@ -50,11 +51,13 @@ export const PriceSection = () => {
           от {pricePerPerson} <Icon name="rouble" /> за человека
         </p>
         <ul className={Styles.plusPoints}>
-          {pricePluses.map(({ plus, description }, i) => (
-            <PricePlus key={i} plus={plus} description={description} />
+          {map(pricePluses, ({ plus, description }, idx) => (
+            <PricePlus key={idx} plus={plus} description={description} />
           ))}
         </ul>
       </Container>
     </section>
   );
 };
+
+export default PriceSection;

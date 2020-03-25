@@ -7,7 +7,7 @@ import { Container } from '../../components/container/container.component';
 import { Heading } from '../../components/heading/heading.component';
 import { Text } from '../../components/text/text.component';
 
-export const AboutUsSection = () => {
+const AboutUsSection = () => {
   const {
     sanityAboutUsSection: { heading, text },
   } = useStaticQuery(
@@ -30,3 +30,5 @@ export const AboutUsSection = () => {
     </section>
   );
 };
+
+export default AboutUsSection;

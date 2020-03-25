@@ -8,7 +8,7 @@ import { Banner } from '../../components/banner/banner.component';
 import { ArrowToDown } from '../../components/arrow-to-down/arrow-to-down.component';
 import { Carousel, SwipeArrow } from '../../components/carousel/carousel.component';
 
-export const FirstSection = () => {
+const FirstSection = () => {
   const {
     sanityFirstSection: { siteTitle, hints, siteLogo, mainReservationButton, carousel },
   } = useStaticQuery(
@@ -62,3 +62,5 @@ export const FirstSection = () => {
     </header>
   );
 };
+
+export default FirstSection;

@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import replace from 'lodash/replace';
 
 import { Icon } from '../icon';
+import { LinkToSection } from '../link-to-section';
 
 import Styles from './contacts.module.scss';
 
@@ -23,9 +24,9 @@ const Contacts = ({ className }) => {
 
   return (
     <div className={`${className} ${Styles.contacts}`}>
-      <button data-smooth-scroll-to="references-section" className={Styles.address} type="button">
+      <LinkToSection to="references-section" className={Styles.address}>
         {address}
-      </button>
+      </LinkToSection>
       <br />
       <div className={Styles.tel}>
         <Icon className={Styles.telIcon} name="phone" />

@@ -1,13 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { LinkToSection } from '../link-to-section';
 
 const ReservationButton = ({ className, children }) => (
-  <button
-    data-smooth-scroll-to="reservation-section"
-    data-smooth-scroll-block="center"
-    className={`${className}`}
-  >
+  <LinkToSection to="reservation-section" block="center" className={`${className}`}>
     {children}
-  </button>
+  </LinkToSection>
 );
+
+ReservationButton.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.string.isRequired,
+};
+
+ReservationButton.defaultProps = {
+  className: '',
+};
 
 export default ReservationButton;

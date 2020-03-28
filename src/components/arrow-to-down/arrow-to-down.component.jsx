@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { LinkToSection } from '../link-to-section';
 
@@ -16,5 +17,13 @@ const ArrowToDown = ({ className }) => (
     </LinkToSection>
   </div>
 );
+
+ArrowToDown.propTypes = {
+  className: PropTypes.string,
+};
+
+ArrowToDown.defaultProps = {
+  className: '',
+};
 
 export default ArrowToDown;

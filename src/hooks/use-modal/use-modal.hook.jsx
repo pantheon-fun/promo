@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import usePortal from 'react-useportal';
 
@@ -5,7 +8,7 @@ import CloseIcon from '../../../public/icons/close.svg';
 
 import Styles from './use-modal.module.scss';
 
-export const useModal = () => {
+const useModal = () => {
   const { openPortal, isOpen, togglePortal, closePortal, Portal } = usePortal();
 
   const Modal = ({ children }) => {

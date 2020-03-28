@@ -1,4 +1,8 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
+import map from 'lodash/map';
 
 import { Text } from '../text';
 
@@ -10,7 +14,7 @@ const Accordion = ({ className, questionsAndAnswers }) => {
 
   return (
     <ul ref={accordionRef} className={`${className} ${Styles.accodion}`}>
-      {questionsAndAnswers.map((qa, idx) => {
+      {map(questionsAndAnswers, (qa, idx) => {
         const isOpen = openedPanel === idx;
         const getAnswerElHeight = () => {
           const HEIGHT_CORRECTION = 20;
@@ -42,6 +46,20 @@ const Accordion = ({ className, questionsAndAnswers }) => {
       })}
     </ul>
   );
+};
+
+Accordion.propTypes = {
+  className: PropTypes.string,
+  questionsAndAnswers: PropTypes.arrayOf(
+    PropTypes.exact({
+      question: PropTypes.string.isRequired,
+      answer: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+Accordion.defaultProps = {
+  className: '',
 };
 
 export default Accordion;

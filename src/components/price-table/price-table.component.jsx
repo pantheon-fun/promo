@@ -5,6 +5,7 @@ import Styles from './price-table.module.scss';
 import { Icon } from '../icon';
 import { LinkToSection } from '../link-to-section';
 
+// TODO: Clean it up
 const PriceElement = ({ price }) => {
   return (
     <LinkToSection to="reservation-section" block="center" className={Styles.priceElement}>

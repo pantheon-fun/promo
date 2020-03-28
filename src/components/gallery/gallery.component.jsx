@@ -1,6 +1,11 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
-import useModal from '../../hooks/use-modal/use-modal.hook';
+import PropTypes from 'prop-types';
+import map from 'lodash/map';
+
+import { useModal } from '../../hooks/use-modal';
 
 import Styles from './gallery.module.scss';
 
@@ -11,7 +16,7 @@ const Gallery = ({ galleryImages }) => {
 
   return (
     <ul className={Styles.gallery}>
-      {galleryImages.map((galleryImage, idx) => (
+      {map(galleryImages, (galleryImage, idx) => (
         <li
           key={idx}
           onClick={e => {
@@ -38,6 +43,19 @@ const Gallery = ({ galleryImages }) => {
       )}
     </ul>
   );
+};
+
+Gallery.propTypes = {
+  galleryImages: PropTypes.arrayOf(
+    PropTypes.shape({
+      img: PropTypes.shape({
+        asset: PropTypes.shape({
+          fluid: PropTypes.object.isRequired,
+        }).isRequired,
+      }).isRequired,
+      alt: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default Gallery;

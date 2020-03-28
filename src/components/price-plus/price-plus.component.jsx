@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Styles from './price-plus.module.scss';
+
 import { Heading } from '../heading';
 
 const PricePlus = ({ plus, description }) => {
@@ -12,6 +14,11 @@ const PricePlus = ({ plus, description }) => {
       <p className={Styles.description}>{description}</p>
     </li>
   );
+};
+
+PricePlus.propTypes = {
+  plus: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default PricePlus;

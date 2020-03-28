@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { LinkToSection } from '../../components/link-to-section/link-to-section.component';
+import { LinkToSection } from '../link-to-section';
 
 import Styles from './arrow-to-down.module.scss';
 import icon from './arrow-to-down.icon.svg';
 
-export const ArrowToDown = ({ className }) => (
+const ArrowToDown = ({ className }) => (
   <div className={`${className} ${Styles.arrowToDown}`}>
     <LinkToSection to="about-us-section" className={Styles.button}>
       <img
@@ -16,3 +16,5 @@ export const ArrowToDown = ({ className }) => (
     </LinkToSection>
   </div>
 );
+
+export default ArrowToDown;

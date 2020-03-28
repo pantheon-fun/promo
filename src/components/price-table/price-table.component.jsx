@@ -2,8 +2,8 @@ import React from 'react';
 
 import Styles from './price-table.module.scss';
 
-import { Icon } from '../../components/icon/icon.component';
-import { LinkToSection } from '../../components/link-to-section/link-to-section.component';
+import { Icon } from '../icon';
+import { LinkToSection } from '../link-to-section';
 
 const PriceElement = ({ price }) => {
   return (
@@ -13,7 +13,7 @@ const PriceElement = ({ price }) => {
   );
 };
 
-export const PriceTable = ({ className, tableData, title }) => {
+const PriceTable = ({ className, tableData, title }) => {
   const playersData = tableData.rows[0].cells.slice(1);
   const timeData = tableData.rows.slice(1).map(row => row.cells[0]);
   const priceData = tableData.rows.slice(1).map(row => row.cells.slice(1));
@@ -68,3 +68,5 @@ export const PriceTable = ({ className, tableData, title }) => {
     </div>
   );
 };
+
+export default PriceTable;

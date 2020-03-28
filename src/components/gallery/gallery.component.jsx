@@ -4,7 +4,7 @@ import useModal from '../../hooks/use-modal/use-modal.hook';
 
 import Styles from './gallery.module.scss';
 
-export const Gallery = ({ galleryImages }) => {
+const Gallery = ({ galleryImages }) => {
   const [openedImageIdx, setOpenedImageIdx] = useState(null);
 
   const { openModal, Modal } = useModal();
@@ -39,3 +39,5 @@ export const Gallery = ({ galleryImages }) => {
     </ul>
   );
 };
+
+export default Gallery;

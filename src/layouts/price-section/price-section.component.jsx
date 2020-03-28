@@ -5,10 +5,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './price-section.module.scss';
 
-import { Container } from '../../components/container/container.component';
-import { Heading } from '../../components/heading/heading.component';
-import { PricePlus } from '../../components/price-plus/price-plus.component';
-import { Icon } from '../../components/icon/icon.component';
+import { Container } from '../../components/container';
+import { Heading } from '../../components/heading';
+import { PricePlus } from '../../components/price-plus';
+import { Icon } from '../../components/icon';
 
 const PriceSection = () => {
   const {

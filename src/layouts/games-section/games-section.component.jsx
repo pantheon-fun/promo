@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import map from 'lodash/map';
 
 import Styles from './games-section.module.scss';
-import { Container } from '../../components/container/container.component';
-import { Heading } from '../../components/heading/heading.component';
-import { GameCard } from '../../components/game-card/game-card.component';
+import { Container } from '../../components/container';
+import { Heading } from '../../components/heading';
+import { GameCard } from '../../components/game-card';
 
 const GamesSection = () => {
   const {

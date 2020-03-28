@@ -2,9 +2,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './faq-section.module.scss';
-import { Container } from '../../components/container/container.component';
-import { Heading } from '../../components/heading/heading.component';
-import { Accordion } from '../../components/accordion/accordion.component';
+import { Container } from '../../components/container';
+import { Heading } from '../../components/heading';
+import { Accordion } from '../../components/accordion';
 
 const FaqSection = () => {
   const {

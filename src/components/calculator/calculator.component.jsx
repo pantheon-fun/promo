@@ -2,9 +2,9 @@ import React from 'react';
 
 import Styles from './calculator.module.scss';
 
-import { Spinner } from '../../components/spinner/spinner.component';
+import { Spinner } from '../spinner';
 
-export const Calculator = ({ className }) => {
+const Calculator = ({ className }) => {
   return (
     <div className={`${className} ${Styles.container}`}>
       <div class={Styles.widget} id="calculator">
@@ -13,3 +13,5 @@ export const Calculator = ({ className }) => {
     </div>
   );
 };
+
+export default Calculator;

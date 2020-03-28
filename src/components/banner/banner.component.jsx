@@ -1,14 +1,14 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-import { ReservationButton } from '../reservation-button/reservation-button.component';
-import { Icon } from '../icon/icon.component';
+import { ReservationButton } from '../reservation-button';
+import { Icon } from '../icon';
 
 import { joinJSX } from '../../utils/join-jsx';
 
 import Styles from './banner.module.scss';
 
-export const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationButton }) => {
+const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationButton }) => {
   // TODO: console.log(siteLogo.alt);
   return (
     <div className={`${className} ${Styles.banner}`}>
@@ -28,3 +28,5 @@ export const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationB
     </div>
   );
 };
+
+export default Banner;

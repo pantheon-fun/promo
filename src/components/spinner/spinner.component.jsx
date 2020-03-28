@@ -2,7 +2,7 @@ import React from 'react';
 
 import Styles from './spinner.module.scss';
 
-export const Spinner = () => {
+const Spinner = () => {
   return (
     <div className={Styles.spinner}>
       <div className={Styles.ring}>
@@ -14,3 +14,5 @@ export const Spinner = () => {
     </div>
   );
 };
+
+export default Spinner;

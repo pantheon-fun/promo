@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 
-import { Text } from '../text/text.component';
+import { Text } from '../text';
 
 import Styles from './accordion.module.scss';
 
-export const Accordion = ({ className, questionsAndAnswers }) => {
+const Accordion = ({ className, questionsAndAnswers }) => {
   const [openedPanel, setOpenedPanel] = useState(null);
   const accordionRef = useRef(null);
 
@@ -43,3 +43,5 @@ export const Accordion = ({ className, questionsAndAnswers }) => {
     </ul>
   );
 };
+
+export default Accordion;

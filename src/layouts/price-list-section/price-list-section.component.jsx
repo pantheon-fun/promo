@@ -3,10 +3,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './price-list-section.module.scss';
 
-import { Container } from '../../components/container/container.component';
-import { Heading } from '../../components/heading/heading.component';
-import { PriceTable } from '../../components/price-table/price-table.component';
-import { Calculator } from '../../components/calculator/calculator.component';
+import { Container } from '../../components/container';
+import { Heading } from '../../components/heading';
+import { PriceTable } from '../../components/price-table';
+import { Calculator } from '../../components/calculator';
 
 const Schedule = ({ className }) => {
   return <div className={className}>calc</div>;

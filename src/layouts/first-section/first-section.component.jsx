@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './first-section.module.scss';
 
-import { Contacts } from '../../components/contacts/contacts.component';
-import { Banner } from '../../components/banner/banner.component';
-import { ArrowToDown } from '../../components/arrow-to-down/arrow-to-down.component';
+import { Contacts } from '../../components/contacts';
+import { Banner } from '../../components/banner';
+import { ArrowToDown } from '../../components/arrow-to-down';
 import { Carousel, SwipeArrow } from '../../components/carousel/carousel.component';
 
 const FirstSection = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ReservationButton = ({ className, children }) => (
+const ReservationButton = ({ className, children }) => (
   <button
     data-smooth-scroll-to="reservation-section"
     data-smooth-scroll-block="center"
@@ -9,3 +9,5 @@ export const ReservationButton = ({ className, children }) => (
     {children}
   </button>
 );
+
+export default ReservationButton;

@@ -2,8 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './gallery-section.module.scss';
-import { Heading } from '../../components/heading/heading.component';
-import { Gallery } from '../../components/gallery/gallery.component';
+import { Heading } from '../../components/heading';
+import { Gallery } from '../../components/gallery';
 
 const GallerySection = () => {
   const {

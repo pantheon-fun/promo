@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './about-us-section.module.scss';
 
-import { Container } from '../../components/container/container.component';
-import { Heading } from '../../components/heading/heading.component';
-import { Text } from '../../components/text/text.component';
+import { Container } from '../../components/container';
+import { Heading } from '../../components/heading';
+import { Text } from '../../components/text';
 
 const AboutUsSection = () => {
   const {

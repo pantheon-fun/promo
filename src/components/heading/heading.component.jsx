@@ -22,7 +22,7 @@ Heading.defaultProps = {
   children: '',
   sub: false,
   className: '',
-  pure: true,
+  pure: false,
 };
 
 export default Heading;

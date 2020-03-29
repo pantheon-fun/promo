@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react';
 
+// Polyfills
+import 'intersection-observer';
 import 'smooth-smooth-scroll/polyfill';
 import { initSmoothScroll } from 'smooth-smooth-scroll';
 
-import { FirstSection } from '../layouts/first-section';
-import { AboutUsSection } from '../layouts/about-us-section';
-import { GamesSection } from '../layouts/games-section';
-import { GallerySection } from '../layouts/gallery-section';
-import { FaqSection } from '../layouts/faq-section';
-import { PriceSection } from '../layouts/price-section';
-import { PriceListSection } from '../layouts/price-list-section';
+import { FirstSection } from '../components/index-page/first-section';
+import { AboutUsSection } from '../components/index-page/about-us-section';
+import { GamesSection } from '../components/index-page/games-section';
+import { GallerySection } from '../components/index-page/gallery-section';
+import { FaqSection } from '../components/index-page/faq-section';
+import { PriceSection } from '../components/index-page/price-section';
+import { PriceListSection } from '../components/index-page/price-list-section';
 
 // TODO: refactore
 import SEO from '../components/seo';

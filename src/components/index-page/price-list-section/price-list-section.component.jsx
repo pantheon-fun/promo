@@ -8,11 +8,8 @@ import { Container } from '../../layout/container';
 import { Heading } from '../../common/heading';
 import { PriceTable } from './components/price-table';
 import { Calculator } from './components/calculator';
+import { Schedule } from './components/schedule';
 import { Reservation } from './components/reservation';
-
-const Schedule = ({ className }) => {
-  return <div className={className}>calc</div>;
-};
 
 const PriceListSection = () => {
   const {

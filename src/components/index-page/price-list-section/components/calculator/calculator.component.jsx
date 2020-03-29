@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -18,23 +18,22 @@ const loadCalculator = () => {
   }//ucalc.pro/api/widget.js?id=${CALC_WIDGET_ID}&t=${Math.floor(new Date() / 18e5)}`;
 
   document.documentElement.appendChild(calcScript);
-
-  return <div className={`uCalc_${CALC_WIDGET_ID}`} />;
 };
 
 const Calculator = ({ className }) => {
   const [ref, inView] = useInView(WIDGET_OBERVER_OPTIONS);
-  const [widgetContent, setWidgetContent] = useState(<Spinner />);
 
   useEffect(() => {
     if (inView === true) {
-      setWidgetContent(loadCalculator());
+      loadCalculator();
     }
   }, [inView]);
 
   return (
     <div ref={ref} className={cn(className, Styles.container)}>
-      <div className={Styles.widget}>{widgetContent}</div>
+      <div className={cn(`uCalc_${CALC_WIDGET_ID}`, Styles.widget)}>
+        <Spinner />
+      </div>
     </div>
   );
 };

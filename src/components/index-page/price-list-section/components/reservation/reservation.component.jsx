@@ -13,7 +13,7 @@ import { initWidget } from '../../../../../utils/bookform';
 import { Icon } from '../../../../common/icon';
 import { Heading } from '../../../../common/heading';
 
-const Calculator = ({ className }) => {
+const Reservation = ({ className }) => {
   const {
     sanityReferences: { vkLink, instLink, telNumber },
   } = useStaticQuery(
@@ -90,12 +90,12 @@ const Calculator = ({ className }) => {
   );
 };
 
-Calculator.propTypes = {
+Reservation.propTypes = {
   className: PropTypes.string,
 };
 
-Calculator.defaultProps = {
+Reservation.defaultProps = {
   className: '',
 };
 
-export default Calculator;
+export default Reservation;

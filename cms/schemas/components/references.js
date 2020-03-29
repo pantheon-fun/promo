@@ -15,5 +15,31 @@ export default {
       name: 'telNumber',
       type: 'string',
     },
+    {
+      title: 'Email',
+      name: 'email',
+      type: 'string',
+    },
+    {
+      title: 'Ссылка на VK',
+      name: 'vkLink',
+      type: 'url',
+    },
+    {
+      title: 'Ссылка на инсту',
+      name: 'instLink',
+      type: 'url',
+    },
+    {
+      title: 'Ссылка на подробный маршрут',
+      description: 'Потом будет заменена отдельной секцией',
+      name: 'detailedRouteLink',
+      type: 'url',
+    },
+    {
+      title: 'Ссылка на непревозойденного, превосходного, самого лучшего разработчика',
+      name: 'devLink',
+      type: 'url',
+    },
   ],
 };

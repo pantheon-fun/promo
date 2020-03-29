@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -7,12 +8,9 @@ import { Container } from '../../layout/container';
 import { Heading } from '../../common/heading';
 import { PriceTable } from './components/price-table';
 import { Calculator } from './components/calculator';
+import { Reservation } from './components/reservation';
 
 const Schedule = ({ className }) => {
-  return <div className={className}>calc</div>;
-};
-
-const Reservation = ({ className }) => {
   return <div className={className}>calc</div>;
 };
 

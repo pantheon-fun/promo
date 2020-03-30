@@ -31,8 +31,8 @@ const Reservation = ({ className }) => {
   const { openModal, Modal, isOpen } = useModal();
 
   const onBookformOptionClick = e => {
-    initWidget(RESERVATION_BOOKFORM_WIDGET_ID);
     openModal(e);
+    initWidget(RESERVATION_BOOKFORM_WIDGET_ID);
   };
 
   return (

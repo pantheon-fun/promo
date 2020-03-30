@@ -1,13 +1,14 @@
 export const initWidget = widgetId => {
+  window.BFInit = false;
   window.BookformObject = 'Bookform';
   window.Bookform = window.Bookform || { q: [] };
 
-  const js = document.createElement('script');
-  const fjs = document.getElementsByTagName('script')[0];
-  js.id = 'Bookform';
-  js.src = `https://widget.bookform.ru/${widgetId}/js`;
-  js.async = 1;
-  fjs.parentNode.insertBefore(js, fjs);
+  const script = document.createElement('script');
+  script.id = `Bookform-${widgetId}`;
+  script.src = `https://widget.bookform.ru/${widgetId}/js`;
+  script.async = true;
 
-  window.Bookform.q.push(['embedded', { id: widgetId }]);
+  document.head.append(script);
+
+  window.Bookform.q = [['embedded', { id: widgetId }]];
 };

@@ -1,0 +1,73 @@
+@import '../../../styles/abstracts.scss';
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: v(color-bg);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  color: v(color-contrast);
+}
+
+.lable {
+  font-weight: 300;
+  width: 65%;
+  padding: 0 2em 0 1em;
+  text-align: right;
+}
+
+.route {
+  background: v(color-contrast);
+  overflow: hidden;
+  width: 35%;
+  margin: 0;
+}
+
+.link {
+  position: relative;
+  color: v(color-bg);
+  font-weight: bold;
+  padding: 1.4em 0 2.4em 2.6em;
+  text-align: left;
+  width: 100%;
+  transition: transform 0.25s ease-in-out;
+
+  @include respond-below(sm) {
+    padding-left: 1.2em;
+  }
+
+  &::before {
+    $smth: 46.8rem;
+
+    display: flex;
+    align-items: center;
+    font-family: 'icomoon', serif;
+    content: '\e900';
+    position: absolute;
+    bottom: 100%;
+    height: 100%;
+    font-size: 2.5em;
+    padding-bottom: 5rem;
+
+    justify-content: flex-start;
+    width: calc(100% + #{$smth});
+    transform: translateX(-#{$smth});
+    padding-left: calc(#{$smth} + 20rem);
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(100%);
+  }
+}
+
+.caption {
+  content: 'подробный';
+  display: block;
+  text-transform: none;
+  font-size: 0.94em;
+  margin-bottom: 0.1em;
+  font-weight: 300;
+}

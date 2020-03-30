@@ -12,6 +12,7 @@ import { GallerySection } from '../components/index-page/gallery-section';
 import { FaqSection } from '../components/index-page/faq-section';
 import { PriceSection } from '../components/index-page/price-section';
 import { PriceListSection } from '../components/index-page/price-list-section';
+import { HowToFindSection } from '../components/index-page/how-to-find-section';
 
 // TODO: refactore
 import SEO from '../components/seo';
@@ -32,6 +33,7 @@ const IndexPage = () => {
         <FaqSection />
         <PriceSection />
         <PriceListSection />
+        <HowToFindSection />
       </main>
     </div>
   );

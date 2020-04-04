@@ -13,6 +13,7 @@ import { FaqSection } from '../components/index-page/faq-section';
 import { PriceSection } from '../components/index-page/price-section';
 import { PriceListSection } from '../components/index-page/price-list-section';
 import { HowToFindSection } from '../components/index-page/how-to-find-section';
+import { ReferenceSection } from '../components/index-page/reference-section';
 
 // TODO: refactore
 import SEO from '../components/seo';
@@ -34,6 +35,7 @@ const IndexPage = () => {
         <PriceSection />
         <PriceListSection />
         <HowToFindSection />
+        <ReferenceSection />
       </main>
     </div>
   );

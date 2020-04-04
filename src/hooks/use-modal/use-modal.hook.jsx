@@ -4,7 +4,7 @@
 import React from 'react';
 import usePortal from 'react-useportal';
 
-import CloseIcon from '../../../public/icons/close.svg';
+import CloseIcon from './icons/close.svg';
 
 import Styles from './use-modal.module.scss';
 

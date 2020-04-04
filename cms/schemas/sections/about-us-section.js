@@ -10,7 +10,7 @@ export default {
     },
     {
       title: 'Описание',
-      description: 'Какой-то текст о нас',
+      description: 'Какой-то текст "о нас"',
       name: 'text',
       type: 'text',
     },

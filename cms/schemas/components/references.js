@@ -10,6 +10,11 @@ export default {
       type: 'string',
     },
     {
+      title: 'Ссылка на арену на Яндекс.карте',
+      name: 'ymapLink',
+      type: 'url',
+    },
+    {
       title: 'Телефон',
       description: 'Номер для приёма звонков в формате: +7 977 722 09 60',
       name: 'telNumber',

@@ -10,6 +10,7 @@
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-source-filesystem": "^2.2.2",
@@ -24,6 +25,7 @@
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.26.1",
     "react-markdown": "^4.3.1",
+    "react-script-tag": "^1.1.2",
     "react-useportal": "^1.0.13",
     "siema": "^1.5.1",
     "smooth-smooth-scroll": "^1.5.0"

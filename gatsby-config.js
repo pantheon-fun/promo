@@ -18,13 +18,31 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `pantheon.fun`,
+        short_name: `pantheon`,
+        description: `Pantheon.fun website`,
+        lang: `ru`,
+        display: `browser`,
+        icon: `src/images/gatsby-icon.png`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `public/icons/favicon.svg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+          omitKeys: [
+            'xmlnsDc',
+            'xmlnsCc',
+            'xmlnsRdf',
+            'xmlnsSvg',
+            'xmlnsSodipodi',
+            'xmlnsInkscape',
+          ],
+        },
       },
     },
     `gatsby-plugin-sass`,

@@ -9,6 +9,7 @@ $side-size: 1em;
   padding-left: $side-size;
   padding-right: $side-size;
   width: 100%;
+  height: 100%;
 
   @each $breakpoint, $value in $breakpoints {
     @include respond-above($breakpoint) {
@@ -23,6 +24,7 @@ $side-size: 1em;
   padding-left: $side-size;
   padding-right: $side-size;
   width: 100%;
+  height: 100%;
 
   @each $breakpoint, $value in $breakpoints {
     @if ($breakpoint == 'xs') {

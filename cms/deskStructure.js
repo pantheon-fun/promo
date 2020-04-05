@@ -14,6 +14,13 @@ export default () =>
             .schemaType('references')
             .documentId('references')
         ),
+      S.listItem()
+        .title('Privacy policy')
+        .child(
+          S.editor()
+            .schemaType('privacyPolicy')
+            .documentId('privacyPolicy')
+        ),
       S.divider(),
       S.listItem()
         .title('Landing')

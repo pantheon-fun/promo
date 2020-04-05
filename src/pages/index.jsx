@@ -1,9 +1,4 @@
-import React, { useEffect } from 'react';
-
-// Polyfills
-import 'intersection-observer';
-import 'smooth-smooth-scroll/polyfill';
-import { initSmoothScroll } from 'smooth-smooth-scroll';
+import React from 'react';
 
 import { FirstSection } from '../components/index-page/first-section';
 import { AboutUsSection } from '../components/index-page/about-us-section';
@@ -14,15 +9,12 @@ import { PriceSection } from '../components/index-page/price-section';
 import { PriceListSection } from '../components/index-page/price-list-section';
 import { HowToFindSection } from '../components/index-page/how-to-find-section';
 import { ReferenceSection } from '../components/index-page/reference-section';
+import { Footer } from '../components/layout/footer';
 
 // TODO: refactore
 import SEO from '../components/seo';
 
 const IndexPage = () => {
-  useEffect(() => {
-    return initSmoothScroll();
-  }, []);
-
   return (
     <div className="index-page">
       <SEO title="Pantheon" />
@@ -37,6 +29,7 @@ const IndexPage = () => {
         <HowToFindSection />
         <ReferenceSection />
       </main>
+      <Footer />
     </div>
   );
 };

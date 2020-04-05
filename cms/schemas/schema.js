@@ -2,11 +2,13 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 import picture from './components/picture';
-import references from './components/references';
 import gameCard from './components/game-card';
 import link from './components/link';
 import qa from './components/qa';
 import pricePlus from './components/price-plus';
+
+import references from './references';
+import privacyPolicy from './privacy-policy';
 
 import firstSection from './sections/first-section';
 import aboutUsSection from './sections/about-us-section';
@@ -19,14 +21,13 @@ import priceListSection from './sections/price-list-section';
 export default createSchema({
   name: 'mySchema',
   types: schemaTypes.concat([
-    /* elements */
+    privacyPolicy,
     references,
     picture,
     gameCard,
     link,
     qa,
     pricePlus,
-    /* sections */
     firstSection,
     aboutUsSection,
     gamesSection,

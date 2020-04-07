@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Styles from './first-section.module.scss';
@@ -44,8 +44,34 @@ const FirstSection = ({ sectionRef }) => {
     `
   );
 
+  const [sectionNode, setSectionNode] = useState(null);
+  const [maxSectionHeight, setMaxSectionHeight] = useState();
+
+  useLayoutEffect(() => {
+    const adjustMaxSectionHeight = () => {
+      if (sectionNode) {
+        setMaxSectionHeight(sectionNode && sectionNode.clientHeight);
+      }
+    };
+
+    adjustMaxSectionHeight();
+    window.addEventListener('orientationchange', adjustMaxSectionHeight);
+
+    return window.removeEventListener('orientationchange', adjustMaxSectionHeight);
+  }, [sectionNode]);
+
   return (
-    <header className={Styles.first} ref={sectionRef} id="first-section">
+    <header
+      className={Styles.first}
+      ref={node => {
+        if (node && !sectionNode) {
+          sectionRef(node);
+          setSectionNode(node);
+        }
+      }}
+      style={{ maxHeight: maxSectionHeight || '100vh' }}
+      id="first-section"
+    >
       <div className={Styles.inner}>
         <Contacts className={Styles.contacts} />
         <Banner

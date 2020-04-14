@@ -73,8 +73,6 @@ const FirstSection = ({ sectionRef }) => {
 
   const maxHeight = useFirstScreenHeight();
 
-  console.log(maxHeight);
-
   return (
     <header className={Styles.first} ref={sectionRef} style={{ maxHeight }} id="first-section">
       <div className={Styles.inner}>

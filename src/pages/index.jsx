@@ -22,7 +22,7 @@ const SMOOTH_SCROLL_CORRECTION = 3;
 const IndexPage = () => {
   const mastheadRef = useRef(null);
 
-  const [observerRef, firstSectionInView] = useInView({
+  const [observerRef, firstSectionInView, entry] = useInView({
     rootMargin: `${mastheadRef.current ? -mastheadRef.current.offsetHeight : '0'}px 0px 0px 0px`,
   });
 
@@ -43,7 +43,7 @@ const IndexPage = () => {
       <SEO title="Pantheon" />
       <FirstSection sectionRef={observerRef} />
       <main className="page-home__content">
-        <Masthead mastheadRef={mastheadRef} hidden={firstSectionInView} />
+        <Masthead mastheadRef={mastheadRef} hidden={firstSectionInView || !entry} />
         <AboutUsSection />
         <GamesSection />
         <GallerySection />

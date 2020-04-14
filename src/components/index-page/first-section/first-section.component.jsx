@@ -9,6 +9,33 @@ import { Banner } from './components/banner';
 import { ArrowToDown } from './components/arrow-to-down';
 import { Carousel, SwipeArrow } from './components/carousel/carousel.component';
 
+const useFirstScreenHeight = () => {
+  const [screenHeight, setScreenHeight] = useState('100vh');
+
+  useLayoutEffect(() => {
+    const correctSizing = () => {
+      let vh = window.innerHeight;
+
+      if (vh > window.screen.height) {
+        vh /= window.devicePixelRatio;
+      }
+
+      setScreenHeight(vh);
+    };
+
+    const onOrientationchange = () => {
+      window.addEventListener('resize', correctSizing, { once: true });
+    };
+
+    correctSizing();
+    window.addEventListener('orientationchange', onOrientationchange);
+
+    return window.removeEventListener('orientationchange', onOrientationchange);
+  }, []);
+
+  return screenHeight;
+};
+
 const FirstSection = ({ sectionRef }) => {
   const {
     sanityFirstSection: { siteTitle, hints, siteLogo, mainReservationButton, carousel },
@@ -44,34 +71,10 @@ const FirstSection = ({ sectionRef }) => {
     `
   );
 
-  const [sectionNode, setSectionNode] = useState(null);
-  const [maxSectionHeight, setMaxSectionHeight] = useState();
-
-  useLayoutEffect(() => {
-    const adjustMaxSectionHeight = () => {
-      if (sectionNode) {
-        setMaxSectionHeight(sectionNode && sectionNode.clientHeight);
-      }
-    };
-
-    adjustMaxSectionHeight();
-    window.addEventListener('orientationchange', adjustMaxSectionHeight);
-
-    return window.removeEventListener('orientationchange', adjustMaxSectionHeight);
-  }, [sectionNode]);
+  const maxHeight = useFirstScreenHeight();
 
   return (
-    <header
-      className={Styles.first}
-      ref={node => {
-        if (node && !sectionNode) {
-          sectionRef(node);
-          setSectionNode(node);
-        }
-      }}
-      style={{ maxHeight: maxSectionHeight || '100vh' }}
-      id="first-section"
-    >
+    <header className={Styles.first} ref={sectionRef} style={{ maxHeight }} id="first-section">
       <div className={Styles.inner}>
         <Contacts className={Styles.contacts} />
         <Banner

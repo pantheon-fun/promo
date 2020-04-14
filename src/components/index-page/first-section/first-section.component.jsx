@@ -10,7 +10,7 @@ import { ArrowToDown } from './components/arrow-to-down';
 import { Carousel, SwipeArrow } from './components/carousel/carousel.component';
 
 const useFirstScreenHeight = () => {
-  const [screenHeight, setScreenHeight] = useState('100vh');
+  const [firstScreenHeight, setfirstScreenHeight] = useState('100vh');
 
   useLayoutEffect(() => {
     const correctSizing = () => {
@@ -20,7 +20,7 @@ const useFirstScreenHeight = () => {
         vh /= window.devicePixelRatio;
       }
 
-      setScreenHeight(vh);
+      setfirstScreenHeight(vh);
     };
 
     const onOrientationchange = () => {
@@ -30,10 +30,10 @@ const useFirstScreenHeight = () => {
     correctSizing();
     window.addEventListener('orientationchange', onOrientationchange);
 
-    return window.removeEventListener('orientationchange', onOrientationchange);
+    return () => window.removeEventListener('orientationchange', onOrientationchange);
   }, []);
 
-  return screenHeight;
+  return firstScreenHeight;
 };
 
 const FirstSection = ({ sectionRef }) => {
@@ -72,6 +72,8 @@ const FirstSection = ({ sectionRef }) => {
   );
 
   const maxHeight = useFirstScreenHeight();
+
+  console.log(maxHeight);
 
   return (
     <header className={Styles.first} ref={sectionRef} style={{ maxHeight }} id="first-section">

@@ -3,9 +3,12 @@ module.exports = {
     title: `Праздник с Лазертаг и Нерф в Мытищах «Pantheon»`,
     description: `Отметьте праздник на крытой лазертаг-арене в 10-ти минутах от станции Мытищи. Вы выбираете во что играть, а с нас остальное.`,
     author: `DZakh`,
+    siteUrl: `https://pantheon.fun`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,6 +29,16 @@ module.exports = {
         icon: `src/images/favicon.svg`,
         start_url: `/`,
         theme_color: `#141111`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-yandex-metrica`,
+      options: {
+        trackingId: process.env.YANDEX_METRICA_TRACKING_ID,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        trackHash: true,
       },
     },
     {

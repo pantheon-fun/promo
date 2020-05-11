@@ -32,13 +32,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-yandex-metrica`,
+      resolve: `gatsby-plugin-yandex-metrika`,
       options: {
         trackingId: process.env.YANDEX_METRICA_TRACKING_ID,
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
         trackHash: true,
+        useCDN: true,
       },
     },
     {

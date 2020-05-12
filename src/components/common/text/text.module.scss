@@ -1,0 +1,17 @@
+@import '../../../styles/abstracts.scss';
+
+.text {
+  line-height: 1.35em;
+  letter-spacing: 0.033em;
+
+  ul {
+    list-style: disc inside;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    font-weight: 400;
+  }
+
+  p + p {
+    padding-top: 1em;
+  }
+}

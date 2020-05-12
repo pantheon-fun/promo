@@ -1,0 +1,77 @@
+@import '../../../../../styles/abstracts.scss';
+
+.accordion {
+  display: inline-block;
+  height: auto;
+  padding: 0;
+  margin-top: 10rem;
+  margin-bottom: 20rem;
+  overflow: hidden;
+}
+
+.panel {
+  position: relative;
+  border-bottom: 1rem solid lightness(v(color-contrast), 0.8);
+  line-height: 1.3em;
+  transition: 0.4s;
+}
+
+.question {
+  position: relative;
+  display: flex;
+  align-content: cover;
+  padding: 1.2em 3em 1.2em 1em;
+  color: v(color-contrast);
+  font-size: 1.15em;
+  font-weight: 400;
+  text-align: left;
+  transition: color 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: v(color-primary);
+  }
+
+  .panel.opened & {
+    color: v(color-primary-light);
+    border-bottom: none;
+  }
+
+  &::after {
+    font-family: 'icomoon', serif;
+    content: '\f067';
+    position: absolute;
+    right: 0.5em;
+    line-height: 2em;
+    align-self: center;
+    width: 2em;
+    height: 2em;
+    color: v(color-contrast);
+    border-radius: 50%;
+    border: 1rem solid v(color-contrast);
+    text-align: center;
+    transition: color 0.3s;
+
+    &:hover::after {
+      cursor: pointer;
+      color: v(color-primary);
+      border: 1rem solid v(color-primary);
+    }
+
+    .panel.opened & {
+      font-family: 'icomoon', serif;
+      content: '\f068';
+      color: v(color-primary-light);
+      border: 1rem solid v(color-primary-light);
+    }
+  }
+}
+
+.answer {
+  text-align: left;
+  font-weight: 300;
+
+  padding: 0 4em 0 1.3em;
+  overflow: hidden;
+  transition: height 0.2s ease-out;
+}

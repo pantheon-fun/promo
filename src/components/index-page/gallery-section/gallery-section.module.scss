@@ -1,0 +1,27 @@
+@import '../../../styles/abstracts.scss';
+
+.gallery-section {
+  background: v(color-bg-light);
+  padding-bottom: 2.2em;
+}
+
+.album-btn {
+  $btn-clr: v(color-contrast-weird);
+
+  border: 2rem dashed $btn-clr;
+  color: $btn-clr;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  margin-top: 2em;
+  transition: background 0.3s;
+
+  &:hover,
+  &:focus {
+    background: v(color-bg);
+  }
+
+  &:active {
+    background: v(color-bg-dark);
+  }
+}

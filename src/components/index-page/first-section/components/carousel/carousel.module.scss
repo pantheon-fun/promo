@@ -1,0 +1,53 @@
+@import '../../../../../styles/abstracts.scss';
+
+.carousel {
+  position: absolute;
+  top: 0;
+  background: v(color-bg);
+
+  &,
+  & div {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  @include bg-image;
+}
+
+.swipe-arrow {
+  display: none;
+}
+
+@include respond-above(sm) {
+  .swipe-arrow {
+    display: flex;
+    cursor: pointer;
+    transition: background 0.7s;
+
+    &:hover,
+    &:focus {
+      background: alpha(v(color-contrast), 0.03);
+    }
+  }
+
+  .swipe-icon {
+    margin: auto;
+    pointer-events: none;
+    width: 40rem;
+    height: 40rem;
+    opacity: 0.25;
+    transition: opacity 0.5s;
+
+    .swipe-arrow:hover &,
+    .swipe-arrow:focus & {
+      opacity: 1;
+    }
+  }
+}

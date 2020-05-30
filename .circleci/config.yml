@@ -13,19 +13,18 @@ jobs:
             - run: npm run build
   deploy-prod:
     docker:
-      # specify the version you desire here (you might not want node)
       - image: circleci/node:9.6.1
     steps:
       - checkout
-      - run: ssh -p $DROPLET_PORT -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP “./pantheon.fun_deploy.sh”
+      - run: ssh -p $DROPLET_PORT -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP “~/pantheon.fun_deploy.sh”
 workflows:
   build-and-deploy:
     jobs:
-      - build
+      # - build
       - deploy-prod:
           filters:
             branches:
               only:
                 - master
-          requires:
-            - build
+          # requires:
+          #   - build

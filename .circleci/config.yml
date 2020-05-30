@@ -2,16 +2,30 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build-and-test:
+  build:
     executor:
       name: node/default
     steps:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm install
-            - run: npm test
+            - run: npm ci
+            - run: npm run build
+  deploy-prod:
+    docker:
+      # specify the version you desire here (you might not want node)
+      - image: circleci/node:9.6.1
+    steps:
+      - checkout
+      - run: ssh -p $DROPLET_PORT -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP “./pantheon.fun_deploy.sh”
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy-prod:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - build

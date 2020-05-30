@@ -31,7 +31,7 @@ const ContactCard = () => {
     `
   );
 
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   const toggleActive = e => {
     const isOnLinkClick = e.target.nodeName === 'A';

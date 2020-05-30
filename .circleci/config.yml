@@ -16,7 +16,7 @@ jobs:
       - image: circleci/node:9.6.1
     steps:
       - checkout
-      - run: ssh -p $DROPLET_PORT -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP “~/pantheon.fun_deploy.sh”
+      - run: ssh -p $DROPLET_PORT -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP “pwd”
 workflows:
   build-and-deploy:
     jobs:

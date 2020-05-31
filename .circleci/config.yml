@@ -17,19 +17,19 @@ jobs:
       - image: circleci/node:9.6.1
     steps:
       - checkout
-      - run: ssh -oStrictHostKeyChecking=no -p $DROPLET_PORT $DROPLET_USER@$DROPLET_IP 'YANDEX_METRICA_TRACKING_ID=$YANDEX_METRICA_TRACKING_ID ~/pantheon.fun_deploy.sh'
+      - run: ssh -oStrictHostKeyChecking=no -p $DROPLET_PORT $DROPLET_USER@$DROPLET_IP 'sudo YANDEX_METRICA_TRACKING_ID=$YANDEX_METRICA_TRACKING_ID ~/pantheon.fun_deploy.sh'
 workflows:
   build-and-deploy:
     jobs:
-      - build:
-          filters:
-            branches:
-              only:
-                - master
+      # - build:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
       - deploy-prod:
           filters:
             branches:
               only:
                 - master
-          requires:
-            - build
+          # requires:
+          #   - build

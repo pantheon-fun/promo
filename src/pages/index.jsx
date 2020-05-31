@@ -22,6 +22,7 @@ const SMOOTH_SCROLL_CORRECTION = 3;
 const IndexPage = () => {
   const mastheadRef = useRef(null);
 
+  // TODO: Because of this stuff we have to rerender the whole page every time
   const [observerRef, firstSectionInView, entry] = useInView({
     rootMargin: `${mastheadRef.current ? -mastheadRef.current.offsetHeight : '0'}px 0px 0px 0px`,
   });

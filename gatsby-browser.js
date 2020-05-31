@@ -1,21 +1,19 @@
 /* eslint-disable react/jsx-filename-extension */
 
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
-import 'intersection-observer';
-import 'smooth-smooth-scroll/polyfill';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './src/styles/main.scss';
-
 const App = ({ children }) => {
   return children;
+};
+
+export const onClientEntry = async () => {
+  await import('./src/styles/main.scss');
+  await import('smooth-smooth-scroll/polyfill');
+
+  if (typeof IntersectionObserver === 'undefined') {
+    await import('intersection-observer');
+  }
 };
 
 export const wrapRootElement = ({ element }) => {

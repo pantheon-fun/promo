@@ -11,6 +11,7 @@
     "browser": true,
     "es6": true
   },
+  "parser": "babel-eslint",
   "plugins": [
     "optimize-regex",
     "sonarjs",

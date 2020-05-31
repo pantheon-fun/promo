@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+const postcssPresetEnv = require(`postcss-preset-env`);
+
 module.exports = {
   siteMetadata: {
     title: `Праздник с Лазертаг и Нерф в Мытищах «Pantheon»`,
@@ -57,7 +59,12 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [postcssPresetEnv({ stage: 0 })],
+      },
+    },
     {
       resolve: 'gatsby-source-sanity',
       options: {

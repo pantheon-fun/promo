@@ -8,7 +8,7 @@ export const initWidget = widgetId => {
   script.src = `https://widget.bookform.ru/${widgetId}/js`;
   script.async = true;
 
-  document.head.append(script);
+  document.head.appendChild(script);
 
   window.Bookform.q = [['embedded', { id: widgetId }]];
 };

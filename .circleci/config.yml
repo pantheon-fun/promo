@@ -21,15 +21,15 @@ jobs:
 workflows:
   build-and-deploy:
     jobs:
-      # - build:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
+      - build:
+          filters:
+            branches:
+              only:
+                - master
       - deploy-prod:
           filters:
             branches:
               only:
                 - master
-          # requires:
-          #   - build
+          requires:
+            - build

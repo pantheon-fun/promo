@@ -9,6 +9,7 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: YANDEX_METRICA_TRACKING_ID=$YANDEX_METRICA_TRACKING_ID
             - run: npm ci
             - run: npm run build
   deploy-prod:

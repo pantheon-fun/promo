@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Праздник с Лазертаг и Нерф в Мытищах «Pantheon»`,

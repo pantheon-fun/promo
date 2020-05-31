@@ -13,6 +13,7 @@ import Styles from './reference-section.module.scss';
 const MapScript = () => {
   return (
     <ScriptTag
+      async
       src={`https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A992f3be32d8510526adae1688dbd1144e734b0fda3d4fe6f4328beda73da6afa&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true`}
     />
   );

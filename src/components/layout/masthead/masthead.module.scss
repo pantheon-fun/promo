@@ -63,22 +63,27 @@
 }
 
 .reservation-btn {
-  --btn-clr: var(--color-contrast);
+  display: none;
 
-  border: 2rem solid v(btn-clr);
-  color: v(btn-clr);
-  letter-spacing: 0;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  padding: 0.5em 1em;
-
-  &:hover,
-  &:focus {
-    --btn-clr: var(--color-primary);
-  }
-
-  &:active {
-    --btn-clr: var(--color-primary-dark);
+  @include respond-above(xs) {
+    --btn-clr: var(--color-contrast);
+    
+    display: block;
+    border: 2rem solid v(btn-clr);
+    color: v(btn-clr);
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+  
+    &:hover,
+    &:focus {
+      --btn-clr: var(--color-primary);
+    }
+  
+    &:active {
+      --btn-clr: var(--color-primary-dark);
+    }
   }
 }
 

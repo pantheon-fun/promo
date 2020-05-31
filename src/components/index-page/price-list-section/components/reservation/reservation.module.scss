@@ -100,3 +100,14 @@
   max-width: 1100px;
   height: 75vh;
 }
+
+@include respond-below(xs) {
+  .wrapper {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .options {
+    height: 200px;
+  }
+}

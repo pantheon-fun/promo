@@ -17,7 +17,7 @@ const loadCalculator = () => {
     window.location.protocol === 'https:' ? 'https:' : 'http:'
   }//ucalc.pro/api/widget.js?id=${CALC_WIDGET_ID}&t=${Math.floor(new Date() / 18e5)}`;
 
-  document.head.append(calcScript);
+  document.head.appendChild(calcScript);
 };
 
 const Calculator = ({ className }) => {

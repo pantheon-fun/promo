@@ -1,13 +1,16 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import React, { useState, useLayoutEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useStore } from 'effector-react';
 
-import Styles from './first-section.module.scss';
+import { forbiddenMastheadZoneObserverStore } from '../../../stores/is-masthead-shown/store';
 
 import { Contacts } from './components/contacts';
 import { Banner } from './components/banner';
 import { ArrowToDown } from './components/arrow-to-down';
 import { Carousel, SwipeArrow } from './components/carousel/carousel.component';
+
+import Styles from './first-section.module.scss';
 
 const useFirstScreenHeight = () => {
   const [firstScreenHeight, setfirstScreenHeight] = useState('100vh');
@@ -36,7 +39,7 @@ const useFirstScreenHeight = () => {
   return firstScreenHeight;
 };
 
-const FirstSection = ({ sectionRef }) => {
+const FirstSection = () => {
   const {
     sanityFirstSection: { siteTitle, hints, siteLogo, mainReservationButton, carousel },
   } = useStaticQuery(
@@ -71,10 +74,18 @@ const FirstSection = ({ sectionRef }) => {
     `
   );
 
+  const forbiddenMastheadZoneObserverRef = useStore(forbiddenMastheadZoneObserverStore);
+
+  // TODO: add memo
   const maxHeight = useFirstScreenHeight();
 
   return (
-    <header className={Styles.first} ref={sectionRef} style={{ maxHeight }} id="first-section">
+    <header
+      className={Styles.first}
+      ref={forbiddenMastheadZoneObserverRef}
+      style={{ maxHeight }}
+      id="first-section"
+    >
       <div className={Styles.inner}>
         <Contacts className={Styles.contacts} />
         <Banner
@@ -91,14 +102,6 @@ const FirstSection = ({ sectionRef }) => {
       <Carousel slides={carousel} />
     </header>
   );
-};
-
-FirstSection.propTypes = {
-  sectionRef: PropTypes.func,
-};
-
-FirstSection.defaultProps = {
-  sectionRef: null,
 };
 
 export default FirstSection;

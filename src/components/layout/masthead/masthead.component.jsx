@@ -1,8 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import React, { useRef, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import cn from 'classnames';
 import replace from 'lodash/replace';
+import { useInView } from 'react-intersection-observer';
+
+import {
+  addMastheadEl,
+  addForbiddenMastheadZoneObserver,
+} from '../../../stores/is-masthead-shown/store';
 
 import Favicon from '../../../images/favicon.svg';
 import { Container } from '../container';
@@ -10,7 +16,7 @@ import { LinkToSection } from '../../common/link-to-section';
 
 import Styles from './masthead.module.scss';
 
-const Masthead = ({ mastheadRef, hidden, className }) => {
+const Masthead = () => {
   const {
     sanityReferences: { telNumber },
   } = useStaticQuery(
@@ -23,8 +29,22 @@ const Masthead = ({ mastheadRef, hidden, className }) => {
     `
   );
 
+  const mastheadRef = useRef(null);
+  const mastheadEl = mastheadRef && mastheadRef.current;
+
+  const [observerRef, isForbiddenMastheadZoneInView, entry] = useInView({
+    rootMargin: `${mastheadEl ? -mastheadEl.offsetHeight : '0'}px 0px 0px 0px`,
+  });
+
+  const isHidden = isForbiddenMastheadZoneInView || !entry;
+
+  useEffect(() => {
+    addMastheadEl(mastheadEl);
+    addForbiddenMastheadZoneObserver(observerRef);
+  }, [mastheadEl, observerRef]);
+
   return (
-    <div ref={mastheadRef} className={cn(Styles.masthead, className, { [Styles.hidden]: hidden })}>
+    <div ref={mastheadRef} className={cn(Styles.masthead, { [Styles.hidden]: isHidden })}>
       <Container className={Styles.inner}>
         <LinkToSection
           to="first-section"
@@ -76,17 +96,6 @@ const Masthead = ({ mastheadRef, hidden, className }) => {
       </Container>
     </div>
   );
-};
-
-Masthead.propTypes = {
-  className: PropTypes.string,
-  hidden: PropTypes.bool,
-  mastheadRef: PropTypes.shape({ current: PropTypes.object }).isRequired,
-};
-
-Masthead.defaultProps = {
-  className: '',
-  hidden: false,
 };
 
 export default Masthead;

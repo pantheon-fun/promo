@@ -1,6 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import { initSmoothScroll } from 'smooth-smooth-scroll';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
 
 import { Masthead } from '../components/layout/masthead';
 import { FirstSection } from '../components/index-page/first-section';
@@ -17,34 +15,13 @@ import { Footer } from '../components/layout/footer';
 // TODO: refactore
 import SEO from '../components/seo';
 
-const SMOOTH_SCROLL_CORRECTION = 3;
-
 const IndexPage = () => {
-  const mastheadRef = useRef(null);
-
-  // TODO: Because of this stuff we have to rerender the whole page every time
-  const [observerRef, firstSectionInView, entry] = useInView({
-    rootMargin: `${mastheadRef.current ? -mastheadRef.current.offsetHeight : '0'}px 0px 0px 0px`,
-  });
-
-  useEffect(() => {
-    const masthead = mastheadRef.current;
-
-    if (masthead) {
-      return initSmoothScroll({
-        offsetTop: masthead.offsetHeight - SMOOTH_SCROLL_CORRECTION,
-      });
-    }
-
-    return false;
-  }, []);
-
   return (
     <div className="index-page">
       <SEO title="Pantheon" />
-      <FirstSection sectionRef={observerRef} />
+      <FirstSection />
       <main className="page-home__content">
-        <Masthead mastheadRef={mastheadRef} hidden={firstSectionInView || !entry} />
+        <Masthead />
         <AboutUsSection />
         <GamesSection />
         <GallerySection />

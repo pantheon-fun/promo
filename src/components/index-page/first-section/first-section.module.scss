@@ -4,7 +4,6 @@
   height: calc(var(--vh, 1vh) * 100);
   min-height: 275rem;
   position: relative;
-  // overflow: hidden;
 }
 
 .inner {
@@ -14,6 +13,7 @@
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
   grid-template-areas:
     'contacts'
     'banner'

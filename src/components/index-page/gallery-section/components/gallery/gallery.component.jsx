@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
 
+import { fluidImageType } from '../../../../../utils/common-types';
+
 import { useModal } from '../../../../../hooks/use-modal';
 
 import Styles from './gallery.module.scss';
@@ -46,16 +48,7 @@ const Gallery = ({ galleryImages }) => {
 };
 
 Gallery.propTypes = {
-  galleryImages: PropTypes.arrayOf(
-    PropTypes.shape({
-      img: PropTypes.shape({
-        asset: PropTypes.shape({
-          fluid: PropTypes.object.isRequired,
-        }).isRequired,
-      }).isRequired,
-      alt: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
+  galleryImages: PropTypes.arrayOf(fluidImageType.isRequired).isRequired,
 };
 
 export default Gallery;

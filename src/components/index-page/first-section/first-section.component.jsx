@@ -8,7 +8,12 @@ import { forbiddenMastheadZoneObserverStore } from '../../../stores/is-masthead-
 import { Contacts } from './components/contacts';
 import { Banner } from './components/banner';
 import { ArrowToDown } from './components/arrow-to-down';
-import { Carousel, SwipeArrow } from './components/carousel/carousel.component';
+import {
+  CustomCarouselProvider,
+  CustomCarousel,
+  CustomButtonNext,
+  CustomButtonBack,
+} from './components/carousel';
 
 import Styles from './first-section.module.scss';
 
@@ -17,13 +22,7 @@ const useFirstScreenHeight = () => {
 
   useLayoutEffect(() => {
     const correctSizing = () => {
-      let vh = window.innerHeight;
-
-      if (vh > window.screen.height) {
-        vh /= window.devicePixelRatio;
-      }
-
-      setfirstScreenHeight(vh);
+      setfirstScreenHeight(window.innerHeight);
     };
 
     const onOrientationchange = () => {
@@ -76,7 +75,6 @@ const FirstSection = () => {
 
   const forbiddenMastheadZoneObserverRef = useStore(forbiddenMastheadZoneObserverStore);
 
-  // TODO: add memo
   const maxHeight = useFirstScreenHeight();
 
   return (
@@ -86,20 +84,22 @@ const FirstSection = () => {
       style={{ maxHeight }}
       id="first-section"
     >
-      <div className={Styles.inner}>
-        <Contacts className={Styles.contacts} />
-        <Banner
-          className={Styles.banner}
-          siteTitle={siteTitle}
-          hints={hints}
-          siteLogo={siteLogo}
-          mainReservationButton={mainReservationButton}
-        />
-        <ArrowToDown className={Styles.arrowToDown} />
-        <SwipeArrow swipeTo="next" className={Styles.swipeNext} />
-        <SwipeArrow swipeTo="prev" className={Styles.swipePrev} />
-      </div>
-      <Carousel slides={carousel} />
+      <CustomCarouselProvider slides={carousel}>
+        <div className={Styles.inner}>
+          <Contacts className={Styles.contacts} />
+          <Banner
+            className={Styles.banner}
+            siteTitle={siteTitle}
+            hints={hints}
+            siteLogo={siteLogo}
+            mainReservationButton={mainReservationButton}
+          />
+          <ArrowToDown className={Styles.arrowToDown} />
+          <CustomButtonNext className={Styles.swipeNext} />
+          <CustomButtonBack className={Styles.swipePrev} />
+        </div>
+        <CustomCarousel slides={carousel} />
+      </CustomCarouselProvider>
     </header>
   );
 };

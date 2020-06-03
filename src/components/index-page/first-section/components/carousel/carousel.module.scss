@@ -7,8 +7,8 @@
 }
 
 .carousel-provider,
-.first :global(.carousel__slider-tray-wrapper),
-.first :global(.carousel__slider-tray) {
+.carousel :global(.carousel__slider-tray-wrapper),
+.carousel :global(.carousel__slider-tray) {
   height: 100%;
 }
 .carousel {

@@ -12,7 +12,7 @@ import { HowToFindSection } from '../components/index-page/how-to-find-section';
 import { ReferenceSection } from '../components/index-page/reference-section';
 import { Footer } from '../components/layout/footer';
 
-// TODO: refactore
+// TODO: refactor
 import SEO from '../components/seo';
 
 const IndexPage = () => {

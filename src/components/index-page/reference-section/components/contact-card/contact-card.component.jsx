@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import cn from 'classnames';
 
 import replace from 'lodash/replace';
@@ -14,22 +14,8 @@ import InstIcon from './icons/inst-icon.inline.svg';
 
 import Styles from './contact-card.module.scss';
 
-const ContactCard = () => {
-  const {
-    sanityReferences: { vkLink, instLink, telNumber, address, email },
-  } = useStaticQuery(
-    graphql`
-      query {
-        sanityReferences {
-          vkLink
-          instLink
-          telNumber
-          address
-          email
-        }
-      }
-    `
-  );
+const ContactCard = ({ references }) => {
+  const { vkLink, instLink, telNumber, address, email, ymapLink } = references;
 
   const [isActive, setIsActive] = useState(false);
 
@@ -67,13 +53,7 @@ const ContactCard = () => {
           <Heading sub className={Styles.type}>
             Адрес
           </Heading>
-          {/* TODO: добавить ссылку на Ymap в sanity */}
-          <a
-            className={Styles.link}
-            href="https://yandex.ru/maps/10740/mytischi/?from=api-maps&ll=37.765531%2C55.920939&mode=search&oid=52710844172&ol=biz&utm_source=api-maps&z=18"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className={Styles.link} href={ymapLink} target="_blank" rel="noopener noreferrer">
             {address}
           </a>
         </li>
@@ -96,6 +76,17 @@ const ContactCard = () => {
       </ul>
     </div>
   );
+};
+
+ContactCard.propTypes = {
+  references: PropTypes.shape({
+    vkLink: PropTypes.string.isRequired,
+    instLink: PropTypes.string.isRequired,
+    telNumber: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    ymapLink: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ContactCard;

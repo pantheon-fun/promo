@@ -1,9 +1,14 @@
 @import '../../../../../styles/abstracts.scss';
 
 .site-logo {
-  width: 160rem;
+  width: 150rem !important;
+  height: 105rem !important;
   margin: 0 auto;
-  margin-bottom: 22rem;
+  margin-bottom: 15rem;
+
+  img {
+    object-fit: contain !important;
+  }
 }
 
 .site-title {
@@ -47,7 +52,8 @@
 /* Height breakpoints */
 @media (max-height: v-get(first-height-breakpoint)) {
   .site-logo {
-    width: 115rem;
+    width: 115rem !important;
+    height: 75rem !important;
   }
 }
 @media (max-height: v-get(second-height-breakpoint)) {
@@ -56,7 +62,8 @@
   }
 
   .site-logo {
-    width: 75rem;
+    width: 100rem !important;
+    height: 65rem !important;
     margin-bottom: 10rem;
   }
 
@@ -82,7 +89,8 @@
 @include respond-above(xs) {
   @media screen and (min-height: v-get(xs-height-breakpoint)) {
     .site-logo {
-      width: 210rem;
+      width: 210rem !important;
+      height: 140rem !important;
     }
 
     .site-title {
@@ -100,7 +108,8 @@
 @include respond-above(md) {
   @media screen and (min-height: v-get(md-height-breakpoint)) {
     .site-logo {
-      width: 230rem;
+      width: 230rem !important;
+      height: 150rem !important;
     }
 
     .site-title {

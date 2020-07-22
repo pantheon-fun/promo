@@ -19,7 +19,7 @@ const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationButton }
       <p className={Styles.hints}>
         {joinJSX(
           map(hints, (hint, idx) => <span key={idx}>{hint}</span>),
-          id => (
+          (id) => (
             <Icon key={id} className={Styles.crosshairsIcon} name="crosshairs" />
           )
         )}

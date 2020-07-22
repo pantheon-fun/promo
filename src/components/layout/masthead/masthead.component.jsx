@@ -2,8 +2,9 @@
 import React, { useRef, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import cx from 'classnames';
-import replace from 'lodash/replace';
 import { useInView } from 'react-intersection-observer';
+
+import replace from 'lodash/replace';
 
 import {
   addMastheadEl,

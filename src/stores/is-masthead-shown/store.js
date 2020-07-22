@@ -11,7 +11,7 @@ export const mastheadElStore = createStore(null).on(addMastheadEl, (state, masth
   return mastheadEl || undefined;
 });
 
-mastheadElStore.watch(mastheadEl => {
+mastheadElStore.watch((mastheadEl) => {
   if (!mastheadEl) {
     return;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Masthead } from '../components/layout/masthead';
-import { FirstSection } from '../components/index-page/first-section';
+import { MainSection } from '../components/index-page/main-section';
 import { AboutUsSection } from '../components/index-page/about-us-section';
 import { GamesSection } from '../components/index-page/games-section';
 import { GallerySection } from '../components/index-page/gallery-section';
@@ -19,7 +19,7 @@ const IndexPage = () => {
   return (
     <div className="index-page">
       <SEO title="Pantheon" />
-      <FirstSection />
+      <MainSection />
       <main className="page-home__content">
         <Masthead />
         <AboutUsSection />

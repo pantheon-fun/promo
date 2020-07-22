@@ -15,14 +15,14 @@ import {
   CustomButtonBack,
 } from './components/carousel';
 
-import Styles from './first-section.module.scss';
+import Styles from './main-section.module.scss';
 
-const useFirstScreenHeight = () => {
-  const [firstScreenHeight, setfirstScreenHeight] = useState('100vh');
+const useMainScreenHeight = () => {
+  const [mainScreenHeight, setMainScreenHeight] = useState('100vh');
 
   useLayoutEffect(() => {
     const correctSizing = () => {
-      setfirstScreenHeight(window.innerHeight);
+      setMainScreenHeight(window.innerHeight);
     };
 
     const onOrientationchange = () => {
@@ -35,16 +35,16 @@ const useFirstScreenHeight = () => {
     return () => window.removeEventListener('orientationchange', onOrientationchange);
   }, []);
 
-  return firstScreenHeight;
+  return mainScreenHeight;
 };
 
-const FirstSection = () => {
+const MainSection = () => {
   const {
-    sanityFirstSection: { siteTitle, hints, siteLogo, mainReservationButton, carousel },
+    sanityMainSection: { siteTitle, hints, siteLogo, mainReservationButton, carousel },
   } = useStaticQuery(
     graphql`
       query {
-        sanityFirstSection {
+        sanityMainSection {
           siteTitle
           hints
           siteLogo {
@@ -75,7 +75,7 @@ const FirstSection = () => {
 
   const forbiddenMastheadZoneObserverRef = useStore(forbiddenMastheadZoneObserverStore);
 
-  const maxHeight = useFirstScreenHeight();
+  const maxHeight = useMainScreenHeight();
 
   return (
     <header
@@ -104,4 +104,4 @@ const FirstSection = () => {
   );
 };
 
-export default FirstSection;
+export default MainSection;

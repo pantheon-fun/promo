@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import cn from 'classnames';
+import cx from 'classnames';
 import Img from 'gatsby-image';
 import map from 'lodash/map';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
@@ -54,7 +54,7 @@ CustomCarousel.propTypes = {
 
 export const CustomButtonNext = ({ className }) => {
   return (
-    <ButtonNext className={cn(className, Styles.swipeArrow)}>
+    <ButtonNext className={cx(className, Styles.swipeArrow)}>
       <img
         className={Styles.swipeIcon}
         src={swipeNextIcon}
@@ -66,7 +66,7 @@ export const CustomButtonNext = ({ className }) => {
 
 export const CustomButtonBack = ({ className }) => {
   return (
-    <ButtonBack className={cn(className, Styles.swipeArrow)}>
+    <ButtonBack className={cx(className, Styles.swipeArrow)}>
       <img
         className={Styles.swipeIcon}
         src={swipePrevIcon}

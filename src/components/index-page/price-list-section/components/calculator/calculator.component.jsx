@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
+import cx from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
 import Styles from './calculator.module.scss';
@@ -30,8 +30,8 @@ const Calculator = ({ className }) => {
   }, [inView]);
 
   return (
-    <div ref={ref} className={cn(className, Styles.container)}>
-      <div className={cn(`uCalc_${CALC_WIDGET_ID}`, Styles.widget)}>
+    <div ref={ref} className={cx(className, Styles.container)}>
+      <div className={cx(`uCalc_${CALC_WIDGET_ID}`, Styles.widget)}>
         <Spinner />
       </div>
     </div>

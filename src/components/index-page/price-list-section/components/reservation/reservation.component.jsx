@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
+import cx from 'classnames';
 import replace from 'lodash/replace';
 
 import Styles from './reservation.module.scss';
@@ -36,14 +36,14 @@ const Reservation = ({ className }) => {
   };
 
   return (
-    <div className={cn(className, Styles.reservation)} id="reservation-section">
+    <div className={cx(className, Styles.reservation)} id="reservation-section">
       <Heading className={Styles.heading} sub>
         Забронировать
       </Heading>
       <div className={Styles.wrapper}>
         <div className={Styles.options}>
           <a
-            className={cn(Styles.option, Styles.vk)}
+            className={cx(Styles.option, Styles.vk)}
             href={vkLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -52,7 +52,7 @@ const Reservation = ({ className }) => {
             <Icon name="vk" />
           </a>
           <a
-            className={cn(Styles.option, Styles.tel)}
+            className={cx(Styles.option, Styles.tel)}
             href={`tel:${replace(telNumber, ' ', '')}`}
             aria-label="Забронируйте игру по телефону"
           >
@@ -60,7 +60,7 @@ const Reservation = ({ className }) => {
             Телефону
           </a>
           <a
-            className={cn(Styles.option, Styles.inst)}
+            className={cx(Styles.option, Styles.inst)}
             href={instLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -69,7 +69,7 @@ const Reservation = ({ className }) => {
             <Icon name="instagram" />
           </a>
           <button
-            className={cn(Styles.option, Styles.form)}
+            className={cx(Styles.option, Styles.form)}
             onClick={onBookformOptionClick}
             type="button"
           >

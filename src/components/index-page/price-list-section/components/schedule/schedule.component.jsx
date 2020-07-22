@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
+import cx from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
 import Styles from './schedule.module.scss';
@@ -24,7 +24,7 @@ const Schedule = ({ className }) => {
   }, [inView]);
 
   return (
-    <div className={cn(className, Styles.schedule)}>
+    <div className={cx(className, Styles.schedule)}>
       <Heading sub className={Styles.heading}>
         Выберите удобное время игры
       </Heading>

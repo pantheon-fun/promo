@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
+import cx from 'classnames';
 
 import Styles from './container.module.scss';
 
 const Container = ({ children, inner, className }) => {
   return (
-    <div className={cn(className, Styles[inner ? 'innerContainer' : 'container'])}>{children}</div>
+    <div className={cx(className, Styles[inner ? 'innerContainer' : 'container'])}>{children}</div>
   );
 };
 

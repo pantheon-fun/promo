@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import cn from 'classnames';
+import cx from 'classnames';
 
 import replace from 'lodash/replace';
 
@@ -28,7 +28,7 @@ const ContactCard = ({ references }) => {
   };
 
   return (
-    <div className={cn({ [Styles.card]: true, [Styles.active]: isActive })} onClick={toggleActive}>
+    <div className={cx({ [Styles.card]: true, [Styles.active]: isActive })} onClick={toggleActive}>
       <Heading className={Styles.heading} pure>
         Контакты
       </Heading>

@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import usePortal from 'react-useportal';
-import cn from 'classnames';
+import cx from 'classnames';
 
 import CloseIcon from './icons/close.svg';
 
@@ -20,7 +20,7 @@ const useModal = () => {
     return (
       <Portal>
         <div className={Styles.background} onClick={closePortal} />
-        <div className={cn(Styles.modal, className)}>
+        <div className={cx(Styles.modal, className)}>
           <img
             src={CloseIcon}
             alt="Иконка закрыть"

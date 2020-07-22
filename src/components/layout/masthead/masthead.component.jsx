@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types';
 import React, { useRef, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import cn from 'classnames';
+import cx from 'classnames';
 import replace from 'lodash/replace';
 import { useInView } from 'react-intersection-observer';
 
@@ -44,7 +44,7 @@ const Masthead = () => {
   }, [mastheadEl, observerRef]);
 
   return (
-    <div ref={mastheadRef} className={cn(Styles.masthead, { [Styles.hidden]: isHidden })}>
+    <div ref={mastheadRef} className={cx(Styles.masthead, { [Styles.hidden]: isHidden })}>
       <Container className={Styles.inner}>
         <LinkToSection
           to="first-section"
@@ -60,27 +60,27 @@ const Masthead = () => {
         <nav className={Styles.navigation}>
           <ul>
             <li className={Styles.navigationItem}>
-              <LinkToSection to="about-us-section" className={cn(Styles.link, 'underline')}>
+              <LinkToSection to="about-us-section" className={cx(Styles.link, 'underline')}>
                 О нас
               </LinkToSection>
             </li>
             <li className={Styles.navigationItem}>
-              <LinkToSection to="gallery-section" className={cn(Styles.link, 'underline')}>
+              <LinkToSection to="gallery-section" className={cx(Styles.link, 'underline')}>
                 Фото
               </LinkToSection>
             </li>
             <li className={Styles.navigationItem}>
-              <LinkToSection to="faq-section" className={cn(Styles.link, 'underline')}>
+              <LinkToSection to="faq-section" className={cx(Styles.link, 'underline')}>
                 Вопросы
               </LinkToSection>
             </li>
             <li className={Styles.navigationItem}>
-              <LinkToSection to="price-list-section" className={cn(Styles.link, 'underline')}>
+              <LinkToSection to="price-list-section" className={cx(Styles.link, 'underline')}>
                 Цены
               </LinkToSection>
             </li>
             <li className={Styles.navigationItem}>
-              <LinkToSection to="references-section" className={cn(Styles.link, 'underline')}>
+              <LinkToSection to="references-section" className={cx(Styles.link, 'underline')}>
                 Контакты
               </LinkToSection>
             </li>

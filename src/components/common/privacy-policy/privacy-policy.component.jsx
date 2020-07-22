@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import cn from 'classnames';
+import cx from 'classnames';
 
 import { Text } from '../text';
 import { useModal } from '../../../hooks/use-modal';
@@ -26,7 +26,7 @@ const PrivacyPolicy = ({ className }) => {
   return (
     <>
       <button
-        className={cn(Styles.privacyPolicyButton, className)}
+        className={cx(Styles.privacyPolicyButton, className)}
         type="button"
         onClick={openModal}
       >

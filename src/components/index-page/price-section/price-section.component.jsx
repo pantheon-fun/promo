@@ -7,18 +7,16 @@ import Styles from './price-section.module.scss';
 
 import { Container } from '../../layout/container';
 import { Heading } from '../../common/heading';
-import { Icon } from '../../common/icon';
 import { PricePlus } from './components/price-plus';
 
 const PriceSection = () => {
   const {
-    sanityPriceSection: { heading, pricePerPerson, pricePluses, backgroundImage },
+    sanityPriceSection: { heading, pricePluses, backgroundImage },
   } = useStaticQuery(
     graphql`
       query {
         sanityPriceSection {
           heading
-          pricePerPerson
           pricePluses {
             plus
             description
@@ -47,9 +45,6 @@ const PriceSection = () => {
       />
       <Container className={Styles.inner}>
         <Heading className={Styles.heading}>{heading}</Heading>
-        <p className={Styles.perPerson}>
-          от {pricePerPerson} <Icon name="rouble" /> за человека
-        </p>
         <ul className={Styles.plusPoints}>
           {map(pricePluses, ({ plus, description }, idx) => (
             <PricePlus key={idx} plus={plus} description={description} />

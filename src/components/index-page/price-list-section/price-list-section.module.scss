@@ -13,30 +13,22 @@
   grid-template-areas:
     'weekdays'
     'weekends'
-    'calculator'
-    'schedule'
-    'reservation';
+    'reservation'
+    'schedule';
 
   @include respond-above(sm) {
     column-gap: 40rem;
     row-gap: 30rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, auto) 1fr repeat(1, auto);
+    grid-template-rows: repeat(1, auto) 1fr repeat(1, auto);
     grid-template-areas:
-      'weekdays calculator'
-      'weekends calculator'
-      'schedule calculator'
-      'reservation reservation';
+      'weekdays weekends'
+      'reservation reservation'
+      'schedule schedule';
   }
 
   @include respond-above(md) {
     padding-left: 42rem;
-    grid-template-rows: repeat(2, auto) 1fr repeat(1, auto);
-    grid-template-areas:
-      'weekdays calculator'
-      'weekends calculator'
-      'reservation calculator'
-      'schedule schedule';
   }
 }
 
@@ -90,10 +82,6 @@
 
 .price-table_weekends {
   grid-area: weekends;
-}
-
-.calculator {
-  grid-area: calculator;
 }
 
 .schedule {

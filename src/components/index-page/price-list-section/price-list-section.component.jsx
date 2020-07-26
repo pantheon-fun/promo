@@ -1,6 +1,5 @@
-/* eslint-disable camelcase */
 import React from 'react';
-// import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import css from './price-list-section.module.scss';
 
@@ -13,26 +12,27 @@ import { Schedule } from './components/schedule';
 import { Reservation } from './components/reservation';
 
 const PriceListSection = () => {
-  // const {
-  //   sanityPriceListSection: { priceTable_weekdays, priceTable_weekends },
-  // } = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       sanityPriceListSection {
-  //         priceTable_weekdays {
-  //           rows {
-  //             cells
-  //           }
-  //         }
-  //         priceTable_weekends {
-  //           rows {
-  //             cells
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // );
+  const {
+    sanityPriceListSection: { priceDetails, prices, specialOffers },
+  } = useStaticQuery(
+    graphql`
+      query {
+        sanityPriceListSection {
+          priceDetails
+          prices {
+            priceTitle
+            priceOneHour
+            priceTwoHours
+            pricePlusHour
+          }
+          specialOffers {
+            offerBody
+            offerName
+          }
+        }
+      }
+    `
+  );
 
   return (
     <section className={css.priceListSection} id="price-list-section">
@@ -40,8 +40,8 @@ const PriceListSection = () => {
         Цены
       </Heading>
       <Container className={css.content}>
-        <SpecialOffers className={css.specialOffers} />
-        <GamePrice className={css.gamePrice} />
+        <SpecialOffers className={css.specialOffers} specialOffers={specialOffers} />
+        <GamePrice className={css.gamePrice} prices={prices} priceDetails={priceDetails} />
         <Schedule className={css.schedule} />
         <Reservation className={css.reservation} />
       </Container>

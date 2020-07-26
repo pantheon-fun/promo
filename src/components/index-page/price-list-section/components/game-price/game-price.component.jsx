@@ -26,7 +26,7 @@ PriceElement.propTypes = {
   price: PropTypes.string.isRequired,
 };
 
-const GamePrice = ({ className }) => {
+const GamePrice = ({ className, prices, priceDetails }) => {
   const sessions = map(SESSIONS, (sessionTime, idx) => {
     const [value, unit] = split(sessionTime, ' ');
 
@@ -42,33 +42,46 @@ const GamePrice = ({ className }) => {
       <Heading className={css.heading} sub>
         Игра
       </Heading>
-      <h5 className={css.subHeading}>Понедельник - Четверг</h5>
-      <div className={css.columnsContainer}>
-        <PriceElement price="600" />
-        <PriceElement price="900" />
-        <PriceElement price="500" />
-      </div>
-      <div className={css.columnsContainer}>{sessions}</div>
-      <h5 className={css.subHeading}>Пятница - Воскресенье и праздники</h5>
-      <div className={css.columnsContainer}>
-        <PriceElement price="800" />
-        <PriceElement price="1200" />
-        <PriceElement price="600" />
-      </div>
-      <div className={css.columnsContainer}>{sessions}</div>
-      <Text className={css.details}>Стоимость указана за одного участника</Text>
-      <Text className={css.details}>Минимальная оплата за **6** человек</Text>
-      <Text className={css.details}>Максимальное количество игрков&nbsp;-&nbsp;**30**</Text>
+      {map(prices, ({ priceTitle, priceOneHour, priceTwoHours, pricePlusHour }, idx) => {
+        return (
+          <React.Fragment key={idx}>
+            <h5 className={css.subHeading}>{priceTitle}</h5>
+            <div className={css.columnsContainer}>
+              <PriceElement price={priceOneHour} />
+              <PriceElement price={priceTwoHours} />
+              <PriceElement price={pricePlusHour} />
+            </div>
+            <div className={css.columnsContainer}>{sessions}</div>
+          </React.Fragment>
+        );
+      })}
+      {map(priceDetails, (priceDetail, idx) => {
+        return (
+          <Text className={css.details} key={idx}>
+            {priceDetail}
+          </Text>
+        );
+      })}
     </div>
   );
 };
 
 GamePrice.propTypes = {
   className: PropTypes.string,
+  prices: PropTypes.arrayOf(
+    PropTypes.exact({
+      priceTitle: PropTypes.string,
+      priceOneHour: PropTypes.number,
+      priceTwoHours: PropTypes.number,
+      pricePlusHour: PropTypes.number,
+    })
+  ).isRequired,
+  priceDetails: PropTypes.arrayOf(PropTypes.string),
 };
 
 GamePrice.defaultProps = {
   className: '',
+  priceDetails: [],
 };
 
 export default GamePrice;

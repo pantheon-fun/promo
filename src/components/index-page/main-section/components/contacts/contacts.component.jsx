@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import cx from 'classnames';
+
 import replace from 'lodash/replace';
 
 import { Icon } from '../../../../common/icon';
@@ -23,7 +25,7 @@ const Contacts = ({ className }) => {
   );
 
   return (
-    <div className={`${className} ${css.contacts}`}>
+    <div className={cx(className, css.contacts)}>
       <LinkToSection to="references-section" className={css.address}>
         {address}
       </LinkToSection>

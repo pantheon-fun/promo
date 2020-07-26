@@ -2,6 +2,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+
 import map from 'lodash/map';
 
 import { Text } from '../../../../common/text';
@@ -13,7 +15,7 @@ const Accordion = ({ className, questionsAndAnswers }) => {
   const accordionRef = useRef(null);
 
   return (
-    <ul ref={accordionRef} className={`${className} ${css.accodion}`}>
+    <ul ref={accordionRef} className={cx(className, css.accodion)}>
       {map(questionsAndAnswers, (qa, idx) => {
         const isOpen = openedPanel === idx;
         const getAnswerElHeight = () => {
@@ -27,7 +29,7 @@ const Accordion = ({ className, questionsAndAnswers }) => {
         return (
           <li
             key={idx}
-            className={`${css.panel} ${isOpen ? css.opened : ''}`}
+            className={cx(css.panel, { [css.opened]: isOpen })}
             onClick={() => {
               setOpenedPanel(isOpen ? null : idx);
             }}

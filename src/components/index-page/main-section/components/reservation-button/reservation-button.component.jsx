@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { LinkToSection } from '../../../../common/link-to-section';
 
 const ReservationButton = ({ className, children }) => (
-  <LinkToSection to="reservation-section" block="center" className={`${className}`}>
+  <LinkToSection to="reservation-section" block="center" className={className}>
     {children}
   </LinkToSection>
 );

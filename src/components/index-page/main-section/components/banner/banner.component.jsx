@@ -1,19 +1,20 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+
 import map from 'lodash/map';
 
 import { fixedImageType } from '../../../../../utils/common-types';
+import { joinJSX } from '../../../../../utils/join-jsx';
 import { ReservationButton } from '../reservation-button';
 import { Icon } from '../../../../common/icon';
-
-import { joinJSX } from '../../../../../utils/join-jsx';
 
 import css from './banner.module.scss';
 
 const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationButton }) => {
   return (
-    <div className={`${className} ${css.banner}`}>
+    <div className={cx(className, css.banner)}>
       <Img fixed={siteLogo.img.asset.fixed} className={css.siteLogo} alt={siteLogo.alt} />
       <h1 className={css.siteTitle}>{siteTitle}</h1>
       <p className={css.hints}>

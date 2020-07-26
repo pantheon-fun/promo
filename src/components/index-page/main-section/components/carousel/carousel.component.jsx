@@ -11,7 +11,7 @@ import { fluidImageType } from '../../../../../utils/common-types';
 import swipeNextIcon from './icons/swipe-next.icon.svg';
 import swipePrevIcon from './icons/swipe-prev.icon.svg';
 
-import Styles from './carousel.module.scss';
+import css from './carousel.module.scss';
 
 export const CustomCarouselProvider = ({ children, slides }) => {
   return (
@@ -24,7 +24,7 @@ export const CustomCarouselProvider = ({ children, slides }) => {
       lockOnWindowScroll
       infinite
       interval={2500}
-      className={Styles.carouselProvider}
+      className={css.carouselProvider}
     >
       {children}
     </CarouselProvider>
@@ -38,10 +38,10 @@ CustomCarouselProvider.propTypes = {
 
 export const CustomCarousel = ({ slides }) => {
   return (
-    <Slider className={Styles.carousel} moveThreshold={0.005}>
+    <Slider className={css.carousel} moveThreshold={0.005}>
       {map(slides, (slide, i) => (
-        <Slide className={Styles.slide} key={i} index={i}>
-          <Img fluid={slide.img.asset.fluid} className={Styles.image} alt={slide.alt} />
+        <Slide className={css.slide} key={i} index={i}>
+          <Img fluid={slide.img.asset.fluid} className={css.image} alt={slide.alt} />
         </Slide>
       ))}
     </Slider>
@@ -54,9 +54,9 @@ CustomCarousel.propTypes = {
 
 export const CustomButtonNext = ({ className }) => {
   return (
-    <ButtonNext className={cx(className, Styles.swipeArrow)}>
+    <ButtonNext className={cx(className, css.swipeArrow)}>
       <img
-        className={Styles.swipeIcon}
+        className={css.swipeIcon}
         src={swipeNextIcon}
         alt="Стрелочка вправо. Посмотреть следующую фотографию в слайдере."
       />
@@ -66,9 +66,9 @@ export const CustomButtonNext = ({ className }) => {
 
 export const CustomButtonBack = ({ className }) => {
   return (
-    <ButtonBack className={cx(className, Styles.swipeArrow)}>
+    <ButtonBack className={cx(className, css.swipeArrow)}>
       <img
-        className={Styles.swipeIcon}
+        className={css.swipeIcon}
         src={swipePrevIcon}
         alt="Стрелочка влево. Посмотреть предыдущую фотографию в слайдере."
       />

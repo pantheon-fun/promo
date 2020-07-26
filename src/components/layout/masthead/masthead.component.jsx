@@ -15,7 +15,7 @@ import Favicon from '../../../images/favicon.svg';
 import { Container } from '../container';
 import { LinkToSection } from '../../common/link-to-section';
 
-import Styles from './masthead.module.scss';
+import css from './masthead.module.scss';
 
 const Masthead = () => {
   const {
@@ -45,52 +45,52 @@ const Masthead = () => {
   }, [mastheadEl, observerRef]);
 
   return (
-    <div ref={mastheadRef} className={cx(Styles.masthead, { [Styles.hidden]: isHidden })}>
-      <Container className={Styles.inner}>
+    <div ref={mastheadRef} className={cx(css.masthead, { [css.hidden]: isHidden })}>
+      <Container className={css.inner}>
         <LinkToSection
           to="first-section"
           aria-label="Кнопка в виде маленького логотипа, что ведет на верх страницы"
-          className={Styles.logo}
+          className={css.logo}
         >
           <img
-            className={Styles.logoIcon}
+            className={css.logoIcon}
             src={Favicon}
             alt="Маленький логотип лазертаг-клуба Пантеон"
           />
         </LinkToSection>
-        <nav className={Styles.navigation}>
+        <nav className={css.navigation}>
           <ul>
-            <li className={Styles.navigationItem}>
-              <LinkToSection to="about-us-section" className={cx(Styles.link, 'underline')}>
+            <li className={css.navigationItem}>
+              <LinkToSection to="about-us-section" className={cx(css.link, 'underline')}>
                 О нас
               </LinkToSection>
             </li>
-            <li className={Styles.navigationItem}>
-              <LinkToSection to="gallery-section" className={cx(Styles.link, 'underline')}>
+            <li className={css.navigationItem}>
+              <LinkToSection to="gallery-section" className={cx(css.link, 'underline')}>
                 Фото
               </LinkToSection>
             </li>
-            <li className={Styles.navigationItem}>
-              <LinkToSection to="faq-section" className={cx(Styles.link, 'underline')}>
+            <li className={css.navigationItem}>
+              <LinkToSection to="faq-section" className={cx(css.link, 'underline')}>
                 Вопросы
               </LinkToSection>
             </li>
-            <li className={Styles.navigationItem}>
-              <LinkToSection to="price-list-section" className={cx(Styles.link, 'underline')}>
+            <li className={css.navigationItem}>
+              <LinkToSection to="price-list-section" className={cx(css.link, 'underline')}>
                 Цены
               </LinkToSection>
             </li>
-            <li className={Styles.navigationItem}>
-              <LinkToSection to="references-section" className={cx(Styles.link, 'underline')}>
+            <li className={css.navigationItem}>
+              <LinkToSection to="references-section" className={cx(css.link, 'underline')}>
                 Контакты
               </LinkToSection>
             </li>
           </ul>
         </nav>
-        <a href={`tel:${replace(telNumber, '', ' ')}`} className={Styles.tel}>
+        <a href={`tel:${replace(telNumber, '', ' ')}`} className={css.tel}>
           {telNumber}
         </a>
-        <LinkToSection to="reservation-section" block="center" className={Styles.reservationBtn}>
+        <LinkToSection to="reservation-section" block="center" className={css.reservationBtn}>
           {/* TODO: replace by "забронировать", remove phone number and add burger */}
           Забронировать
         </LinkToSection>

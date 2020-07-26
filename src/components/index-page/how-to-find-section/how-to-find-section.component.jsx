@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Styles from './how-to-find-section.module.scss';
+import css from './how-to-find-section.module.scss';
 
 const HowToFindSection = () => {
   const {
@@ -17,16 +17,11 @@ const HowToFindSection = () => {
   );
 
   return (
-    <section className={Styles.section}>
-      <h2 className={Styles.lable}>Как нас найти?</h2>
-      <div className={Styles.route}>
-        <a
-          href={detailedRouteLink}
-          className={Styles.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={Styles.caption}>подробный</span>
+    <section className={css.section}>
+      <h2 className={css.lable}>Как нас найти?</h2>
+      <div className={css.route}>
+        <a href={detailedRouteLink} className={css.link} target="_blank" rel="noopener noreferrer">
+          <span className={css.caption}>подробный</span>
           Маршрут
         </a>
       </div>

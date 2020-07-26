@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import map from 'lodash/map';
 
-import Styles from './games-section.module.scss';
+import css from './games-section.module.scss';
 import { Container } from '../../layout/container';
 import { Heading } from '../../common/heading';
 import { GameCard } from './components/game-card';
@@ -35,10 +35,10 @@ const GamesSection = () => {
   );
 
   return (
-    <section className={Styles.section} id="games-section">
+    <section className={css.section} id="games-section">
       <Container>
         <Heading>{heading}</Heading>
-        <ul className={Styles.gamesList}>
+        <ul className={css.gamesList}>
           {map(gameCards, (cardData, i) => (
             <GameCard key={i} cardData={cardData} />
           ))}

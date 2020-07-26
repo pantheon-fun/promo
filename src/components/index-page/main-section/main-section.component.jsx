@@ -15,7 +15,7 @@ import {
   CustomButtonBack,
 } from './components/carousel';
 
-import Styles from './main-section.module.scss';
+import css from './main-section.module.scss';
 
 const useMainScreenHeight = () => {
   const [mainScreenHeight, setMainScreenHeight] = useState('100vh');
@@ -79,24 +79,24 @@ const MainSection = () => {
 
   return (
     <header
-      className={Styles.first}
+      className={css.first}
       ref={forbiddenMastheadZoneObserverRef}
       style={{ maxHeight }}
       id="first-section"
     >
       <CustomCarouselProvider slides={carousel}>
-        <div className={Styles.inner}>
-          <Contacts className={Styles.contacts} />
+        <div className={css.inner}>
+          <Contacts className={css.contacts} />
           <Banner
-            className={Styles.banner}
+            className={css.banner}
             siteTitle={siteTitle}
             hints={hints}
             siteLogo={siteLogo}
             mainReservationButton={mainReservationButton}
           />
-          <ArrowToDown className={Styles.arrowToDown} />
-          <CustomButtonNext className={Styles.swipeNext} />
-          <CustomButtonBack className={Styles.swipePrev} />
+          <ArrowToDown className={css.arrowToDown} />
+          <CustomButtonNext className={css.swipeNext} />
+          <CustomButtonBack className={css.swipePrev} />
         </div>
         <CustomCarousel slides={carousel} />
       </CustomCarouselProvider>

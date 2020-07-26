@@ -6,7 +6,7 @@ import cx from 'classnames';
 import { Text } from '../text';
 import { useModal } from '../../../hooks/use-modal';
 
-import Styles from './privacy-policy.module.scss';
+import css from './privacy-policy.module.scss';
 
 const PrivacyPolicy = ({ className }) => {
   const {
@@ -25,16 +25,12 @@ const PrivacyPolicy = ({ className }) => {
 
   return (
     <>
-      <button
-        className={cx(Styles.privacyPolicyButton, className)}
-        type="button"
-        onClick={openModal}
-      >
+      <button className={cx(css.privacyPolicyButton, className)} type="button" onClick={openModal}>
         Политика конфиденциальности
       </button>
       {isOpen && (
         <Modal>
-          <div className={Styles.privacyPolicyModal}>
+          <div className={css.privacyPolicyModal}>
             <Text>{privacyPolicyContent}</Text>
           </div>
         </Modal>

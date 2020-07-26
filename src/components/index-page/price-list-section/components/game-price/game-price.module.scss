@@ -1,0 +1,56 @@
+@import '../../../../../styles/abstracts.scss';
+
+.wrapper {
+  background: v(color-bg);
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 1.5em 1.9em;
+}
+
+.heading {
+  padding-top: 3px;
+  padding-bottom: 20px;
+}
+
+.sub-heading {
+  text-transform: uppercase;
+  color: v(color-primary);
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: left;
+
+  padding-bottom: 8px;
+}
+
+.columns-container {
+  display: grid;
+  gap: 15rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.time {
+  padding-top: 5px;
+  padding-bottom: 21px;
+  font-weight: normal;
+}
+
+.details {
+  margin-top: 6px;
+  font-weight: normal;
+}
+
+.price-element {
+  padding-left: 3rem;
+  border: 2rem solid v(color-primary);
+  font-weight: bold;
+  line-height: 2.6em;
+  font-size: 0.9em;
+
+  transition: background 0.3s, font-weight 0.3s;
+
+  &:hover,
+  &:focus {
+    background: v(color-bg-light);
+    font-weight: bold;
+  }
+}

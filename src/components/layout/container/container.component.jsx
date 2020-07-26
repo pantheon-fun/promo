@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import Styles from './container.module.scss';
+import css from './container.module.scss';
 
 const Container = ({ children, inner, className }) => {
   return (
-    <div className={cx(className, Styles[inner ? 'innerContainer' : 'container'])}>{children}</div>
+    <div className={cx(className, css[inner ? 'innerContainer' : 'container'])}>{children}</div>
   );
 };
 

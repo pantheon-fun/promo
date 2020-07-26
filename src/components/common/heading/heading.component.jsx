@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import Styles from './heading.module.scss';
+import css from './heading.module.scss';
 
 const Heading = ({ children, sub, className, pure }) => {
   if (sub) {
-    return <h3 className={`${className} ${pure ? Styles.pure : Styles.subHeading}`}>{children}</h3>;
+    return <h3 className={cx(className, pure ? css.pure : css.subHeading)}>{children}</h3>;
   }
 
-  return <h2 className={`${className} ${pure ? Styles.pure : Styles.heading}`}>{children}</h2>;
+  return <h2 className={cx(className, pure ? css.pure : css.heading)}>{children}</h2>;
 };
 
 Heading.propTypes = {

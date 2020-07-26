@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
-import Styles from './schedule.module.scss';
+import css from './schedule.module.scss';
 
 import {
   SCHEDULE_BOOKFORM_WIDGET_ID,
@@ -24,13 +24,13 @@ const Schedule = ({ className }) => {
   }, [inView]);
 
   return (
-    <div className={cx(className, Styles.schedule)}>
-      <Heading sub className={Styles.heading}>
+    <div className={cx(className, css.schedule)}>
+      <Heading sub className={css.heading}>
         Выберите удобное время игры
       </Heading>
       <div
         ref={ref}
-        className={Styles.container}
+        className={css.container}
         id={`bookform-embedded-widget-${SCHEDULE_BOOKFORM_WIDGET_ID}`}
       >
         <Spinner />

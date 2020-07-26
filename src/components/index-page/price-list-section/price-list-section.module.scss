@@ -11,8 +11,8 @@
   display: grid;
   gap: 25rem;
   grid-template-areas:
-    'weekdays'
-    'weekends'
+    'game-price'
+    'special-offers'
     'reservation'
     'schedule';
 
@@ -22,13 +22,9 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(1, auto) 1fr repeat(1, auto);
     grid-template-areas:
-      'weekdays weekends'
+      'special-offers game-price'
       'reservation reservation'
       'schedule schedule';
-  }
-
-  @include respond-above(md) {
-    padding-left: 42rem;
   }
 }
 
@@ -76,12 +72,12 @@
   }
 }
 
-.price-table_weekdays {
-  grid-area: weekdays;
+.game-price {
+  grid-area: game-price;
 }
 
-.price-table_weekends {
-  grid-area: weekends;
+.special-offers {
+  grid-area: special-offers;
 }
 
 .schedule {

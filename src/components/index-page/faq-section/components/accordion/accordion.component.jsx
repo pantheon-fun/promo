@@ -2,18 +2,20 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+
 import map from 'lodash/map';
 
 import { Text } from '../../../../common/text';
 
-import Styles from './accordion.module.scss';
+import css from './accordion.module.scss';
 
 const Accordion = ({ className, questionsAndAnswers }) => {
   const [openedPanel, setOpenedPanel] = useState(null);
   const accordionRef = useRef(null);
 
   return (
-    <ul ref={accordionRef} className={`${className} ${Styles.accodion}`}>
+    <ul ref={accordionRef} className={cx(className, css.accodion)}>
       {map(questionsAndAnswers, (qa, idx) => {
         const isOpen = openedPanel === idx;
         const getAnswerElHeight = () => {
@@ -27,14 +29,14 @@ const Accordion = ({ className, questionsAndAnswers }) => {
         return (
           <li
             key={idx}
-            className={`${Styles.panel} ${isOpen ? Styles.opened : ''}`}
+            className={cx(css.panel, { [css.opened]: isOpen })}
             onClick={() => {
               setOpenedPanel(isOpen ? null : idx);
             }}
           >
-            <h3 className={Styles.question}>{qa.question}</h3>
+            <h3 className={css.question}>{qa.question}</h3>
             <div
-              className={Styles.answer}
+              className={css.answer}
               style={{
                 height: isOpen ? getAnswerElHeight() : 0,
               }}

@@ -9,7 +9,7 @@ import { Spinner } from '../../common/spinner';
 import { Container } from '../../layout/container';
 import { ContactCard } from './components/contact-card';
 
-import Styles from './reference-section.module.scss';
+import css from './reference-section.module.scss';
 
 const ReferenceSection = () => {
   const { sanityReferences: references } = useStaticQuery(
@@ -38,12 +38,12 @@ const ReferenceSection = () => {
   }, [inView, references.ymapScript]);
 
   return (
-    <section ref={observerRef} className={Styles.section} id="references-section">
-      <div className={Styles.mapWidget}>
+    <section ref={observerRef} className={css.section} id="references-section">
+      <div className={css.mapWidget}>
         <Spinner />
         {mapWidget}
       </div>
-      <Container className={Styles.inner}>
+      <Container className={css.inner}>
         <ContactCard references={references} />
       </Container>
     </section>

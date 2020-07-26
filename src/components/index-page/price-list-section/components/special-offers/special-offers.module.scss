@@ -1,0 +1,42 @@
+@import '../../../../../styles/abstracts.scss';
+
+.wrapper {
+  background: v(color-bg);
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 1.5em 1.9em;
+}
+
+.heading {
+  padding-top: 3px;
+  padding-bottom: 20px;
+}
+
+.sub-heading {
+  text-transform: uppercase;
+  color: v(color-primary);
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: left;
+
+  padding-bottom: 8px;
+}
+
+.offer-content {
+  font-weight: normal;
+  text-align: left;
+  padding-bottom: 10px;
+
+  ul {
+    padding-top: 0;
+    padding-bottom: 6px;
+  }
+
+  li {
+    padding: 1px 0;
+  }
+
+  p + p {
+    padding-top: 6px;
+  }
+}

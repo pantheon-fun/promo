@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import replace from 'lodash/replace';
 
-import Styles from './reservation.module.scss';
+import css from './reservation.module.scss';
 
 import { useModal } from '../../../../../hooks/use-modal';
 import { RESERVATION_BOOKFORM_WIDGET_ID } from '../../../../../utils/constants';
@@ -30,20 +30,20 @@ const Reservation = ({ className }) => {
 
   const { openModal, Modal, isOpen } = useModal();
 
-  const onBookformOptionClick = e => {
+  const onBookformOptionClick = (e) => {
     openModal(e);
     initWidget(RESERVATION_BOOKFORM_WIDGET_ID);
   };
 
   return (
-    <div className={cx(className, Styles.reservation)} id="reservation-section">
-      <Heading className={Styles.heading} sub>
+    <div className={cx(className, css.reservation)} id="reservation-section">
+      <Heading className={css.heading} sub>
         Забронировать
       </Heading>
-      <div className={Styles.wrapper}>
-        <div className={Styles.options}>
+      <div className={css.wrapper}>
+        <div className={css.options}>
           <a
-            className={cx(Styles.option, Styles.vk)}
+            className={cx(css.option, css.vk)}
             href={vkLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -52,15 +52,15 @@ const Reservation = ({ className }) => {
             <Icon name="vk" />
           </a>
           <a
-            className={cx(Styles.option, Styles.tel)}
+            className={cx(css.option, css.tel)}
             href={`tel:${replace(telNumber, ' ', '')}`}
             aria-label="Забронируйте игру по телефону"
           >
-            <span className={Styles.small}>по</span>
+            <span className={css.small}>по</span>
             Телефону
           </a>
           <a
-            className={cx(Styles.option, Styles.inst)}
+            className={cx(css.option, css.inst)}
             href={instLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -69,17 +69,17 @@ const Reservation = ({ className }) => {
             <Icon name="instagram" />
           </a>
           <button
-            className={cx(Styles.option, Styles.form)}
+            className={cx(css.option, css.form)}
             onClick={onBookformOptionClick}
             type="button"
           >
-            <span className={Styles.small}>через</span>
+            <span className={css.small}>через</span>
             Яндекс форму
           </button>
           {isOpen && (
             <Modal>
               <div
-                className={Styles.bookformContainer}
+                className={css.bookformContainer}
                 id={`bookform-embedded-widget-${RESERVATION_BOOKFORM_WIDGET_ID}`}
               />
             </Modal>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Styles from './gallery-section.module.scss';
+import css from './gallery-section.module.scss';
 import { Heading } from '../../common/heading';
 import { Gallery } from './components/gallery';
 
@@ -33,12 +33,12 @@ const GallerySection = () => {
   );
 
   return (
-    <section className={Styles.gallerySection} id="gallery-section">
+    <section className={css.gallerySection} id="gallery-section">
       <Heading>{heading}</Heading>
       <Gallery galleryImages={galleryImages} />
       <a
         href={albumBtn.url}
-        className={Styles.albumBtn}
+        className={css.albumBtn}
         target="_blank"
         rel="noopener noreferrer nofollow"
       >

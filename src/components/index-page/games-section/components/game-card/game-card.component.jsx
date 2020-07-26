@@ -7,12 +7,12 @@ import { fixedImageType } from '../../../../../utils/common-types';
 import { Heading } from '../../../../common/heading';
 import { Text } from '../../../../common/text';
 
-import Styles from './game-card.module.scss';
+import css from './game-card.module.scss';
 
 const GameCard = ({ cardData: { icon, title, description } }) => {
   return (
-    <li className={Styles.gameCard}>
-      <Img fixed={icon.img.asset.fixed} className={Styles.icon} alt={icon.alt} />
+    <li className={css.gameCard}>
+      <Img fixed={icon.img.asset.fixed} className={css.icon} alt={icon.alt} />
       <Heading sub>{title}</Heading>
       <Text>{description}</Text>
     </li>

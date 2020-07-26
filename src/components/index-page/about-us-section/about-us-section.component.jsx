@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Styles from './about-us-section.module.scss';
+import css from './about-us-section.module.scss';
 
 import { Container } from '../../layout/container';
 import { Heading } from '../../common/heading';
@@ -22,7 +22,7 @@ const AboutUsSection = () => {
   );
 
   return (
-    <section className={Styles.section} id="about-us-section">
+    <section className={css.section} id="about-us-section">
       <Container inner>
         <Heading>{heading}</Heading>
         <Text>{text}</Text>

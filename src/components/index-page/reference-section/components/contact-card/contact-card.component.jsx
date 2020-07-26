@@ -12,14 +12,14 @@ import { Heading } from '../../../../common/heading';
 import VkIcon from './icons/vk-icon.inline.svg';
 import InstIcon from './icons/inst-icon.inline.svg';
 
-import Styles from './contact-card.module.scss';
+import css from './contact-card.module.scss';
 
 const ContactCard = ({ references }) => {
   const { vkLink, instLink, telNumber, address, email, ymapLink } = references;
 
   const [isActive, setIsActive] = useState(false);
 
-  const toggleActive = e => {
+  const toggleActive = (e) => {
     const isOnLinkClick = e.target.nodeName === 'A';
 
     if (!isOnLinkClick) {
@@ -28,47 +28,47 @@ const ContactCard = ({ references }) => {
   };
 
   return (
-    <div className={cx({ [Styles.card]: true, [Styles.active]: isActive })} onClick={toggleActive}>
-      <Heading className={Styles.heading} pure>
+    <div className={cx({ [css.card]: true, [css.active]: isActive })} onClick={toggleActive}>
+      <Heading className={css.heading} pure>
         Контакты
       </Heading>
-      <ul className={Styles.list}>
-        <li className={Styles.item}>
-          <Heading sub className={Styles.type}>
+      <ul className={css.list}>
+        <li className={css.item}>
+          <Heading sub className={css.type}>
             Телефон
           </Heading>
-          <a className={Styles.link} href={`tel:${replace(telNumber, ' ', '')}`}>
+          <a className={css.link} href={`tel:${replace(telNumber, ' ', '')}`}>
             {telNumber}
           </a>
         </li>
-        <li className={Styles.item}>
-          <Heading sub className={Styles.type}>
+        <li className={css.item}>
+          <Heading sub className={css.type}>
             Почта
           </Heading>
-          <a className={Styles.link} href={`mailto:${email}`}>
+          <a className={css.link} href={`mailto:${email}`}>
             {email}
           </a>
         </li>
-        <li className={Styles.item}>
-          <Heading sub className={Styles.type}>
+        <li className={css.item}>
+          <Heading sub className={css.type}>
             Адрес
           </Heading>
-          <a className={Styles.link} href={ymapLink} target="_blank" rel="noopener noreferrer">
+          <a className={css.link} href={ymapLink} target="_blank" rel="noopener noreferrer">
             {address}
           </a>
         </li>
-        <li className={Styles.item}>
-          <Heading sub className={Styles.type}>
+        <li className={css.item}>
+          <Heading sub className={css.type}>
             Мы в соцсетях
           </Heading>
-          <div className={Styles.socials}>
-            <a className={Styles.social} href={vkLink} target="_blank" rel="noopener noreferrer">
-              <VkIcon className={Styles.socialIcon} alt="Перейти в нашу группу во Вконтакте" />
+          <div className={css.socials}>
+            <a className={css.social} href={vkLink} target="_blank" rel="noopener noreferrer">
+              <VkIcon className={css.socialIcon} alt="Перейти в нашу группу во Вконтакте" />
             </a>
-            <a className={Styles.social} href={instLink} target="_blank" rel="noopener noreferrer">
-              <InstIcon className={Styles.socialIcon} alt="Перейти в наш Инстаграм" />
+            <a className={css.social} href={instLink} target="_blank" rel="noopener noreferrer">
+              <InstIcon className={css.socialIcon} alt="Перейти в наш Инстаграм" />
             </a>
-            <LinkToSection to="reservation-section" block="center" className={Styles.reservation}>
+            <LinkToSection to="reservation-section" block="center" className={css.reservation}>
               Забронировать
             </LinkToSection>
           </div>

@@ -9,7 +9,7 @@ import { fluidImageType } from '../../../../../utils/common-types';
 
 import { useModal } from '../../../../../hooks/use-modal';
 
-import Styles from './gallery.module.scss';
+import css from './gallery.module.scss';
 
 const Gallery = ({ galleryImages }) => {
   const [openedImageIdx, setOpenedImageIdx] = useState(null);
@@ -17,21 +17,17 @@ const Gallery = ({ galleryImages }) => {
   const { openModal, Modal } = useModal();
 
   return (
-    <ul className={Styles.gallery}>
+    <ul className={css.gallery}>
       {map(galleryImages, (galleryImage, idx) => (
         <li
           key={idx}
-          onClick={e => {
+          onClick={(e) => {
             setOpenedImageIdx(idx);
             openModal(e);
           }}
-          className={Styles.item}
+          className={css.item}
         >
-          <Img
-            fluid={galleryImage.img.asset.fluid}
-            className={Styles.image}
-            alt={galleryImage.alt}
-          />
+          <Img fluid={galleryImage.img.asset.fluid} className={css.image} alt={galleryImage.alt} />
         </li>
       ))}
       {openedImageIdx !== null && (

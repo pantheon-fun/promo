@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import map from 'lodash/map';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Styles from './price-section.module.scss';
+import css from './price-section.module.scss';
 
 import { Container } from '../../layout/container';
 import { Heading } from '../../common/heading';
@@ -37,15 +37,15 @@ const PriceSection = () => {
   );
 
   return (
-    <section className={Styles.priceSection} id="price-section">
+    <section className={css.priceSection} id="price-section">
       <Img
         fluid={backgroundImage.img.asset.fluid}
-        className={Styles.backgroundImage}
+        className={css.backgroundImage}
         alt={backgroundImage.alt}
       />
-      <Container className={Styles.inner}>
-        <Heading className={Styles.heading}>{heading}</Heading>
-        <ul className={Styles.plusPoints}>
+      <Container className={css.inner}>
+        <Heading className={css.heading}>{heading}</Heading>
+        <ul className={css.plusPoints}>
           {map(pricePluses, ({ plus, description }, idx) => (
             <PricePlus key={idx} plus={plus} description={description} />
           ))}

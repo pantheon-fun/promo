@@ -6,7 +6,7 @@ import replace from 'lodash/replace';
 import { Icon } from '../../../../common/icon';
 import { LinkToSection } from '../../../../common/link-to-section';
 
-import Styles from './contacts.module.scss';
+import css from './contacts.module.scss';
 
 const Contacts = ({ className }) => {
   const {
@@ -23,14 +23,14 @@ const Contacts = ({ className }) => {
   );
 
   return (
-    <div className={`${className} ${Styles.contacts}`}>
-      <LinkToSection to="references-section" className={Styles.address}>
+    <div className={`${className} ${css.contacts}`}>
+      <LinkToSection to="references-section" className={css.address}>
         {address}
       </LinkToSection>
       <br />
-      <div className={Styles.tel}>
-        <Icon className={Styles.telIcon} name="phone" />
-        <a href={`tel:${replace(telNumber, /\s/g, '')}`} className={Styles.telNumber}>
+      <div className={css.tel}>
+        <Icon className={css.telIcon} name="phone" />
+        <a href={`tel:${replace(telNumber, /\s/g, '')}`} className={css.telNumber}>
           {telNumber}
         </a>
       </div>

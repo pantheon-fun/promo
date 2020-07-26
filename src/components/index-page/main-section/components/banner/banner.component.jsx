@@ -9,22 +9,22 @@ import { Icon } from '../../../../common/icon';
 
 import { joinJSX } from '../../../../../utils/join-jsx';
 
-import Styles from './banner.module.scss';
+import css from './banner.module.scss';
 
 const Banner = ({ className, siteTitle, hints, siteLogo, mainReservationButton }) => {
   return (
-    <div className={`${className} ${Styles.banner}`}>
-      <Img fixed={siteLogo.img.asset.fixed} className={Styles.siteLogo} alt={siteLogo.alt} />
-      <h1 className={Styles.siteTitle}>{siteTitle}</h1>
-      <p className={Styles.hints}>
+    <div className={`${className} ${css.banner}`}>
+      <Img fixed={siteLogo.img.asset.fixed} className={css.siteLogo} alt={siteLogo.alt} />
+      <h1 className={css.siteTitle}>{siteTitle}</h1>
+      <p className={css.hints}>
         {joinJSX(
           map(hints, (hint, idx) => <span key={idx}>{hint}</span>),
           (id) => (
-            <Icon key={id} className={Styles.crosshairsIcon} name="crosshairs" />
+            <Icon key={id} className={css.crosshairsIcon} name="crosshairs" />
           )
         )}
       </p>
-      <ReservationButton className={Styles.reservationButton}>
+      <ReservationButton className={css.reservationButton}>
         {mainReservationButton}
       </ReservationButton>
     </div>

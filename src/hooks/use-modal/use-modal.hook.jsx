@@ -7,7 +7,7 @@ import cx from 'classnames';
 
 import CloseIcon from './icons/close.svg';
 
-import Styles from './use-modal.module.scss';
+import css from './use-modal.module.scss';
 
 const useModal = () => {
   const { openPortal, isOpen, togglePortal, closePortal, Portal } = usePortal();
@@ -19,12 +19,12 @@ const useModal = () => {
 
     return (
       <Portal>
-        <div className={Styles.background} onClick={closePortal} />
-        <div className={cx(Styles.modal, className)}>
+        <div className={css.background} onClick={closePortal} />
+        <div className={cx(css.modal, className)}>
           <img
             src={CloseIcon}
             alt="Иконка закрыть"
-            className={Styles.closeIcon}
+            className={css.closeIcon}
             onClick={closePortal}
           />
           {children}

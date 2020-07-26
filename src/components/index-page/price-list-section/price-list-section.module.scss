@@ -26,10 +26,6 @@
       'reservation reservation'
       'schedule schedule';
   }
-
-  @include respond-above(md) {
-    padding-left: 42rem;
-  }
 }
 
 .heading {

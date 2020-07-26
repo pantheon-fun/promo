@@ -57,7 +57,8 @@ const GamePrice = ({ className }) => {
       </div>
       <div className={css.columnsContainer}>{sessions}</div>
       <Text className={css.details}>Стоимость указана за одного участника</Text>
-      <Text className={css.details}>Минимальная оплата за 6 человек</Text>
+      <Text className={css.details}>Минимальная оплата за **6** человек</Text>
+      <Text className={css.details}>Максимальное количество игрков&nbsp;-&nbsp;**30**</Text>
     </div>
   );
 };

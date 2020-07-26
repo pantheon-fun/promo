@@ -12,7 +12,7 @@
   gap: 25rem;
   grid-template-areas:
     'weekdays'
-    'weekends'
+    'game-price'
     'reservation'
     'schedule';
 
@@ -22,7 +22,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(1, auto) 1fr repeat(1, auto);
     grid-template-areas:
-      'weekdays weekends'
+      'weekdays game-price'
       'reservation reservation'
       'schedule schedule';
   }
@@ -80,8 +80,8 @@
   grid-area: weekdays;
 }
 
-.price-table_weekends {
-  grid-area: weekends;
+.game-price {
+  grid-area: game-price;
 }
 
 .schedule {

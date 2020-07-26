@@ -2,11 +2,12 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Styles from './price-list-section.module.scss';
+import css from './price-list-section.module.scss';
 
 import { Container } from '../../layout/container';
 import { Heading } from '../../common/heading';
 import { PriceTable } from './components/price-table';
+import { GamePrice } from './components/game-price';
 import { Schedule } from './components/schedule';
 import { Reservation } from './components/reservation';
 
@@ -33,23 +34,19 @@ const PriceListSection = () => {
   );
 
   return (
-    <section className={Styles.priceListSection} id="price-list-section">
-      <Heading pure className={Styles.heading}>
+    <section className={css.priceListSection} id="price-list-section">
+      <Heading pure className={css.heading}>
         Цены
       </Heading>
-      <Container className={Styles.content}>
+      <Container className={css.content}>
         <PriceTable
-          className={Styles.priceTable_weekdays}
+          className={css.priceTable_weekdays}
           tableData={priceTable_weekdays}
           title="Понедельник - Четверг"
         />
-        <PriceTable
-          className={Styles.priceTable_weekends}
-          tableData={priceTable_weekends}
-          title="Пятница - Воскресенье"
-        />
-        <Schedule className={Styles.schedule} />
-        <Reservation className={Styles.reservation} />
+        <GamePrice className={css.gamePrice} />
+        <Schedule className={css.schedule} />
+        <Reservation className={css.reservation} />
       </Container>
     </section>
   );

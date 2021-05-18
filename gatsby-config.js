@@ -73,15 +73,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`300`, `400`, `700`],
-            subsets: [`cyrillic`],
-          },
+          // eslint-disable-next-line no-useless-escape
+          `Open Sans\:300,400,700`, // you can also specify font weights and styles
         ],
+        display: 'swap',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

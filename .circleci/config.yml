@@ -3,8 +3,8 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build:
-    docker:
-      - image: node:12.18.3
+    executor:
+      name: node/default
     steps:
       - checkout
       - node/with-cache:
@@ -14,11 +14,10 @@ jobs:
             - run: npm run build
   deploy-prod:
     docker:
-      - image: node:12.18.3
+      - image: circleci/node:9.6.1
     steps:
       - checkout
       - run: ssh -oStrictHostKeyChecking=no -p $DROPLET_PORT $DROPLET_USER@$DROPLET_IP "YANDEX_METRICA_TRACKING_ID=$YANDEX_METRICA_TRACKING_ID ~/pantheon.fun_deploy.sh"
-
 workflows:
   build-and-deploy:
     jobs:

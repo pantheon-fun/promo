@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:9.6.1
+      - image: node:12.18.3
     steps:
       - checkout
       - run: YANDEX_METRICA_TRACKING_ID=$YANDEX_METRICA_TRACKING_ID
@@ -12,7 +12,7 @@ jobs:
       - run: npm run build
   deploy-prod:
     docker:
-      - image: circleci/node:9.6.1
+      - image: node:12.18.3
     steps:
       - checkout
       - run: ssh -oStrictHostKeyChecking=no -p $DROPLET_PORT $DROPLET_USER@$DROPLET_IP "YANDEX_METRICA_TRACKING_ID=$YANDEX_METRICA_TRACKING_ID ~/pantheon.fun_deploy.sh"

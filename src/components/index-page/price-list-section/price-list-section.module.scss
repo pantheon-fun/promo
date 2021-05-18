@@ -12,19 +12,13 @@
   gap: 25rem;
   grid-template-areas:
     'game-price'
-    'special-offers'
-    'reservation'
-    'schedule';
+    'special-offers';
 
   @include respond-above(sm) {
     column-gap: 40rem;
     row-gap: 30rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1, auto) 1fr repeat(1, auto);
-    grid-template-areas:
-      'special-offers game-price'
-      'reservation reservation'
-      'schedule schedule';
+    grid-template-areas: 'special-offers game-price';
   }
 }
 
@@ -78,12 +72,4 @@
 
 .special-offers {
   grid-area: special-offers;
-}
-
-.schedule {
-  grid-area: schedule;
-}
-
-.reservation {
-  grid-area: reservation;
 }

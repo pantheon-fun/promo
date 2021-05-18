@@ -8,8 +8,6 @@ import { Heading } from '../../common/heading';
 
 import { GamePrice } from './components/game-price';
 import { SpecialOffers } from './components/special-offers';
-import { Schedule } from './components/schedule';
-import { Reservation } from './components/reservation';
 
 const PriceListSection = () => {
   const {
@@ -42,8 +40,6 @@ const PriceListSection = () => {
       <Container className={css.content}>
         <SpecialOffers className={css.specialOffers} specialOffers={specialOffers} />
         <GamePrice className={css.gamePrice} prices={prices} priceDetails={priceDetails} />
-        <Schedule className={css.schedule} />
-        <Reservation className={css.reservation} />
       </Container>
     </section>
   );

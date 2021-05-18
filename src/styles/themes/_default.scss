@@ -2,9 +2,9 @@
 [data-theme='default'] {
   /* Background colors */
   @include defineColorHSL(--color-bg-darker, 0, 10%, 0%);
-  @include defineColorHSL(--color-bg-dark, 0, 10%, 7%);
-  @include defineColorHSL(--color-bg, 0, 10%, 12%);
-  @include defineColorHSL(--color-bg-light, 0, 10%, 16%);
+  @include defineColorHSL(--color-bg-dark, 0, 0%, 5%);
+  @include defineColorHSL(--color-bg, 0, 0%, 9%);
+  @include defineColorHSL(--color-bg-light, 0, 0%, 13%);
   /* Primary colors */
   @include defineColorHSL(--color-primary-dark, 4, 97%, 25%);
   @include defineColorHSL(--color-primary, 4, 90%, 60%);

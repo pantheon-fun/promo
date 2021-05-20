@@ -1,10 +1,16 @@
 {
   "name": "pantheon-fun",
-  "version": "0.2.0",
+  "version": "1.0.0",
+  "license": "MIT",
   "author": "Dmitry Zakharov <dzakh.dev@gmail.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
   "dependencies": {
     "classnames": "^2.2.6",
-    "dotenv": "^8.2.0",
     "effector": "^20.15.8",
     "effector-react": "^20.7.3",
     "gatsby": "^2.20.8",
@@ -54,23 +60,5 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-sonarjs": "^0.5.0",
     "prettier": "^1.19.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

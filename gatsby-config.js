@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const postcssPresetEnv = require(`postcss-preset-env`);
 
 module.exports = {
@@ -38,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-yandex-metrika`,
       options: {
-        trackingId: process.env.YANDEX_METRICA_TRACKING_ID,
+        trackingId: 55340875,
         trackHash: true,
         useCDN: true,
       },

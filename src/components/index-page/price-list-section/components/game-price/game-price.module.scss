@@ -19,13 +19,21 @@
   font-size: 1.2em;
   text-align: left;
 
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
-.columns-container {
-  display: grid;
-  gap: 15rem;
-  grid-template-columns: repeat(3, 1fr);
+.prices {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.price-element-outer {
+  display: block;
+  flex-grow: 1;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
 }
 
 .time {
@@ -40,11 +48,11 @@
 }
 
 .price-element {
-  padding-left: 3rem;
-  border: 2rem solid v(color-primary);
+  position: relative;
+  border: 3rem solid v(color-primary);
   font-weight: bold;
-  line-height: 2.6em;
-  font-size: 0.9em;
+  height: 100rem;
+  padding: 0;
 
   transition: background 0.3s, font-weight 0.3s;
 
@@ -53,4 +61,27 @@
     background: v(color-bg-light);
     font-weight: bold;
   }
+}
+
+.price {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 9px;
+  font-size: 1.4em;
+  font-weight: normal;
+  display: flex;
+}
+
+.price-icon {
+  margin-left: 3px;
+  margin-top: 1px;
+}
+
+.session {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3px 8px;
+  font-size: 2em;
 }

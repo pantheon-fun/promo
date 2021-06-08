@@ -11,18 +11,12 @@ import { SpecialOffers } from './components/special-offers';
 
 const PriceListSection = () => {
   const {
-    sanityPriceListSection: { priceDetails, prices, specialOffers },
+    sanityPriceListSection: { priceDetails, specialOffers },
   } = useStaticQuery(
     graphql`
       query {
         sanityPriceListSection {
           priceDetails
-          prices {
-            priceTitle
-            priceOneHour
-            priceTwoHours
-            pricePlusHour
-          }
           specialOffers {
             offerBody
             offerName
@@ -31,6 +25,20 @@ const PriceListSection = () => {
       }
     `
   );
+
+  // TODO: Move to the cms
+  const prices = [
+    // {
+    //   priceTitle: 'Понедельник - Четверг',
+    //   priceThreeHours: 1400,
+    //   priceTwoHours: 900,
+    // },
+    {
+      priceTitle: 'Пятница - Воскресенье и праздники',
+      priceThreeHours: 1800,
+      priceTwoHours: 1200,
+    },
+  ];
 
   return (
     <section className={css.priceListSection} id="price-list-section">

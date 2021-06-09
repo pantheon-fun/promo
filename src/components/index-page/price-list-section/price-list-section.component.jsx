@@ -8,23 +8,15 @@ import { Heading } from '../../common/heading';
 
 import { GamePrice } from './components/game-price';
 import { SpecialOffers } from './components/special-offers';
-import { Schedule } from './components/schedule';
-import { Reservation } from './components/reservation';
 
 const PriceListSection = () => {
   const {
-    sanityPriceListSection: { priceDetails, prices, specialOffers },
+    sanityPriceListSection: { priceDetails, specialOffers },
   } = useStaticQuery(
     graphql`
       query {
         sanityPriceListSection {
           priceDetails
-          prices {
-            priceTitle
-            priceOneHour
-            priceTwoHours
-            pricePlusHour
-          }
           specialOffers {
             offerBody
             offerName
@@ -34,6 +26,20 @@ const PriceListSection = () => {
     `
   );
 
+  // TODO: Move to the cms
+  const prices = [
+    // {
+    //   priceTitle: 'Понедельник - Четверг',
+    //   priceThreeHours: 1400,
+    //   priceTwoHours: 900,
+    // },
+    {
+      priceTitle: 'Пятница - Воскресенье и праздники',
+      priceThreeHours: 1800,
+      priceTwoHours: 1200,
+    },
+  ];
+
   return (
     <section className={css.priceListSection} id="price-list-section">
       <Heading pure className={css.heading}>
@@ -42,8 +48,6 @@ const PriceListSection = () => {
       <Container className={css.content}>
         <SpecialOffers className={css.specialOffers} specialOffers={specialOffers} />
         <GamePrice className={css.gamePrice} prices={prices} priceDetails={priceDetails} />
-        <Schedule className={css.schedule} />
-        <Reservation className={css.reservation} />
       </Container>
     </section>
   );

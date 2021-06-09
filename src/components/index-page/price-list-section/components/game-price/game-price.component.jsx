@@ -3,7 +3,6 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import map from 'lodash/map';
-import split from 'lodash/split';
 
 import { Icon } from '../../../../common/icon';
 import { LinkToSection } from '../../../../common/link-to-section';
@@ -12,46 +11,55 @@ import { Text } from '../../../../common/text';
 
 import css from './game-price.module.scss';
 
-const SESSIONS = ['1 час', '2 часа', '+ час'];
+const SESSIONS = ['2 часа', '3 часа'];
 
-const PriceElement = ({ price }) => {
+const PriceElement = ({ price, session, className }) => {
   return (
-    <LinkToSection to="reservation-section" block="center" className={css.priceElement}>
-      {price} <Icon name="rouble" />
+    <LinkToSection
+      to="reservation-section"
+      block="center"
+      className={cx(css.priceElement, className)}
+    >
+      <div className={css.session}>{session}</div>
+      <div className={css.price}>
+        {price} <Icon className={css.priceIcon} name="rouble" />
+      </div>
     </LinkToSection>
   );
 };
 
 PriceElement.propTypes = {
+  className: PropTypes.string,
   price: PropTypes.string.isRequired,
+  session: PropTypes.string.isRequired,
+};
+
+PriceElement.defaultProps = {
+  className: '',
 };
 
 const GamePrice = ({ className, prices, priceDetails }) => {
-  const sessions = map(SESSIONS, (sessionTime, idx) => {
-    const [value, unit] = split(sessionTime, ' ');
-
-    return (
-      <div key={idx} className={css.time}>
-        {value === '+' ? <Icon name="plus" /> : value} {unit}
-      </div>
-    );
-  });
-
   return (
     <div className={cx(className, css.wrapper)}>
       <Heading className={css.heading} sub>
         Игра
       </Heading>
-      {map(prices, ({ priceTitle, priceOneHour, priceTwoHours, pricePlusHour }, idx) => {
+      {map(prices, ({ priceTitle, priceThreeHours, priceTwoHours }, idx) => {
         return (
           <React.Fragment key={idx}>
             <h5 className={css.subHeading}>{priceTitle}</h5>
-            <div className={css.columnsContainer}>
-              <PriceElement price={priceOneHour} />
-              <PriceElement price={priceTwoHours} />
-              <PriceElement price={pricePlusHour} />
+            <div className={css.prices}>
+              {map([priceTwoHours, priceThreeHours], (price, priceIdx) => {
+                return (
+                  <PriceElement
+                    key={price}
+                    className={css.priceElementOuter}
+                    price={price}
+                    session={SESSIONS[priceIdx]}
+                  />
+                );
+              })}
             </div>
-            <div className={css.columnsContainer}>{sessions}</div>
           </React.Fragment>
         );
       })}
@@ -71,9 +79,8 @@ GamePrice.propTypes = {
   prices: PropTypes.arrayOf(
     PropTypes.exact({
       priceTitle: PropTypes.string,
-      priceOneHour: PropTypes.number,
+      priceThreeHours: PropTypes.number,
       priceTwoHours: PropTypes.number,
-      pricePlusHour: PropTypes.number,
     })
   ).isRequired,
   priceDetails: PropTypes.arrayOf(PropTypes.string),

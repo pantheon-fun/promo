@@ -30,7 +30,9 @@ const ReservationSection = () => {
           <li>
             <a className={css.source} href={`tel:${references}`}>
               <Icon className={css.sourceIcon} name="phone" />
-              <div className={css.sourceLink}>По телефону: {references.telNumber}</div>
+              <div className={css.sourceLink}>
+                По телефону: <span className={css.sourceLinkPhone}>{references.telNumber}</span>
+              </div>
             </a>
           </li>
           <li>

@@ -23,12 +23,13 @@
 
 .sources {
   text-align: left;
-  width: 440px;
+  width: 410px;
+  max-width: 100%;
 }
 
 .source {
   display: flex;
-  font-size: 24rem;
+  font-size: 1.3em;
 
   padding: 4px;
   margin-bottom: 1px;
@@ -47,4 +48,8 @@
   .source:hover & {
     text-decoration: underline;
   }
+}
+
+.source-link-phone {
+  white-space: nowrap;
 }

@@ -10,6 +10,7 @@ import { PriceSection } from '../components/index-page/price-section';
 import { PriceListSection } from '../components/index-page/price-list-section';
 import { HowToFindSection } from '../components/index-page/how-to-find-section';
 import { ReferenceSection } from '../components/index-page/reference-section';
+import { ReservationSection } from '../components/index-page/reservation';
 import { Footer } from '../components/layout/footer';
 
 // TODO: refactore
@@ -28,6 +29,7 @@ const IndexPage = () => {
         <FaqSection />
         <PriceSection />
         <PriceListSection />
+        <ReservationSection />
         <HowToFindSection />
         <ReferenceSection />
       </main>

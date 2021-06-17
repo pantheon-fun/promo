@@ -1,3 +1,5 @@
+> Moved to GitLab: https://gitlab.com/pantheon-fun/core
+
 # pantheon.fun
 
 Website for the laser-tag arena Pantheon `https://pantheon.fun`

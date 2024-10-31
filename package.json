@@ -6,7 +6,7 @@
   "scripts": {
     "next:dev": "next dev",
     "dev": "npm-run-all res:build --parallel --print-label res:dev next:dev",
-    "build": "npm run res:build && next build",
+    "build": "npm run res:build && next build && next export",
     "start": "next start",
     "res:build": "rescript",
     "res:dev": "rescript build -w",

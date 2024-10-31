@@ -1,0 +1,26 @@
+.section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-bg-light);
+}
+
+.map-widget {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.map-widget-iframe {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  filter: invert(89%) hue-rotate(125deg);
+}
+.map-widget-loading .map-widget-iframe {
+  visibility: hidden;
+}

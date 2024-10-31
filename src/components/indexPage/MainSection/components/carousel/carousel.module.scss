@@ -1,0 +1,65 @@
+@import '@/styles/abstracts.scss';
+
+.carousel {
+  position: absolute;
+  top: 0;
+  background: v(color-bg);
+}
+
+.carousel-provider,
+.carousel :global(.carousel__slider-tray-wrapper),
+.carousel :global(.carousel__slider-tray) {
+  height: 100%;
+}
+.carousel {
+  width: 100%;
+  height: 100%;
+}
+
+// TODO:
+// .slide {
+//   cursor: grab;
+// }
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: brightness(40%);
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.swipe-arrow {
+  display: none;
+}
+
+@include respond-above(sm) {
+  .swipe-arrow {
+    display: flex;
+    cursor: pointer;
+    transition: background 0.7s;
+
+    &:hover,
+    &:focus {
+      background: alpha(v(color-contrast), 0.03);
+    }
+  }
+
+  .swipe-icon {
+    position: relative;
+    margin: auto;
+    pointer-events: none;
+    width: 40rem;
+    height: 40rem;
+    opacity: 0.25;
+    transition: opacity 0.5s;
+
+    .swipe-arrow:hover &,
+    .swipe-arrow:focus & {
+      opacity: 1;
+    }
+  }
+}

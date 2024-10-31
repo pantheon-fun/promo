@@ -1,0 +1,10 @@
+@import '@/styles/abstracts.scss';
+
+.default {
+  display: flex;
+  flex-direction: row;
+}
+
+.alignItems_baseline {
+  align-items: baseline;
+}

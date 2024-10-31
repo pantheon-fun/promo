@@ -1,0 +1,33 @@
+stages:
+  - prebuild
+  - verify
+  - build
+
+prebuild:
+  stage: prebuild
+  extends:
+    - .prebuild
+  rules:
+    - !reference [.prepare-app-rules, rules]
+
+verify:
+  stage: verify
+  needs:
+    - prebuild
+  extends:
+    - .verify
+  rules:
+    - !reference [.prepare-app-rules, rules]
+
+build:
+  stage: build
+  needs:
+    - prebuild
+    - verify
+  extends:
+    - .build
+  rules:
+    - !reference [.prepare-app-rules, rules]
+
+include:
+  - local: .gitlab/ci/*.gitlab-ci.yml

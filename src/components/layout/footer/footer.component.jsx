@@ -1,25 +1,19 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
-import { PrivacyPolicy } from '../../common/privacy-policy';
-import { Container } from '../container';
+import { make as Container } from '@/components/ContainerComponent.bs';
+import { make as PrivacyPolicy } from '@/components/PrivacyPolicyComponent.bs';
 
-import css from './footer.module.scss';
+import { use as usePageContent } from '../../../utils/IndexPageContent.bs.js';
+
+import css from './Footer.module.scss';
+
+const currentYear = new Date().getFullYear();
 
 const Footer = () => {
+  const pageContent = usePageContent();
   const {
-    sanityReferences: { devLink },
-  } = useStaticQuery(
-    graphql`
-      query {
-        sanityReferences {
-          devLink
-        }
-      }
-    `
-  );
-
-  const currentYear = new Date().getFullYear();
+    references: { devLink },
+  } = pageContent;
 
   return (
     <footer className={css.footer}>

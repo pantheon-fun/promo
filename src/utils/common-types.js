@@ -1,21 +1,27 @@
 import PropTypes from 'prop-types';
 
-const fluidImageType = PropTypes.shape({
+export const fluidImageType = PropTypes.shape({
   img: PropTypes.shape({
     asset: PropTypes.shape({
+      // eslint-disable-next-line react/forbid-prop-types
       fluid: PropTypes.object.isRequired,
     }).isRequired,
   }).isRequired,
   alt: PropTypes.string.isRequired,
 });
 
-const fixedImageType = PropTypes.shape({
+export const fixedImageType = PropTypes.shape({
   img: PropTypes.shape({
     asset: PropTypes.shape({
+      // eslint-disable-next-line react/forbid-prop-types
       fixed: PropTypes.object.isRequired,
     }).isRequired,
   }).isRequired,
   alt: PropTypes.string.isRequired,
 });
 
-export { fluidImageType, fixedImageType };
+export const pictureType = PropTypes.shape({
+  // eslint-disable-next-line react/forbid-prop-types
+  img: PropTypes.object.isRequired,
+  alt: PropTypes.string.isRequired,
+});

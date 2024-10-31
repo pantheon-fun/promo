@@ -1,4 +1,4 @@
-> Moved to GitLab: https://gitlab.com/pantheon-fun/core
+> Moved back from GitLab: https://gitlab.com/pantheon-fun/core
 
 # pantheon.fun
 

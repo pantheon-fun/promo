@@ -1,0 +1,15 @@
+@import '@/styles/abstracts.scss';
+
+.section {
+  background: v(color-bg-light);
+  position: relative;
+}
+
+.price-cards {
+  margin-top: -20px;
+}
+
+.heading {
+  padding-top: 1em;
+  padding-bottom: 2em;
+}

@@ -1,0 +1,47 @@
+@import '@/styles/abstracts.scss';
+
+.container {
+  padding: 20rem;
+  background: v(color-bg);
+  border: 4rem solid v(color-bg);
+  border-radius: 1em;
+  text-align: left;
+}
+
+@include respond-above(sm) {
+  .container.is-accented {
+    transform: scale(1.1);
+    box-shadow: 0 5rem 7rem alpha(v(color-bg-darker), 0.2);
+  }
+}
+
+.heading {
+  padding-top: 0;
+  padding-bottom: 12rem;
+  text-transform: inherit;
+}
+
+.description {
+  white-space: pre-line;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 12rem;
+}
+
+.price {
+  font-size: 32rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.price-icon {
+  margin-left: 6rem;
+}
+
+.points-list {
+  padding-bottom: 20rem;
+}
+
+.point:not(:last-child) {
+  padding-bottom: 8px;
+}

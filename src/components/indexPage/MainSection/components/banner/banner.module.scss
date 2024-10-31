@@ -1,0 +1,128 @@
+@import '@/styles/abstracts.scss';
+
+.site-logo {
+  width: 150rem;
+  height: 105rem;
+  margin: 0 auto;
+  margin-bottom: 15rem;
+
+  div {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.site-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.hints {
+  padding-top: 4rem;
+  font-size: 0.7em;
+  letter-spacing: -0.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding-bottom: 20rem;
+}
+
+.crosshairs-icon {
+  padding: 0.25em;
+  color: v(color-primary);
+}
+
+.reservation-button {
+  $btn-clr: v(color-contrast);
+
+  z-index: 3;
+  font-size: 14rem;
+  padding: 0.85em 1.3em 0.88em;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  border: 2rem solid $btn-clr;
+  color: $btn-clr;
+  border-radius: 1em;
+
+  @include btn-interactive($btn-clr);
+
+  @include respond-above(xs) {
+    font-size: 16rem;
+  }
+}
+
+/* Height breakpoints */
+@media (max-height: v-get(first-height-breakpoint)) {
+  .site-logo {
+    width: 115rem;
+    height: 75rem;
+  }
+}
+@media (max-height: v-get(second-height-breakpoint)) {
+  .reservation-button {
+    font-size: 0.8em;
+  }
+
+  .site-logo {
+    width: 100rem;
+    height: 65rem;
+    margin-bottom: 10rem;
+  }
+
+  .hints {
+    padding-bottom: 10rem;
+  }
+}
+
+/* Adaptive font-size */
+@include respond-below(xs) {
+  @media screen and (min-width: v-get(min-width)) and (min-height: v-get(first-height-breakpoint)) {
+    .site-title {
+      font-size: 6.2vw;
+    }
+
+    .hints {
+      font-size: 3.6vw;
+    }
+  }
+}
+
+/* Width breakpoints */
+@include respond-above(xs) {
+  @media screen and (min-height: v-get(xs-height-breakpoint)) {
+    .site-logo {
+      width: 210rem;
+      height: 140rem;
+    }
+
+    .site-title {
+      font-size: 36rem;
+    }
+
+    .hints {
+      font-size: 18rem;
+      letter-spacing: 0.6rem;
+      padding-top: 0.7em;
+    }
+  }
+}
+
+@include respond-above(md) {
+  @media screen and (min-height: v-get(md-height-breakpoint)) {
+    .site-logo {
+      width: 230rem;
+      height: 150rem;
+    }
+
+    .site-title {
+      font-size: 46rem;
+    }
+
+    .hints {
+      font-size: 22rem;
+      letter-spacing: 1rem;
+      padding-top: 0.7em;
+      padding-bottom: 0.7em;
+    }
+  }
+}

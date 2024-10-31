@@ -1,18 +1,9 @@
 @charset 'UTF-8';
 
-@import
-  'vendors/normalize';
+@import 'vendors/normalize';
 
 @import 'abstracts';
 
-@import
-  'base/base',
-  'base/fonts',
-  'base/typography',
-  'base/helpers';
+@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
 
-@import
-  'pages/home';
-
-@import
-  'themes/default';
+@import 'themes/default';

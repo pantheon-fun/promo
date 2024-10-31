@@ -1,0 +1,33 @@
+@import '@/styles/abstracts.scss';
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.item {
+  height: 35vw;
+  min-height: 130rem;
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+  height: 100%;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+@include respond-above(md) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .item {
+    height: 17.5vw;
+  }
+}

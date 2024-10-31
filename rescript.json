@@ -1,0 +1,22 @@
+{
+  "name": "pantheon-fun-promo",
+  "namespace": false,
+  "jsx": { "version": 4 },
+  "bs-dependencies": [
+    "@rescript/react",
+    "rescript-classnames",
+    "rescript-webapi",
+    "@dzakh/rescript-core"
+  ],
+  "bsc-flags": ["-open RescriptCore"],
+  "sources": [{ "dir": "src", "subdirs": true }],
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "warnings": {
+    "number": "-3",
+    "error": "+101+8"
+  }
+}

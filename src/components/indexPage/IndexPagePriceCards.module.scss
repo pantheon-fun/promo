@@ -1,0 +1,22 @@
+@import '@/styles/abstracts.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-cards {
+  display: grid;
+  gap: 12rem;
+
+  @include respond-above(sm) {
+    gap: 24rem;
+    grid-template-columns: repeat(3, 1fr);
+    // For an element with scale
+    padding-bottom: 25rem;
+  }
+
+  @include respond-above(lg) {
+    gap: 32rem;
+  }
+}

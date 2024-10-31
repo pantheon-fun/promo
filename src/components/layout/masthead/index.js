@@ -1,1 +1,1 @@
-export { default as Masthead } from './masthead.component';
+export { default as Masthead } from './Masthead.component';

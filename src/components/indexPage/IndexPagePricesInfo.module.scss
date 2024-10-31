@@ -1,0 +1,75 @@
+@import '@/styles/abstracts.scss';
+
+.price-info-section {
+  background: v(color-bg-light);
+  position: relative;
+}
+
+.content {
+  padding-top: 80rem;
+  display: flex;
+  justify-content: center;
+}
+
+.special-offers {
+  text-align: left;
+  max-width: 600px;
+}
+
+.attentionArrow {
+  $triangle-width: 112rem;
+  $triangle-height: 66rem;
+  $letter-spacing: 8rem;
+
+  @include heading-style;
+
+  position: absolute;
+  top: -70rem;
+  right: 0;
+  left: $letter-spacing;
+  margin: 0 auto;
+  font-size: 30rem;
+  letter-spacing: $letter-spacing;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 40rem;
+    right: 0;
+    left: -$letter-spacing;
+    margin: 0 auto;
+
+    width: $triangle-width;
+    border-width: $triangle-height $triangle-width / 2;
+    border-style: solid;
+    border-color: v(color-bg) transparent transparent transparent;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 40rem;
+    right: 0;
+    left: -$letter-spacing;
+    margin: 0 auto;
+
+    width: $triangle-width;
+    border-width: $triangle-height - 6rem $triangle-width / 2;
+    border-style: solid;
+    border-color: v(color-primary) transparent transparent transparent;
+  }
+}
+
+.specialInfoWrapper {
+  background: var(--color-bg);
+  padding: 20rem;
+  border-radius: 1em;
+}
+
+.specialInfoOfferContent {
+  font-weight: normal;
+}
+
+.specialInfoFirstHeading {
+  padding-top: 0;
+}

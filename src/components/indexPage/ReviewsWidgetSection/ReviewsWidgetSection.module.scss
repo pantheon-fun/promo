@@ -1,0 +1,58 @@
+@import '@/styles/abstracts.scss';
+
+.reviews-widget-section {
+  background: v(color-bg-light);
+}
+
+.inner {
+  padding-bottom: 75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2.1em;
+  color: v(color-contrast);
+  font-weight: 300;
+  padding-top: 0;
+  padding-bottom: 1em;
+}
+
+.widget-container {
+  width: 560px;
+  max-width: 100%;
+  height: 800px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1em;
+  background: #ffffff;
+  filter: invert(89%) hue-rotate(140deg);
+}
+
+.widget-iframe {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: none;
+  position: relative;
+}
+
+.widget-footer {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 10px;
+  font-family: YS Text, sans-serif;
+  padding: 0 20px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+
+.widget-container-loading .widget-iframe {
+  visibility: hidden;
+}

@@ -1,0 +1,31 @@
+@import '@/styles/abstracts.scss';
+
+.section {
+  background: v(color-bg);
+}
+
+.gamesList {
+  display: grid;
+  gap: 20rem;
+  margin: 0 auto;
+  padding: 40rem 0 65rem;
+
+  @include respond-above(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-above(lg) {
+    gap: 24rem;
+  }
+}
+
+.gameCard {
+  text-align: left;
+  padding: 16rem;
+  border: 4rem solid v(color-bg-light);
+  border-radius: 1em;
+}
+
+.gameCardHeading {
+  padding-top: 0px;
+}

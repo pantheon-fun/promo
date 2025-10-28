@@ -16,8 +16,8 @@ var priceCards = [
       "**2 часа** игры лазертаг",
       "Финальный Boss раунд с элементами экшн-квеста"
     ],
-    weekDayPrice: 1700,
-    price: 1900,
+    weekDayPrice: 1900,
+    price: 2200,
     gradeColor: "#00c2ff"
   },
   {
@@ -28,8 +28,8 @@ var priceCards = [
       "**1 час** интерактивной комнаты отдыха для проведения торжества",
       "Финальный Boss раунд с элементами экшн-квеста"
     ],
-    weekDayPrice: 1700,
-    price: 1900,
+    weekDayPrice: 1900,
+    price: 2200,
     isAccented: true,
     gradeColor: "#b000f1"
   },
@@ -41,8 +41,8 @@ var priceCards = [
       "**1 час** интерактивной комнаты отдыха для проведения торжества",
       "Финальный Boss раунд с элементами экшн-квеста"
     ],
-    weekDayPrice: 2400,
-    price: 2600,
+    weekDayPrice: 2600,
+    price: 2900,
     gradeColor: "#ffbf20"
   }
 ];
